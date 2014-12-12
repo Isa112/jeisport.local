@@ -1,0 +1,21 @@
+label{
+    display: block;
+}
+.form-item{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.anket-form input[type="text"], input[type="email"]{
+    margin-top: 5px;
+    padding: 3px 10px;
+    font-size: 14px;
+}
+.anket-form input[type="submit"]{
+    background: #00a68e;
+    border: none;
+    border-radius: 8px;
+    font: 14px Segoe;
+    color: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+}
