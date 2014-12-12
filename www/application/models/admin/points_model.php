@@ -169,7 +169,7 @@ class Points_model extends CI_Model {
             'name' => $this->input->post('name'),
             'order' => 0,
             'header' => $this->input->post('header'),
-            'url' => $this->input->post('url'),
+            'url' => str_replace(array(')','('),array('',''),$this->input->post('url')),
             'graphite' => $this->input->post('graphite'),
             'image' => $image,
             'sport_id' => $this->input->post('sport'),
