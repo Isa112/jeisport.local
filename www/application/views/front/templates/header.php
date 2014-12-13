@@ -23,7 +23,7 @@
                     endforeach;
                     ?>
                 </ul>
-<!--                <div class="login-block">
+                <div class="login-block">
                     <form action="">
                         <label>Авторизация</label>
                         <input type="text" name="name" placeholder="имя или e-mail" />
@@ -31,6 +31,6 @@
                         <input type="submit" value="Войти"/>
                     </form>
                     <a href="#">Регистрация</a>
-                </div>-->
+                </div>
             </div>
         </div>
