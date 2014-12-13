@@ -1,28 +1,28 @@
 <script src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-	    
-	    var map;
-		ymaps.ready(function(){
-			
-			map = new YMaps.Map(YMaps.jQuery("#ya-block")[0]);
-	
-	        // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
-	        var point = new YMaps.GeoPoint(<?= $point['coords'] ?>);
-	        map.setCenter(point, 10);
-	        map.addControl(new YMaps.TypeControl());
-	        map.addControl(new YMaps.ToolBar());
-	        map.addControl(new YMaps.Zoom());
-	        map.addControl(new YMaps.ScaleLine());
-	
-	        var placemark = new YMaps.Placemark(point);
-	        placemark.name = "<?= $point['name'] ?>";
-	        map.addOverlay(placemark);
-		});
-	    
-		// Создает обработчик события window.onLoad
-	    // YMaps.jQuery(function () {
-	        // Создает экземпляр карты и привязывает его к созданному контейнеру
+
+        var map;
+        ymaps.ready(function () {
+
+            map = new YMaps.Map(YMaps.jQuery("#ya-block")[0]);
+
+            // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
+            var point = new YMaps.GeoPoint(<?= $point['coords'] ?>);
+            map.setCenter(point, 10);
+            map.addControl(new YMaps.TypeControl());
+            map.addControl(new YMaps.ToolBar());
+            map.addControl(new YMaps.Zoom());
+            map.addControl(new YMaps.ScaleLine());
+
+            var placemark = new YMaps.Placemark(point);
+            placemark.name = "<?= $point['name'] ?>";
+            map.addOverlay(placemark);
+        });
+
+        // Создает обработчик события window.onLoad
+        // YMaps.jQuery(function () {
+        // Создает экземпляр карты и привязывает его к созданному контейнеру
 
 // 	    })
 // $("#point-map").addClass("active");
@@ -54,9 +54,9 @@
                 <div class="point-map-block">
                     <a class="show-map" href="#">Показать карту</a>
                     <div id="point-map" style="overflow: hidden;">
-	                    <div id="ya-block" style="width: 100%; height: 400px;">
-	                    	
-	                    </div>
+                        <div id="ya-block" style="width: 100%; height: 400px;">
+
+                        </div>
                     </div>
                 </div>
                 <div class="halls-block">
@@ -68,7 +68,11 @@
                                     <img src="/getimage.php?key=images/points/halls/<?= $hall['image'] ?>&type=4" alt="">
                                 </a>
                                 <p class="title"><?= $hall['name'] ?></p>
-                                <p class="desc"><?= $hall['description'] ?></p>
+                                <?php if (strlen($hall['name']) < 150): ?>
+                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 200, "..."); ?></p>
+                                <?php else: ?>
+                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 100, "..."); ?></p>
+                                <?php endif; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
