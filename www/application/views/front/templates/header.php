@@ -24,13 +24,31 @@
                     ?>
                 </ul>
                 <div class="login-block">
-                    <form action="">
-                        <label>Авторизация</label>
-                        <input type="text" name="name" placeholder="имя или e-mail" />
-                        <input type="password" name="pass" placeholder="пароль" />
+                    <form action="/forum/ucp.php?mode=login&sid=fh4gpf32rtsb0y513wnaowenfp0q2394">
+                        <label><a href="/forum/ucp.php?mode=login">Авторизация</a></label>
+                        <input type="text" name="username" placeholder="имя или e-mail" />
+                        <input type="password" name="password" placeholder="пароль" />
+                        <input type="hidden" name="redirect" value="/forum/" />
+                        <input type="hidden" name="login" value="external" />
                         <input type="submit" value="Войти"/>
                     </form>
-                    <a href="#">Регистрация</a>
+                    <a href="/forum/ucp.php?mode=register">Регистрация</a>
+                    <form method="post" action="/forum/ucp.php?mode=register&sid=9tq6r0t2gd34g38a68f0t01f3gf68a54">
+                        <label>Регистрация</label>
+                        <input type="text" name="username" placeholder="логин" />
+                        <input type="text" name="email" placeholder="e-mail" />
+                        <input type="password" name="new_password" placeholder="пароль" />
+                        <input type="password" name="password_confirm" placeholder="подтверждение пароля" />
+                        <input type="hidden" name="redirect" value="/forum/" />
+                        <input type="hidden" name="login" value="external" />
+                        <input type="hidden" name="from_external" value="external" />
+                        <input type="hidden" name="tz" value="Asia/Bishkek" />
+                        <input type="hidden" name="lang" value="ru" />
+                        <input type="hidden" name="creation_time" value="<?=time()?>" />
+                        <input type="hidden" name="submit" value="1" />
+                        <input type="submit" value="Войти"/>
+                    </form>
+
                 </div>
             </div>
         </div>
