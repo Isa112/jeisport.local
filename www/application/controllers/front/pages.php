@@ -16,6 +16,10 @@ class Pages extends CI_Controller {
 
     public function view($page = 'home') {
 
+        if ($this->input->get('sid') != '') {
+            $this->session->set_userdata('phpbb_sid', $this->input->get('sid'));
+        }
+
         if (!file_exists(APPPATH . '/views/front/pages/' . $page . '.php')) {
             $this->output->set_status_header('404');
             $this->load->view('front/pages/404', $data);

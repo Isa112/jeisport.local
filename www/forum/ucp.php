@@ -106,8 +106,13 @@ switch ($mode)
 			$message = $user->lang['LOGOUT_FAILED'] . '<br /><br />' . sprintf($user->lang['RETURN_INDEX'], '<a href="' . append_sid("{$phpbb_root_path}index.$phpEx") . '">', '</a> ');
 			trigger_error($message);
 		}
-
-		redirect(append_sid("{$phpbb_root_path}index.$phpEx"));
+        if ($request->is_set('redirect')) {
+            header('Location:'.$request->variable('redirect', '/index.php'));
+            exit;
+        }
+        header('Location:/forumlogin/logout?redirect_to_forum=1');
+        exit;
+        redirect(append_sid("{$phpbb_root_path}index.$phpEx"));
 	break;
 
 	case 'terms':

@@ -170,6 +170,10 @@ $route['blog/(:any)'] = 'front/pages/blog/$1';
 $route['contacts'] = 'front/pages/contacts';
 $route['contacts/save'] = 'front/pages/contacts/save';
 
+$route['forumlogin/login'] = 'front/forumlogin/login';
+$route['forumlogin/login1'] = 'front/forumlogin/login1';
+$route['forumlogin/logout'] = 'front/forumlogin/logout';
+
 $route['(:any)/(:any)/(:any)'] = 'front/pages/point/$1/$2/$3';
 $route['(:any)/(:any)'] = 'front/pages/points/$1/$2';
 $route['(:any)'] = 'front/pages/sports/$1';
