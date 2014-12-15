@@ -1,3 +1,8 @@
+/.idea/
+/www/nbproject/
+/.gitignore/
+/www/forum/cach/*
+
 */config/development
 */logs/log-*.php
 */logs/!index.html
@@ -52,4 +57,3 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-/www/nbproject/private/
