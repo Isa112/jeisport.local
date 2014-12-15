@@ -5,15 +5,21 @@ class Forumlogin extends CI_Controller {
         if ($this->input->get('username') != '' && $this->input->get('password') != '') {
             $query = $this->db->get_where('phpbb_users', array('username' => $this->input->get('username')));
             $userData = $query->row_array();
-            if (!empty($userData)) {
+
+            $getVars = ($this->input->get())? $this->input->get() : array();
+            $getString = '?mode=login';
+            foreach ($getVars as $getKey=>$getVar) {
+                $getString .= "&$getKey=$getVar";
+            }
+
+            $url = "http://{$_SERVER['HTTP_HOST']}/forum/ucp.php$getString";
+            $c = curl_init($url);
+            curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+            $page = curl_exec($c);
+            curl_close($c);
+            if (!empty($userData) && empty($page)) {
                 $this->session->set_userdata('phpbb_username', $this->input->get('username'));
                 $this->session->set_userdata('phpbb_userpassword', $this->input->get('password'));
-
-                $getVars = ($this->input->get())? $this->input->get() : array();
-                $getString = '?mode=login';
-                foreach ($getVars as $getKey=>$getVar) {
-                    $getString .= "&$getKey=$getVar";
-                }
                 header("Location:/forum/ucp.php$getString");
             }
             header("Location:/index.php");
