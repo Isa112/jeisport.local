@@ -2,22 +2,28 @@
 -- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 14, 2014 at 02:09 PM
--- Server version: 5.5.25
--- PHP Version: 5.3.13
+-- Хост: 127.0.0.1
+-- Время создания: Фев 02 2015 г., 18:11
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
--- Database: `jeisport`
+-- База данных: `jeisport`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Структура таблицы `admins`
 --
 
 DROP TABLE IF EXISTS `admins`;
@@ -33,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `admins`
+-- Дамп данных таблицы `admins`
 --
 
 INSERT INTO `admins` (`id`, `login`, `e-mail`, `pass`, `name`, `sname`, `lname`) VALUES
@@ -44,7 +50,7 @@ INSERT INTO `admins` (`id`, `login`, `e-mail`, `pass`, `name`, `sname`, `lname`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Структура таблицы `blog`
 --
 
 DROP TABLE IF EXISTS `blog`;
@@ -65,16 +71,16 @@ CREATE TABLE IF NOT EXISTS `blog` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `blog`
+-- Дамп данных таблицы `blog`
 --
 
 INSERT INTO `blog` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `order`, `views`, `active`) VALUES
-(1, 'Пост!', 'post', '<p>Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;</p>\r\n', '25.11.2014 12:04', '', '', '', '96152abddc5a2270d5d58d8615a9d8f4.jpg', 0, 9, 'on');
+(1, 'Пост!', 'post', '<p>Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;</p>\r\n', '25.11.2014 12:04', '', '', '', '96152abddc5a2270d5d58d8615a9d8f4.jpg', 0, 10, 'on');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Структура таблицы `categories`
 --
 
 DROP TABLE IF EXISTS `categories`;
@@ -97,12 +103,12 @@ CREATE TABLE IF NOT EXISTS `categories` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 --
--- Dumping data for table `categories`
+-- Дамп данных таблицы `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `h1`, `h2`, `url`, `image`, `image2`, `image3`, `title`, `desc`, `keyw`, `text`, `order`, `active`) VALUES
 (55, 'Фитнес клубы', 'СЕКЦИИ И КЛУБЫ ЕДИНОБОРСТВ', 'вфывфы', 'fitnes-club', 'a8a74c9a411b4c4780c5541794781a34.png', 'a2e2962e050f5e56bfb2c2ed266a2c9c.jpg', '581e1115d8756264290bd5f80fff39da.png', '', '', '', '<p><span style="font-family:rbcgrotesk-light; font-size:medium">Устали однообразно курсировать между домом и работой? Решили разбавить этот тандем яркой ноткой, занявшись своим телом и здоровьем, ведь &laquo;в здоровом теле &ndash; здоровый дух&raquo;? А может, вы ищете спортивные секции для детей, поскольку осенью снижается физическая активность, столь необходимая для полноценного развития ребенка? Тогда самое время сесть поудобнее и изучить самую актуальную и подробную информацию про спортивные клубы Москвы! Здесь вы найдете самые разные спортивные клубы, которые могут быть расположены около вашего места работы или дома, а также спортивные секции, где будут заниматься ваши дети. На сайте Jeisport.ru представлено огромное разнообразие спортивных клубов Москвы, среди которых вы найдете: Спортклубы и спортивные школы, в которых проводятся занятия по единоборствам: кикбоксинг, бокс, боевое самбо, муай-тай (тайский бокс) и многие другие, Фитнесклубы &ndash; замечательная возможность для прекрасных дам подтянуть фигуру и всегда выглядеть потрясающе: в нашем каталоге представлено большое разнообразие спортивных секций по аква-аэробике, пилатесу, фитнесу, в том числе для молодых мам и беременных, а также тренажерные залы, Спортклубы с бассейнами &ndash; то, что нужно для полного избавления от стрессов: в каталоге вы найдете бассейны по своему вкусу &ndash; крытые или открытые, Спортивные игры &ndash; раздел нашего сайта, который наверняка заинтересует любителей оздоровиться и насладиться игрой в баскетбол, бадминтон, пляжный или классический волейбол, хоккей, пинг-понг, керлинг, гольф и, конечно, футбол. К вашим услугам огромный выбор спортклубов, предлагающих посетителям поиграть в эти и другие спортивные игры, Танцы &ndash; для вашего удобства все спортивные танцевальные секции сгруппированы по танцевальным направлениям: латина, go-go, R&amp;B, бальные, клубные, хореография и многие другие; здесь же вы найдете спортивные танцевальные секции для детей, Активный отдых &ndash; то, что нужно для полного расслабления и восстановления сил! В этой категории любители острых ощущений и не только найдут информацию о парашютном спорте, велотрассах, роллердромах, скалодромах, скейтпарках, паркуре и полетах на шаре в Москве. С нами выбор спортивного клуба или секции в Москве &ndash; сплошное удовольствие!</span></p>\r\n', 0, 'on'),
-(56, 'Единоборства', 'Единоборства', 'Единоборства1', 'edinoborstva', 'e011deafb2481e9bb5fdd8feb87bb2d4.png', '677d16f9df549c47cb903ea2ef624ee9.jpg', '5df20f2e456705a916602dadf3d6870e.png', '', '', '', '', 0, 'on'),
+(56, 'Единоборства', 'Единоборства', 'Единоборства1', 'edinoborstva', '584e049bf5f0610f0918139c9a7270ea.png', '677d16f9df549c47cb903ea2ef624ee9.jpg', '5df20f2e456705a916602dadf3d6870e.png', '', '', '', '', 1, 'on'),
 (57, 'Активный отдых', 'вфывыфв', '', 'aktivnyj_otdyh', '417ed988d387e76062153863b00bab1f.png', '2517551ff51f3f1bd94b801fd1f0ac6a.jpg', '67692f50c3395cd1414392bdc663f0fb.png', '', '', '', '', 0, 'on'),
 (58, 'Бассейны', 'выфвфы', 'выфвфы', 'bassejny', '2a45da1064c21b9d4a1f38f2ddf3d1e9.png', 'a5c9bf021581dbc7e667339dfed21aca.jpg', 'c7254a6077c4d45a5f6bafdf6e3b4ff1.png', '', '', '', '', 0, 'on'),
 (59, 'Спортивные игры', 'dasd', '', 'sportivnye_igry', '26b383a341ef28602520efad9b61abba.png', 'fa00f9ccc0cd7eb60b229720832eaf2c.jpg', '5f2a042d48368242d740d3d875ae15b5.png', '', '', '', '', 0, 'on'),
@@ -111,7 +117,7 @@ INSERT INTO `categories` (`id`, `name`, `h1`, `h2`, `url`, `image`, `image2`, `i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `email`
+-- Структура таблицы `email`
 --
 
 DROP TABLE IF EXISTS `email`;
@@ -120,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `email`
+-- Дамп данных таблицы `email`
 --
 
 INSERT INTO `email` (`email`) VALUES
@@ -129,7 +135,7 @@ INSERT INTO `email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Структура таблицы `feedback`
 --
 
 DROP TABLE IF EXISTS `feedback`;
@@ -147,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `feedback`
+-- Дамп данных таблицы `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `name`, `email`, `phone`, `theme`, `msg`, `date`, `ip`, `read`) VALUES
@@ -160,7 +166,7 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `phone`, `theme`, `msg`, `date`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `maintext`
+-- Структура таблицы `maintext`
 --
 
 DROP TABLE IF EXISTS `maintext`;
@@ -169,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `maintext` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `maintext`
+-- Дамп данных таблицы `maintext`
 --
 
 INSERT INTO `maintext` (`text`) VALUES
@@ -178,7 +184,7 @@ INSERT INTO `maintext` (`text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- Структура таблицы `news`
 --
 
 DROP TABLE IF EXISTS `news`;
@@ -200,16 +206,16 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `news`
+-- Дамп данных таблицы `news`
 --
 
 INSERT INTO `news` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `category_id`, `order`, `views`, `active`) VALUES
-(1, 'нвоость', 'nvoost', '', '06.12.2014 19:15', '', '', '', '0b19723203bd948cc45c768ac87ce581.jpg', 0, 0, 6, 'on');
+(1, 'нвоость', 'nvoost', '', '06.12.2014 19:15', '', '', '', '0b19723203bd948cc45c768ac87ce581.jpg', 0, 0, 7, 'on');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news_categories`
+-- Структура таблицы `news_categories`
 --
 
 DROP TABLE IF EXISTS `news_categories`;
@@ -224,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `news_categories` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_acl_groups`
+-- Структура таблицы `phpbb_acl_groups`
 --
 
 DROP TABLE IF EXISTS `phpbb_acl_groups`;
@@ -240,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_acl_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_acl_groups`
+-- Дамп данных таблицы `phpbb_acl_groups`
 --
 
 INSERT INTO `phpbb_acl_groups` (`group_id`, `forum_id`, `auth_option_id`, `auth_role_id`, `auth_setting`) VALUES
@@ -270,7 +276,7 @@ INSERT INTO `phpbb_acl_groups` (`group_id`, `forum_id`, `auth_option_id`, `auth_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_acl_options`
+-- Структура таблицы `phpbb_acl_options`
 --
 
 DROP TABLE IF EXISTS `phpbb_acl_options`;
@@ -285,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_acl_options` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=122 ;
 
 --
--- Dumping data for table `phpbb_acl_options`
+-- Дамп данных таблицы `phpbb_acl_options`
 --
 
 INSERT INTO `phpbb_acl_options` (`auth_option_id`, `auth_option`, `is_global`, `is_local`, `founder_only`) VALUES
@@ -414,7 +420,7 @@ INSERT INTO `phpbb_acl_options` (`auth_option_id`, `auth_option`, `is_global`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_acl_roles`
+-- Структура таблицы `phpbb_acl_roles`
 --
 
 DROP TABLE IF EXISTS `phpbb_acl_roles`;
@@ -430,7 +436,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_acl_roles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=25 ;
 
 --
--- Dumping data for table `phpbb_acl_roles`
+-- Дамп данных таблицы `phpbb_acl_roles`
 --
 
 INSERT INTO `phpbb_acl_roles` (`role_id`, `role_name`, `role_description`, `role_type`, `role_order`) VALUES
@@ -462,7 +468,7 @@ INSERT INTO `phpbb_acl_roles` (`role_id`, `role_name`, `role_description`, `role
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_acl_roles_data`
+-- Структура таблицы `phpbb_acl_roles_data`
 --
 
 DROP TABLE IF EXISTS `phpbb_acl_roles_data`;
@@ -475,7 +481,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_acl_roles_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_acl_roles_data`
+-- Дамп данных таблицы `phpbb_acl_roles_data`
 --
 
 INSERT INTO `phpbb_acl_roles_data` (`role_id`, `auth_option_id`, `auth_setting`) VALUES
@@ -889,7 +895,7 @@ INSERT INTO `phpbb_acl_roles_data` (`role_id`, `auth_option_id`, `auth_setting`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_acl_users`
+-- Структура таблицы `phpbb_acl_users`
 --
 
 DROP TABLE IF EXISTS `phpbb_acl_users`;
@@ -905,7 +911,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_acl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_acl_users`
+-- Дамп данных таблицы `phpbb_acl_users`
 --
 
 INSERT INTO `phpbb_acl_users` (`user_id`, `forum_id`, `auth_option_id`, `auth_role_id`, `auth_setting`) VALUES
@@ -914,7 +920,7 @@ INSERT INTO `phpbb_acl_users` (`user_id`, `forum_id`, `auth_option_id`, `auth_ro
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_attachments`
+-- Структура таблицы `phpbb_attachments`
 --
 
 DROP TABLE IF EXISTS `phpbb_attachments`;
@@ -945,7 +951,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_attachments` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_banlist`
+-- Структура таблицы `phpbb_banlist`
 --
 
 DROP TABLE IF EXISTS `phpbb_banlist`;
@@ -969,7 +975,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_banlist` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_bbcodes`
+-- Структура таблицы `phpbb_bbcodes`
 --
 
 DROP TABLE IF EXISTS `phpbb_bbcodes`;
@@ -991,7 +997,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_bbcodes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_bookmarks`
+-- Структура таблицы `phpbb_bookmarks`
 --
 
 DROP TABLE IF EXISTS `phpbb_bookmarks`;
@@ -1004,7 +1010,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_bookmarks` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_bots`
+-- Структура таблицы `phpbb_bots`
 --
 
 DROP TABLE IF EXISTS `phpbb_bots`;
@@ -1020,7 +1026,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_bots` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=46 ;
 
 --
--- Dumping data for table `phpbb_bots`
+-- Дамп данных таблицы `phpbb_bots`
 --
 
 INSERT INTO `phpbb_bots` (`bot_id`, `bot_active`, `bot_name`, `user_id`, `bot_agent`, `bot_ip`) VALUES
@@ -1073,7 +1079,7 @@ INSERT INTO `phpbb_bots` (`bot_id`, `bot_active`, `bot_name`, `user_id`, `bot_ag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_config`
+-- Структура таблицы `phpbb_config`
 --
 
 DROP TABLE IF EXISTS `phpbb_config`;
@@ -1086,7 +1092,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_config`
+-- Дамп данных таблицы `phpbb_config`
 --
 
 INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
@@ -1162,7 +1168,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('bump_interval', '10', 0),
 ('bump_type', 'd', 0),
 ('cache_gc', '7200', 0),
-('cache_last_gc', '1418548322', 1),
+('cache_last_gc', '1422442254', 1),
 ('captcha_gd', '1', 0),
 ('captcha_gd_3d_noise', '1', 0),
 ('captcha_gd_fonts', '1', 0),
@@ -1185,7 +1191,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('coppa_mail', '', 0),
 ('cron_lock', '0', 1),
 ('database_gc', '604800', 0),
-('database_last_gc', '1418455028', 1),
+('database_last_gc', '1422442341', 1),
 ('dbms_version', '5.5.25', 0),
 ('default_dateformat', 'D M d, Y g:i a', 0),
 ('default_lang', 'ru', 0),
@@ -1322,12 +1328,12 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('new_member_group_default', '0', 0),
 ('new_member_post_limit', '3', 0),
 ('newest_user_colour', '', 1),
-('newest_user_id', '51', 1),
-('newest_username', 'dizufghjka', 1),
+('newest_user_id', '54', 1),
+('newest_username', 'login123', 1),
 ('num_files', '0', 1),
 ('num_posts', '1', 1),
 ('num_topics', '1', 1),
-('num_users', '4', 1),
+('num_users', '7', 1),
 ('override_user_style', '0', 0),
 ('pass_complex', 'PASS_TYPE_ANY', 0),
 ('plupload_last_gc', '0', 1),
@@ -1340,14 +1346,14 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('print_pm', '1', 0),
 ('questionnaire_unique_id', '5b7e323c13fc2705', 0),
 ('queue_interval', '60', 0),
-('rand_seed', '264facff15575fc4d55529bcc0404275', 1),
-('rand_seed_last_update', '1418552666', 1),
+('rand_seed', '034912400e222ce5baf4e6fbe7a45bc5', 1),
+('rand_seed_last_update', '1422442336', 1),
 ('ranks_path', 'images/ranks', 0),
 ('read_notification_expire_days', '30', 0),
 ('read_notification_gc', '86400', 0),
-('read_notification_last_gc', '1418547824', 1),
-('record_online_date', '1418455152', 1),
-('record_online_users', '2', 1),
+('read_notification_last_gc', '1422442337', 1),
+('record_online_date', '1418561949', 1),
+('record_online_users', '3', 1),
 ('referer_validation', '1', 0),
 ('require_activation', '0', 0),
 ('script_path', '/forum', 0),
@@ -1356,7 +1362,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('search_gc', '7200', 0),
 ('search_indexing_state', '', 1),
 ('search_interval', '0', 0),
-('search_last_gc', '1418548604', 1),
+('search_last_gc', '1418636939', 1),
 ('search_store_results', '1800', 0),
 ('search_type', '\\phpbb\\search\\fulltext_native', 0),
 ('secure_allow_deny', '1', 0),
@@ -1366,7 +1372,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('server_port', '80', 0),
 ('server_protocol', 'http://', 0),
 ('session_gc', '3600', 0),
-('session_last_gc', '1418551084', 1),
+('session_last_gc', '1422442262', 1),
 ('session_length', '3600', 0),
 ('site_desc', 'A short text to describe your forum', 0),
 ('site_home_text', '', 0),
@@ -1391,12 +1397,12 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('version', '3.1.2', 0),
 ('warnings_expire_days', '90', 0),
 ('warnings_gc', '14400', 0),
-('warnings_last_gc', '1418550842', 1);
+('warnings_last_gc', '1418637366', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_config_text`
+-- Структура таблицы `phpbb_config_text`
 --
 
 DROP TABLE IF EXISTS `phpbb_config_text`;
@@ -1407,7 +1413,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_config_text` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_config_text`
+-- Дамп данных таблицы `phpbb_config_text`
 --
 
 INSERT INTO `phpbb_config_text` (`config_name`, `config_value`) VALUES
@@ -1419,7 +1425,7 @@ INSERT INTO `phpbb_config_text` (`config_name`, `config_value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_confirm`
+-- Структура таблицы `phpbb_confirm`
 --
 
 DROP TABLE IF EXISTS `phpbb_confirm`;
@@ -1435,45 +1441,18 @@ CREATE TABLE IF NOT EXISTS `phpbb_confirm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_confirm`
+-- Дамп данных таблицы `phpbb_confirm`
 --
 
 INSERT INTO `phpbb_confirm` (`confirm_id`, `session_id`, `confirm_type`, `code`, `seed`, `attempts`) VALUES
-('68625f1fbcfad8cb150843e58eaaa0bc', '01a3bf10a4920bf9bd2b6c0c93217534', 1, '31UL1S', 1173962195, 0),
-('7824f9fc441f13cb4f4f1e8fe14a39c2', '16edf9a0f193245e086149842a0aa8fa', 1, '57ZDXF', 1162251929, 0),
-('70c825f3519cf78d2ef6267d25490a5d', '18bff9462da3489a8dc738e9d24d082d', 1, '4EM8M', 2017281100, 0),
-('f57c940b2b97e73c9eb9c182c73fc14b', '27047109ed4e6cee64ec0b3e0370018a', 1, '4SUC', 1662515553, 1),
-('184422964f7f78967f7439eafe5b40b3', '395370c78b0e7c966bab357fa9bc765a', 1, '2SY7WX', 1134414938, 1),
-('1aef43cd1006d2533d484811b280e06e', '3f3de71d7382c5ae3c85022c68d6bc45', 1, '1J53MF', 2111819860, 0),
-('95c7f41f40f17798afe89a5566ea2fe5', '494570c2d2e65040a84105da4107ca17', 1, '7IQDMP9', 359517285, 0),
-('3b710464bb9ab0851a3b89c5e4305d1f', '4a5551bb123ff1e912b125420d0e28d0', 1, '3WFG', 1847431099, 0),
-('ab580bcf9aa6fa52d1a6592817f8b3c2', '5dae21715574e96a647d6dfcb8a6135c', 1, 'F8Y6G93', 637553645, 0),
-('7f5fdf91c9459f33de2d3d6b00bb5080', '7cc37459010c44588484605e03592a55', 1, '8HPK9FI', 1111450832, 0),
-('4763ee9d7162b78bcaa5421e3762c843', '7ffb21673b8c2f9dd5f703452bcd6686', 1, '38WGL', 55729841, 0),
-('c86efff7499d93a494035975b334f626', '81ea74dfcf086cf9cbbf79d1f3b52e34', 1, '27Q6A8F', 594612307, 0),
-('d3f0165ed39ed4385ee2b936f6aceec8', '8950558909dc8370dab50b0d68e12975', 1, '5T4412', 339695349, 0),
-('e7ed31aede66ea9e21f379e2e4e734c5', '8d382603eea322fec535e92cdf75e959', 1, '7KYQHYC', 1843472462, 0),
-('d901c1fb8403b11b151685f841f2036e', '9281645bde07fe1cb5583499c567cd82', 1, '55ML', 1383485033, 0),
-('e1c95ec64a4425271c381f3ea354b8a5', '93e78fedf752758231ff3d1f14a76511', 1, '4YE5A', 240862081, 0),
-('4fe0e3ab68a3f501fb1bdc54c6786fbc', '95631b6960132b58cfdc9d0766e3d650', 1, '1B77KU4', 425409823, 0),
-('1164643bd34d40d9e3097118c54da472', '98cfbf4536a08caacdf19304477abb39', 1, '718NU3', 329573715, 0),
-('2d0246b7e3b5eda566116e6e96e7b38a', '9b97f7e4d3cf4ad419f2cc99c6f91586', 1, '6IFPJG5', 1899030989, 0),
-('aad6a61550871f0195b9b203c92aa279', 'a95729a476a9d0a5464117e275c43a31', 1, '429VJZ8', 1918059866, 0),
-('fe79cb0f7731e80e252bbbdfe590d101', 'a9f0e89b8f2b47e650bb8f999cadf207', 1, '21TRXJK', 18289917, 1),
-('abbf9005a4aa7c75cde1616d4901b7b2', 'ae725be9a1a82565d8e2d63f1e0cca8e', 1, '3M8WWH', 1470685894, 0),
-('a82ff2279efe006e35dec4830952a73c', 'b3b3ac5fc47cd5728e1d5a0dadcacb58', 1, '7CBN6E', 1360657753, 0),
-('d8c2ff9d03a7d607714189f5a985fd0a', 'cc1adcf2621ab951e36bde30e66eb9b6', 1, '7L6M', 1673477530, 0),
-('800c818f4f8f6524eb917f7bf704998a', 'd53cc22626afea83d9d027bdd903d310', 1, '6HUCPBP', 1346775274, 0),
-('9afaeb8b1a4f9196ba7844ff050a7ee2', 'd6a53402a0f8a955689fa91ece9ba384', 1, '3233JP9', 1286253758, 0),
-('302e2076ed69b9e05f7bb141adb2f96a', 'db6cd892fd9a3641dad5834e5e10f640', 1, '182Q9ZJ', 963122491, 0),
-('70f2a21fd575268e2acd6eb81cab6003', 'ed9513667fa4f7e986b23bc24dee4531', 1, '35DM7', 1061888542, 0),
-('2de7ba328141b5006d227545d4b50f3d', 'f6c970b07ab52ed7134060a617f01371', 1, '3Y32CR', 757153319, 0),
-('588de15992bdc0404597ed027d176922', 'ffbf097356510dfc51455a9f2f46e1e2', 1, '5FIX', 1790772088, 0);
+('057a8169dd189aaae1a4e2d369d76b7e', '4d0ea8185e23266c3097ced52b8b723a', 2, '2KG35X', 1989214699, 0),
+('68add5b2f46e7eb82548c215fe29752d', '4d0ea8185e23266c3097ced52b8b723a', 2, '1QLUZ', 1864413750, 1),
+('833553548f2634587c55e03f280095c0', 'a037d25b265980120fb0240d77534da3', 1, '6S57GGR', 433324437, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_disallow`
+-- Структура таблицы `phpbb_disallow`
 --
 
 DROP TABLE IF EXISTS `phpbb_disallow`;
@@ -1486,7 +1465,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_disallow` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_drafts`
+-- Структура таблицы `phpbb_drafts`
 --
 
 DROP TABLE IF EXISTS `phpbb_drafts`;
@@ -1505,7 +1484,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_drafts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_ext`
+-- Структура таблицы `phpbb_ext`
 --
 
 DROP TABLE IF EXISTS `phpbb_ext`;
@@ -1519,7 +1498,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_ext` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_extensions`
+-- Структура таблицы `phpbb_extensions`
 --
 
 DROP TABLE IF EXISTS `phpbb_extensions`;
@@ -1531,7 +1510,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_extensions` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=67 ;
 
 --
--- Dumping data for table `phpbb_extensions`
+-- Дамп данных таблицы `phpbb_extensions`
 --
 
 INSERT INTO `phpbb_extensions` (`extension_id`, `group_id`, `extension`) VALUES
@@ -1605,7 +1584,7 @@ INSERT INTO `phpbb_extensions` (`extension_id`, `group_id`, `extension`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_extension_groups`
+-- Структура таблицы `phpbb_extension_groups`
 --
 
 DROP TABLE IF EXISTS `phpbb_extension_groups`;
@@ -1623,7 +1602,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_extension_groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=10 ;
 
 --
--- Dumping data for table `phpbb_extension_groups`
+-- Дамп данных таблицы `phpbb_extension_groups`
 --
 
 INSERT INTO `phpbb_extension_groups` (`group_id`, `group_name`, `cat_id`, `allow_group`, `download_mode`, `upload_icon`, `max_filesize`, `allowed_forums`, `allow_in_pm`) VALUES
@@ -1640,7 +1619,7 @@ INSERT INTO `phpbb_extension_groups` (`group_id`, `group_name`, `cat_id`, `allow
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_forums`
+-- Структура таблицы `phpbb_forums`
 --
 
 DROP TABLE IF EXISTS `phpbb_forums`;
@@ -1700,7 +1679,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `phpbb_forums`
+-- Дамп данных таблицы `phpbb_forums`
 --
 
 INSERT INTO `phpbb_forums` (`forum_id`, `parent_id`, `left_id`, `right_id`, `forum_parents`, `forum_name`, `forum_desc`, `forum_desc_bitfield`, `forum_desc_options`, `forum_desc_uid`, `forum_link`, `forum_password`, `forum_style`, `forum_image`, `forum_rules`, `forum_rules_link`, `forum_rules_bitfield`, `forum_rules_options`, `forum_rules_uid`, `forum_topics_per_page`, `forum_type`, `forum_status`, `forum_last_post_id`, `forum_last_poster_id`, `forum_last_post_subject`, `forum_last_post_time`, `forum_last_poster_name`, `forum_last_poster_colour`, `forum_flags`, `display_on_index`, `enable_indexing`, `enable_icons`, `enable_prune`, `prune_next`, `prune_days`, `prune_viewed`, `prune_freq`, `display_subforum_list`, `forum_options`, `forum_posts_approved`, `forum_posts_unapproved`, `forum_posts_softdeleted`, `forum_topics_approved`, `forum_topics_unapproved`, `forum_topics_softdeleted`, `enable_shadow_prune`, `prune_shadow_days`, `prune_shadow_freq`, `prune_shadow_next`) VALUES
@@ -1710,7 +1689,7 @@ INSERT INTO `phpbb_forums` (`forum_id`, `parent_id`, `left_id`, `right_id`, `for
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_forums_access`
+-- Структура таблицы `phpbb_forums_access`
 --
 
 DROP TABLE IF EXISTS `phpbb_forums_access`;
@@ -1724,7 +1703,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums_access` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_forums_track`
+-- Структура таблицы `phpbb_forums_track`
 --
 
 DROP TABLE IF EXISTS `phpbb_forums_track`;
@@ -1738,7 +1717,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums_track` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_forums_watch`
+-- Структура таблицы `phpbb_forums_watch`
 --
 
 DROP TABLE IF EXISTS `phpbb_forums_watch`;
@@ -1754,7 +1733,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums_watch` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_groups`
+-- Структура таблицы `phpbb_groups`
 --
 
 DROP TABLE IF EXISTS `phpbb_groups`;
@@ -1785,7 +1764,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=8 ;
 
 --
--- Dumping data for table `phpbb_groups`
+-- Дамп данных таблицы `phpbb_groups`
 --
 
 INSERT INTO `phpbb_groups` (`group_id`, `group_type`, `group_founder_manage`, `group_skip_auth`, `group_name`, `group_desc`, `group_desc_bitfield`, `group_desc_options`, `group_desc_uid`, `group_display`, `group_avatar`, `group_avatar_type`, `group_avatar_width`, `group_avatar_height`, `group_rank`, `group_colour`, `group_sig_chars`, `group_receive_pm`, `group_message_limit`, `group_legend`, `group_max_recipients`) VALUES
@@ -1800,7 +1779,7 @@ INSERT INTO `phpbb_groups` (`group_id`, `group_type`, `group_founder_manage`, `g
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_icons`
+-- Структура таблицы `phpbb_icons`
 --
 
 DROP TABLE IF EXISTS `phpbb_icons`;
@@ -1816,7 +1795,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_icons` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=11 ;
 
 --
--- Dumping data for table `phpbb_icons`
+-- Дамп данных таблицы `phpbb_icons`
 --
 
 INSERT INTO `phpbb_icons` (`icons_id`, `icons_url`, `icons_width`, `icons_height`, `icons_order`, `display_on_posting`) VALUES
@@ -1834,7 +1813,7 @@ INSERT INTO `phpbb_icons` (`icons_id`, `icons_url`, `icons_width`, `icons_height
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_lang`
+-- Структура таблицы `phpbb_lang`
 --
 
 DROP TABLE IF EXISTS `phpbb_lang`;
@@ -1850,7 +1829,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_lang` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `phpbb_lang`
+-- Дамп данных таблицы `phpbb_lang`
 --
 
 INSERT INTO `phpbb_lang` (`lang_id`, `lang_iso`, `lang_dir`, `lang_english_name`, `lang_local_name`, `lang_author`) VALUES
@@ -1860,7 +1839,7 @@ INSERT INTO `phpbb_lang` (`lang_id`, `lang_iso`, `lang_dir`, `lang_english_name`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_log`
+-- Структура таблицы `phpbb_log`
 --
 
 DROP TABLE IF EXISTS `phpbb_log`;
@@ -1881,10 +1860,10 @@ CREATE TABLE IF NOT EXISTS `phpbb_log` (
   KEY `topic_id` (`topic_id`),
   KEY `reportee_id` (`reportee_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=18 ;
 
 --
--- Dumping data for table `phpbb_log`
+-- Дамп данных таблицы `phpbb_log`
 --
 
 INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`, `reportee_id`, `log_ip`, `log_time`, `log_operation`, `log_data`) VALUES
@@ -1902,12 +1881,14 @@ INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`
 (12, 0, 2, 0, 0, 0, '127.0.0.1', 1418549429, 'LOG_USER_DELETED', 'a:1:{i:0;s:5:"user1";}'),
 (13, 2, 1, 0, 0, 0, '127.0.0.1', 1418551729, 'LOG_ERROR_EMAIL', 'a:1:{i:0;s:1679:"<strong>EMAIL/SMTP</strong><br /><em>/forum/ucp.php</em><br /><br />Ошибка при отправке email в <strong>строке 1505</strong>. Ответ сервера: 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 l5sm511533lam.48 - gsmtp\r\n.<h1>Backtrace</h1><p>Connecting to smtp.googlemail.com:25<br />LINE: 1020 &lt;- 220 mx.google.com ESMTP l5sm511533lam.48 - gsmtp\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-STARTTLS\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># STARTTLS<br />LINE: 1414 &lt;- 220 2.0.0 Ready to start TLS\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-AUTH LOGIN PLAIN XOAUTH XOAUTH2 PLAIN-CLIENTTOKEN\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># AUTH LOGIN<br />LINE: 1493 &lt;- 334 VXNlcm5hbWU6\r\n<br /># Omitting sensitive information<br />LINE: 1499 &lt;- 334 UGFzc3dvcmQ6\r\n<br /># Omitting sensitive information<br />LINE: 1505 &lt;- 535-5.7.8 Username and Password not accepted. Learn more at\r\n<br />LINE: 1505 &lt;- 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 l5sm511533lam.48 - gsmtp\r\n</p><br />";}'),
 (14, 2, 1, 0, 0, 0, '127.0.0.1', 1418552037, 'LOG_ERROR_EMAIL', 'a:1:{i:0;s:1682:"<strong>EMAIL/SMTP</strong><br /><em>/forum/ucp.php</em><br /><br />Ошибка при отправке email в <strong>строке 1505</strong>. Ответ сервера: 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 e5sm1787058laf.44 - gsmtp\r\n.<h1>Backtrace</h1><p>Connecting to smtp.googlemail.com:25<br />LINE: 1020 &lt;- 220 mx.google.com ESMTP e5sm1787058laf.44 - gsmtp\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-STARTTLS\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># STARTTLS<br />LINE: 1414 &lt;- 220 2.0.0 Ready to start TLS\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-AUTH LOGIN PLAIN XOAUTH XOAUTH2 PLAIN-CLIENTTOKEN\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># AUTH LOGIN<br />LINE: 1493 &lt;- 334 VXNlcm5hbWU6\r\n<br /># Omitting sensitive information<br />LINE: 1499 &lt;- 334 UGFzc3dvcmQ6\r\n<br /># Omitting sensitive information<br />LINE: 1505 &lt;- 535-5.7.8 Username and Password not accepted. Learn more at\r\n<br />LINE: 1505 &lt;- 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 e5sm1787058laf.44 - gsmtp\r\n</p><br />";}'),
-(15, 2, 1, 0, 0, 0, '127.0.0.1', 1418552191, 'LOG_ERROR_EMAIL', 'a:1:{i:0;s:1682:"<strong>EMAIL/SMTP</strong><br /><em>/forum/ucp.php</em><br /><br />Ошибка при отправке email в <strong>строке 1505</strong>. Ответ сервера: 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 w8sm1798387lad.17 - gsmtp\r\n.<h1>Backtrace</h1><p>Connecting to smtp.googlemail.com:25<br />LINE: 1020 &lt;- 220 mx.google.com ESMTP w8sm1798387lad.17 - gsmtp\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-STARTTLS\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># STARTTLS<br />LINE: 1414 &lt;- 220 2.0.0 Ready to start TLS\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-AUTH LOGIN PLAIN XOAUTH XOAUTH2 PLAIN-CLIENTTOKEN\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># AUTH LOGIN<br />LINE: 1493 &lt;- 334 VXNlcm5hbWU6\r\n<br /># Omitting sensitive information<br />LINE: 1499 &lt;- 334 UGFzc3dvcmQ6\r\n<br /># Omitting sensitive information<br />LINE: 1505 &lt;- 535-5.7.8 Username and Password not accepted. Learn more at\r\n<br />LINE: 1505 &lt;- 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 w8sm1798387lad.17 - gsmtp\r\n</p><br />";}');
+(15, 2, 1, 0, 0, 0, '127.0.0.1', 1418552191, 'LOG_ERROR_EMAIL', 'a:1:{i:0;s:1682:"<strong>EMAIL/SMTP</strong><br /><em>/forum/ucp.php</em><br /><br />Ошибка при отправке email в <strong>строке 1505</strong>. Ответ сервера: 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 w8sm1798387lad.17 - gsmtp\r\n.<h1>Backtrace</h1><p>Connecting to smtp.googlemail.com:25<br />LINE: 1020 &lt;- 220 mx.google.com ESMTP w8sm1798387lad.17 - gsmtp\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-STARTTLS\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># STARTTLS<br />LINE: 1414 &lt;- 220 2.0.0 Ready to start TLS\r\n<br /># EHLO ADMIN-ILJP75QA4.mshome.net<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [37.218.130.8]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-AUTH LOGIN PLAIN XOAUTH XOAUTH2 PLAIN-CLIENTTOKEN\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250-CHUNKING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># AUTH LOGIN<br />LINE: 1493 &lt;- 334 VXNlcm5hbWU6\r\n<br /># Omitting sensitive information<br />LINE: 1499 &lt;- 334 UGFzc3dvcmQ6\r\n<br /># Omitting sensitive information<br />LINE: 1505 &lt;- 535-5.7.8 Username and Password not accepted. Learn more at\r\n<br />LINE: 1505 &lt;- 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 w8sm1798387lad.17 - gsmtp\r\n</p><br />";}'),
+(16, 0, 2, 0, 0, 0, '127.0.0.1', 1418639608, 'LOG_ADMIN_AUTH_FAIL', ''),
+(17, 0, 2, 0, 0, 0, '127.0.0.1', 1418639619, 'LOG_ADMIN_AUTH_SUCCESS', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_login_attempts`
+-- Структура таблицы `phpbb_login_attempts`
 --
 
 DROP TABLE IF EXISTS `phpbb_login_attempts`;
@@ -1926,17 +1907,16 @@ CREATE TABLE IF NOT EXISTS `phpbb_login_attempts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_login_attempts`
+-- Дамп данных таблицы `phpbb_login_attempts`
 --
 
 INSERT INTO `phpbb_login_attempts` (`attempt_ip`, `attempt_browser`, `attempt_forwarded_for`, `attempt_time`, `user_id`, `username`, `username_clean`) VALUES
-('127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 1418549360, 0, 'user32w78fgeviu@gmail.com', 'user32w78fgeviu@gmail.com'),
-('127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 1418549372, 0, 'user32w78fgeviu@gmail.com', 'user32w78fgeviu@gmail.com');
+('127.0.0.1', '', '', 1422442332, 53, 'andry', 'andry');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_migrations`
+-- Структура таблицы `phpbb_migrations`
 --
 
 DROP TABLE IF EXISTS `phpbb_migrations`;
@@ -1952,7 +1932,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_migrations`
+-- Дамп данных таблицы `phpbb_migrations`
 --
 
 INSERT INTO `phpbb_migrations` (`migration_name`, `migration_depends_on`, `migration_schema_done`, `migration_data_done`, `migration_data_state`, `migration_start_time`, `migration_end_time`) VALUES
@@ -2102,7 +2082,7 @@ INSERT INTO `phpbb_migrations` (`migration_name`, `migration_depends_on`, `migra
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_moderator_cache`
+-- Структура таблицы `phpbb_moderator_cache`
 --
 
 DROP TABLE IF EXISTS `phpbb_moderator_cache`;
@@ -2120,7 +2100,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_moderator_cache` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_modules`
+-- Структура таблицы `phpbb_modules`
 --
 
 DROP TABLE IF EXISTS `phpbb_modules`;
@@ -2143,7 +2123,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_modules` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=207 ;
 
 --
--- Dumping data for table `phpbb_modules`
+-- Дамп данных таблицы `phpbb_modules`
 --
 
 INSERT INTO `phpbb_modules` (`module_id`, `module_enabled`, `module_display`, `module_basename`, `module_class`, `parent_id`, `left_id`, `right_id`, `module_langname`, `module_mode`, `module_auth`) VALUES
@@ -2357,7 +2337,7 @@ INSERT INTO `phpbb_modules` (`module_id`, `module_enabled`, `module_display`, `m
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_notifications`
+-- Структура таблицы `phpbb_notifications`
 --
 
 DROP TABLE IF EXISTS `phpbb_notifications`;
@@ -2378,7 +2358,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_notifications` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_notification_types`
+-- Структура таблицы `phpbb_notification_types`
 --
 
 DROP TABLE IF EXISTS `phpbb_notification_types`;
@@ -2393,7 +2373,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_notification_types` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_oauth_accounts`
+-- Структура таблицы `phpbb_oauth_accounts`
 --
 
 DROP TABLE IF EXISTS `phpbb_oauth_accounts`;
@@ -2407,7 +2387,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_oauth_accounts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_oauth_tokens`
+-- Структура таблицы `phpbb_oauth_tokens`
 --
 
 DROP TABLE IF EXISTS `phpbb_oauth_tokens`;
@@ -2423,7 +2403,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_oauth_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_poll_options`
+-- Структура таблицы `phpbb_poll_options`
 --
 
 DROP TABLE IF EXISTS `phpbb_poll_options`;
@@ -2439,7 +2419,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_poll_options` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_poll_votes`
+-- Структура таблицы `phpbb_poll_votes`
 --
 
 DROP TABLE IF EXISTS `phpbb_poll_votes`;
@@ -2456,7 +2436,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_poll_votes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_posts`
+-- Структура таблицы `phpbb_posts`
 --
 
 DROP TABLE IF EXISTS `phpbb_posts`;
@@ -2501,7 +2481,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_posts` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `phpbb_posts`
+-- Дамп данных таблицы `phpbb_posts`
 --
 
 INSERT INTO `phpbb_posts` (`post_id`, `topic_id`, `forum_id`, `poster_id`, `icon_id`, `poster_ip`, `post_time`, `post_reported`, `enable_bbcode`, `enable_smilies`, `enable_magic_url`, `enable_sig`, `post_username`, `post_subject`, `post_text`, `post_checksum`, `post_attachment`, `bbcode_bitfield`, `bbcode_uid`, `post_postcount`, `post_edit_time`, `post_edit_reason`, `post_edit_user`, `post_edit_count`, `post_edit_locked`, `post_visibility`, `post_delete_time`, `post_delete_reason`, `post_delete_user`) VALUES
@@ -2510,7 +2490,7 @@ INSERT INTO `phpbb_posts` (`post_id`, `topic_id`, `forum_id`, `poster_id`, `icon
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_privmsgs`
+-- Структура таблицы `phpbb_privmsgs`
 --
 
 DROP TABLE IF EXISTS `phpbb_privmsgs`;
@@ -2547,7 +2527,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_privmsgs_folder`
+-- Структура таблицы `phpbb_privmsgs_folder`
 --
 
 DROP TABLE IF EXISTS `phpbb_privmsgs_folder`;
@@ -2563,7 +2543,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_folder` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_privmsgs_rules`
+-- Структура таблицы `phpbb_privmsgs_rules`
 --
 
 DROP TABLE IF EXISTS `phpbb_privmsgs_rules`;
@@ -2584,7 +2564,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_rules` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_privmsgs_to`
+-- Структура таблицы `phpbb_privmsgs_to`
 --
 
 DROP TABLE IF EXISTS `phpbb_privmsgs_to`;
@@ -2607,7 +2587,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_to` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_profile_fields`
+-- Структура таблицы `phpbb_profile_fields`
 --
 
 DROP TABLE IF EXISTS `phpbb_profile_fields`;
@@ -2642,7 +2622,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_fields` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=14 ;
 
 --
--- Dumping data for table `phpbb_profile_fields`
+-- Дамп данных таблицы `phpbb_profile_fields`
 --
 
 INSERT INTO `phpbb_profile_fields` (`field_id`, `field_name`, `field_type`, `field_ident`, `field_length`, `field_minlen`, `field_maxlen`, `field_novalue`, `field_default_value`, `field_validation`, `field_required`, `field_show_on_reg`, `field_hide`, `field_no_view`, `field_active`, `field_order`, `field_show_profile`, `field_show_on_vt`, `field_show_novalue`, `field_show_on_pm`, `field_show_on_ml`, `field_is_contact`, `field_contact_desc`, `field_contact_url`) VALUES
@@ -2663,7 +2643,7 @@ INSERT INTO `phpbb_profile_fields` (`field_id`, `field_name`, `field_type`, `fie
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_profile_fields_data`
+-- Структура таблицы `phpbb_profile_fields_data`
 --
 
 DROP TABLE IF EXISTS `phpbb_profile_fields_data`;
@@ -2688,7 +2668,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_fields_data` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_profile_fields_lang`
+-- Структура таблицы `phpbb_profile_fields_lang`
 --
 
 DROP TABLE IF EXISTS `phpbb_profile_fields_lang`;
@@ -2704,7 +2684,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_fields_lang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_profile_lang`
+-- Структура таблицы `phpbb_profile_lang`
 --
 
 DROP TABLE IF EXISTS `phpbb_profile_lang`;
@@ -2718,7 +2698,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_profile_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_profile_lang`
+-- Дамп данных таблицы `phpbb_profile_lang`
 --
 
 INSERT INTO `phpbb_profile_lang` (`field_id`, `lang_id`, `lang_name`, `lang_explain`, `lang_default_value`) VALUES
@@ -2752,7 +2732,7 @@ INSERT INTO `phpbb_profile_lang` (`field_id`, `lang_id`, `lang_name`, `lang_expl
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_ranks`
+-- Структура таблицы `phpbb_ranks`
 --
 
 DROP TABLE IF EXISTS `phpbb_ranks`;
@@ -2766,7 +2746,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_ranks` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `phpbb_ranks`
+-- Дамп данных таблицы `phpbb_ranks`
 --
 
 INSERT INTO `phpbb_ranks` (`rank_id`, `rank_title`, `rank_min`, `rank_special`, `rank_image`) VALUES
@@ -2775,7 +2755,7 @@ INSERT INTO `phpbb_ranks` (`rank_id`, `rank_title`, `rank_min`, `rank_special`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_reports`
+-- Структура таблицы `phpbb_reports`
 --
 
 DROP TABLE IF EXISTS `phpbb_reports`;
@@ -2803,7 +2783,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_reports` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_reports_reasons`
+-- Структура таблицы `phpbb_reports_reasons`
 --
 
 DROP TABLE IF EXISTS `phpbb_reports_reasons`;
@@ -2816,7 +2796,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_reports_reasons` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `phpbb_reports_reasons`
+-- Дамп данных таблицы `phpbb_reports_reasons`
 --
 
 INSERT INTO `phpbb_reports_reasons` (`reason_id`, `reason_title`, `reason_description`, `reason_order`) VALUES
@@ -2828,7 +2808,7 @@ INSERT INTO `phpbb_reports_reasons` (`reason_id`, `reason_title`, `reason_descri
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_search_results`
+-- Структура таблицы `phpbb_search_results`
 --
 
 DROP TABLE IF EXISTS `phpbb_search_results`;
@@ -2843,7 +2823,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_search_results` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_search_wordlist`
+-- Структура таблицы `phpbb_search_wordlist`
 --
 
 DROP TABLE IF EXISTS `phpbb_search_wordlist`;
@@ -2858,7 +2838,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_search_wordlist` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=59 ;
 
 --
--- Dumping data for table `phpbb_search_wordlist`
+-- Дамп данных таблицы `phpbb_search_wordlist`
 --
 
 INSERT INTO `phpbb_search_wordlist` (`word_id`, `word_text`, `word_common`, `word_count`) VALUES
@@ -2924,7 +2904,7 @@ INSERT INTO `phpbb_search_wordlist` (`word_id`, `word_text`, `word_common`, `wor
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_search_wordmatch`
+-- Структура таблицы `phpbb_search_wordmatch`
 --
 
 DROP TABLE IF EXISTS `phpbb_search_wordmatch`;
@@ -2938,7 +2918,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_search_wordmatch` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_search_wordmatch`
+-- Дамп данных таблицы `phpbb_search_wordmatch`
 --
 
 INSERT INTO `phpbb_search_wordmatch` (`post_id`, `word_id`, `title_match`) VALUES
@@ -3005,7 +2985,7 @@ INSERT INTO `phpbb_search_wordmatch` (`post_id`, `word_id`, `title_match`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_sessions`
+-- Структура таблицы `phpbb_sessions`
 --
 
 DROP TABLE IF EXISTS `phpbb_sessions`;
@@ -3030,49 +3010,19 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_sessions`
+-- Дамп данных таблицы `phpbb_sessions`
 --
 
 INSERT INTO `phpbb_sessions` (`session_id`, `session_user_id`, `session_last_visit`, `session_start`, `session_time`, `session_ip`, `session_browser`, `session_forwarded_for`, `session_page`, `session_viewonline`, `session_autologin`, `session_admin`, `session_forum_id`) VALUES
-('01a3bf10a4920bf9bd2b6c0c93217534', 1, 1418552013, 1418552013, 1418552034, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('16edf9a0f193245e086149842a0aa8fa', 1, 1418551516, 1418551516, 1418551516, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('20eb66c4ea6a39f74fc097ec8543dbc8', 49, 1418551866, 1418551866, 1418551866, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
-('27047109ed4e6cee64ec0b3e0370018a', 1, 1418548602, 1418548602, 1418548603, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=f57c940b2b97e73c9eb9c182c73fc14b&mode=confirm&type=1', 1, 0, 0, 0),
-('28688e5295b6820a5a6f168a4a4accef', 49, 1418551836, 1418551836, 1418551839, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'viewforum.php?f=2', 1, 0, 0, 2),
-('395370c78b0e7c966bab357fa9bc765a', 1, 1418552139, 1418552139, 1418552169, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('3f3de71d7382c5ae3c85022c68d6bc45', 1, 1418547822, 1418547822, 1418547823, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=1aef43cd1006d2533d484811b280e06e&mode=confirm&type=1', 1, 0, 0, 0),
-('494570c2d2e65040a84105da4107ca17', 1, 1418550841, 1418550841, 1418550842, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=95c7f41f40f17798afe89a5566ea2fe5&mode=confirm&type=1', 1, 0, 0, 0),
-('4a5551bb123ff1e912b125420d0e28d0', 1, 1418551632, 1418551632, 1418551633, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=3b710464bb9ab0851a3b89c5e4305d1f&mode=confirm&type=1', 1, 0, 0, 0),
-('5dae21715574e96a647d6dfcb8a6135c', 1, 1418551412, 1418551412, 1418551413, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=ab580bcf9aa6fa52d1a6592817f8b3c2&mode=confirm&type=1', 1, 0, 0, 0),
-('7cc37459010c44588484605e03592a55', 1, 1418551451, 1418551451, 1418551451, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('7ffb21673b8c2f9dd5f703452bcd6686', 1, 1418551461, 1418551461, 1418551461, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('81ea74dfcf086cf9cbbf79d1f3b52e34', 1, 1418551468, 1418551468, 1418551468, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('8950558909dc8370dab50b0d68e12975', 1, 1418549836, 1418549836, 1418549836, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('8d382603eea322fec535e92cdf75e959', 1, 1418551679, 1418551679, 1418551679, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('91f45d9ef28402e67eba105d98361b66', 1, 1418547729, 1418547729, 1418547729, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('9281645bde07fe1cb5583499c567cd82', 1, 1418551701, 1418551701, 1418551703, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=d901c1fb8403b11b151685f841f2036e&mode=confirm&type=1', 1, 0, 0, 0),
-('93e78fedf752758231ff3d1f14a76511', 1, 1418549443, 1418549443, 1418549446, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=e1c95ec64a4425271c381f3ea354b8a5&mode=confirm&type=1', 1, 0, 0, 0),
-('95631b6960132b58cfdc9d0766e3d650', 1, 1418548900, 1418548900, 1418548901, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=4fe0e3ab68a3f501fb1bdc54c6786fbc&mode=confirm&type=1', 1, 0, 0, 0),
-('98cfbf4536a08caacdf19304477abb39', 1, 1418548320, 1418548320, 1418548321, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=1164643bd34d40d9e3097118c54da472&mode=confirm&type=1', 1, 0, 0, 0),
-('9b97f7e4d3cf4ad419f2cc99c6f91586', 1, 1418552189, 1418552189, 1418552195, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
-('a95729a476a9d0a5464117e275c43a31', 1, 1418549613, 1418549613, 1418549614, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=aad6a61550871f0195b9b203c92aa279&mode=confirm&type=1', 1, 0, 0, 0),
-('a9f0e89b8f2b47e650bb8f999cadf207', 1, 1418552666, 1418552666, 1418552675, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=fe79cb0f7731e80e252bbbdfe590d101&mode=confirm&type=1', 1, 0, 0, 0),
-('ae725be9a1a82565d8e2d63f1e0cca8e', 1, 1418551433, 1418551433, 1418551433, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('af1dfcae38454a283c642ba7d85f8d62', 1, 1418547691, 1418547691, 1418547691, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('b3b3ac5fc47cd5728e1d5a0dadcacb58', 1, 1418548980, 1418548980, 1418548983, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=a82ff2279efe006e35dec4830952a73c&mode=confirm&type=1', 1, 0, 0, 0),
-('cc1adcf2621ab951e36bde30e66eb9b6', 1, 1418548864, 1418548864, 1418548865, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=d8c2ff9d03a7d607714189f5a985fd0a&mode=confirm&type=1', 1, 0, 0, 0),
-('d53cc22626afea83d9d027bdd903d310', 1, 1418551521, 1418551521, 1418551521, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('d6a53402a0f8a955689fa91ece9ba384', 1, 1418551162, 1418551162, 1418551163, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=9afaeb8b1a4f9196ba7844ff050a7ee2&mode=confirm&type=1', 1, 0, 0, 0),
-('db6cd892fd9a3641dad5834e5e10f640', 1, 1418551444, 1418551444, 1418551444, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0),
-('e5eb5d7efb1e5647b0c00cbd072f250a', 2, 1418535259, 1418549400, 1418549431, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'adm/index.php?i=acp_users&mode=overview', 1, 0, 1, 0),
-('ed9513667fa4f7e986b23bc24dee4531', 1, 1418549069, 1418549069, 1418549070, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=70f2a21fd575268e2acd6eb81cab6003&mode=confirm&type=1', 1, 0, 0, 0),
-('f6c970b07ab52ed7134060a617f01371', 1, 1418551083, 1418551083, 1418551084, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?confirm_id=2de7ba328141b5006d227545d4b50f3d&mode=confirm&type=1', 1, 0, 0, 0),
-('ffbf097356510dfc51455a9f2f46e1e2', 1, 1418551645, 1418551645, 1418551645, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0);
+('4d0ea8185e23266c3097ced52b8b723a', 1, 1422442332, 1422442332, 1422442332, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=%D1%84&redirect=%2F&username=andry', 1, 0, 0, 0),
+('7283b53094076b31ecf6241f5475bc40', 2, 1418639316, 1422442339, 1422442339, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.91 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
+('a037d25b265980120fb0240d77534da3', 1, 1422442260, 1422442260, 1422442261, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.91 Safari/537.36', '', 'ucp.php?confirm_id=833553548f2634587c55e03f280095c0&mode=confirm&type=1', 1, 0, 0, 0),
+('df72a58bc463c255a1b8255b4b3ca67e', 1, 1422442251, 1422442251, 1422442251, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.91 Safari/537.36', '', 'ucp.php?mode=register', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_sessions_keys`
+-- Структура таблицы `phpbb_sessions_keys`
 --
 
 DROP TABLE IF EXISTS `phpbb_sessions_keys`;
@@ -3086,18 +3036,21 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions_keys` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_sessions_keys`
+-- Дамп данных таблицы `phpbb_sessions_keys`
 --
 
 INSERT INTO `phpbb_sessions_keys` (`key_id`, `user_id`, `last_ip`, `last_login`) VALUES
+('9eec2f6982c043b138f9c13014a4c44e', 2, '127.0.0.1', 1418639316),
 ('a0c1c93a9dbec896435120eaacfdfd74', 2, '127.0.0.1', 1418455164),
+('a75a39f74bd0a571de2f39db551ac5e2', 2, '127.0.0.1', 1418638786),
 ('bef4610612a5569142d9369ade0a4220', 2, '127.0.0.1', 1418455008),
+('d151ed9c3132b47a2c6471a88fa8c38b', 2, '127.0.0.1', 1418638836),
 ('f09fba754a08e109592c8efb23f3a0e8', 2, '127.0.0.1', 1418455070);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_sitelist`
+-- Структура таблицы `phpbb_sitelist`
 --
 
 DROP TABLE IF EXISTS `phpbb_sitelist`;
@@ -3112,7 +3065,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_sitelist` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_smilies`
+-- Структура таблицы `phpbb_smilies`
 --
 
 DROP TABLE IF EXISTS `phpbb_smilies`;
@@ -3130,7 +3083,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_smilies` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=43 ;
 
 --
--- Dumping data for table `phpbb_smilies`
+-- Дамп данных таблицы `phpbb_smilies`
 --
 
 INSERT INTO `phpbb_smilies` (`smiley_id`, `code`, `emotion`, `smiley_url`, `smiley_width`, `smiley_height`, `smiley_order`, `display_on_posting`) VALUES
@@ -3180,7 +3133,7 @@ INSERT INTO `phpbb_smilies` (`smiley_id`, `code`, `emotion`, `smiley_url`, `smil
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_styles`
+-- Структура таблицы `phpbb_styles`
 --
 
 DROP TABLE IF EXISTS `phpbb_styles`;
@@ -3198,7 +3151,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_styles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `phpbb_styles`
+-- Дамп данных таблицы `phpbb_styles`
 --
 
 INSERT INTO `phpbb_styles` (`style_id`, `style_name`, `style_copyright`, `style_active`, `style_path`, `bbcode_bitfield`, `style_parent_id`, `style_parent_tree`) VALUES
@@ -3207,7 +3160,7 @@ INSERT INTO `phpbb_styles` (`style_id`, `style_name`, `style_copyright`, `style_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_teampage`
+-- Структура таблицы `phpbb_teampage`
 --
 
 DROP TABLE IF EXISTS `phpbb_teampage`;
@@ -3221,7 +3174,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_teampage` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `phpbb_teampage`
+-- Дамп данных таблицы `phpbb_teampage`
 --
 
 INSERT INTO `phpbb_teampage` (`teampage_id`, `group_id`, `teampage_name`, `teampage_position`, `teampage_parent`) VALUES
@@ -3231,7 +3184,7 @@ INSERT INTO `phpbb_teampage` (`teampage_id`, `group_id`, `teampage_name`, `teamp
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_topics`
+-- Структура таблицы `phpbb_topics`
 --
 
 DROP TABLE IF EXISTS `phpbb_topics`;
@@ -3284,7 +3237,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `phpbb_topics`
+-- Дамп данных таблицы `phpbb_topics`
 --
 
 INSERT INTO `phpbb_topics` (`topic_id`, `forum_id`, `icon_id`, `topic_attachment`, `topic_reported`, `topic_title`, `topic_poster`, `topic_time`, `topic_time_limit`, `topic_views`, `topic_status`, `topic_type`, `topic_first_post_id`, `topic_first_poster_name`, `topic_first_poster_colour`, `topic_last_post_id`, `topic_last_poster_id`, `topic_last_poster_name`, `topic_last_poster_colour`, `topic_last_post_subject`, `topic_last_post_time`, `topic_last_view_time`, `topic_moved_id`, `topic_bumped`, `topic_bumper`, `poll_title`, `poll_start`, `poll_length`, `poll_max_options`, `poll_last_vote`, `poll_vote_change`, `topic_visibility`, `topic_delete_time`, `topic_delete_reason`, `topic_delete_user`, `topic_posts_approved`, `topic_posts_unapproved`, `topic_posts_softdeleted`) VALUES
@@ -3293,7 +3246,7 @@ INSERT INTO `phpbb_topics` (`topic_id`, `forum_id`, `icon_id`, `topic_attachment
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_topics_posted`
+-- Структура таблицы `phpbb_topics_posted`
 --
 
 DROP TABLE IF EXISTS `phpbb_topics_posted`;
@@ -3305,7 +3258,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics_posted` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_topics_posted`
+-- Дамп данных таблицы `phpbb_topics_posted`
 --
 
 INSERT INTO `phpbb_topics_posted` (`user_id`, `topic_id`, `topic_posted`) VALUES
@@ -3314,7 +3267,7 @@ INSERT INTO `phpbb_topics_posted` (`user_id`, `topic_id`, `topic_posted`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_topics_track`
+-- Структура таблицы `phpbb_topics_track`
 --
 
 DROP TABLE IF EXISTS `phpbb_topics_track`;
@@ -3331,7 +3284,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics_track` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_topics_watch`
+-- Структура таблицы `phpbb_topics_watch`
 --
 
 DROP TABLE IF EXISTS `phpbb_topics_watch`;
@@ -3347,7 +3300,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics_watch` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_users`
+-- Структура таблицы `phpbb_users`
 --
 
 DROP TABLE IF EXISTS `phpbb_users`;
@@ -3423,15 +3376,15 @@ CREATE TABLE IF NOT EXISTS `phpbb_users` (
   KEY `user_birthday` (`user_birthday`),
   KEY `user_email_hash` (`user_email_hash`),
   KEY `user_type` (`user_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=55 ;
 
 --
--- Dumping data for table `phpbb_users`
+-- Дамп данных таблицы `phpbb_users`
 --
 
 INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions`, `user_perm_from`, `user_ip`, `user_regdate`, `username`, `username_clean`, `user_password`, `user_passchg`, `user_email`, `user_email_hash`, `user_birthday`, `user_lastvisit`, `user_lastmark`, `user_lastpost_time`, `user_lastpage`, `user_last_confirm_key`, `user_last_search`, `user_warnings`, `user_last_warning`, `user_login_attempts`, `user_inactive_reason`, `user_inactive_time`, `user_posts`, `user_lang`, `user_timezone`, `user_dateformat`, `user_style`, `user_rank`, `user_colour`, `user_new_privmsg`, `user_unread_privmsg`, `user_last_privmsg`, `user_message_rules`, `user_full_folder`, `user_emailtime`, `user_topic_show_days`, `user_topic_sortby_type`, `user_topic_sortby_dir`, `user_post_show_days`, `user_post_sortby_type`, `user_post_sortby_dir`, `user_notify`, `user_notify_pm`, `user_notify_type`, `user_allow_pm`, `user_allow_viewonline`, `user_allow_viewemail`, `user_allow_massemail`, `user_options`, `user_avatar`, `user_avatar_type`, `user_avatar_width`, `user_avatar_height`, `user_sig`, `user_sig_bbcode_uid`, `user_sig_bbcode_bitfield`, `user_jabber`, `user_actkey`, `user_newpasswd`, `user_form_salt`, `user_new`, `user_reminded`, `user_reminded_time`) VALUES
-(1, 2, 1, '00000000000w27wrgg\ni1cjyo000000\ni1cjyo000000', 0, '', 1418454675, 'Anonymous', 'anonymous', '', 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', '', 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'eec150afe4991c01', 1, 0, 0),
-(2, 3, 5, 'zik0zjzik0zjzik0zc\ni1cjyo000000\nzik0zjzi8sg0', 0, '127.0.0.1', 1418454675, 'admin', 'admin', '$2y$10$obXAkj6EoWu7ggCb4ssZZeCxBYjMDU2lDJ2ZlmLRvRVuOWJMV.YXS', 0, 'jt4twggad34erzdsf@hotmail.com', 13310010827, '', 1418535259, 0, 0, 'ucp.php?login=external&password=qaz2wsx&redirect=%2F&username=admin', '', 0, 0, 0, 0, 0, 0, 1, 'en', '', 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '1b8c2289a570a54f', 1, 0, 0),
+(1, 2, 1, '00000000000w27wrgg\ni1cjyo000000\ni1cjyo000000', 0, '', 1418454675, 'Anonymous', 'anonymous', '', 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', '', 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '3e8b5b73e304f1c4', 1, 0, 0),
+(2, 3, 5, 'zik0zjzik0zjzik0zc\ni1cjyo000000\nzik0zjzi8sg0', 0, '127.0.0.1', 1418454675, 'admin', 'admin', '$2y$10$obXAkj6EoWu7ggCb4ssZZeCxBYjMDU2lDJ2ZlmLRvRVuOWJMV.YXS', 0, 'jt4twggad34erzdsf@hotmail.com', 13310010827, '', 1418639316, 0, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 1, 'en', '', 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '00dc8ab8308f8fa9', 1, 0, 0),
 (3, 2, 6, '', 0, '', 1418454699, 'AdsBot [Google]', 'adsbot [google]', '', 1418454699, '', 0, '', 0, 1418454699, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '21116ee5b90d3ba2', 0, 0, 0),
 (4, 2, 6, '', 0, '', 1418454700, 'Alexa [Bot]', 'alexa [bot]', '', 1418454700, '', 0, '', 0, 1418454700, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'c08cd3bff7159522', 0, 0, 0),
 (5, 2, 6, '', 0, '', 1418454700, 'Alta Vista [Bot]', 'alta vista [bot]', '', 1418454700, '', 0, '', 0, 1418454700, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'b2dfbcf74171735d', 0, 0, 0),
@@ -3477,14 +3430,17 @@ INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions
 (45, 2, 6, '', 0, '', 1418454710, 'Yahoo Slurp [Bot]', 'yahoo slurp [bot]', '', 1418454710, '', 0, '', 0, 1418454710, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '4769227ef815e1f8', 0, 0, 0),
 (46, 2, 6, '', 0, '', 1418454710, 'Yahoo [Bot]', 'yahoo [bot]', '', 1418454710, '', 0, '', 0, 1418454710, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e3cc9b97e4d29212', 0, 0, 0),
 (47, 2, 6, '', 0, '', 1418454711, 'YahooSeeker [Bot]', 'yahooseeker [bot]', '', 1418454711, '', 0, '', 0, 1418454711, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '3cdbc008adf32b0b', 0, 0, 0),
-(49, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418551724, 'jhsdgasdg', 'jhsdgasdg', '$2y$10$po7mB6dbPMGRpo4GkXmZQ.domMBKkOppCjaD2k2d1KfzGs.LyuQBK', 1418551724, 'jhsdgasdg@mail.ru', 398765278017, '', 0, 1418551724, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '3d713f9d2162ddd0', 1, 0, 0),
+(49, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418551724, 'jhsdgasdg', 'jhsdgasdg', '$2y$10$po7mB6dbPMGRpo4GkXmZQ.domMBKkOppCjaD2k2d1KfzGs.LyuQBK', 1418551724, 'jhsdgasdg@mail.ru', 398765278017, '', 1418551839, 1418551724, 0, 'viewforum.php?f=2', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '3d713f9d2162ddd0', 1, 0, 0),
 (50, 0, 2, '', 0, '127.0.0.1', 1418552035, 'resagr', 'resagr', '$2y$10$Xh/s3e41vRpc.hheUgR8oO3Yo8eMBiB4XqiKCN9iIR2QBUadPaSjW', 1418552035, '54uhtsrsrht@namba.kg', 406198964720, '', 0, 1418552035, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '4d2b4f366772d2a8', 1, 0, 0),
-(51, 0, 2, '', 0, '127.0.0.1', 1418552189, 'dizufghjka', 'dizufghjka', '$2y$10$ojHMZdFTNkwxQJ5V6P8m4O8mz5cFNAPmdcetFaO3wvnIgDGbfyzum', 1418552189, 'dizufghjka@gmail.com', 14981037020, '', 0, 1418552189, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e75b8bf81861d0cd', 1, 0, 0);
+(51, 0, 2, '', 0, '127.0.0.1', 1418552189, 'dizufghjka', 'dizufghjka', '$2y$10$ojHMZdFTNkwxQJ5V6P8m4O8mz5cFNAPmdcetFaO3wvnIgDGbfyzum', 1418552189, 'dizufghjka@gmail.com', 14981037020, '', 0, 1418552189, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e75b8bf81861d0cd', 1, 0, 0),
+(52, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418561617, 'protected', 'protected', '$2y$10$7Xa55trKvXpzEvXnOR.FiOPOIrqqmX8TzABQpfOK5UGYW5qlXCFo.', 1418561617, 'protected.for@gmail.com', 389024239523, '', 1418561745, 1418561617, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Antarctica/Vostok', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '6a29e124ff5c8768', 1, 0, 0),
+(53, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418561867, 'andry', 'andry', '$2y$10$E/5hpnEgltf/Iwr.QDkGcun0YSSh6itIedKqaeBQZRel9c.YNz6ey', 1418561867, 'protected_by@mail.ru', 256812957320, '', 1418581697, 1418561867, 0, 'index.php', '', 0, 0, 0, 3, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e73d571faa18321a', 1, 0, 0),
+(54, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418582399, 'login123', 'login123', '$2y$10$j87fWJPG7r7c8dZlNPTdNucOTfOtTEvd3sVKrLYqD6kuhE9l7iJla', 1418582399, 'email@mail.ru', 118448467813, '', 1418637404, 1418582399, 0, 'ucp.php?login=external&mode=login&password=pass123&redirect=%2F&username=login123', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '5b644e08b2af59f8', 1, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_user_group`
+-- Структура таблицы `phpbb_user_group`
 --
 
 DROP TABLE IF EXISTS `phpbb_user_group`;
@@ -3499,7 +3455,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_user_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_user_group`
+-- Дамп данных таблицы `phpbb_user_group`
 --
 
 INSERT INTO `phpbb_user_group` (`group_id`, `user_id`, `group_leader`, `user_pending`) VALUES
@@ -3557,12 +3513,18 @@ INSERT INTO `phpbb_user_group` (`group_id`, `user_id`, `group_leader`, `user_pen
 (2, 50, 0, 0),
 (7, 50, 0, 0),
 (2, 51, 0, 0),
-(7, 51, 0, 0);
+(7, 51, 0, 0),
+(2, 52, 0, 0),
+(7, 52, 0, 0),
+(2, 53, 0, 0),
+(7, 53, 0, 0),
+(2, 54, 0, 0),
+(7, 54, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_user_notifications`
+-- Структура таблицы `phpbb_user_notifications`
 --
 
 DROP TABLE IF EXISTS `phpbb_user_notifications`;
@@ -3575,7 +3537,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_user_notifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data for table `phpbb_user_notifications`
+-- Дамп данных таблицы `phpbb_user_notifications`
 --
 
 INSERT INTO `phpbb_user_notifications` (`item_type`, `item_id`, `user_id`, `method`, `notify`) VALUES
@@ -3778,12 +3740,24 @@ INSERT INTO `phpbb_user_notifications` (`item_type`, `item_id`, `user_id`, `meth
 ('notification.type.post', 0, 51, '', 1),
 ('notification.type.post', 0, 51, 'notification.method.email', 1),
 ('notification.type.topic', 0, 51, '', 1),
-('notification.type.topic', 0, 51, 'notification.method.email', 1);
+('notification.type.topic', 0, 51, 'notification.method.email', 1),
+('notification.type.post', 0, 52, '', 1),
+('notification.type.post', 0, 52, 'notification.method.email', 1),
+('notification.type.topic', 0, 52, '', 1),
+('notification.type.topic', 0, 52, 'notification.method.email', 1),
+('notification.type.post', 0, 53, '', 1),
+('notification.type.post', 0, 53, 'notification.method.email', 1),
+('notification.type.topic', 0, 53, '', 1),
+('notification.type.topic', 0, 53, 'notification.method.email', 1),
+('notification.type.post', 0, 54, '', 1),
+('notification.type.post', 0, 54, 'notification.method.email', 1),
+('notification.type.topic', 0, 54, '', 1),
+('notification.type.topic', 0, 54, 'notification.method.email', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_warnings`
+-- Структура таблицы `phpbb_warnings`
 --
 
 DROP TABLE IF EXISTS `phpbb_warnings`;
@@ -3799,7 +3773,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_warnings` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_words`
+-- Структура таблицы `phpbb_words`
 --
 
 DROP TABLE IF EXISTS `phpbb_words`;
@@ -3813,7 +3787,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_words` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phpbb_zebra`
+-- Структура таблицы `phpbb_zebra`
 --
 
 DROP TABLE IF EXISTS `phpbb_zebra`;
@@ -3825,10 +3799,17 @@ CREATE TABLE IF NOT EXISTS `phpbb_zebra` (
   PRIMARY KEY (`user_id`,`zebra_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Дамп данных таблицы `phpbb_zebra`
+--
+
+INSERT INTO `phpbb_zebra` (`user_id`, `zebra_id`, `friend`, `foe`) VALUES
+(54, 2, 1, 0);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `points`
+-- Структура таблицы `points`
 --
 
 DROP TABLE IF EXISTS `points`;
@@ -3862,7 +3843,7 @@ CREATE TABLE IF NOT EXISTS `points` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
 
 --
--- Dumping data for table `points`
+-- Дамп данных таблицы `points`
 --
 
 INSERT INTO `points` (`id`, `name`, `order`, `active`, `payed`, `url`, `header`, `title`, `desc`, `keyw`, `image`, `sport_id`, `subway1_id`, `time1`, `subway2_id`, `time2`, `contacts`, `phone`, `email`, `site`, `graphite`, `text`, `payedf`, `payedt`, `coords`) VALUES
@@ -3891,7 +3872,7 @@ INSERT INTO `points` (`id`, `name`, `order`, `active`, `payed`, `url`, `header`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `points_halls`
+-- Структура таблицы `points_halls`
 --
 
 DROP TABLE IF EXISTS `points_halls`;
@@ -3906,7 +3887,7 @@ CREATE TABLE IF NOT EXISTS `points_halls` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=142 ;
 
 --
--- Dumping data for table `points_halls`
+-- Дамп данных таблицы `points_halls`
 --
 
 INSERT INTO `points_halls` (`id`, `name`, `image`, `description`, `order`, `point_id`) VALUES
@@ -3997,7 +3978,7 @@ INSERT INTO `points_halls` (`id`, `name`, `image`, `description`, `order`, `poin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `points_images`
+-- Структура таблицы `points_images`
 --
 
 DROP TABLE IF EXISTS `points_images`;
@@ -4010,7 +3991,7 @@ CREATE TABLE IF NOT EXISTS `points_images` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=155 ;
 
 --
--- Dumping data for table `points_images`
+-- Дамп данных таблицы `points_images`
 --
 
 INSERT INTO `points_images` (`id`, `image`, `order`, `point_id`) VALUES
@@ -4125,7 +4106,7 @@ INSERT INTO `points_images` (`id`, `image`, `order`, `point_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `points_treners`
+-- Структура таблицы `points_treners`
 --
 
 DROP TABLE IF EXISTS `points_treners`;
@@ -4143,7 +4124,7 @@ CREATE TABLE IF NOT EXISTS `points_treners` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
--- Dumping data for table `points_treners`
+-- Дамп данных таблицы `points_treners`
 --
 
 INSERT INTO `points_treners` (`id`, `name`, `sname`, `image`, `pph`, `ppm`, `order`, `text`, `point_id`) VALUES
@@ -4158,7 +4139,7 @@ INSERT INTO `points_treners` (`id`, `name`, `sname`, `image`, `pph`, `ppm`, `ord
 -- --------------------------------------------------------
 
 --
--- Table structure for table `requests`
+-- Структура таблицы `requests`
 --
 
 DROP TABLE IF EXISTS `requests`;
@@ -4181,7 +4162,7 @@ CREATE TABLE IF NOT EXISTS `requests` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `requests`
+-- Дамп данных таблицы `requests`
 --
 
 INSERT INTO `requests` (`id`, `name`, `age`, `sex`, `weight`, `sports`, `subway`, `contrains`, `canpay`, `email`, `phone`, `date`, `ip`, `read`) VALUES
@@ -4191,7 +4172,7 @@ INSERT INTO `requests` (`id`, `name`, `age`, `sex`, `weight`, `sports`, `subway`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sports`
+-- Структура таблицы `sports`
 --
 
 DROP TABLE IF EXISTS `sports`;
@@ -4211,7 +4192,7 @@ CREATE TABLE IF NOT EXISTS `sports` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=84 ;
 
 --
--- Dumping data for table `sports`
+-- Дамп данных таблицы `sports`
 --
 
 INSERT INTO `sports` (`id`, `name`, `url`, `image`, `active`, `category_id`, `title`, `desc`, `keyw`, `text`, `order`) VALUES
@@ -4280,7 +4261,7 @@ INSERT INTO `sports` (`id`, `name`, `url`, `image`, `active`, `category_id`, `ti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subways`
+-- Структура таблицы `subways`
 --
 
 DROP TABLE IF EXISTS `subways`;
@@ -4294,7 +4275,7 @@ CREATE TABLE IF NOT EXISTS `subways` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `subways`
+-- Дамп данных таблицы `subways`
 --
 
 INSERT INTO `subways` (`id`, `name`, `image`, `order`, `active`) VALUES
@@ -4304,7 +4285,7 @@ INSERT INTO `subways` (`id`, `name`, `image`, `order`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Структура таблицы `tags`
 --
 
 DROP TABLE IF EXISTS `tags`;
@@ -4317,7 +4298,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
--- Dumping data for table `tags`
+-- Дамп данных таблицы `tags`
 --
 
 INSERT INTO `tags` (`id`, `name`, `object`, `page_id`) VALUES
@@ -4325,3 +4306,7 @@ INSERT INTO `tags` (`id`, `name`, `object`, `page_id`) VALUES
 (26, '1231231', 'blog', 19),
 (27, 'воллейбол', 'blog', 1),
 (28, 'футбол', 'blog', 1);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

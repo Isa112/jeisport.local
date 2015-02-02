@@ -1,48 +1,54 @@
 <footer>
-    <div class="footer-inner-block">
-        <div class="container">
-            <div class="fb-block">
-                <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="310" data-height="290" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+    <div class="header_wrapper">
+
+        <div class="footer_logo">
+            <a href="#"><img src="img/logo.png" alt=""></a>
+            <div class="social_icons">
+                <a href="#" class="vk"></a>
+                <a href="#" class="ok"></a>
+                <a href="#" class="tw"></a>
+                <a href="#" class="fc"></a>
             </div>
-            <div class="footer-category-block">
+        </div>
+
+        <div class="footer_navigation">
+            <ul>
                 <?php
                 if ($categories):
                     foreach ($categories as $category):
                         $sports = $this->sports_model->get_sports_for_category_front($category['id']);
                         ?>
-                        <div class="category-item-block">
-                            <p><?= $category['name'] ?></p>
-                            <ul>
-                                <?php
-                                if ($sports):
-                                    foreach ($sports as $sport):
-                                        ?>
-                                        <li><a href="/<?= $category['url'] . '/' . $sport['url'] ?>"><?= $sport['name'] ?></a></li>
-                                        <?php
-                                    endforeach;
-                                endif;
-                                ?>
-                            </ul>
-                        </div>
+                        <li>
+                            <h6><?= $category['name'] ?></h6>
+                            <?php
+                            if ($sports):
+                                foreach ($sports as $sport):
+                                    ?>
+                                    <a href="/<?= $category['url'] . '/' . $sport['url'] ?>"><?= $sport['name'] ?></a>
+                                    <?php
+                                endforeach;
+                            endif;
+                            ?>
+                        </li>
                         <?php
                     endforeach;
                 endif;
                 ?>
-                <div class="goog-link">
-                    <p>Сайт создан компанией</p>
-                    <a href="http://www.googstudio.com"><img src="/img/goog-logo.png" alt=""/></a>
-                </div>
-            </div>
+            </ul>
         </div>
-    </div>
-    <div class="copyright-block">
-        <div class="container">
-            <p>© ООО «Жей Спорт» 2014. Все права защищены.<br>
-                ООО «Жей Спорт»<br>
-                119072, г. Москва ул. Домская, дом 14, корпус 2</p>
+
+        <div class="clear"></div>
+
+        <div class="co">
+            <p>© ООО «Жей Спорт» 2014. Все права защищены.</p>
+            <p>ООО «Жей Спорт»</p>
+            <p>119072, г. Москва ул. Домская, дом 14, корпус 2</p>
         </div>
+
+        <a href="#" class="metrics"></a>
+
     </div>
 </footer>
-</div>
+
 </body>
 </html>
