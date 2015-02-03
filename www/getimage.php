@@ -52,6 +52,10 @@ function getImage($link, $type) {
             $newwidth = 226;
             $newheight = 161;
             break;
+        case 9: //для логотипом метро
+            $newwidth = 19;
+            $newheight = 18;
+            break;
     }
     $thumb = imagecreatetruecolor($newwidth, $newheight);
     if (getExtension($filename) == 'jpg' || getExtension($filename) == 'jpeg') {

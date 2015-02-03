@@ -111,11 +111,19 @@ class Points extends CI_Controller {
     }
 
     public function check_url($url) {
-        if ($this->points_model->get_point_by_url($url)) {
-            $this->form_validation->set_message('check_url', 'Такой ЧПУ уже занят!');
-            return FALSE;
+        str_replace(array(")", "("), '', $url);
+        $url = $this->points_model->get_point_by_url($url);
+        $url = $url['url'];
+//        echo $this->input->post('url');
+        if ($url == $this->input->post('url')) {
+            return true;
         } else {
-            return TRUE;
+            if ($this->points_model->get_point_by_url($url)) {
+                $this->form_validation->set_message('check_url', 'Такой ЧПУ уже занят!');
+                return FALSE;
+            } else {
+                return TRUE;
+            }
         }
     }
 
@@ -132,7 +140,7 @@ class Points extends CI_Controller {
             $arr[$sport['id']] = $sport['name'];
         }
         $selected = $this->points_model->get_sport_for_point($id);
-        if(count($selected)) {
+        if (count($selected)) {
             $data['selected'] = $selected['sport_id'];
         }
         $data['sports'] = $arr;
@@ -146,6 +154,7 @@ class Points extends CI_Controller {
 
         if ($this->input->post('do') == 'pointEdit') {
             $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('url', 'ЧПУ', 'trim|required|xss_clean|callback_check_url');
             $this->form_validation->set_rules('sport', 'Вид спорта', 'trim|required|xss_clean');
             $this->form_validation->set_rules('graphite', 'График работы', 'trim|required|xss_clean');
             $this->form_validation->set_rules('contacts', 'Контактная информация', 'trim|xss_clean');

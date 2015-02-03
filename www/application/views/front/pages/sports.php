@@ -20,7 +20,7 @@
                             <h6><?= $sport['name'] ?></h6>
                         </div>
                         <div class="hidden_block">
-                            <a href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>"><img src="" alt="<?= $sport['name'] ?>"></a>
+                            <a href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>/"><img src="" alt="<?= $sport['name'] ?>"></a>
                         </div>
                     </li>
                     <?php

@@ -40,10 +40,10 @@
             <div class="modal-content">
                 <h3>Получи скидку в спортивные клубы Москвы!</h3>
                 <ul>
-                    <li><img src="/img/popup_/img/img_1.png" alt=""></li>
-                    <li><img src="/img/popup_/img/img_2.png" alt=""></li>
-                    <li><img src="/img/popup_/img/img_3.png" alt=""></li>
-                    <li><img src="/img/popup_/img/Untitled-4.png" alt=""></li>
+                    <li><img src="/img/popup_img/img_1.png" alt=""></li>
+                    <li><img src="/img/popup_img/img_2.png" alt=""></li>
+                    <li><img src="/img/popup_img/img_3.png" alt=""></li>
+                    <li><img src="/img/popup_img/Untitled-4.png" alt=""></li>
                 </ul>
                 <p>Устали однообразно курсировать между домом и работой? Решили разбавить этот тандем яркой ноткой, занявшись своим телом и здоровьем, ведь «в здоровом теле – здоровый дух»? А может, вы ищете спортивные секции для детей, поскольку осенью снижается физическая активность, столь необходимая для полноценного развития ребенка? Тогда самое время сесть поудобнее и изучить самую актуальную и подробную информацию про спортивные клубы Москвы! </p>
                 <div class="ticket_block">
@@ -97,7 +97,7 @@
     <header>
         <div class="header_wrapper">
             <div class="logo">
-                <a href=""><img src="/img/logo.png" height="66" width="193" alt=""></a>
+                <a href="/"><img src="/img/logo.png" height="66" width="193" alt=""></a>
             </div><!-- logo -->
             <ul>
 
@@ -106,7 +106,7 @@
                 foreach ($categories as $category):
                     if ($category['active'] == 'on'):
                         ?>
-                        <li><a style="background: #00a68e url(/images/categories/<?= $category['image'] ?>) center 22px no-repeat;" href="<?= '/' . $category['url'] ?>"><?= $category['name'] ?></a></li>
+                        <li><a style="background: #00a68e url(/images/categories/<?= $category['image'] ?>) center 22px no-repeat;" href="<?= '/' . $category['url'] ?>/"><?= $category['name'] ?></a></li>
                         <?php
                     endif;
                 endforeach;

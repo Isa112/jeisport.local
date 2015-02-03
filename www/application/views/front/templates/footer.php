@@ -2,7 +2,7 @@
     <div class="header_wrapper">
 
         <div class="footer_logo">
-            <a href="#"><img src="img/logo.png" alt=""></a>
+            <a href="#"><img src="/img/logo.png" alt=""></a>
             <div class="social_icons">
                 <a href="#" class="vk"></a>
                 <a href="#" class="ok"></a>

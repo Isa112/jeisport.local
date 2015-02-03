@@ -227,8 +227,10 @@ jQuery(document).ready(function () {
             return false;
         }
     })
-
-    $('.search').keydown(function () {
+    $('.search-button').click(function () {
+        window.location.href = "/search/" + $('.search-input').val();
+    });
+    $('.search-input').keydown(function () {
         if (event.keyCode == $.ui.keyCode.ENTER) {
             window.location.href = "/search/" + $(this).val();
         }

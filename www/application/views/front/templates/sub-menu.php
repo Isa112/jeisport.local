@@ -10,13 +10,13 @@
         </ul>
         <div class="search">
             <span>Поиск по сайту</span>
-            <input type="text" value="<?php
+            <input class="search-input" type="text" value="<?php
             if ($this->uri->segment(1) == 'search') {
                 if ($this->uri->segment(2))
                     echo urldecode($this->uri->segment(2));
             }
             ?>">
-            <input type="button" value="Искать">
+            <input class="search-button" type="button" value="Искать">
         </div>
     </div>
 </nav>

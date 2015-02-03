@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
             <label for="url">ЧПУ</label>
-            <input disabled name='url' value="<?= $point['url'] ?>" type="text" class="form-control" id="url" placeholder="Чпу">
+            <input name='url' value="<?= $point['url'] ?>" type="text" class="form-control" id="url" placeholder="Чпу">
         </div>
         <div class="form-group">
             <label for="url">Вид спорта</label>

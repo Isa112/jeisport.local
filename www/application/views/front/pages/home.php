@@ -1,11 +1,6 @@
 <div class="content">
     <div class="wrapper">
 
-        <ul class="breadcrumbs">
-            <li><a href="">Главная</a></li>
-            <li><a href="#">Единоборства</a></li>
-        </ul><!-- breadcrumbs -->
-
         <div class="main_banner">
             <video autoplay="" loop="" muted="" class="bgvideo" id="bgvideo"><source src="video/video.mp4" type="video/mp4"></video>
 
@@ -13,7 +8,7 @@
 
             <div class="main_banner_inner">
 
-                <h1>Самая обширная база спортивных клубов Москвы!</h1>
+                <h1 style="padding-top: 40px;">Самая обширная база спортивных клубов Москвы!</h1>
                 <div class="banner_form">
                     <h2>Подбери себе  спортивный клуб:</h2>
 
@@ -85,7 +80,7 @@
                         <h6><?= $category['name'] ?></h6>
                     </div>
                     <div class="hidden_block">
-                        <a href="<?= '/' . $category['url'] ?>"><img src="/images/categories/<?= $category['image3'] ?>" alt=""></a>
+                        <a href="<?= '/' . $category['url'] ?>/"><img src="/images/categories/<?= $category['image3'] ?>" alt=""></a>
                     </div>
                 </li>
                 <?php endforeach; ?>

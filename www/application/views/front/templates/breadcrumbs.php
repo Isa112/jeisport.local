@@ -6,10 +6,10 @@
             <?php if ($stitle): ?>
                 <li><a href="/<?= $category['url'] ?>"><?= $category['name'] ?></a></li>
             <?php else: ?>
-                <li><?= $category['name'] ?></li>
+                <li><a href=""><?= $category['name'] ?></a></li>
             <?php endif; ?>
             <?php if ($stitle): ?>
-                <li><?= $stitle ?></li>
+                <li><a href=""><?= $stitle ?></a></li>
             <?php endif; ?>
         </ul><!-- breadcrumbs -->
 
