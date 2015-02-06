@@ -1,7 +1,7 @@
-/.idea/
-/www/nbproject/
-/.gitignore/
-/www/forum/cach/*
+.idea/
+www/forum/cache/
+www/nbproject/
+
 
 */config/development
 */logs/log-*.php
