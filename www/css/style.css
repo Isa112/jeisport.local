@@ -13,6 +13,7 @@ q:before, q:after {content: '';content: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 input[type=text] {outline: 0;}input[type=submit] {outline: 0;}
 input[type=submit] {outline: 0;}input[type=submit]:hover {cursor: pointer;}
+input[type=button] {outline: 0;}input[type=button]:hover {cursor: pointer;}
 textarea {outline: 0;}
 /*fonts*/
 
@@ -1229,7 +1230,7 @@ a.ticket:hover {
     background: linear-gradient(to bottom,  rgba(225,225,225,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1e1e1', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
 }
-.modal-wrapper input[type=submit] {
+.modal-wrapper input[type=submit], input[type=button] {
     padding: 0 10px;
     width: auto;
     color: #fff;
@@ -1843,15 +1844,9 @@ ul.points li span {
     font-size: 16px;
     line-height: 18px;
     width: 40%;
-    padding-left: 7%;
+    /*padding-left: 7%;*/
     padding-bottom: 10px;
     color: #505050 ;
-}
-ul.points li span.metro1 {
-    background: url(../img/sample_icons/metro1.png) 0 0 no-repeat;
-}
-ul.points li span.metro2 {
-    background: url(../img/sample_icons/metro2.png) 0 0 no-repeat;
 }
 ul.points li p {
     font-family: 'RBCGROTESK-REGULAR';
@@ -2027,16 +2022,16 @@ h3.presentation_title_h3 {
     font-size: 16px;
     line-height: 18px;
     width: 40%;
-    padding-left: 7%;
+    /*padding-left: 7%;*/
     padding-bottom: 10px;
     color: #505050 ;
 }
-.presentation_content span.metro1 {
+/*.presentation_content span.metro1 {
     background: url(../img/sample_icons/metro1.png) 0 0 no-repeat;
 }
 .presentation_content span.metro2 {
     background: url(../img/sample_icons/metro2.png) 0 0 no-repeat;
-}
+}*/
 .presentation_content label {
     font-family: 'RBCGROTESK-REGULAR';
     font-size: 16px;

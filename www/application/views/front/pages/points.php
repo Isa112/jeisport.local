@@ -12,28 +12,31 @@
                 $subway1 = $subway1['name'];
                 if ($subway1):
                     ?>
-                    <span class="metro1" style="background: url(/getimage.php?key=images/subways/<?= $subway1_img ?>&type=9) 0 0 no-repeat;"><?php
+                    <img src="/images/subways/<?= $subway1_img ?>" style="width: 19px; height: 18px; float:left; margin-right: 2px;">
+                    <span class="metro1"><?php
                         if ($subway1) {
                             echo $subway1 . ' ' . $point['time1'] . ' мин';
                         }
                         ?></span>
                     <?php
                 else:
-                    echo '<span class="metro1">Нет</span>';
+                    echo '<img src="/img/sample_icons/metro1.png" style="width: 19px; height: 18px; float:left; margin-right: 2px;"><span class="metro1">Нет</span>';
                 endif;
                 $subway2 = $this->points_model->get_subway_for_point_front($point['subway2_id']);
                 $subway2_img = $subway2['image'];
                 $subway2 = $subway2['name'];
                 if ($subway2):
                     ?>
-                    <span class="metro2" style="background: url(/getimage.php?key=images/subways/<?= $subway2_img ?>&type=9) 0 0 no-repeat;"><?php
+                    <img src="/images/subways/<?= $subway2_img ?>" style="width: 19px; height: 18px; float:left; margin-right: 2px;">
+                    <span class="metro2"><?php
                         if ($subway2) {
                             echo $subway2 . ' ' . $point['time2'] . ' мин';
                         }
                         ?></span>
+                    <div class="clear"></div>
                     <?php
                 else:
-                    echo '<span class="metro2">Нет</span>';
+                    echo '<img src="/img/sample_icons/metro2.png" style="width: 19px; height: 18px; float:left; margin-right: 2px;"><span class="metro2">Нет</span><div class="clear"></div>';
                 endif;
                 ?>
                 <?php
@@ -79,77 +82,77 @@
     <h1><?= $sport['name'] ?></h1>
     <div class="points-items">
 <?php foreach ($points as $point): ?>
-                                                                                                        <a href="/<?= $category['url'] . '/' . $sport['url'] . '/' . $point['url'] ?>">
-                                                                                                            <div class="img">
-                                                                                                                <img src="/images/points/<?= $point['image'] ?>" alt="">
-                                                                                                                <p class="title"><?= $point['name'] ?></p>
-                                                                                                            </div>
-                                                                                                            <div class="desc">
-                                                                                                                <div class="metro">
+                                                                                                                                    <a href="/<?= $category['url'] . '/' . $sport['url'] . '/' . $point['url'] ?>">
+                                                                                                                                        <div class="img">
+                                                                                                                                            <img src="/images/points/<?= $point['image'] ?>" alt="">
+                                                                                                                                            <p class="title"><?= $point['name'] ?></p>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="desc">
+                                                                                                                                            <div class="metro">
     <?php
     $subway1 = $this->points_model->get_subway_for_point_front($point['subway1_id']);
     $subway1 = $subway1['name'];
     if ($subway1):
         ?>
-                                                                                                                                                                                                                    <div class="metro-item">
-                                                                                                                                                                                                                        <img src="/img/metro-img.png" alt="">
-                                                                                                                                                                                                                        <p><?php
+                                                                                                                                                                                                                                                                            <div class="metro-item">
+                                                                                                                                                                                                                                                                                <img src="/img/metro-img.png" alt="">
+                                                                                                                                                                                                                                                                                <p><?php
         if ($subway1) {
             echo $subway1 . ' ' . $point['time1'] . ' мин';
         } else {
             echo 'Нет';
         }
         ?></p>
-                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                            </div>
         <?php
     endif;
     $subway2 = $this->points_model->get_subway_for_point_front($point['subway2_id']);
     $subway2 = $subway2['name'];
     if ($subway2):
         ?>
-                                                                                                                                                                                                                    <div class="metro-item">
-                                                                                                                                                                                                                        <img src="/img/metro-img.png" alt="">
-                                                                                                                                                                                                                        <p><?php
+                                                                                                                                                                                                                                                                            <div class="metro-item">
+                                                                                                                                                                                                                                                                                <img src="/img/metro-img.png" alt="">
+                                                                                                                                                                                                                                                                                <p><?php
         if ($subway2) {
             echo $subway2 . ' ' . $point['time2'] . ' мин';
         } else {
             echo 'Нет';
         }
         ?></p>
-                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                            </div>
     <?php endif; ?>
-                                                                                                                </div>
-                                                                                                                <div class="description">
+                                                                                                                                            </div>
+                                                                                                                                            <div class="description">
     <?php
     if ($point['contacts']):
         ?>
-                                                                                                                                                                                                                    <p>Адрес: <?= $point['contacts'] ?></p>
+                                                                                                                                                                                                                                                                            <p>Адрес: <?= $point['contacts'] ?></p>
         <?php
     endif;
     if ($point['phone']):
         ?>
-                                                                                                                                                                                                                    <p>Телефон: <?= $point['phone'] ?></p>
+                                                                                                                                                                                                                                                                            <p>Телефон: <?= $point['phone'] ?></p>
         <?php
     endif;
     if ($point['email']):
         ?>
-                                                                                                                                                                                                                    <p>E-mail: <?= $point['email'] ?></p>
+                                                                                                                                                                                                                                                                            <p>E-mail: <?= $point['email'] ?></p>
         <?php
     endif;
     if ($point['site']):
         ?>
-                                                                                                                                                                                                                    <p>Сайт: <?= $point['site'] ?></p>
+                                                                                                                                                                                                                                                                            <p>Сайт: <?= $point['site'] ?></p>
     <?php endif; ?>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </a>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </a>
 <?php endforeach; ?>
     </div>
 </div>
 <div class="description-block">
 <?php if ($sport): ?>
-                                                                                                    <h1><?= $sport['name'] ?></h1>
-                                                                                                    <p><?= $sport['text'] ?></p>
+                                                                                                                                <h1><?= $sport['name'] ?></h1>
+                                                                                                                                <p><?= $sport['text'] ?></p>
 <?php endif; ?>
 </div>
 </div>

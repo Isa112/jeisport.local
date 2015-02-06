@@ -1,6 +1,7 @@
 .idea/
 www/forum/cache/
 www/nbproject/
+.gitignore
 
 
 */config/development
