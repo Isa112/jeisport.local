@@ -16,7 +16,7 @@
                         <div class="input-text">
                             <span>Выберите категорию</span>
                             <label for="">
-                                <i></i>
+                                <i class="select_open_1"></i>
                                 <select id="select-1" placeholder="категория" value="категория">
                                     <option value="category">категория 1</option>
                                     <option value="category">категория 2</option>
@@ -29,7 +29,7 @@
                         <div class="input-text">
                             <span>Выберите подкатегорию</span>
                             <label for="">
-                                <i></i>
+                                <i class="select_open_2"></i>
                                 <select id="select-2" placeholder="подкатегория" value="подкатегория">
                                     <option value="subcategory">подкатегория 1</option>
                                     <option value="subcategory">подкатегория 2</option>
@@ -42,7 +42,7 @@
                         <div class="input-text input-text-3">
                             <span>Пропишите станцию метро</span>
                             <label for="">
-                                <i></i>
+                                <i class="select_open_3"></i>
                                 <select id="select-3" placeholder="метро" value="метро">
                                     <option value="metro">станция метро 1</option>
                                     <option value="metro">станция метро 2</option>
@@ -60,7 +60,7 @@
                     <div class="clear"></div><!-- clear -->
                     <div class="btn_wrapper">
                         <p class="btn_title">Отправьте нам заявку и мы подберем лучшее решение для Вас</p>
-                        <a href="#" data-modal-id="#modal3" class="send_btn modal-open">Отправить заявку</a><!-- send_btn -->
+                        <a href="#" data-modal-id="#modal3" class="send_btn modal-open send_request">Отправить заявку</a><!-- send_btn -->
                         <p>После подбора наш менеджер свяжется с Вами</p>
                     </div>
 

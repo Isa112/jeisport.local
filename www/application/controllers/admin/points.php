@@ -113,7 +113,8 @@ class Points extends CI_Controller {
     public function check_url($url) {
         str_replace(array(")", "("), '', $url);
         $url = $this->points_model->get_point_by_url($url);
-        $url = $url['url'];
+        if ($url)
+            $url = $url['url'];
 //        echo $this->input->post('url');
         if ($url == $this->input->post('url')) {
             return true;

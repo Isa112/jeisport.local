@@ -24,5 +24,5 @@
         <script src="/js/jquery-ui.min.js"></script>
         <script src="/js/jquery.flexslider.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
-        <script type="text/javascript" src="/js/library.js"></script>
+        <!--<script type="text/javascript" src="/js/library.js"></script>-->
     </head>

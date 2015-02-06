@@ -131,7 +131,7 @@ class Pages extends CI_Controller {
         $data['halls'] = $this->points_model->get_halls_for_point_for_front($point['id']);
         $data['treners'] = $this->points_model->get_treners_for_point_for_front($point['id']);
         $data['images'] = $this->points_model->get_images_for_point_for_front($point['id']);
-        
+
         $sports = $this->sports_model->get_sports_for_category_front($category['id']);
         $data['sports'] = $sports;
 
@@ -224,7 +224,7 @@ class Pages extends CI_Controller {
                     $this->load->view('front/pages/sendrequest');
                 } else {
                     $arr = array(
-                        'error' => '<div class="form-item" style="color:green; font-weight:bold;padding: 10px 30px;"><strong>Спасибо! </strong>Ваша заявка была успешно отправлена! Ожидайте, в скором времени наш менеджер свяжется с вами</div>'
+                        'error' => '<div class="form-item" style="color:green; font-weight:bold;padding: 10px 30px; margin-top: 150px;"><strong>Спасибо! </strong>Ваша заявка была успешно отправлена! Ожидайте, в скором времени наш менеджер свяжется с вами</div>'
                     );
                     echo $arr['error'];
                     $this->front_model->set_request();
@@ -327,6 +327,25 @@ class Pages extends CI_Controller {
         </div>
     </div>
 MSG;
+                    $config = array(
+                        'protocol' => 'smtp',
+                        'smtp_host' => 'ssl://smtp.googlemail.com',
+                        'smtp_port' => 465,
+                        'smtp_user' => 'officialakniet@gmail.com',
+                        'smtp_pass' => 'googstud321',
+                        'mailtype' => 'html',
+                        'charset' => 'utf-8'
+                    );
+                    $this->load->library('email');
+                    $this->email->initialize($config);
+
+                    $this->email->set_newline("\r\n");
+                    $this->email->from("jeisport@mail.ru", "Jeisport");
+                    $this->email->to($to['email']);
+                    $this->email->subject('Новая заявка с сайта jeisport');
+                    $this->email->message($msg);
+                    $this->email->send();
+
 //                    $this->load->library('email');
 //                    $config['protocol'] = 'smtp';
 //                    $config['smtp_host'] = 'smtp.mail.ru';
@@ -342,6 +361,8 @@ MSG;
 //                    $this->email->message($msg);
 //                    $this->email->send();
                 }
+            } else {
+                echo 'Неверный post запрос';
             }
         } else {
             echo 'Ошибка при отправке формы';

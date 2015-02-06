@@ -1,6 +1,6 @@
 <footer>
     <div class="header_wrapper">
-
+        <a href="#header" class="plagination back_to_top_in_footer"></a>
         <div class="footer_logo">
             <a href="#"><img src="/img/logo.png" alt=""></a>
             <div class="social_icons">

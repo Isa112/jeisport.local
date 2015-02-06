@@ -1,7 +1,7 @@
 <body>
 
     <a href="#" data-modal-id="#modal1" class="enter modal-open"><img src="/img/social/icon_enter.png" alt="">Вход</a>
-    <a href="#" data-modal-id="#modal2" class="ticket modal-open"><img src="/img/social/icon_sbs.png" alt="">СБС</a>
+    <a href="#" data-modal-id="#modal2" class="ticket modal-open"><img src="/img/social/icon_sbs.png" alt=""><span>СБС</span><i>Студенческий билет спортсмена</i></a>
 
     <!-- registration / enter -->
 
@@ -9,25 +9,44 @@
         <div class="bg"></div>
         <div class="modal modal-enter">
             <div class="modal-title"><a href="#" class="close-modal"></a></div>
+
+
             <div class="modal-content">
-                <h3>Вход или регистрация</h3>
-                <form action="">
+                <?php if (!$this->session->userdata('phpbb_username') && !$this->session->userdata('phpbb_userpassword')): ?>
+                    <h3>Вход или регистрация</h3>
                     <div class="registration-block">
-                        <span>Регистрация</span>
-                        <input type="text" placeholder="Логин или e-mail">
-                        <input type="text" placeholder="Пароль">
-                        <input type="text" placeholder="Повторите пароль">
-                        <input type="button" value="Регистрация">
+                        <form method="post" action="/forum/ucp.php?mode=register&sid=9tq6r0t2gd34g38a68f0t01f3gf68a54">
+                            <span>Регистрация</span>
+                            <input type="text" name="username" placeholder="Логин">
+                            <input type="text" name="email" placeholder="E-mail" />
+                            <input type="password" name="new_password" placeholder="Пароль">
+                            <input type="password" name="password_confirm" placeholder="Повторите пароль">
+                            <input type="hidden" name="redirect" value="/forum/" />
+                            <input type="hidden" name="login" value="external" />
+                            <input type="hidden" name="from_external" value="external" />
+                            <input type="hidden" name="tz" value="Asia/Bishkek" />
+                            <input type="hidden" name="lang" value="ru" />
+                            <input type="hidden" name="creation_time" value="<?= time() ?>" />
+                            <input type="hidden" name="submit" value="1" />
+                            <input type="submit" value="Регистрация">
+                        </form>
                     </div>
                     <div class="enter-block">
-                        <span>Авторизация</span>
-                        <a href="#" class="fc_icon"></a><a href="#" class="tw_icon"></a>
-                        <input type="text" placeholder="Логин или e-mail">
-                        <input type="text" placeholder="Пароль">
-                        <input type="button" value="Войти">
+                        <form method="get" action="/forumlogin/login">
+                            <span>Авторизация</span>
+                            <a href="#" class="fc_icon"></a><a href="#" class="tw_icon"></a>
+                            <input type="text" name="username" placeholder="Логин или e-mail">
+                            <input type="password" name="password" placeholder="Пароль">
+                            <input type="hidden" name="redirect" value="/" />
+                            <input type="hidden" name="login" value="external" />
+                            <input type="submit" value="Войти">
+                        </form>
                     </div>
-                </form>
-                <div class="clear"></div>
+                    <div class="clear"></div>
+                <?php else: ?>
+                    <p>Добро пожаловать, <?= $this->session->userdata('phpbb_username') ?>! <a href="/forumlogin/login1">Перейти в форум</a></p>
+                    <p><a href="forumlogin/logout">Выход</a></p>
+                <?php endif; ?>
                 <p>Вся информция остается конфиденциальной и не передается третьим лицам</p>
             </div>
         </div>
@@ -73,28 +92,13 @@
         <div class="bg"></div>
         <div class="modal modal-questionnaire">
             <div class="modal-title"><a href="#" class="close-modal"></a></div>
-            <div class="modal-content">
-                <h3>Заявка на подбор клуба</h3>
-                <form action="">
-                    <span>Все поля обязательны для заполнения!</span>
-                    <input type="text" placeholder="Имя">
-                    <input type="text" placeholder="Возраст">
-                    <input type="text" placeholder="Пол">
-                    <input type="text" placeholder="Какими видами спорта хотели бы заниматься">
-                    <input type="text" placeholder="Бижайщее метро">
-                    <input type="text" placeholder="Противопоказания от врача">
-                    <input type="text" placeholder="Сколько готовы платить в месяц">
-                    <input type="text" placeholder="Телефон">
-                    <input type="button" value="Отправить">
-                </form>
-                <p>Вся информция остается конфиденциальной и не передается третьим лицам</p>
-            </div>
+            <div id="request_res"></div>
         </div>
     </div>
 
 
 
-    <header>
+    <header id="header">
         <div class="header_wrapper">
             <div class="logo">
                 <a href="/"><img src="/img/logo.png" height="66" width="193" alt=""></a>
@@ -107,10 +111,10 @@
                     if ($category['active'] == 'on'):
                         ?>
                         <li><a style="background: #00a68e url(/images/categories/<?= $category['image'] ?>) center 22px no-repeat;" href="<?= '/' . $category['url'] ?>/"><?= $category['name'] ?></a></li>
-                        <?php
-                    endif;
-                endforeach;
-                ?>
+                            <?php
+                        endif;
+                    endforeach;
+                    ?>
             </ul><!-- navigation -->
         </div><!-- header wrapper -->
     </header><!-- header -->
