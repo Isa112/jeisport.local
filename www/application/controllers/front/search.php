@@ -42,6 +42,7 @@ class Search extends CI_Controller {
         }
 
         header("Content-type:text/html;charset=utf-8");
+        
         $this->load->view('front/templates/metahead', $data);
         $this->load->view('front/templates/header', $data);
         $this->load->view('front/templates/sub-menu', $data);

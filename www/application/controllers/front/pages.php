@@ -115,7 +115,6 @@ class Pages extends CI_Controller {
     public function point($category, $sport, $point) {
         $categories = $this->categories_model->get_categories_for_front();
         $data['categories'] = $categories;
-
         $point = $this->points_model->get_point_by_url_for_front($point);
         $sport = $this->sports_model->get_sport_by_url_for_front($sport);
         $category = $this->categories_model->get_category_by_url_for_front($category);
@@ -134,13 +133,17 @@ class Pages extends CI_Controller {
 
         $sports = $this->sports_model->get_sports_for_category_front($category['id']);
         $data['sports'] = $sports;
-
-        $this->load->view('front/templates/metahead', $data);
-        $this->load->view('front/templates/header', $data);
-        $this->load->view('front/templates/sub-menu', $data);
-        $this->load->view('front/templates/filters', $data);
-        $this->load->view('front/pages/point', $data);
-        $this->load->view('front/templates/footer', $data);
+        if (!$point):
+            $this->output->set_status_header('404');
+            $this->load->view('front/pages/404', $data);
+        else:
+            $this->load->view('front/templates/metahead', $data);
+            $this->load->view('front/templates/header', $data);
+            $this->load->view('front/templates/sub-menu', $data);
+            $this->load->view('front/templates/filters', $data);
+            $this->load->view('front/pages/point', $data);
+            $this->load->view('front/templates/footer', $data);
+        endif;
     }
 
     public function news($new) {

@@ -29,7 +29,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="name">Название</label>
-            <input name='name' value="<?= $point['name'] ?>" type="text" class="form-control" id="name" placeholder="Название">
+            <input name='name' value='<?= $point['name'] ?>' type="text" class="form-control" id="name" placeholder="Название">
         </div>
         <div class="form-group">
             <label for="url">ЧПУ</label>

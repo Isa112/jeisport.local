@@ -45,20 +45,20 @@
                     <span class="metro2">Нет</span>
                 <?php endif; ?>
                 <div class="clear"></div>
-                <?php if($point['contacts']): ?>
-                <p>Адрес: <?= $point['contacts'] ?></p>
+                <?php if ($point['contacts']): ?>
+                    <p>Адрес: <?= $point['contacts'] ?></p>
                 <?php endif; ?>
-                <?php if($point['phone']): ?>
-                <p>Телефон: <?= $point['phone'] ?></p>
+                <?php if ($point['phone']): ?>
+                    <p>Телефон: <?= $point['phone'] ?></p>
                 <?php endif; ?>
-                <?php if($point['email']): ?>
-                <p>E-mail: <?= $point['email'] ?></p>
+                <?php if ($point['email']): ?>
+                    <p>E-mail: <?= $point['email'] ?></p>
                 <?php endif; ?>
-                <?php if($point['site']): ?>
-                <p>Сайт: <?= $point['site'] ?></p>
+                <?php if ($point['site']): ?>
+                    <p>Сайт: <?= $point['site'] ?></p>
                 <?php endif; ?>
-                <?php if($point['graphite']): ?>
-                <p>График работы: <?= $point['graphite'] ?></p>
+                <?php if ($point['graphite']): ?>
+                    <p>График работы: <?= $point['graphite'] ?></p>
                 <?php endif; ?>
                 <p>Цена: свыше 60 тыс. руб за год</p>
                 <label for="">Вы владелец?</label>
@@ -101,81 +101,19 @@
 
         <div class="flexslider">
 
-            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-2000px, 0px, 0px); transform: translate3d(-2000px, 0px, 0px);"><li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                    </li>
-
-                    <li class="" style="width: 1000px; float: left; display: block;">
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                    </li>
-
-                    <li class="flex-active-slide" style="width: 1000px; float: left; display: block;">
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                    </li>
-
-                    <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                        </div>
-                    </li></ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div><!-- slider -->
+            <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                <ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-2000px, 0px, 0px); transform: translate3d(-2000px, 0px, 0px);">
+                    <?php for ($i = 0; $i < intval(count($treners) / 4); $i++): ?>
+                        <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
+                            <div class="video_block">
+                                <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/images/points/treners/<?= $treners[$i]['image'] ?>" alt="" draggable="false"></a>
+                                <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
+                            </div>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </div>
+            <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div><!-- slider -->
 
         <h3 class="block-title presentation_title_h3" id="section_3">Видео</h3><!-- title -->
 
@@ -203,7 +141,7 @@
 </div>
 
 
-<script src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
+<!--<script src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -267,42 +205,42 @@
                 <div class="halls-block">
                     <p class="point-title">Спортивные залы клуба</p>
                     <div class="halls-items">
-                        <?php foreach ($halls as $hall): ?>
-                            <div class="hall-item">
-                                <a class="halls" href="/images/points/halls/<?= $hall['image'] ?>">
-                                    <img src="/getimage.php?key=images/points/halls/<?= $hall['image'] ?>&type=4" alt="">
-                                </a>
-                                <p class="title"><?= $hall['name'] ?></p>
-                                <?php if (strlen($hall['name']) < 150): ?>
-                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 200, "..."); ?></p>
-                                <?php else: ?>
-                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 100, "..."); ?></p>
-                                <?php endif; ?>
-                            </div>
-                        <?php endforeach; ?>
+<?php foreach ($halls as $hall): ?>
+                                                                                                                                            <div class="hall-item">
+                                                                                                                                                <a class="halls" href="/images/points/halls/<?= $hall['image'] ?>">
+                                                                                                                                                    <img src="/getimage.php?key=images/points/halls/<?= $hall['image'] ?>&type=4" alt="">
+                                                                                                                                                </a>
+                                                                                                                                                <p class="title"><?= $hall['name'] ?></p>
+    <?php if (strlen($hall['name']) < 150): ?>
+                                                                                                                                                                                                                                                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 200, "..."); ?></p>
+    <?php else: ?>
+                                                                                                                                                                                                                                                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 100, "..."); ?></p>
+    <?php endif; ?>
+                                                                                                                                            </div>
+<?php endforeach; ?>
                     </div>
                 </div>
                 <div class="point-description-block">
                     <div class="point-images-block">
                         <a href="javascript:"><img src="/getimage.php?key=images/points/<?= $point['image'] ?>&type=5" alt=""></a>
-                        <?php foreach ($images as $image): ?>
-                            <a class="tour_images" href="/images/points/images/<?= $image['image'] ?>"><img src="/getimage.php?key=images/points/images/<?= $image['image'] ?>&type=6" alt=""></a>
-                        <?php endforeach; ?>
+<?php foreach ($images as $image): ?>
+                                                                                                                                            <a class="tour_images" href="/images/points/images/<?= $image['image'] ?>"><img src="/getimage.php?key=images/points/images/<?= $image['image'] ?>&type=6" alt=""></a>
+<?php endforeach; ?>
                     </div>
                     <div class="point-contacts-block">
                         <div class="metro">
-                            <?php if ($subway1): ?>
-                                <div class="metro-item">
-                                    <img src="//img/metro-img.png" alt="">
-                                    <p> <?= $subway1['name'] . ' ' . $point['time1'] . ' мин' ?></p>
-                                </div>
-                            <?php endif; ?>
-                            <?php if ($subway2): ?>
-                                <div class="metro-item">
-                                    <img src="//img/metro-img.png" alt="">
-                                    <p> <?= $subway2['name'] . ' ' . $point['time2'] . ' мин' ?></p>
-                                </div>
-                            <?php endif; ?>
+<?php if ($subway1): ?>
+                                                                                                                                                <div class="metro-item">
+                                                                                                                                                    <img src="//img/metro-img.png" alt="">
+                                                                                                                                                    <p> <?= $subway1['name'] . ' ' . $point['time1'] . ' мин' ?></p>
+                                                                                                                                                </div>
+<?php endif; ?>
+<?php if ($subway2): ?>
+                                                                                                                                                <div class="metro-item">
+                                                                                                                                                    <img src="//img/metro-img.png" alt="">
+                                                                                                                                                    <p> <?= $subway2['name'] . ' ' . $point['time2'] . ' мин' ?></p>
+                                                                                                                                                </div>
+<?php endif; ?>
                         </div>
                         <p>Адрес: <?= $point['contacts'] ?></p>
                         <p>Телефон: <?= $point['phone'] ?></p>
@@ -322,7 +260,7 @@
                             <p class="point-title">Описание клуба</p>
                         </div>
                         <div class="point-inner-body">
-                            <?= $point['text'] ?>
+<?= $point['text'] ?>
                         </div>
                     </div>
                 </div>
@@ -330,14 +268,14 @@
                     <p class="point-title">Тренера клуба</p>
                     <div class="inner-trainers-block">
                         <ul class="trainers-items">
-                            <?php foreach ($treners as $trener): ?>
-                                <li>
-                                    <a class="treners" href="/images/points/treners/<?= $trener['image'] ?>">
-                                        <img src="/getimage.php?key=images/points/treners/<?= $trener['image'] ?>&type=7" alt=""/>
-                                        <p><?= $trener['sname'] . ' ' . $trener['name'] ?></p>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
+<?php foreach ($treners as $trener): ?>
+                                                                                                                                                <li>
+                                                                                                                                                    <a class="treners" href="/images/points/treners/<?= $trener['image'] ?>">
+                                                                                                                                                        <img src="/getimage.php?key=images/points/treners/<?= $trener['image'] ?>&type=7" alt=""/>
+                                                                                                                                                        <p><?= $trener['sname'] . ' ' . $trener['name'] ?></p>
+                                                                                                                                                    </a>
+                                                                                                                                                </li>
+<?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
@@ -390,4 +328,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->

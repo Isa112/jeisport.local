@@ -1,7 +1,46 @@
 <body>
+    <script>
+        (function (cash) {
+            $(window).load(function () {
 
-    <a href="#" data-modal-id="#modal1" class="enter modal-open"><img src="/img/social/icon_enter.png" alt="">Вход</a>
-    <a href="#" data-modal-id="#modal2" class="ticket modal-open"><img src="/img/social/icon_sbs.png" alt=""><span>СБС</span><i>Студенческий билет спортсмена</i></a>
+                $('.modal-open').on('click', function () {
+                    var modal_id = $(this).data('modal-id');
+                    $(modal_id).fadeIn();
+                    return false;
+                });
+<?php if (!$this->session->userdata('phpbb_username') && !$this->session->userdata('phpbb_userpassword')): ?>
+                    $('.modal-open2').on('click', function () {
+                        var modal_id = $(this).data('modal-id');
+                        $(modal_id).fadeIn();
+                        return false;
+                    });
+<?php endif; ?>
+                $('.modal-wrapper .bg, .modal-wrapper .close-modal').on('click', function () {
+                    $(this).parents('.modal-wrapper').fadeOut();
+                    return false;
+                });
+
+                $('.plagination').click(function (event) {
+                    $('html,body').animate({scrollTop: $($(this).attr('href')).offset().top + "px"}, 1000);
+                    event.preventDefault();
+                });
+
+                // $('[data-tooltip]').hover(function(){ var t = $(this).data('tooltip');$(this).data('tooltip',$(this).html());$(this).html(t);}, function(){var t = $(this).data('tooltip');$(this).data('tooltip',$(this).html());$(this).html(t);});
+
+            });
+        })(jQuery);
+    </script>
+
+    <?php if (!$this->session->userdata('phpbb_username') && !$this->session->userdata('phpbb_userpassword')): ?>
+        <a href="#" data-modal-id="#modal1" class="enter modal-open2"><img src="/img/social/icon_enter.png" alt="">Вход</a>
+        <a href="#" data-modal-id="#modal2" class="ticket modal-open" style="top: 263px;"><img src="/img/social/icon_sbs.png" alt=""><span>СБС</span><i>Студенческий билет спортсмена</i></a>
+    <?php else: ?>
+        <a href="javascript:" data-modal-id="#modal1" class="enter modal-open2" style="width: auto; top: 220px; cursor: default;">Добро пожаловать, <?= $this->session->userdata('phpbb_username') ?>!</a>
+        <a class="enter enter2" href="/forumlogin/logout">Выход</a>
+        <a href="#" data-modal-id="#modal2" class="ticket modal-open"><img src="/img/social/icon_sbs.png" alt=""><span>СБС</span><i>Студенческий билет спортсмена</i></a>
+        <!--<span style="text-decoration: underline;" onclick="window.location = '/forumlogin/login1'">Перейти в форум</span>-->
+    <?php endif; ?>
+
 
     <!-- registration / enter -->
 
@@ -43,11 +82,8 @@
                         </form>
                     </div>
                     <div class="clear"></div>
-                <?php else: ?>
-                    <p>Добро пожаловать, <?= $this->session->userdata('phpbb_username') ?>! <a href="/forumlogin/login1">Перейти в форум</a></p>
-                    <p><a href="forumlogin/logout">Выход</a></p>
+                    <p>Вся информция остается конфиденциальной и не передается третьим лицам</p>
                 <?php endif; ?>
-                <p>Вся информция остается конфиденциальной и не передается третьим лицам</p>
             </div>
         </div>
     </div>
@@ -74,7 +110,7 @@
                         <h5>Для получения студ билета спортсмена укажите:</h5>
                         <input type="radio" name="radio1" value="Оплата при доставке курьеру">
                         <label for="radio1">Оплата при доставке курьеру</label>
-                        <input type="radio" name="radio2" value="Заберу сам(а) - Оплатить онлайн">
+                        <input type="radio" name="radio1" value="Заберу сам(а) - Оплатить онлайн">
                         <label for="radio2">Заберу сам(а) - Оплатить онлайн"</label>
                         <input type="text" placeholder="Имя">
                         <input type="text" placeholder="Фамилия">
@@ -96,7 +132,43 @@
         </div>
     </div>
 
+    <?php if (is_string($this->uri->segment(3))): ?>
+        <div id="modal5" class="modal-wrapper">
+            <div class="bg"></div>
+            <div class="modal modal-callback">
+                <div class="modal-title"><a href="#" class="close-modal"></a></div>
+                <div class="modal-content">
+                    <h3>Введите телефон и имя и наш менеджер  свяжется с Вами!</h3>
+                    <form action="">
+                        <input type="text" placeholder="Введите имя">
+                        <input type="text" placeholder="Введите телефон">
+                        <input type="button" value="Отправить">
+                    </form>
+                    <div class="callback_bottom"></div>
+                </div>
+            </div>
+        </div>
 
+        <div id="modal6" class="modal-wrapper">
+            <div class="bg"></div>
+            <div class="modal modal-trainer">
+                <div class="modal-title"><a href="#" class="close-modal"></a></div>
+                <div class="modal-content">
+                    <h3>Тренер Фитнес-клуба  Мультиспорт в СК Лужники</h3>
+                    <div class="trainer_block">
+                        <img src="/img/popup_trainer_img.jpg" alt="">
+                        <h5>Марк Александров Федорович</h5>
+                        <div class="clear"></div>
+                        <h6>Квалификация:</h6>
+                        <span>Тренер- преподователь, Специалист по  физической культуре. Преподователь 1-й категории КМС по Американскому рукопашному  бою. КМС по кикбоксингу КМС по военному 4-х бою</span>
+                        <div class="clear"></div>
+                        <p>Программа тренировок включает блоки силовых упражнений, кардио-сессии, элементы оздоровительных систем и "ударную" технику БОКСА, КИК-БОКСИНГА, ТАЭКВОН-ДО ИТФ. Простота, доступность, отсутствие глупых и несуразных приемов, работа в МИНИ-ГРУППАХ, и самое главное - ИНДИВИДУАЛЬНЫЙ ПОДХОД, делает занятия в нашем клубе подходящими как для новичков, так и для бывалых! А богатый "боевой" арсенал из наиболее эффективных стилей - позволяет всем желающим участвовать в соревнованиях по самым разным направлениям</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <?php endif; ?>
 
     <header id="header">
         <div class="header_wrapper">
@@ -104,17 +176,18 @@
                 <a href="/"><img src="/img/logo.png" height="66" width="193" alt=""></a>
             </div><!-- logo -->
             <ul>
-
                 <li><a href="/">Главная</a></li>
                 <?php
                 foreach ($categories as $category):
                     if ($category['active'] == 'on'):
                         ?>
-                        <li><a style="background: #00a68e url(/images/categories/<?= $category['image'] ?>) center 22px no-repeat;" href="<?= '/' . $category['url'] ?>/"><?= $category['name'] ?></a></li>
-                            <?php
-                        endif;
-                    endforeach;
-                    ?>
+                        <li>
+                            <a style="background-image: #00a68e url(/images/categories/<?= $category['image'] ?>) center 22px no-repeat;" href="<?= '/' . $category['url'] ?>/"><?= $category['name'] ?></a>
+                        </li>
+                        <?php
+                    endif;
+                endforeach;
+                ?>
             </ul><!-- navigation -->
         </div><!-- header wrapper -->
     </header><!-- header -->

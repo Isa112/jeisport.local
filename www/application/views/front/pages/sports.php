@@ -8,20 +8,18 @@
 
 <div class="category-content">
     <h3 class="about_us_title category_title"><?= $category['h1'] ?></h3>
-    <div class="categories">
+    <div class="categories categories_2">
         <ul>
             <!-- li -->
             <?php
             if ($sports) {
                 foreach ($sports as $sport):
                     ?>
-                    <li style="background: url(/getimage.php?key=images/sports/<?= $sport['image'] ?>&type=8) 0 0 no-repeat;">
+                    <li class="no_hover no_bg" onclick="window.location = '<?= '/' . $category['url'] . '/' . $sport['url'] ?>'">
                         <div class="visible_block">
                             <h6><?= $sport['name'] ?></h6>
                         </div>
-                        <div class="hidden_block">
-                            <a href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>/"><img src="" alt="<?= $sport['name'] ?>"></a>
-                        </div>
+                        <img src="/images/sports/<?= $sport['image'] ?>" alt="<?= $sport['name'] ?>">
                     </li>
                     <?php
                 endforeach;
@@ -50,11 +48,11 @@
 if ($sports) {
     foreach ($sports as $sport):
         ?>
-                        <a href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>">
-                            <div class="category-item-bg"></div>
-                            <img src="/getimage.php?key=images/sports/<?= $sport['image'] ?>&type=8" alt="<?= $sport['name'] ?>"/>
-                            <p><?= $sport['name'] ?></p>
-                        </a>
+                                                                        <a href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>">
+                                                                            <div class="category-item-bg"></div>
+                                                                            <img src="/getimage.php?key=images/sports/<?= $sport['image'] ?>&type=8" alt="<?= $sport['name'] ?>"/>
+                                                                            <p><?= $sport['name'] ?></p>
+                                                                        </a>
         <?php
     endforeach;
 }else {
