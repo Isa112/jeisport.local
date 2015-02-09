@@ -103,14 +103,20 @@
 
             <div class="flex-viewport" style="overflow: hidden; position: relative;">
                 <ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-2000px, 0px, 0px); transform: translate3d(-2000px, 0px, 0px);">
-                    <?php for ($i = 0; $i < intval(count($treners) / 4); $i++): ?>
+                    <?php foreach ($treners as $trener): ?>
                         <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
-                            <div class="video_block">
-                                <a href="#" data-modal-id="#modal6" class="img_link modal-open"><img src="/images/points/treners/<?= $treners[$i]['image'] ?>" alt="" draggable="false"></a>
-                                <a href="#" data-modal-id="#modal6" class="title_link modal-open">Виктор Федоров</a>
-                            </div>
+                            <?php for ($i = 0; $i < 4; $i++): ?>
+                                <?php if (isset($trener[$i])): ?>
+                                    <div class="video_block">
+                                        <a href="#" data-modal-id="#modal6" data-id="<?= $trener[$i]['id'] ?>" class="img_link modal-open">
+                                            <img class="trener_image" src="/images/points/treners/<?= $trener[$i]['image'] ?>" alt="" draggable="false">
+                                        </a>
+                                        <a href="#" data-modal-id="#modal6" class="title_link modal-open"><?= $trener[$i]['name'] ?></a>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endfor; ?>
                         </li>
-                    <?php endfor; ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div><!-- slider -->
@@ -206,17 +212,17 @@
                     <p class="point-title">Спортивные залы клуба</p>
                     <div class="halls-items">
 <?php foreach ($halls as $hall): ?>
-                                                                                                                                            <div class="hall-item">
-                                                                                                                                                <a class="halls" href="/images/points/halls/<?= $hall['image'] ?>">
-                                                                                                                                                    <img src="/getimage.php?key=images/points/halls/<?= $hall['image'] ?>&type=4" alt="">
-                                                                                                                                                </a>
-                                                                                                                                                <p class="title"><?= $hall['name'] ?></p>
+                                                                                                                                                                                                <div class="hall-item">
+                                                                                                                                                                                                    <a class="halls" href="/images/points/halls/<?= $hall['image'] ?>">
+                                                                                                                                                                                                        <img src="/getimage.php?key=images/points/halls/<?= $hall['image'] ?>&type=4" alt="">
+                                                                                                                                                                                                    </a>
+                                                                                                                                                                                                    <p class="title"><?= $hall['name'] ?></p>
     <?php if (strlen($hall['name']) < 150): ?>
-                                                                                                                                                                                                                                                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 200, "..."); ?></p>
+                                                                                                                                                                                                                                                                                                                                                                            <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 200, "..."); ?></p>
     <?php else: ?>
-                                                                                                                                                                                                                                                                    <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 100, "..."); ?></p>
+                                                                                                                                                                                                                                                                                                                                                                            <p class="desc"><?= mb_strimwidth(strip_tags($hall['description']), 0, 100, "..."); ?></p>
     <?php endif; ?>
-                                                                                                                                            </div>
+                                                                                                                                                                                                </div>
 <?php endforeach; ?>
                     </div>
                 </div>
@@ -224,22 +230,22 @@
                     <div class="point-images-block">
                         <a href="javascript:"><img src="/getimage.php?key=images/points/<?= $point['image'] ?>&type=5" alt=""></a>
 <?php foreach ($images as $image): ?>
-                                                                                                                                            <a class="tour_images" href="/images/points/images/<?= $image['image'] ?>"><img src="/getimage.php?key=images/points/images/<?= $image['image'] ?>&type=6" alt=""></a>
+                                                                                                                                                                                                <a class="tour_images" href="/images/points/images/<?= $image['image'] ?>"><img src="/getimage.php?key=images/points/images/<?= $image['image'] ?>&type=6" alt=""></a>
 <?php endforeach; ?>
                     </div>
                     <div class="point-contacts-block">
                         <div class="metro">
 <?php if ($subway1): ?>
-                                                                                                                                                <div class="metro-item">
-                                                                                                                                                    <img src="//img/metro-img.png" alt="">
-                                                                                                                                                    <p> <?= $subway1['name'] . ' ' . $point['time1'] . ' мин' ?></p>
-                                                                                                                                                </div>
+                                                                                                                                                                                                    <div class="metro-item">
+                                                                                                                                                                                                        <img src="//img/metro-img.png" alt="">
+                                                                                                                                                                                                        <p> <?= $subway1['name'] . ' ' . $point['time1'] . ' мин' ?></p>
+                                                                                                                                                                                                    </div>
 <?php endif; ?>
 <?php if ($subway2): ?>
-                                                                                                                                                <div class="metro-item">
-                                                                                                                                                    <img src="//img/metro-img.png" alt="">
-                                                                                                                                                    <p> <?= $subway2['name'] . ' ' . $point['time2'] . ' мин' ?></p>
-                                                                                                                                                </div>
+                                                                                                                                                                                                    <div class="metro-item">
+                                                                                                                                                                                                        <img src="//img/metro-img.png" alt="">
+                                                                                                                                                                                                        <p> <?= $subway2['name'] . ' ' . $point['time2'] . ' мин' ?></p>
+                                                                                                                                                                                                    </div>
 <?php endif; ?>
                         </div>
                         <p>Адрес: <?= $point['contacts'] ?></p>
@@ -269,12 +275,12 @@
                     <div class="inner-trainers-block">
                         <ul class="trainers-items">
 <?php foreach ($treners as $trener): ?>
-                                                                                                                                                <li>
-                                                                                                                                                    <a class="treners" href="/images/points/treners/<?= $trener['image'] ?>">
-                                                                                                                                                        <img src="/getimage.php?key=images/points/treners/<?= $trener['image'] ?>&type=7" alt=""/>
-                                                                                                                                                        <p><?= $trener['sname'] . ' ' . $trener['name'] ?></p>
-                                                                                                                                                    </a>
-                                                                                                                                                </li>
+                                                                                                                                                                                                    <li>
+                                                                                                                                                                                                        <a class="treners" href="/images/points/treners/<?= $trener['image'] ?>">
+                                                                                                                                                                                                            <img src="/getimage.php?key=images/points/treners/<?= $trener['image'] ?>&type=7" alt=""/>
+                                                                                                                                                                                                            <p><?= $trener['sname'] . ' ' . $trener['name'] ?></p>
+                                                                                                                                                                                                        </a>
+                                                                                                                                                                                                    </li>
 <?php endforeach; ?>
                         </ul>
                     </div>

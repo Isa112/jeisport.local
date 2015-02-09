@@ -128,7 +128,9 @@ class Pages extends CI_Controller {
         $data['subway2'] = $this->points_model->get_subway_for_point_front($point['subway2_id']);
 
         $data['halls'] = $this->points_model->get_halls_for_point_for_front($point['id']);
-        $data['treners'] = $this->points_model->get_treners_for_point_for_front($point['id']);
+
+        $treners = $this->points_model->get_treners_for_point_for_front($point['id']);
+        $data['treners'] = array_chunk($treners, 4);
         $data['images'] = $this->points_model->get_images_for_point_for_front($point['id']);
 
         $sports = $this->sports_model->get_sports_for_category_front($category['id']);
@@ -417,6 +419,13 @@ MSG;
             $this->load->view('front/pages/contacts', $data);
             $this->load->view('front/templates/footer', $data);
         }
+    }
+
+    public function trener($id) {
+        $trener = $this->points_model->get_trener_for_point($id);
+        $data['point'] = $this->input->post('point');
+        $data['trener'] = $trener;
+        $this->load->view('front/pages/trener', $data);
     }
 
 }

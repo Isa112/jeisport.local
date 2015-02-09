@@ -19,6 +19,14 @@ $(window).load(function () {
     $('#search-button2').click(function () {
         window.location = '/search/' + $(this).parent().find('#search-input2').val();
     });
+
+    $('.trener_image').click(function () {
+        var id = $(this).parent().attr('data-id');
+        var point = $('.presentation_title').find('h5').text();
+        $.post('/trener/' + id, { point: point }, function (data, status, hxr) {
+            $('.trener_popup').html(data);
+        });
+    });
 });
 
 function show(state) {

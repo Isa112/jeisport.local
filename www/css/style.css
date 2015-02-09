@@ -801,7 +801,7 @@ section {padding-bottom: 60px;overflow: hidden;}
     top: 0;left: 0;
     z-index: 1;
 
-     transition: all 0.5s ;
+    transition: all 0.5s ;
     -moz-transition: all 0.5s ;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -821,7 +821,7 @@ section {padding-bottom: 60px;overflow: hidden;}
 }
 
 /*ссылка*/
- 
+
 
 /************************************************************
       titles
@@ -903,6 +903,8 @@ footer ul {
     float: left;
 }
 footer ul li {
+    max-height: 120px;
+    overflow: hidden;
     float: left;
     width: auto;
     margin: 0 10px;

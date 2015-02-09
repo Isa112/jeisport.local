@@ -266,6 +266,7 @@ class Points_model extends CI_Model {
     public function delete_trener($id) {
         $this->db->delete('points_treners', array('id' => $id));
     }
+    
 
     public function get_trener_for_point($id) {
         $query = $this->db->get_where('points_treners', array('id' => $id));

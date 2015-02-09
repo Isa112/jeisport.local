@@ -48,6 +48,9 @@ $route['search/(:any)'] = 'front/search/query/$1';
 
 $route['sendrequest'] = 'front/pages/sendrequest';
 $route['sendrequest/save'] = 'front/pages/sendrequest/save';
+
+$route['trener/(:any)'] = 'front/pages/trener/$1';
+        
 $route['request/read'] = 'admin/admin/setreadrequest';
 
 $route['request/savemail'] = 'admin/admin/savemail';

@@ -394,6 +394,10 @@ class Points extends CI_Controller {
         </div>
         <?php
     }
+    
+    public function get4treners(){
+        
+    }
 
     public function hall_delete() {
         if (!$this->session->userdata('logged')) {
@@ -618,6 +622,7 @@ class Points extends CI_Controller {
         </div>
         <?php
     }
+    
 
     public function hall_data_save() {
         $this->points_model->hall_data_save();
