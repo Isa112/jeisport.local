@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="url">ЧПУ</label>
-            <input disabled name='url' value="<?= $category['url'] ?>" type="text" class="form-control" id="url" placeholder="Чпу">
+            <input name='url' value="<?= $category['url'] ?>" type="text" class="form-control" id="url" placeholder="Чпу">
         </div>
         <div class="form-group">
             <label for="h1">Заголовок</label>

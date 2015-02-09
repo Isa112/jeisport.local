@@ -125,6 +125,7 @@ class Categories_model extends CI_Model {
         if (!$image && !$image2 && !$image3) {
             $data = array(
                 'name' => $this->input->post('name'),
+                'url' => $this->input->post('url'),
                 'h1' => $this->input->post('h1'),
                 'h2' => $this->input->post('h2'),
                 'title' => $this->input->post('title'),
@@ -138,6 +139,7 @@ class Categories_model extends CI_Model {
         } else {
             $data = array(
                 'name' => $this->input->post('name'),
+                'url' => $this->input->post('url'),
                 'h1' => $this->input->post('h1'),
                 'image' => $image,
                 'image2' => $image2,

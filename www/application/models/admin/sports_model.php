@@ -127,6 +127,7 @@ class Sports_model extends CI_Model {
         if (!$image) {
             $data = array(
                 'name' => $this->input->post('name'),
+                'url' => $this->input->post('url'),
                 'title' => $this->input->post('title'),
                 'desc' => $this->input->post('desc'),
                 'keyw' => $this->input->post('keyw'),
@@ -139,6 +140,7 @@ class Sports_model extends CI_Model {
         } else {
             $data = array(
                 'name' => $this->input->post('name'),
+                'url' => $this->input->post('url'),
                 'image' => $image,
                 'title' => $this->input->post('title'),
                 'desc' => $this->input->post('desc'),

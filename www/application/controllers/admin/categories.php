@@ -121,6 +121,7 @@ class Categories extends CI_Controller {
         $data['category'] = $category;
         if ($this->input->post('do') == 'categoryEdit') {
             $this->form_validation->set_rules('name', 'Название', 'required');
+            $this->form_validation->set_rules('url', 'ЧПУ', 'required');
             $this->form_validation->set_rules('h1', 'Заголовок', 'trim|required|xss_clean');
             $this->form_validation->set_rules('h2', 'Заголовок 2', 'trim|required|xss_clean');
             $this->form_validation->set_rules('title', 'Мета title', 'trim');

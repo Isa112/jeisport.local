@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="url">ЧПУ</label>
-            <input disabled name='url' value="<?= $sport['url'] ?>" type="text" class="form-control" id="url" placeholder="Чпу">
+            <input name='url' value="<?= $sport['url'] ?>" type="text" class="form-control" id="url" placeholder="Чпу">
         </div>
         <div class="form-group">
             <label for="url">Категория</label>
