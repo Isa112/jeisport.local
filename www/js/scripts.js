@@ -108,7 +108,7 @@ function form_sendsbs() {
     return false;
 }
 function sendbackcall() {
-    $('#back_call_form').css('opacity','0.5');
+    $('#back_call_form').css('opacity', '0.5');
     $.ajax({
         url: '/send_backcall_from_point/save',
         type: "POST",
@@ -165,6 +165,12 @@ $(function () { // when DOM is ready
 
     $('#send_backcall').click(function () {
         form_sendbackcall();
+    });
+
+    $('#select-1').change(function () {
+        $.post('get_sports', {category: $(this).val()}, function (data) {
+            $('#select-2').html(data);
+        });
     });
 
 });

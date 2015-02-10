@@ -25,10 +25,19 @@ class Pages extends CI_Controller {
             $this->load->view('front/pages/404', $data);
         }
 
-        $categories = $this->categories_model->get_categories_for_front();
+
 
         $data['title'] = 'Jeisport - Самая обширная база спортивных клубов Москвы!';
+
+        $categories = $this->categories_model->get_categories_for_front();
         $data['categories'] = $categories;
+
+        $subways = $this->subways_model->get_subways_for_point();
+        $data['subways'] = $subways;
+
+        $sports = $this->sports_model->get_sports();
+        $data['sports'] = $sports;
+
         $data['news'] = $this->news_model->get3news_for_front();
         $data['posts'] = $this->blogs_model->get3posts_for_front();
         $maintext = $this->main_model->get_maintext();
@@ -389,6 +398,14 @@ class Pages extends CI_Controller {
         $data['point'] = $this->input->post('point');
         $data['trener'] = $trener;
         $this->load->view('front/pages/trener', $data);
+    }
+
+    public function get_sports_by_category() {
+        $category = $this->input->post('category');
+        $sports = $this->sports_model->get_ordered_sports($category);
+        foreach ($sports as $sport) {
+            echo '<option value="' . $sport['id'] . '">' . $sport['name'] . '</option>';
+        }
     }
 
 }

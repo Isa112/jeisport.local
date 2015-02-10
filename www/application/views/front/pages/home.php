@@ -12,43 +12,39 @@
                 <div class="banner_form">
                     <h2>Подбери себе  спортивный клуб:</h2>
 
-                    <form action="">
+                    <form action="javascript:">
                         <div class="input-text">
                             <span>Выберите категорию</span>
                             <label for="">
                                 <i class="select_open_1"></i>
                                 <select id="select-1" placeholder="категория" value="категория">
-                                    <option value="category">категория 1</option>
-                                    <option value="category">категория 2</option>
-                                    <option value="category">категория 3</option>
-                                    <option value="category">категория 4</option>
-                                    <option value="category">категория 5</option>
+                                    <?php
+                                    foreach ($categories as $cat):
+                                        ?>
+                                        <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                                        <?php
+                                    endforeach;
+                                    ?>
                                 </select>
                             </label>
                         </div>
                         <div class="input-text">
-                            <span>Выберите подкатегорию</span>
+                            <span>Выберите вид спорта</span>
                             <label for="">
                                 <i class="select_open_2"></i>
                                 <select id="select-2" placeholder="подкатегория" value="подкатегория">
-                                    <option value="subcategory">подкатегория 1</option>
-                                    <option value="subcategory">подкатегория 2</option>
-                                    <option value="subcategory">подкатегория 3</option>
-                                    <option value="subcategory">подкатегория 4</option>
-                                    <option value="subcategory">подкатегория 5</option>
+                                    <option value="" disabled style="display: none;">Выберите категорию...</option>
                                 </select>
                             </label>
                         </div>
                         <div class="input-text input-text-3">
-                            <span>Пропишите станцию метро</span>
+                            <span>Выберите станцию метро</span>
                             <label for="">
                                 <i class="select_open_3"></i>
                                 <select id="select-3" placeholder="метро" value="метро">
-                                    <option value="metro">станция метро 1</option>
-                                    <option value="metro">станция метро 2</option>
-                                    <option value="metro">станция метро 3</option>
-                                    <option value="metro">станция метро 4</option>
-                                    <option value="metro">станция метро 5</option>
+                                    <?php foreach ($subways as $cat): ?>
+                                        <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </label>
                         </div>
@@ -75,15 +71,15 @@
                 <!-- li -->
                 <?php if ($categories): ?>
                     <?php foreach ($categories as $category): ?>
-                <li style="background: url(/images/categories/<?= $category['image2'] ?>) 0 0 no-repeat;">
-                    <div class="visible_block">
-                        <h6><?= $category['name'] ?></h6>
-                    </div>
-                    <div class="hidden_block">
-                        <a href="<?= '/' . $category['url'] ?>/"><img src="/images/categories/<?= $category['image3'] ?>" alt=""></a>
-                    </div>
-                </li>
-                <?php endforeach; ?>
+                        <li style="background: url(/images/categories/<?= $category['image2'] ?>) 0 0 no-repeat;">
+                            <div class="visible_block">
+                                <h6><?= $category['name'] ?></h6>
+                            </div>
+                            <div class="hidden_block">
+                                <a href="<?= '/' . $category['url'] ?>/"><img src="/images/categories/<?= $category['image3'] ?>" alt=""></a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
                     <?php
                 else: echo 'Категорий в базе не найдено!';
                 endif;

@@ -57,6 +57,8 @@ $route['send_backcall_from_point/save'] = 'front/pages/send_backcall_from_point/
 
 $route['trener/(:any)'] = 'front/pages/trener/$1';
 
+$route['get_sports'] = 'front/pages/get_sports_by_category';
+
 $route['request/read'] = 'admin/admin/setreadrequest';
 $route['request/savemail'] = 'admin/admin/savemail';
 
