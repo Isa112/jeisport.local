@@ -15,7 +15,7 @@
             if ($sports) {
                 foreach ($sports as $sport):
                     ?>
-                    <li class="no_hover no_bg" onclick="window.location = '<?= '/' . $category['url'] . '/' . $sport['url'] ?>'">
+                    <li class="no_hover no_bg" onclick="window.location = '<?= '/' . $category['url'] . '/' . $sport['url'] ?>/'">
                         <div class="visible_block">
                             <h6><?= $sport['name'] ?></h6>
                         </div>

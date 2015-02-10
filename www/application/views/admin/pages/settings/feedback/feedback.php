@@ -26,7 +26,6 @@
             <tr>
                 <td width="30px">#</td>
                 <td width="25%">Имя</td>
-                <td width="25%">E-mail</td>
                 <td width="25%">Телефон</td>
                 <td width="25%">Дата</td>
                 <td width="25%">IP-адрес</td>
@@ -40,7 +39,6 @@
                 <tr>
                     <td class="id"><?= $msg['id'] ?></td>
                     <td><?= $msg['name'] ?></td>
-                    <td><?= $msg['email'] ?></td>
                     <td><?= $msg['phone'] ?></td>
                     <td><?= $msg['date'] ?></td>
                     <td><?= $msg['ip'] ?></td>

@@ -77,6 +77,23 @@
                 <label for="keyw">Мета keywords</label>
                 <textarea name='keyw' rows="3" class="form-control" id="keyw" placeholder=""><?= $new['keyw'] ?></textarea>
             </div>
+            <div class="form-group">
+                <label style="display: block;">Теги</label>
+                <div class='tags'>
+                    <?php foreach ($tags as $tag): ?>
+                        <div class="input-group tag" style="margin-top: 10px; width:50%">
+                            <input type="text" maxlength="10" tag="<?= $tag['id'] ?>" value="<?= $tag['name'] ?>" class="form-control" disabled required>
+                            <span class="input-group-btn del_ex_tag">
+                                <button class="btn btn-danger" title="Удалить">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <a href="#" id="add_tag_field" style="margin-top:10px;" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
+                <p class="help-block">В каждое поле по одному тегу</p>
+            </div>
             <div class="checkbox">
                 <label>
                     <input name='active' <?php

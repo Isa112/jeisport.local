@@ -107,10 +107,10 @@ function form_sendsbs() {
     });
     return false;
 }
-function sendbackcall(url) {
-    $('#back_call_form').css('opacity', '0.5');
+function sendbackcall() {
+    $('#back_call_form').css('opacity','0.5');
     $.ajax({
-        url: '/send_backcall_from_point/save/' + url,
+        url: '/send_backcall_from_point/save',
         type: "POST",
         dataType: "html",
         data: $('#backcall_form').find('form').serialize(),

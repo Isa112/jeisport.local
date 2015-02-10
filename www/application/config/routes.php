@@ -53,7 +53,7 @@ $route['getStudentTicket'] = 'front/pages/getStudentTicket';
 $route['getStudentTicket/save'] = 'front/pages/getStudentTicket/save';
 
 $route['send_backcall_from_point'] = 'front/pages/send_backcall_from_point';
-$route['send_backcall_from_point/save/(:any)'] = 'front/pages/send_backcall_from_point/save/$1';
+$route['send_backcall_from_point/save'] = 'front/pages/send_backcall_from_point/save';
 
 $route['trener/(:any)'] = 'front/pages/trener/$1';
 

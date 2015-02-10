@@ -294,32 +294,40 @@ class Pages extends CI_Controller {
                     echo $arr['error'];
                     $this->front_model->set_backcall();
                     $point_url = $this->input->post('point_url');
-                    //$to = $this->admins_model->get_email();
+                    preg_match('/([_a-z0-9-]+)\/$/i', $point_url, $matches);
+                    $point = $this->points_model->get_point_by_url_for_front($matches[1]);
+                    $point_email = $point['email'];
+                    $admin_email = $this->main_model->get_adm_email();
+                    $admin_email = $admin_email['email'];
 
-                    $config = array(
-                        'protocol' => 'smtp',
-                        'smtp_host' => 'ssl://smtp.googlemail.com',
-                        'smtp_port' => 465,
-                        'smtp_user' => 'officialakniet@gmail.com',
-                        'smtp_pass' => 'googstud321',
-                        'mailtype' => 'html',
-                        'charset' => 'utf-8'
-                    );
-                    $this->load->library('email');
-                    $this->email->initialize($config);
 
-                    $this->email->set_newline("\r\n");
-                    $this->email->from('officialakniet@gmail.com', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
-                    $this->email->to('protected.for@gmail.com');
-                    $this->email->subject('Новый заказ на обратный звонок');
-                    $this->email->message(
-                            'Имя: ' . $this->input->post('name') . '<br/>' .
-                            'Телефон: ' . $this->input->post('phone') . '<br/>' .
-                            'Ссылка на спорт. точку: ' . $this->input->post('point_url') . '<br/>' .
-                            'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
-                            'IP-адрес: ' . $this->input->ip_address()
-                    );
-                    $this->email->send();
+                    if (valid_email($point_email)) {
+                        $config = array(
+                            'protocol' => 'smtp',
+                            'smtp_host' => 'ssl://smtp.googlemail.com',
+                            'smtp_port' => 465,
+                            'smtp_user' => 'officialakniet@gmail.com',
+                            'smtp_pass' => 'googstud321',
+                            'mailtype' => 'html',
+                            'charset' => 'utf-8'
+                        );
+                        $this->load->library('email');
+                        $this->email->initialize($config);
+
+                        $this->email->set_newline("\r\n");
+                        $this->email->from('support@jeisport.ru', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                        $this->email->to($point_email);
+                        $this->email->cc($admin_email);
+                        $this->email->subject('Новый заказ на обратный звонок');
+                        $this->email->message(
+                                'Имя: ' . $this->input->post('name') . '<br/>' .
+                                'Телефон: ' . $this->input->post('phone') . '<br/>' .
+                                'Ссылка на спорт. точку: ' . $this->input->post('point_url') . '<br/>' .
+                                'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
+                                'IP-адрес: ' . $this->input->ip_address()
+                        );
+                        $this->email->send();
+                    }
                 }
             } else {
                 echo 'Неверный post запрос';

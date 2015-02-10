@@ -40,11 +40,12 @@ class Blog extends CI_Controller {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');
         }
-        global $object; $object = 'blog';
+        global $object;
+        $object = 'blog';
         $data['title'] = 'Административная панель';
         $blog = $this->blogs_model->get_blogs($id);
         $data['blog'] = $blog;
-        $tags = $this->main_model->get_tags($id);
+        $tags = $this->main_model->get_tags($id, $object);
         $data['tags'] = $tags;
         if ($this->input->post('do') == 'blogEdit') {
             $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');

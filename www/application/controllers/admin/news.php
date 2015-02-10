@@ -24,13 +24,17 @@ class News extends CI_Controller {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');
         }
+        global $object;
+        $object = 'news';
         $data['title'] = 'Административная панель';
         $new = $this->news_model->get_news($id);
         $data['new'] = $new;
-        
+        $tags = $this->main_model->get_tags($id, $object);
+        $data['tags'] = $tags;
+
         $newcategories = $this->newscategories_model->get_newscategories_for_new();
         $data['newcategories'] = $newcategories;
-        
+
         if ($this->input->post('do') == 'newEdit') {
             $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');
             $this->form_validation->set_rules('category', 'Категория', 'trim|xss_clean');
@@ -57,6 +61,11 @@ class News extends CI_Controller {
 
                 $image_data = $this->upload->data();
                 if ($_FILES['image']['name'] == '') {
+                    if ($this->input->post('tags')) {
+                        foreach ($this->input->post('tags') as $tag) {
+                            $this->main_model->set_tag($tag, $id, $object);
+                        }
+                    }
                     $this->news_model->update_new($id);
                     $arr = array(
                         'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Новость была успешно обновлена!</div>'
@@ -71,6 +80,11 @@ class News extends CI_Controller {
                         $new = $this->news_model->get_news($id);
                         if (file_exists('images/news/' . $new['image'])) {
                             unlink('images/news/' . $new['image']);
+                            if ($this->input->post('tags')) {
+                                foreach ($this->input->post('tags') as $tag) {
+                                    $this->main_model->set_tag($tag, $id, $object);
+                                }
+                            }
                             $image_data = $this->upload->data();
                             $this->news_model->update_new($id, $image_data['file_name']);
                             $arr = array(
@@ -79,6 +93,11 @@ class News extends CI_Controller {
                             $this->session->set_userdata($arr);
                             redirect('admin/settings/news/edit/' . $new['id']);
                         } else {
+                            if ($this->input->post('tags')) {
+                                foreach ($this->input->post('tags') as $tag) {
+                                    $this->main_model->set_tag($tag, $id, $object);
+                                }
+                            }
                             $image_data = $this->upload->data();
                             $this->news_model->update_new($id, $image_data['file_name']);
                             $arr = array(
@@ -106,7 +125,7 @@ class News extends CI_Controller {
         $data['title'] = 'Административная панель';
         $newcategories = $this->newscategories_model->get_newscategories_for_new();
         $data['newcategories'] = $newcategories;
-        
+
         if ($this->input->post('do') == 'newAdd') {
             $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');
             $this->form_validation->set_rules('category', 'Категория', 'trim|xss_clean');

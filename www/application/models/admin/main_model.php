@@ -44,9 +44,9 @@ class Main_model extends CI_Model {
         }
     }
 
-    public function get_tags($page_id) {
+    public function get_tags($page_id, $object) {
         if ($page_id) {
-            $query = $this->db->get_where('tags', array('page_id' => $page_id, 'object' => 'blog'));
+            $query = $this->db->get_where('tags', array('page_id' => $page_id, 'object' => $object));
             return $query->result_array();
         }
     }
