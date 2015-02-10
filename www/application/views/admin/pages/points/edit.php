@@ -67,6 +67,10 @@
             <input required name='graphite' value="<?= $point['graphite'] ?>" type="text" class="form-control" id="graphite" placeholder="6:00 - 23:00 - Пн-Сб">
         </div>
         <div class="form-group">
+            <label for="youtube">Ключ видео с youtube</label>
+            <input required name='youtube' value="<?= $point['youtube'] ?>" type="text" class="form-control" id="youtube" placeholder="v5NfMbQn8jA">
+        </div>
+        <div class="form-group">
             <label for="image">Главное изображение</label><br/>
             <div class="well"><img width="200px" style="border: 1px solid black; background-color: grey;" src="/images/points/<?= $point['image'] ?>"></div>
             <input name='image' type="file" class="btn-file" id="image">

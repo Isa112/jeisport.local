@@ -64,6 +64,10 @@
             <input required name='graphite' value="<?= set_value('graphite') ?>" type="text" class="form-control" id="graphite" placeholder="6:00 - 23:00 - Пн-Сб">
         </div>
         <div class="form-group">
+            <label for="youtube">Ключ видео с youtube</label>
+            <input required name='youtube' value="<?= set_value('youtube') ?>" type="text" class="form-control" id="youtube" placeholder="v5NfMbQn8jA">
+        </div>
+        <div class="form-group">
             <label for="image">Главное изображение</label><br/>
             <input name='image' type="file" class="btn-file" id="image" required>
             <p class="help-block">Выберите главное фото для спортивной точки</p>

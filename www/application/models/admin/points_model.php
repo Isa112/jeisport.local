@@ -167,6 +167,7 @@ class Points_model extends CI_Model {
 
         $data = array(
             'name' => $this->input->post('name'),
+            'youtube' => $this->input->post('youtube'),
             'order' => 0,
             'header' => $this->input->post('header'),
             'url' => str_replace(array(')', '('), array('', ''), $this->input->post('url')),
@@ -205,6 +206,7 @@ class Points_model extends CI_Model {
         if (!$image) {
             $data = array(
                 'name' => $this->input->post('name'),
+                'youtube' => $this->input->post('youtube'),
                 'url' => $this->input->post('url'),
                 'title' => $this->input->post('title'),
                 'desc' => $this->input->post('desc'),
@@ -232,6 +234,7 @@ class Points_model extends CI_Model {
         } else {
             $data = array(
                 'name' => $this->input->post('name'),
+                'youtube' => $this->input->post('youtube'),
                 'url' => $this->input->post('url'),
                 'title' => $this->input->post('title'),
                 'desc' => $this->input->post('desc'),

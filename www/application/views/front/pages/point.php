@@ -120,12 +120,13 @@
                 </ul>
             </div>
             <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div><!-- slider -->
+        <?php if (strlen($point['youtube']) == 11): ?>
+            <h3 class="block-title presentation_title_h3" id="section_3">Видео</h3><!-- title -->
 
-        <h3 class="block-title presentation_title_h3" id="section_3">Видео</h3><!-- title -->
-
-        <div class="youtube">
-            <iframe width="640" height="388" src="https://www.youtube.com/embed/trIbvBq2-jA" frameborder="0" allowfullscreen=""></iframe>
-        </div>
+            <div class="youtube">
+                <iframe width="640" height="388" src="https://www.youtube.com/embed/<?= $point['youtube'] ?>" frameborder="0" allowfullscreen></iframe>
+            </div>
+        <?php endif; ?>
 
         <h3 class="block-title comments_title" id="section_1">Отзывы</h3><!-- title -->
 

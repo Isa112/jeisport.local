@@ -59,6 +59,7 @@ class Points extends CI_Controller {
 
         if ($this->input->post('do') == 'pointAdd') {
             $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('youtube', 'Видео с youtube', 'trim|xss_clean');
             $this->form_validation->set_rules('url', 'ЧПУ', 'trim|required|xss_clean|callback_check_url');
             $this->form_validation->set_rules('graphite', 'График работы', 'trim|required|xss_clean');
             $this->form_validation->set_rules('sport', 'Вид спорта', 'trim|required|xss_clean');
@@ -156,6 +157,7 @@ class Points extends CI_Controller {
 
         if ($this->input->post('do') == 'pointEdit') {
             $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('youtube', 'Видео с youtube', 'trim|xss_clean');
             $this->form_validation->set_rules('url', 'ЧПУ', 'trim|required|xss_clean|callback_check_url');
             $this->form_validation->set_rules('sport', 'Вид спорта', 'trim|required|xss_clean');
             $this->form_validation->set_rules('graphite', 'График работы', 'trim|required|xss_clean');
