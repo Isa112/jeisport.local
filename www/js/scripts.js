@@ -168,7 +168,7 @@ $(function () { // when DOM is ready
     });
 
     $('#select-1').change(function () {
-        $.post('get_sports', {category: $(this).val()}, function (data) {
+        $.post('/get_sports', {category: $(this).val()}, function (data) {
             $('#select-2').html(data);
         });
     });

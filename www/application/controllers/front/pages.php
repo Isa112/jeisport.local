@@ -56,6 +56,8 @@ class Pages extends CI_Controller {
         $data['categories'] = $categories;
 
         $category = $this->categories_model->get_category_by_url_for_front($category);
+        $subways = $this->subways_model->get_subways_for_point();
+        $data['subways'] = $subways;
         if (!$category) {
             $this->output->set_status_header('404');
             $this->load->view('front/pages/404', $data);
@@ -84,6 +86,8 @@ class Pages extends CI_Controller {
     public function points($category, $sport) {
         $categories = $this->categories_model->get_categories_for_front();
         $data['categories'] = $categories;
+        $subways = $this->subways_model->get_subways_for_point();
+        $data['subways'] = $subways;
 
         $sport = $this->sports_model->get_sport_by_url($sport);
         if (!$sport) {
@@ -127,6 +131,8 @@ class Pages extends CI_Controller {
         $point = $this->points_model->get_point_by_url_for_front($point);
         $sport = $this->sports_model->get_sport_by_url_for_front($sport);
         $category = $this->categories_model->get_category_by_url_for_front($category);
+        $subways = $this->subways_model->get_subways_for_point();
+        $data['subways'] = $subways;
 
         $data['stitle'] = $point['name'];
         $data['category'] = $category;
