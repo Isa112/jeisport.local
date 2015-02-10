@@ -55,6 +55,10 @@
             <input name='email' value="<?= $point['email'] ?>" type="email" class="form-control" id="email" placeholder="">
         </div>
         <div class="form-group">
+            <label for="admemail">E-mail администратора</label>
+            <input name='admemail' value="<?= $point['admemail'] ?>" type="email" class="form-control" id="admemail" placeholder="">
+        </div>
+        <div class="form-group">
             <label for="site">Сайт</label>
             <input name='site' value="<?= $point['site'] ?>" type="text" class="form-control" id="site" placeholder="www.site.com">
         </div>

@@ -107,17 +107,7 @@
                         <span>Доставка по Москве 350 рублей.</span>
                     </div>
                     <div class="ticket_form">
-                        <h5>Для получения студ билета спортсмена укажите:</h5>
-                        <input type="radio" name="radio1" value="Оплата при доставке курьеру">
-                        <label for="radio1">Оплата при доставке курьеру</label>
-                        <input type="radio" name="radio1" value="Заберу сам(а) - Оплатить онлайн">
-                        <label for="radio2">Заберу сам(а) - Оплатить онлайн"</label>
-                        <input type="text" placeholder="Имя">
-                        <input type="text" placeholder="Фамилия">
-                        <input type="text" class="no-margin" placeholder="Отчество">
-                        <input type="text" placeholder="Место учебы">
-                        <input type="text" placeholder="Контакты">
-                        <input type="button" value="Отправить">
+                        <div id="sbs_res"></div>
                     </div>
                 </div>
             </div>
@@ -139,11 +129,7 @@
                 <div class="modal-title"><a href="#" class="close-modal"></a></div>
                 <div class="modal-content">
                     <h3>Введите телефон и имя и наш менеджер  свяжется с Вами!</h3>
-                    <form action="">
-                        <input type="text" placeholder="Введите имя">
-                        <input type="text" placeholder="Введите телефон">
-                        <input type="button" value="Отправить">
-                    </form>
+                    <div id="backcall_form"></div>
                     <div class="callback_bottom"></div>
                 </div>
             </div>

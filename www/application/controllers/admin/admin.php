@@ -48,7 +48,8 @@ class Admin extends CI_Controller {
         if ($page != 'login' && !$this->session->userdata('logged')) {
             redirect('admin/login');
         }
-
+        
+        $data['adm_email'] = $this->main_model->get_adm_email();
         $data['title'] = 'Административная панель';
         $this->load->view('admin/templates/metahead', $data);
         $this->load->view('admin/templates/navbar', $data);

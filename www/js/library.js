@@ -242,6 +242,12 @@ jQuery(document).ready(function () {
         window.location.href = "/search/" + $(this).find('.search').val();
     });
 
+    $('#adm_email_save').click(function () {
+        $.post('/admin_email_save/', {email: $(this).parent().prev().val()}, function (data) {
+            alert('Сохранено');
+        })
+    });
+    
     image_del_click_subscription()
     hall_del_click_subscription()
     trener_del_click_subscription()

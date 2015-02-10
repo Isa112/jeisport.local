@@ -48,6 +48,11 @@ class Settings extends CI_Controller {
         }
     }
 
+    public function admin_email_save() {
+        $email = $this->input->post('email');
+        $this->main_model->update_adm_email($email);
+    }
+
     public function tag_del() {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');

@@ -234,104 +234,68 @@ class Pages extends CI_Controller {
                     echo $arr['error'];
                     $this->front_model->set_request();
                     $to = $this->admins_model->get_email();
-                    $msg = <<<MSG
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Имя</div>
-            <div class="panel-body">
-                <?= {$this->input->post('name')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">E-mail</div>
-            <div class="panel-body">
-                <a href="mailto:<?= {$this->input->post('email')} ?>"><?= {$this->input->post('email')} ?></a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Дата отправки</div>
-            <div class="panel-body">
-                <?= {$this->input->post('date')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">IP-адрес</div>
-            <div class="panel-body">
-                <?= {$this->input->post('ip')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Возраст</div>
-            <div class="panel-body">
-                <?= {$this->input->post('age')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Пол</div>
-            <div class="panel-body">
-                <?= {$this->input->post('sex')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Вес</div>
-            <div class="panel-body">
-                <?= {$this->input->post('weight')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Какими видами спорта хотели бы заниматься</div>
-            <div class="panel-body">
-                <?= {$this->input->post('sports')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Ближайшее метро</div>
-            <div class="panel-body">
-                <?= {$this->input->post('subway')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Противопоказания от врача</div>
-            <div class="panel-body">
-                <?= {$this->input->post('contrains')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Сколько готовы платить в месяц</div>
-            <div class="panel-body">
-                <?= {$this->input->post('canpay')} ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Телефон</div>
-            <div class="panel-body">
-                <?= {$this->input->post('phone')} ?>
-            </div>
-        </div>
-    </div>
-MSG;
+                }
+            } else {
+                echo 'Неверный post запрос';
+            }
+        } else {
+            echo 'Ошибка при отправке формы';
+        }
+    }
+
+    public function getStudentTicket($action = null) {
+        if (!$action) {
+            $this->load->view('front/pages/sendStudentTicket');
+        } elseif ($action == 'save') {
+            if ($this->input->post('do') == 'sendsbs') {
+                $this->form_validation->set_rules('name', 'Имя', 'trim|required|xss_clean');
+                $this->form_validation->set_rules('sname', 'Фамилия', 'trim|required|xss_clean');
+                $this->form_validation->set_rules('mname', 'Отчество', 'trim|required|xss_clean');
+                $this->form_validation->set_rules('univer', 'Место учебы', 'trim|required|xss_clean');
+                $this->form_validation->set_rules('contacts', 'Контакты', 'trim|required|xss_clean');
+                $this->form_validation->set_rules('delivery', 'Доставка', 'trim|xss_clean');
+
+                $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
+
+                if ($this->form_validation->run() == FALSE) {
+                    $this->load->view('front/pages/sendStudentTicket');
+                } else {
+                    $arr = array(
+                        'error' => '<div class="form-item" style="color:green; font-weight:bold;padding: 10px 30px; margin-top: 30px; text-align: center;"><strong>Спасибо! </strong>Ваша заявка была успешно отправлена! Ожидайте, в скором времени наш менеджер свяжется с вами</div>'
+                    );
+                    echo $arr['error'];
+                    $this->front_model->set_sbs();
+                    //$to = $this->admins_model->get_email();
+                }
+            } else {
+                echo 'Неверный post запрос';
+            }
+        } else {
+            echo 'Ошибка при отправке формы';
+        }
+    }
+
+    public function send_backcall_from_point($action = null) {
+        if (!$action) {
+            $this->load->view('front/pages/sendbackcall');
+        } elseif ($action == 'save') {
+            if ($this->input->post('do') == 'sendbackcall') {
+                $this->form_validation->set_rules('name', 'Имя', 'trim|required|xss_clean');
+                $this->form_validation->set_rules('phone', 'Телефон', 'trim|required|xss_clean');
+
+                $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
+
+                if ($this->form_validation->run() == FALSE) {
+                    $this->load->view('front/pages/sendbackcall');
+                } else {
+                    $arr = array(
+                        'error' => '<div class="form-item" style="color:green; font-weight:bold;padding: 10px 30px; margin-top: 30px; text-align: center;"><strong>Спасибо! </strong>Ваша заявка была успешно отправлена! Ожидайте, в скором времени наш менеджер свяжется с вами</div>'
+                    );
+                    echo $arr['error'];
+                    $this->front_model->set_backcall();
+                    $point_url = $this->input->post('point_url');
+                    //$to = $this->admins_model->get_email();
+
                     $config = array(
                         'protocol' => 'smtp',
                         'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -345,26 +309,17 @@ MSG;
                     $this->email->initialize($config);
 
                     $this->email->set_newline("\r\n");
-                    $this->email->from("jeisport@mail.ru", "Jeisport");
-                    $this->email->to($to['email']);
-                    $this->email->subject('Новая заявка с сайта jeisport');
-                    $this->email->message($msg);
+                    $this->email->from('officialakniet@gmail.com', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->to('protected.for@gmail.com');
+                    $this->email->subject('Новый заказ на обратный звонок');
+                    $this->email->message(
+                            'Имя: ' . $this->input->post('name') . '<br/>' .
+                            'Телефон: ' . $this->input->post('phone') . '<br/>' .
+                            'Ссылка на спорт. точку: ' . $this->input->post('point_url') . '<br/>' .
+                            'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
+                            'IP-адрес: ' . $this->input->ip_address()
+                    );
                     $this->email->send();
-
-//                    $this->load->library('email');
-//                    $config['protocol'] = 'smtp';
-//                    $config['smtp_host'] = 'smtp.mail.ru';
-//                    $config['smtp_user'] = 'jeisport@mail.ru';
-//                    $config['smtp_pass'] = 'jeisport123';
-//                    $config['mailtype'] = 'html';
-//                    $config['validate'] = true;
-//                    $this->email->initialize($config);
-//                    $this->email->mailtype = 'html';
-//                    $this->email->from("jeisport@mail.ru", "Jeisport");
-//                    $this->email->to($to['email']);
-//                    $this->email->subject($this->_mail_encode("Сообщение с сайта jeisport", "utf-8"));
-//                    $this->email->message($msg);
-//                    $this->email->send();
                 }
             } else {
                 echo 'Неверный post запрос';

@@ -5,6 +5,16 @@
             echo 'active';
         }
         ?>">Обратная связь <span style="background-color:green;" class="badge"><?= $this->feedback_model->get_unread_msgs(); ?></span></a>
+        <a href="/admin/settings/backcall" class="list-group-item <?php
+        if ($this->uri->segment(3) == 'backcall') {
+            echo 'active';
+        }
+        ?>">Заявки на обратный звонок</a>
+        <a href="/admin/settings/studentcards" class="list-group-item <?php
+        if ($this->uri->segment(3) == 'studentcards') {
+            echo 'active';
+        }
+        ?>">Заявки на покупку студ. билета</a>
         <a href="/admin/settings/blog" class="list-group-item <?php
         if ($this->uri->segment(3) == 'blog') {
             echo 'active';

@@ -1,4 +1,3 @@
-
 $(window).load(function () {
     $('.flexslider').flexslider({
         animation: "slide",
@@ -23,7 +22,7 @@ $(window).load(function () {
     $('.trener_image').click(function () {
         var id = $(this).parent().attr('data-id');
         var point = $('.presentation_title').find('h5').text();
-        $.post('/trener/' + id, { point: point }, function (data, status, hxr) {
+        $.post('/trener/' + id, {point: point}, function (data, status, hxr) {
             $('.trener_popup').html(data);
         });
     });
@@ -79,6 +78,69 @@ function form_sendbid() {
     });
     return false;
 }
+function sendsbs() {
+    $.ajax({
+        url: '/getStudentTicket/save',
+        type: "POST",
+        dataType: "html",
+        data: $('#sbs_res').find('form').serialize(),
+        success: function (response) {
+            document.getElementById('sbs_res').innerHTML = response;
+        },
+        error: function (response) {
+            document.getElementById('sbs_res').innerHTML = "Ошибка при отправке формы";
+        }
+    });
+    return false;
+}
+function form_sendsbs() {
+    $.ajax({
+        url: '/getStudentTicket',
+        type: "POST",
+        dataType: "html",
+        success: function (response) {
+            document.getElementById('sbs_res').innerHTML = response;
+        },
+        error: function (response) {
+            document.getElementById('sbs_res').innerHTML = "Ошибка при отправке формы";
+        }
+    });
+    return false;
+}
+function sendbackcall(url) {
+    $('#back_call_form').css('opacity', '0.5');
+    $.ajax({
+        url: '/send_backcall_from_point/save/' + url,
+        type: "POST",
+        dataType: "html",
+        data: $('#backcall_form').find('form').serialize(),
+        success: function (response) {
+            document.getElementById('backcall_form').innerHTML = response;
+            var url = $('#point_url').attr('href');
+            $('#point_input_url').val(url);
+        },
+        error: function (response) {
+            document.getElementById('backcall_form').innerHTML = "Ошибка при отправке формы";
+        }
+    });
+    return false;
+}
+function form_sendbackcall() {
+    $.ajax({
+        url: '/send_backcall_from_point',
+        type: "POST",
+        dataType: "html",
+        success: function (response) {
+            document.getElementById('backcall_form').innerHTML = response;
+            var url = $('#point_url').attr('href');
+            $('#point_input_url').val(url);
+        },
+        error: function (response) {
+            document.getElementById('backcall_form').innerHTML = "Ошибка при отправке формы";
+        }
+    });
+    return false;
+}
 $(function () { // when DOM is ready
     // open .select element
     $('.select_open_1').click(function () {
@@ -95,6 +157,14 @@ $(function () { // when DOM is ready
 
     $('.send_request').click(function () {
         form_sendbid();
+    });
+
+    $('.ticket').click(function () {
+        form_sendsbs();
+    });
+
+    $('#send_backcall').click(function () {
+        form_sendbackcall();
     });
 
 });

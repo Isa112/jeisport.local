@@ -27,6 +27,37 @@ class Front_model extends CI_Model {
         return $this->db->insert('requests', $data);
     }
 
+    public function set_sbs() {
+        date_default_timezone_set('Asia/Bishkek');
+        $data = array(
+            'name' => $this->input->post('name'),
+            'sname' => $this->input->post('sname'),
+            'mname' => $this->input->post('mname'),
+            'univer' => $this->input->post('univer'),
+            'contacts' => nl2br($this->input->post('contacts')),
+            'delivery' => $this->input->post('delivery'),
+            'date' => date('d.m.Y H:i:s'),
+            'ip' => $this->input->ip_address(),
+            'read' => 0
+        );
+
+        return $this->db->insert('studentcards', $data);
+    }
+
+    public function set_backcall() {
+        date_default_timezone_set('Asia/Bishkek');
+        $data = array(
+        'name' => $this->input->post('name'),
+        'phone' => $this->input->post('phone'),
+        'point_url' => $this->input->post('point_url'),
+        'date' => date('d.m.Y H:i:s'),
+        'ip' => $this->input->ip_address(),
+        'read' => 0
+        );
+
+        return $this->db->insert('backcalls', $data);
+    }
+
     public function get_requests($id = null) {
         if ($id) {
             $query = $this->db->get_where('requests', array('id' => $id));

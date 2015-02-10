@@ -49,10 +49,15 @@ $route['search/(:any)'] = 'front/search/query/$1';
 $route['sendrequest'] = 'front/pages/sendrequest';
 $route['sendrequest/save'] = 'front/pages/sendrequest/save';
 
-$route['trener/(:any)'] = 'front/pages/trener/$1';
-        
-$route['request/read'] = 'admin/admin/setreadrequest';
+$route['getStudentTicket'] = 'front/pages/getStudentTicket';
+$route['getStudentTicket/save'] = 'front/pages/getStudentTicket/save';
 
+$route['send_backcall_from_point'] = 'front/pages/send_backcall_from_point';
+$route['send_backcall_from_point/save/(:any)'] = 'front/pages/send_backcall_from_point/save/$1';
+
+$route['trener/(:any)'] = 'front/pages/trener/$1';
+
+$route['request/read'] = 'admin/admin/setreadrequest';
 $route['request/savemail'] = 'admin/admin/savemail';
 
 
@@ -151,10 +156,22 @@ $route['admin/settings/subways/add'] = 'admin/subways/add';
 $route['admin/settings/maintext'] = 'admin/settings/maintext';
 $route['admin/settings/maintext/edit'] = 'admin/settings/maintext/edit';
 
+$route['admin_email_save'] = 'admin/settings/admin_email_save';
+
 $route['admin/settings/feedback'] = 'admin/feedback/page/feedback';
 $route['admin/settings/feedback/delete/(:any)'] = 'admin/feedback/delete/$1';
 $route['feedback/read'] = 'admin/feedback/setread';
 $route['admin/settings/feedback/(:any)'] = 'admin/feedback/page/feedback/$1';
+
+$route['admin/settings/studentcards'] = 'admin/studentcards/page/studentcards';
+$route['admin/settings/studentcards/delete/(:any)'] = 'admin/studentcards/delete/$1';
+$route['studentcards/read'] = 'admin/studentcards/setread';
+$route['admin/settings/studentcards/(:any)'] = 'admin/studentcards/page/studentcards/$1';
+
+$route['admin/settings/backcall'] = 'admin/backcall/page/backcall';
+$route['admin/settings/backcall/delete/(:any)'] = 'admin/backcall/delete/$1';
+$route['backcall/read'] = 'admin/backcall/setread';
+$route['admin/settings/backcall/(:any)'] = 'admin/backcall/page/backcall/$1';
 
 $route['admin/settings/tag_del'] = 'admin/settings/tag_del';
 

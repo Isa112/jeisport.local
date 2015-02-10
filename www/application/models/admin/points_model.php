@@ -169,7 +169,7 @@ class Points_model extends CI_Model {
             'name' => $this->input->post('name'),
             'order' => 0,
             'header' => $this->input->post('header'),
-            'url' => str_replace(array(')','('),array('',''),$this->input->post('url')),
+            'url' => str_replace(array(')', '('), array('', ''), $this->input->post('url')),
             'graphite' => $this->input->post('graphite'),
             'image' => $image,
             'sport_id' => $this->input->post('sport'),
@@ -180,6 +180,7 @@ class Points_model extends CI_Model {
             'contacts' => $this->input->post('contacts'),
             'phone' => $this->input->post('phone'),
             'email' => $this->input->post('email'),
+            'admemail' => $this->input->post('admemail'),
             'site' => $this->input->post('site'),
             'title' => $this->input->post('title'),
             'desc' => $this->input->post('desc'),
@@ -211,6 +212,7 @@ class Points_model extends CI_Model {
                 'contacts' => $this->input->post('contacts'),
                 'phone' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
+                'admemail' => $this->input->post('admemail'),
                 'site' => $this->input->post('site'),
                 'text' => $this->input->post('text'),
                 'subway1_id' => $this->input->post('subway1_id'),
@@ -238,6 +240,7 @@ class Points_model extends CI_Model {
                 'contacts' => $this->input->post('contacts'),
                 'phone' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
+                'admemail' => $this->input->post('admemail'),
                 'site' => $this->input->post('site'),
                 'text' => $this->input->post('text'),
                 'sport_id' => $this->input->post('sport'),
@@ -266,7 +269,6 @@ class Points_model extends CI_Model {
     public function delete_trener($id) {
         $this->db->delete('points_treners', array('id' => $id));
     }
-    
 
     public function get_trener_for_point($id) {
         $query = $this->db->get_where('points_treners', array('id' => $id));

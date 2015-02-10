@@ -18,6 +18,18 @@ class Main_model extends CI_Model {
         $this->db->update('maintext', $data);
     }
 
+    public function get_adm_email() {
+        $query = $this->db->get('email');
+        return $query->row_array();
+    }
+
+    public function update_adm_email($email) {
+        $data = array(
+            'email' => $email
+        );
+        $this->db->update('email', $data);
+    }
+
     public function set_tag($tag, $page_id, $object) {
         $tag = addslashes(strip_tags($tag));
         $page_id = addslashes(strip_tags($page_id));

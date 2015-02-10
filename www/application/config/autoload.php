@@ -121,6 +121,8 @@ $autoload['model'] = array(
     'admin/sports_model',
     'admin/subways_model',
     'admin/videoblog_model',
+    'admin/studentcards_model',
+    'admin/backcall_model',
     'front/front_model',
     'front/search_model'
     );

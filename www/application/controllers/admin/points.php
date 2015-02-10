@@ -65,6 +65,7 @@ class Points extends CI_Controller {
             $this->form_validation->set_rules('contacts', 'Контактная информация', 'trim|xss_clean');
             $this->form_validation->set_rules('phone', 'Телефон', 'trim|xss_clean');
             $this->form_validation->set_rules('email', 'E-mail', 'trim|xss_clean');
+            $this->form_validation->set_rules('admemail', 'E-mail администратора', 'trim|xss_clean');
             $this->form_validation->set_rules('site', 'Сайт', 'trim|xss_clean');
             $this->form_validation->set_rules('subway1_id', 'Первая станция метро', 'trim|xss_clean');
             $this->form_validation->set_rules('time1', 'Время до первой станции метро', 'trim|xss_clean');
@@ -161,6 +162,7 @@ class Points extends CI_Controller {
             $this->form_validation->set_rules('contacts', 'Контактная информация', 'trim|xss_clean');
             $this->form_validation->set_rules('phone', 'Телефон', 'trim|xss_clean');
             $this->form_validation->set_rules('email', 'E-mail', 'trim|xss_clean');
+            $this->form_validation->set_rules('admemail', 'E-mail администратора', 'trim|xss_clean');
             $this->form_validation->set_rules('site', 'Сайт', 'trim|xss_clean');
             $this->form_validation->set_rules('subway1_id', 'Первая станция метро', 'trim|xss_clean');
             $this->form_validation->set_rules('time1', 'Время до первой станции метро', 'trim|xss_clean');

@@ -6,7 +6,7 @@
     }
     $this->session->unset_userdata('error');
     ?>
-    <form action="javascript" method="post">
+    <form action="javascript:" method="post">
         <span>Все поля обязательны для заполнения!</span>
         <input <?php
         if (strpos(validation_errors(), '"Имя"')) {
