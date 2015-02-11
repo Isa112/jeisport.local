@@ -66,7 +66,7 @@
         </div>
         <div class="form-group">
             <label for="youtube">Ключ видео с youtube</label>
-            <input required name='youtube' value="<?= set_value('youtube') ?>" type="text" class="form-control" id="youtube" placeholder="v5NfMbQn8jA">
+            <input name='youtube' value="<?= set_value('youtube') ?>" type="text" class="form-control" id="youtube" placeholder="v5NfMbQn8jA">
         </div>
         <div class="form-group">
             <label for="price_month">Цена за 1 месяц</label>
