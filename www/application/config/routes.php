@@ -188,6 +188,10 @@ $route['admin/requests/(:any)'] = 'admin/admin/requests/$1';
 
 $route['admin/(:any)'] = 'admin/admin/view/$1';
 
+$route['news'] = 'front/pages/news';
+$route['news/(:num)'] = 'front/pages/news/null/$1';
+$route['blog'] = 'front/pages/blog';
+
 $route['news/views'] = 'front/pages/incnewviews';
 $route['news/(:any)'] = 'front/pages/news/$1';
 

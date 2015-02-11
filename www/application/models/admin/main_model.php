@@ -17,7 +17,7 @@ class Main_model extends CI_Model {
         );
         $this->db->update('maintext', $data);
     }
-    
+
     public function get_about() {
         $query = $this->db->get('about');
         return $query->row_array();
@@ -56,9 +56,12 @@ class Main_model extends CI_Model {
         }
     }
 
-    public function get_tags($page_id, $object) {
+    public function get_tags($page_id = null, $object) {
         if ($page_id) {
             $query = $this->db->get_where('tags', array('page_id' => $page_id, 'object' => $object));
+            return $query->result_array();
+        } else {
+            $query = $this->db->get_where('tags', array('object' => $object));
             return $query->result_array();
         }
     }

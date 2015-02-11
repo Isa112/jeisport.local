@@ -181,7 +181,7 @@
         <section>
 
             <div class="news">
-                <h4>Новости Jeisport</h4>
+                <h4 style="cursor:pointer;" onclick="window.location = '/news/'">Новости Jeisport</h4>
                 <?php if ($news): ?>
                     <?php foreach ($news as $new): ?>
                         <!-- block_item -->
@@ -207,7 +207,7 @@
             </div><!-- news -->
 
             <div class="blog">
-                <h4>Блог Jeisport</h4>
+                <h4 style="cursor:pointer;" onclick="window.location = '/blog/'">Блог Jeisport</h4>
 
                 <!-- block_item -->
                 <?php if ($posts): ?>

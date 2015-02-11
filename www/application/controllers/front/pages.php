@@ -164,14 +164,25 @@ class Pages extends CI_Controller {
         endif;
     }
 
-    public function news($new) {
+    public function news($new = null, $page = null) {
         $categories = $this->categories_model->get_categories_for_front();
         $data['categories'] = $categories;
 
         $new = $this->news_model->get_new_by_url_for_front($new);
         if (!$new) {
-            $this->output->set_status_header('404');
-            $this->load->view('front/pages/404', $data);
+            $data['title'] = 'Новости';
+            $startFrom = $page * 5;
+            $data['startFrom'] = $startFrom;
+            $data['news'] = $this->news_model->get_news_for_pagination($startFrom);
+            $data['countNews'] = count($this->news_model->get_news_for_front());
+            $data['tags'] = $this->main_model->get_tags(null, 'news');
+            $data['newsCategories'] = $this->newscategories_model->get_newscategories();
+
+            $this->load->view('front/templates/metahead', $data);
+            $this->load->view('front/templates/header', $data);
+            $this->load->view('front/templates/sub-menu', $data);
+            $this->load->view('front/pages/news', $data);
+            $this->load->view('front/templates/footer', $data);
         } else {
             $data['title'] = mb_ucfirst($new['name']);
             $data['new'] = $new;
@@ -179,7 +190,7 @@ class Pages extends CI_Controller {
             $this->load->view('front/templates/metahead', $data);
             $this->load->view('front/templates/header', $data);
             $this->load->view('front/templates/sub-menu', $data);
-            $this->load->view('front/pages/news', $data);
+            $this->load->view('front/pages/new', $data);
             $this->load->view('front/templates/footer', $data);
         }
     }

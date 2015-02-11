@@ -11,8 +11,31 @@ class News_model extends CI_Model {
             $query = $this->db->get_where('news', array('id' => $id));
             return $query->row_array();
         }
+        $this->db->order_by('active', 'desc');
         $this->db->order_by('order', 'desc');
         $query = $this->db->get('news');
+        if (count($query->result_array()) > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
+    public function get_news_for_pagination($startFrom = null) {
+
+        $this->db->order_by('order', 'desc');
+        $query = $this->db->get_where('news', array('active' => 'on'), 5, $startFrom);
+        if (count($query->result_array()) > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
+    public function get_news_for_front() {
+
+        $this->db->order_by('order', 'desc');
+        $query = $this->db->get_where('news', array('active' => 'on'));
         if (count($query->result_array()) > 0) {
             return $query->result_array();
         } else {
@@ -79,7 +102,7 @@ class News_model extends CI_Model {
             return false;
         }
     }
-    
+
     public function get_new_by_url_for_front($url) {
         if ($url) {
             $query = $this->db->get_where('news', array('url' => $url, 'active' => 'on'));

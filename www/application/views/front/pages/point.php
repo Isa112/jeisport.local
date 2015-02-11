@@ -7,6 +7,12 @@
             <li><a id="point_url" href="/<?= $category['url'] ?>/<?= $sport['url'] ?>/<?= $point['url'] ?>/"><?= $point['name'] ?></a></li>
         </ul>
         <div class="presentation">
+            <div class="flexslider presentation_slider">
+                <ul class="slides">
+                    <li><img src="/img/presentation.jpg" alt=""></li>
+                    <li><img src="/img/presentation2.jpg" alt=""></li>
+                </ul>
+            </div><!-- slider -->
             <div class="presentation_title">
                 <h5><?= $point['name'] ?></h5>
                 <a href="#section_1" class="plagination">Отзывы</a>
@@ -68,7 +74,7 @@
                 </div>
                 <h4 id="section_2">Прайс лист</h4>
                 <div id="tab">
-                    <?php if (is_string($point['price_year'])): ?>
+                    <?php if ($point['price_year']): ?>
                         <div>
                             <span>за год</span>
                             <div class="tab_content">
@@ -77,7 +83,7 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                    <?php if (is_string($point['price_6months'])): ?>
+                    <?php if ($point['price_6months']): ?>
                         <div>
                             <span>за 6 мес.</span>
                             <div class="tab_content">
@@ -86,7 +92,7 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                    <?php if (is_string($point['price_month'])): ?>
+                    <?php if ($point['price_month']): ?>
                         <div>
                             <span>за 1 мес.</span>
                             <div class="tab_content">
@@ -99,30 +105,32 @@
                 </div>
             </div>
         </div>
+        <?php if ($treners): ?>
+            <h3 class="block-title presentation_title_h3" id="section_4">Тренеры</h3><!-- title -->
 
-        <h3 class="block-title presentation_title_h3" id="section_4">Тренеры</h3><!-- title -->
+            <div class="flexslider">
+                <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                    <ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-2000px, 0px, 0px); transform: translate3d(-2000px, 0px, 0px);">
+                        <?php foreach ($treners as $trener): ?>
+                            <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
+                                <?php for ($i = 0; $i < 4; $i++): ?>
+                                    <?php if (isset($trener[$i])): ?>
+                                        <div class="video_block">
+                                            <a href="#" data-modal-id="#modal6" data-id="<?= $trener[$i]['id'] ?>" class="img_link modal-open">
+                                                <img class="trener_image" src="/images/points/treners/<?= $trener[$i]['image'] ?>" alt="" draggable="false">
+                                            </a>
+                                            <a href="#" data-modal-id="#modal6" class="title_link modal-open"><?= $trener[$i]['name'] ?></a>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul>
+            </div><!-- slider -->
+        <?php endif; ?>
 
-        <div class="flexslider">
-
-            <div class="flex-viewport" style="overflow: hidden; position: relative;">
-                <ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-2000px, 0px, 0px); transform: translate3d(-2000px, 0px, 0px);">
-                    <?php foreach ($treners as $trener): ?>
-                        <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
-                            <?php for ($i = 0; $i < 4; $i++): ?>
-                                <?php if (isset($trener[$i])): ?>
-                                    <div class="video_block">
-                                        <a href="#" data-modal-id="#modal6" data-id="<?= $trener[$i]['id'] ?>" class="img_link modal-open">
-                                            <img class="trener_image" src="/images/points/treners/<?= $trener[$i]['image'] ?>" alt="" draggable="false">
-                                        </a>
-                                        <a href="#" data-modal-id="#modal6" class="title_link modal-open"><?= $trener[$i]['name'] ?></a>
-                                    </div>
-                                <?php endif; ?>
-                            <?php endfor; ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div><!-- slider -->
         <?php if (strlen($point['youtube']) == 11): ?>
             <h3 class="block-title presentation_title_h3" id="section_3">Видео</h3><!-- title -->
 
