@@ -9,10 +9,13 @@
                         <?php
                         foreach ($categories as $cat):
                             ?>
-                            <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
-                            <?php
-                        endforeach;
-                        ?>
+                            <option <?php
+                            if ($cat['id'] == $sports[0]['category_id'])
+                                echo 'selected';
+                            ?> value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                                <?php
+                            endforeach;
+                            ?>
                     </select>
                 </label>
             </div>
@@ -21,7 +24,10 @@
                 <label for="">
                     <i></i>
                     <select id="select-2" placeholder="подкатегория" value="подкатегория">
-                        <option value="" disabled style="display: none;">Выберите категорию...</option>
+                        <!--<option value="" disabled style="display: none;">Выберите категорию...</option>-->
+                        <?php foreach ($sports as $cat): ?>
+                            <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </label>
             </div>

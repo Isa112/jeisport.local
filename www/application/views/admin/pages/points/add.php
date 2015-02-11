@@ -54,6 +54,7 @@
         <div class="form-group">
             <label for="admemail">E-mail администратора</label>
             <input name='admemail' value="<?= set_value('admemail') ?>" type="email" class="form-control" id="admemail" placeholder="">
+            <p class="help-block">На него будут приходить уведомления</p>
         </div>
         <div class="form-group">
             <label for="site">Сайт</label>
@@ -66,6 +67,18 @@
         <div class="form-group">
             <label for="youtube">Ключ видео с youtube</label>
             <input required name='youtube' value="<?= set_value('youtube') ?>" type="text" class="form-control" id="youtube" placeholder="v5NfMbQn8jA">
+        </div>
+        <div class="form-group">
+            <label for="price_month">Цена за 1 месяц</label>
+            <input name='price_month' value="<?= set_value('price_month') ?>" type="text" class="form-control" id="price_month" placeholder="35 000 руб.">
+        </div>
+        <div class="form-group">
+            <label for="price_6months">Цена за 6 месяцев</label>
+            <input name='price_6months' value="<?= set_value('price_6months') ?>" type="text" class="form-control" id="price_6months" placeholder="55 000 руб.">
+        </div>
+        <div class="form-group">
+            <label for="price_year">Цена за год</label>
+            <input name='price_year' value="<?= set_value('price_year') ?>" type="text" class="form-control" id="price_year" placeholder="65 000 руб.">
         </div>
         <div class="form-group">
             <label for="image">Главное изображение</label><br/>

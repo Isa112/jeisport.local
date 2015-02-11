@@ -35,9 +35,10 @@ class Pages extends CI_Controller {
         $subways = $this->subways_model->get_subways_for_point();
         $data['subways'] = $subways;
 
-        $sports = $this->sports_model->get_sports();
+        $first_category = $this->categories_model->get_first_category();
+        $sports = $this->sports_model->get_sports_for_category_front($first_category[0]['id']);
         $data['sports'] = $sports;
-
+        
         $data['news'] = $this->news_model->get3news_for_front();
         $data['posts'] = $this->blogs_model->get3posts_for_front();
         $maintext = $this->main_model->get_maintext();
@@ -311,7 +312,7 @@ class Pages extends CI_Controller {
                     $point_url = $this->input->post('point_url');
                     preg_match('/([_a-z0-9-]+)\/$/i', $point_url, $matches);
                     $point = $this->points_model->get_point_by_url_for_front($matches[1]);
-                    $point_email = $point['email'];
+                    $point_email = $point['admemail'];
                     $admin_email = $this->main_model->get_adm_email();
                     $admin_email = $admin_email['email'];
 
@@ -330,14 +331,14 @@ class Pages extends CI_Controller {
                         $this->email->initialize($config);
 
                         $this->email->set_newline("\r\n");
-                        $this->email->from('support@jeisport.ru', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                        $this->email->from('support@jeisport.ru', 'Заявка на звонок с сайта ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
                         $this->email->to($point_email);
                         $this->email->cc($admin_email);
                         $this->email->subject('Новый заказ на обратный звонок');
                         $this->email->message(
                                 'Имя: ' . $this->input->post('name') . '<br/>' .
                                 'Телефон: ' . $this->input->post('phone') . '<br/>' .
-                                'Ссылка на спорт. точку: ' . $this->input->post('point_url') . '<br/>' .
+                                'Ссылка на спорт. точку: <a href="' . str_ireplace('http://', '', substr(base_url(), 0, -1)) . $this->input->post('point_url') . '">' . str_ireplace('http://', '', substr(base_url(), 0, -1)) . $this->input->post('point_url') . '</a><br/>' .
                                 'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
                                 'IP-адрес: ' . $this->input->ip_address()
                         );
