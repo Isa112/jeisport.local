@@ -68,30 +68,33 @@
                 </div>
                 <h4 id="section_2">Прайс лист</h4>
                 <div id="tab">
-
-                    <div>
-                        <span>за год</span>
-                        <div class="tab_content">
-                            <span>65 000 руб.</span>
-                            <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                    <?php if (is_string($point['price_year'])): ?>
+                        <div>
+                            <span>за год</span>
+                            <div class="tab_content">
+                                <span><?= $point['price_year'] ?></span>
+                                <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div>
-                        <span>за 6 мес.</span>
-                        <div class="tab_content">
-                            <span>55 000 руб.</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, cupiditate beatae. Tenetur sint voluptate quo!</p>
+                    <?php endif; ?>
+                    <?php if (is_string($point['price_6months'])): ?>
+                        <div>
+                            <span>за 6 мес.</span>
+                            <div class="tab_content">
+                                <span><?= $point['price_6months'] ?></span>
+                                <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div>
-                        <span>за 1 мес.</span>
-                        <div class="tab_content">
-                            <span>35 000 руб.</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae aliquam dolorem dicta. Aliquid laboriosam enim, commodi quis, id iure. Iure reiciendis ex illo laboriosam deserunt doloribus aut repellat, recusandae maiores iste corrupti accusantium numquam quam illum optio. Vel, est, iure.</p>
+                    <?php endif; ?>
+                    <?php if (is_string($point['price_month'])): ?>
+                        <div>
+                            <span>за 1 мес.</span>
+                            <div class="tab_content">
+                                <span><?= $point['price_month'] ?></span>
+                                <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
 
                 </div>
             </div>

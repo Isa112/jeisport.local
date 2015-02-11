@@ -191,6 +191,9 @@ class Points_model extends CI_Model {
             'payed' => $this->input->post('payed'),
             'payedf' => $this->input->post('payedf'),
             'payedt' => $this->input->post('payedt'),
+            'price_month' => $this->input->post('price_month'),
+            'price_6months' => $this->input->post('price_6months'),
+            'price_year' => $this->input->post('price_year'),
             'coords' => $this->input->post('coords')
         );
 
@@ -227,6 +230,9 @@ class Points_model extends CI_Model {
                 'payedf' => $this->input->post('payedf'),
                 'payedt' => $this->input->post('payedt'),
                 'graphite' => $this->input->post('graphite'),
+                'price_month' => $this->input->post('price_month'),
+                'price_6months' => $this->input->post('price_6months'),
+                'price_year' => $this->input->post('price_year'),
                 'coords' => $this->input->post('coords')
             );
             $this->db->where('id', $id);
@@ -252,6 +258,9 @@ class Points_model extends CI_Model {
                 'payedf' => $this->input->post('payedf'),
                 'payedt' => $this->input->post('payedt'),
                 'graphite' => $this->input->post('graphite'),
+                'price_month' => $this->input->post('price_month'),
+                'price_6months' => $this->input->post('price_6months'),
+                'price_year' => $this->input->post('price_year'),
                 'coords' => mb_substr(mb_substr($this->input->post('coords'), 1, mb_strlen($this->input->post('coords'), 'utf-8'), 'utf-8'), 0, -1)
             );
 

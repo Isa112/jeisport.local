@@ -17,6 +17,18 @@ class Main_model extends CI_Model {
         );
         $this->db->update('maintext', $data);
     }
+    
+    public function get_about() {
+        $query = $this->db->get('about');
+        return $query->row_array();
+    }
+
+    public function update_about() {
+        $data = array(
+            'text' => $this->input->post('text')
+        );
+        $this->db->update('about', $data);
+    }
 
     public function get_adm_email() {
         $query = $this->db->get('email');

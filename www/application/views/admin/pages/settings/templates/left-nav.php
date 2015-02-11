@@ -35,16 +35,21 @@
             echo 'active';
         }
         ?>">Станции метро</a>
+        <a href="/admin/settings/videoblog" class="list-group-item <?php
+        if ($this->uri->segment(3) == 'videoblog') {
+            echo 'active';
+        }
+        ?>">Видео блог</a>
         <a href="/admin/settings/maintext" class="list-group-item <?php
         if ($this->uri->segment(3) == 'maintext') {
             echo 'active';
         }
         ?>">Текст на главной</a>
-        <a href="/admin/settings/videoblog" class="list-group-item <?php
-           if ($this->uri->segment(3) == 'videoblog') {
+        <a href="/admin/settings/about" class="list-group-item <?php
+           if ($this->uri->segment(3) == 'about') {
                echo 'active';
            }
-           ?>">Видео блог</a>
+           ?>">Текст "О нас"</a>
         <!--        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
                 <a href="#" class="list-group-item">Vestibulum at eros</a>-->
     </div>

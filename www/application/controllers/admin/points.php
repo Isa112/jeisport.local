@@ -77,6 +77,9 @@ class Points extends CI_Controller {
             $this->form_validation->set_rules('keyw', 'Мета keywords', 'trim|xss_clean');
             $this->form_validation->set_rules('payedf', 'Оплачен с', 'trim|xss_clean');
             $this->form_validation->set_rules('payedt', 'Оплачен по', 'trim|xss_clean');
+            $this->form_validation->set_rules('price_month', 'Цена за 1 месяц', 'trim|xss_clean');
+            $this->form_validation->set_rules('price_6months', 'Цена за 6 месяцев', 'trim|xss_clean');
+            $this->form_validation->set_rules('price_year', 'Цена за год', 'trim|xss_clean');
         }
         $data['title'] = 'Добавление спортивной точки';
 
@@ -175,6 +178,9 @@ class Points extends CI_Controller {
             $this->form_validation->set_rules('keyw', 'Мета keywords', 'trim|xss_clean');
             $this->form_validation->set_rules('payedf', 'Оплачен с', 'trim|xss_clean');
             $this->form_validation->set_rules('payedt', 'Оплачен по', 'trim|xss_clean');
+            $this->form_validation->set_rules('price_month', 'Цена за 1 месяц', 'trim|xss_clean');
+            $this->form_validation->set_rules('price_6months', 'Цена за 6 месяцев', 'trim|xss_clean');
+            $this->form_validation->set_rules('price_year', 'Цена за год', 'trim|xss_clean');
 
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
 

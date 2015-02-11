@@ -43,6 +43,8 @@ if (!defined('BASEPATH'))
 
 $route['default_controller'] = 'front/pages/view';
 
+$route['about'] = 'front/pages/view/about';
+
 $route['search'] = 'front/search';
 $route['search/(:any)'] = 'front/search/query/$1';
 
@@ -157,6 +159,9 @@ $route['admin/settings/subways/add'] = 'admin/subways/add';
 
 $route['admin/settings/maintext'] = 'admin/settings/maintext';
 $route['admin/settings/maintext/edit'] = 'admin/settings/maintext/edit';
+
+$route['admin/settings/about'] = 'admin/settings/about';
+$route['admin/settings/about/edit'] = 'admin/settings/about/edit';
 
 $route['admin_email_save'] = 'admin/settings/admin_email_save';
 

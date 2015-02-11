@@ -33,7 +33,13 @@
                             <label for="">
                                 <i class="select_open_2"></i>
                                 <select id="select-2" placeholder="подкатегория" value="подкатегория">
-                                    <option value="" disabled style="display: none;">Выберите категорию...</option>
+                                    <?php
+                                    foreach ($sports as $cat):
+                                        ?>
+                                        <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                                        <?php
+                                    endforeach;
+                                    ?>
                                 </select>
                             </label>
                         </div>

@@ -49,6 +49,16 @@ class Categories_model extends CI_Model {
         }
     }
 
+    public function get_first_category() {
+        $this->db->order_by('order', 'desc');
+        $query = $this->db->get('categories');
+        if (count($query->result_array()) > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
     public function get_category_for_point($id) {
         if ($id) {
             $query = $this->db->get_where('categories', array('id' => $id));

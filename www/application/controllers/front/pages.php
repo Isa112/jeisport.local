@@ -24,9 +24,6 @@ class Pages extends CI_Controller {
             $this->output->set_status_header('404');
             $this->load->view('front/pages/404', $data);
         }
-
-
-
         $data['title'] = 'Jeisport - Самая обширная база спортивных клубов Москвы!';
 
         $categories = $this->categories_model->get_categories_for_front();
@@ -38,12 +35,15 @@ class Pages extends CI_Controller {
         $first_category = $this->categories_model->get_first_category();
         $sports = $this->sports_model->get_sports_for_category_front($first_category[0]['id']);
         $data['sports'] = $sports;
-        
+
         $data['news'] = $this->news_model->get3news_for_front();
         $data['posts'] = $this->blogs_model->get3posts_for_front();
         $maintext = $this->main_model->get_maintext();
 
         $data['maintext'] = $maintext['text'];
+        if ($page == 'about') {
+            $data['about_text'] = $this->main_model->get_about();
+        }
 
         $this->load->view('front/templates/metahead', $data);
         $this->load->view('front/templates/header', $data);
@@ -281,7 +281,7 @@ class Pages extends CI_Controller {
                     );
                     echo $arr['error'];
                     $this->front_model->set_sbs();
-                    //$to = $this->admins_model->get_email();
+//$to = $this->admins_model->get_email();
                 }
             } else {
                 echo 'Неверный post запрос';
@@ -411,7 +411,7 @@ class Pages extends CI_Controller {
         $category = $this->input->post('category');
         $sports = $this->sports_model->get_ordered_sports($category);
         foreach ($sports as $sport) {
-            echo '<option value="' . $sport['id'] . '">' . $sport['name'] . '</option>';
+            echo '<option value="' . $sport ['id'] . '">' . $sport ['name'] . '</option>';
         }
     }
 
