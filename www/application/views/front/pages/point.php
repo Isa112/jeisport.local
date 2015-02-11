@@ -9,16 +9,23 @@
         <div class="presentation">
             <div class="flexslider presentation_slider">
                 <ul class="slides">
-                    <li><img src="/img/presentation.jpg" alt=""></li>
-                    <li><img src="/img/presentation2.jpg" alt=""></li>
+                    <?php foreach ($halls as $hall): ?>
+                        <li><img src="/images/points/halls/<?= $hall['image'] ?>" alt="<?= $hall['name'] ?>"></li>
+                    <?php endforeach; ?>
                 </ul>
             </div><!-- slider -->
             <div class="presentation_title">
                 <h5><?= $point['name'] ?></h5>
                 <a href="#section_1" class="plagination">Отзывы</a>
-                <a href="#section_2" class="plagination">Прайс лист </a>
-                <a href="#section_3" class="plagination">Видео</a>
-                <a href="#section_4" class="plagination">Тренера</a>
+                <?php if ($point['price_year'] || $point['price_6months'] || $point['price_month']): ?>
+                    <a href="#section_2" class="plagination">Прайс лист </a>
+                <?php endif; ?>
+                <?php if (strlen($point['youtube']) == 11): ?>
+                    <a href="#section_3" class="plagination">Видео</a>
+                <?php endif; ?>
+                <?php if ($treners): ?>
+                    <a href="#section_4" class="plagination">Тренера</a>
+                <?php endif; ?>
             </div>
             <div class="presentation_adress">
                 <h6><?= $point['contacts'] ?></h6>
@@ -72,37 +79,38 @@
                     <p>Чтобы записаться на пробное посещение или задать вопросы менеджеру клуба закажи обратный звонок</p>
                     <a href="javascript:" id="send_backcall" class="modal-open" data-modal-id="#modal5">Заказать обратный звонок</a>
                 </div>
-                <h4 id="section_2">Прайс лист</h4>
-                <div id="tab">
-                    <?php if ($point['price_year']): ?>
-                        <div>
-                            <span>за год</span>
-                            <div class="tab_content">
-                                <span><?= $point['price_year'] ?></span>
-                                <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                <?php if ($point['price_year'] || $point['price_6months'] || $point['price_month']): ?>
+                    <h4 id="section_2">Прайс лист</h4>
+                    <div id="tab">
+                        <?php if ($point['price_year']): ?>
+                            <div>
+                                <span>за год</span>
+                                <div class="tab_content">
+                                    <span><?= $point['price_year'] ?></span>
+                                    <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                                </div>
                             </div>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($point['price_6months']): ?>
-                        <div>
-                            <span>за 6 мес.</span>
-                            <div class="tab_content">
-                                <span><?= $point['price_6months'] ?></span>
-                                <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                        <?php endif; ?>
+                        <?php if ($point['price_6months']): ?>
+                            <div>
+                                <span>за 6 мес.</span>
+                                <div class="tab_content">
+                                    <span><?= $point['price_6months'] ?></span>
+                                    <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                                </div>
                             </div>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($point['price_month']): ?>
-                        <div>
-                            <span>за 1 мес.</span>
-                            <div class="tab_content">
-                                <span><?= $point['price_month'] ?></span>
-                                <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                        <?php endif; ?>
+                        <?php if ($point['price_month']): ?>
+                            <div>
+                                <span>за 1 мес.</span>
+                                <div class="tab_content">
+                                    <span><?= $point['price_month'] ?></span>
+                                    <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
+                                </div>
                             </div>
-                        </div>
-                    <?php endif; ?>
-
-                </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         <?php if ($treners): ?>

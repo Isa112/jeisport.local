@@ -172,5 +172,8 @@ $(function () { // when DOM is ready
             $('#select-2').html(data);
         });
     });
+    $('#select_category').change(function(){
+        
+    });
 
 });
