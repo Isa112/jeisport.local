@@ -174,7 +174,7 @@ class Pages extends CI_Controller {
             $startFrom = $page * 5;
             $data['startFrom'] = $startFrom;
             $data['news'] = $this->news_model->get_news_for_pagination($startFrom);
-            $data['countNews'] = count($this->news_model->get_news_for_front());
+            $data['countNews'] = count($this->news_model->get_news_for_front())-1;
             $data['tags'] = $this->main_model->get_tags(null, 'news');
             $data['newsCategories'] = $this->newscategories_model->get_newscategories();
 
