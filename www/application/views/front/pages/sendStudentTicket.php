@@ -4,7 +4,7 @@
     if ($this->input->post('delivery') == 'courier') {
         echo 'checked';
     }
-    ?> type="radio" name="delivery" id="courier" value="courier">
+    ?> type="radio" checked="" name="delivery" id="courier" value="courier">
     <label for="courier">Оплата при доставке курьеру</label>
     <input <?php
     if ($this->input->post('delivery') == 'self') {
@@ -42,5 +42,5 @@
     }
     ?> name="contacts" value="<?= set_value('contacts') ?>" type="text" placeholder="Контакты">
     <input type="hidden" name="do" value="sendsbs">
-    <input type="button" value="Отправить" onclick="javascript:sendsbs()">
+    <input id='send_sbs_btn' type="button" value="Отправить" onclick="javascript:sendsbs()">
 </form>

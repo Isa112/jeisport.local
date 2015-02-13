@@ -329,7 +329,46 @@ class Pages extends CI_Controller {
                     );
                     echo $arr['error'];
                     $this->front_model->set_sbs();
-//$to = $this->admins_model->get_email();
+
+                    $admin_email = $this->main_model->get_adm_email();
+                    $admin_email = $admin_email['email'];
+                    if ($this->input->post('delivery') == 'courier') {
+                        $delivery = 'При доставке курьеру';
+                    } elseif ('self') {
+                        $delivery = 'Онлайн (заберу сам(а))';
+                    }else{
+                        $delivery = 'Не указано';
+                    }
+
+                    if (valid_email($admin_email)) {
+                        $config = array(
+                            'protocol' => 'smtp',
+                            'smtp_host' => 'ssl://smtp.googlemail.com',
+                            'smtp_port' => 465,
+                            'smtp_user' => 'officialakniet@gmail.com',
+                            'smtp_pass' => 'googstud321',
+                            'mailtype' => 'html',
+                            'charset' => 'utf-8'
+                        );
+                        $this->load->library('email');
+                        $this->email->initialize($config);
+
+                        $this->email->set_newline("\r\n");
+                        $this->email->from('support@jeisport.ru', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                        $this->email->to($admin_email);
+                        $this->email->subject('Новая заявка на покупку студенческого билета на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                        $this->email->message(
+                                'Имя: ' . $this->input->post('name') . '<br/>' .
+                                'Фамилия: ' . $this->input->post('sname') . '<br/>' .
+                                'Отчество: ' . $this->input->post('mname') . '<br/>' .
+                                'Место учебы: ' . $this->input->post('univer') . '<br/>' .
+                                'Контакты: ' . $this->input->post('contacts') . '<br/>' .
+                                'Оплата: ' . $delivery . ' <br/>' .
+                                'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
+                                'IP-адрес: ' . $this->input->ip_address()
+                        );
+                        $this->email->send();
+                    }
                 }
             } else {
                 echo 'Неверный post запрос';
