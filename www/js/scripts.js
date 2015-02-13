@@ -50,6 +50,8 @@ var openSelect = function (selector) {
     }
 }
 function sendbid() {
+    $("#send_request_btn").hide();
+    $(".send_request_loading").show();
     $.ajax({
         url: '/sendrequest/save',
         type: "POST",
@@ -57,6 +59,8 @@ function sendbid() {
         data: $('#request_res').find('form').serialize(),
         success: function (response) {
             document.getElementById('request_res').innerHTML = response;
+            $("#send_request_btn").show();
+            $(".send_request_loading").hide();
         },
         error: function (response) {
             document.getElementById('request_res').innerHTML = "Ошибка при отправке формы";
@@ -172,8 +176,8 @@ $(function () { // when DOM is ready
             $('#select-2').html(data);
         });
     });
-    $('#select_category').change(function(){
-        
+    $('#select_category').change(function () {
+
     });
 
 });

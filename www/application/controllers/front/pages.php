@@ -174,7 +174,7 @@ class Pages extends CI_Controller {
             $startFrom = $page * 5;
             $data['startFrom'] = $startFrom;
             $data['news'] = $this->news_model->get_news_for_pagination($startFrom);
-            $data['countNews'] = count($this->news_model->get_news_for_front())-1;
+            $data['countNews'] = count($this->news_model->get_news_for_front()) - 1;
             $data['tags'] = $this->main_model->get_tags(null, 'news');
             $data['newsCategories'] = $this->newscategories_model->get_newscategories();
 
@@ -260,7 +260,44 @@ class Pages extends CI_Controller {
                     );
                     echo $arr['error'];
                     $this->front_model->set_request();
-                    $to = $this->admins_model->get_email();
+
+                    $admin_email = $this->main_model->get_adm_email();
+                    $admin_email = $admin_email['email'];
+
+
+                    if (valid_email($admin_email)) {
+                        $config = array(
+                            'protocol' => 'smtp',
+                            'smtp_host' => 'ssl://smtp.googlemail.com',
+                            'smtp_port' => 465,
+                            'smtp_user' => 'officialakniet@gmail.com',
+                            'smtp_pass' => 'googstud321',
+                            'mailtype' => 'html',
+                            'charset' => 'utf-8'
+                        );
+                        $this->load->library('email');
+                        $this->email->initialize($config);
+
+                        $this->email->set_newline("\r\n");
+                        $this->email->from('support@jeisport.ru', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                        $this->email->to($admin_email);
+                        $this->email->subject('Заявка на подбор клуба на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                        $this->email->message(
+                                'Имя: ' . $this->input->post('name') . '<br/>' .
+                                'Телефон: ' . $this->input->post('phone') . '<br/>' .
+                                'Возраст: ' . $this->input->post('age') . '<br/>' .
+                                'Пол: ' . $this->input->post('sex') . '<br/>' .
+                                'Вес: ' . $this->input->post('weight') . '<br/>' .
+                                'Какими видами спорта хотели бы заниматься: ' . $this->input->post('sports') . '<br/>' .
+                                'Ближайшее метро: ' . $this->input->post('subway') . '<br/>' .
+                                'Противопоказания от врача: ' . $this->input->post('contrains') . '<br/>' .
+                                'Сколько готовы платить в месяц: ' . $this->input->post('canpay') . '<br/>' .
+                                'E-mail: ' . $this->input->post('email') . '<br/>' .
+                                'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
+                                'IP-адрес: ' . $this->input->ip_address()
+                        );
+                        $this->email->send();
+                    }
                 }
             } else {
                 echo 'Неверный post запрос';
