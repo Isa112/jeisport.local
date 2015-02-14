@@ -1,32 +1,3 @@
-<script>
-    $(document).ready(function () {
-        $('#emailsave').click(function () {
-            $.ajax({
-                url: '/request/savemail',
-                type: "POST",
-                dataType: "html",
-                data: {
-                    email: $(this).parent().parent().find('input').val()
-                },
-                success: function (response) {
-                    console.log('Успех');
-                },
-                error: function (response) {
-                    console.log('Ошибка');
-                }
-            });
-        });
-    });
-</script>
-<div style="margin-bottom: 10px; width:30%;">
-    <div class="input-group">
-        <span class="input-group-addon">@</span>
-        <input type="text" placeholder="E-mail" class="form-control" value="<?= $email['email'] ?>">
-        <span class="input-group-btn">
-            <button id="emailsave" class="btn btn-default" type="button">Сохранить</button>
-        </span>
-    </div>
-</div>
 <table class="table table-bordered">
     <?php
     if (is_array($requests)) {

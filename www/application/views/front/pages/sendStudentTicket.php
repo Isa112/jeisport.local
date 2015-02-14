@@ -43,4 +43,5 @@
     ?> name="contacts" value="<?= set_value('contacts') ?>" type="text" placeholder="Контакты">
     <input type="hidden" name="do" value="sendsbs">
     <input id='send_sbs_btn' type="button" value="Отправить" onclick="javascript:sendsbs()">
+    <div id="send_sbs_img" style="text-align: center; display: none;"><img src="/img/loading2.gif"></div>
 </form>

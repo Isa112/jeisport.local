@@ -60,6 +60,7 @@
         ?> name="phone" value="<?= set_value('name') ?>" type="text" placeholder="Телефон">
         <input type="hidden" name="do" value="sendrequest">
         <input id='send_request_btn' type="button" value="Отправить" onclick="javascript:sendbid()">
+        <div id="send_request_img" style="text-align: center; display: none;"><img src="/img/loading2.gif"></div>
     </form>
     <p>Вся информция остается конфиденциальной и не передается третьим лицам</p>
 </div>

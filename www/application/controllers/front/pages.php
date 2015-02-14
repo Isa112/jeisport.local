@@ -336,7 +336,7 @@ class Pages extends CI_Controller {
                         $delivery = 'При доставке курьеру';
                     } elseif ('self') {
                         $delivery = 'Онлайн (заберу сам(а))';
-                    }else{
+                    } else {
                         $delivery = 'Не указано';
                     }
 
@@ -400,6 +400,7 @@ class Pages extends CI_Controller {
                     preg_match('/([_a-z0-9-]+)\/$/i', $point_url, $matches);
                     $point = $this->points_model->get_point_by_url_for_front($matches[1]);
                     $point_email = $point['admemail'];
+
                     $admin_email = $this->main_model->get_adm_email();
                     $admin_email = $admin_email['email'];
 
@@ -470,6 +471,40 @@ class Pages extends CI_Controller {
                 );
                 $this->session->set_userdata($arr);
                 $this->front_model->save_feedback();
+
+                $admin_email = $this->main_model->get_adm_email();
+                $admin_email = $admin_email['email'];
+
+
+                if (valid_email($admin_email)) {
+                    $config = array(
+                        'protocol' => "smtp",
+                        'smtp_host' => "ssl://smtp.googlemail.com",
+                        'smtp_port' => 465,
+                        'smtp_user' => "officialakniet@gmail.com",
+                        'smtp_pass' => "googstud321",
+                        'mailtype' => "html",
+                        'charset' => "utf-8"
+                    );
+                    $this->load->library('email');
+                    $this->email->initialize($config);
+
+                    $this->email->set_newline("\r\n");
+                    $this->email->from('support@jeisport.ru', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->to($admin_email);
+                    $this->email->subject('Новое сообщение с сайта ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->message(
+                            'Имя: ' . $this->input->post('name') . '<br/>' .
+                            'E-mail: ' . $this->input->post('email') . '<br/>' .
+                            'Телефон: ' . $this->input->post('phone') . '<br/>' .
+                            'Тема сообщения: ' . $this->input->post('theme') . '<br/>' .
+                            'Сообщение: ' . $this->input->post('msg') . '<br/>' .
+                            'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
+                            'IP-адрес: ' . $this->input->ip_address()
+                    );
+                    $this->email->send();
+                }
+
                 redirect('contacts');
             }
         } else {

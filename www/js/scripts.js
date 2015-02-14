@@ -51,6 +51,7 @@ var openSelect = function (selector) {
 }
 function sendbid() {
     $("#send_request_btn").hide();
+    $("#send_request_img").show();
     $.ajax({
         url: '/sendrequest/save',
         type: "POST",
@@ -59,6 +60,7 @@ function sendbid() {
         success: function (response) {
             document.getElementById('request_res').innerHTML = response;
             $("#send_request_btn").show();
+            $("#send_request_img").hide();
         },
         error: function (response) {
             document.getElementById('request_res').innerHTML = "Ошибка при отправке формы";
@@ -82,6 +84,7 @@ function form_sendbid() {
 }
 function sendsbs() {
     $("#send_sbs_btn").hide();
+    $("#send_sbs_img").show();
     $.ajax({
         url: '/getStudentTicket/save',
         type: "POST",
@@ -90,6 +93,7 @@ function sendsbs() {
         success: function (response) {
             document.getElementById('sbs_res').innerHTML = response;
             $("#send_sbs_btn").show();
+            $("#send_sbs_img").hide();
         },
         error: function (response) {
             document.getElementById('sbs_res').innerHTML = "Ошибка при отправке формы";
@@ -112,7 +116,8 @@ function form_sendsbs() {
     return false;
 }
 function sendbackcall() {
-    $('#back_call_form').css('opacity', '0.5');
+    $('#send_backcall_btn').hide();
+    $('#send_backcall_img').show();
     $.ajax({
         url: '/send_backcall_from_point/save',
         type: "POST",
@@ -122,6 +127,8 @@ function sendbackcall() {
             document.getElementById('backcall_form').innerHTML = response;
             var url = $('#point_url').attr('href');
             $('#point_input_url').val(url);
+            $('#send_backcall_btn').show();
+            $('#send_backcall_img').hide();
         },
         error: function (response) {
             document.getElementById('backcall_form').innerHTML = "Ошибка при отправке формы";
