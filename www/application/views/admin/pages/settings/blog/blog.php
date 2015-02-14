@@ -36,7 +36,7 @@
                 <div class="col-md-9" style="float:right;">
                     <span class="glyphicon glyphicon-eye-open"></span><span style="margin-left: 10px;"><?= $blog['views'] ?></span>
                     <span class="glyphicon glyphicon-comment"></span><span style="margin-left: 10px;">12</span>
-                    <span class="glyphicon glyphicon-time"></span><span style="margin-left: 10px;"><?= $blog['date'] ?></span>
+                    <span class="glyphicon glyphicon-time"></span><span style="margin-left: 10px;"><?= date('d.m.Y H:i', strtotime($blog['date'])) ?></span>
                 </div>
                 <br><hr>
             </div>

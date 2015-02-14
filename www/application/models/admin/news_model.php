@@ -13,6 +13,7 @@ class News_model extends CI_Model {
         }
         $this->db->order_by('active', 'desc');
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('date', 'desc');
         $query = $this->db->get('news');
         if (count($query->result_array()) > 0) {
             return $query->result_array();
@@ -24,6 +25,7 @@ class News_model extends CI_Model {
     public function get_news_for_pagination($startFrom = null) {
 
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('date', 'desc');
         $query = $this->db->get_where('news', array('active' => 'on'), 5, $startFrom);
         if (count($query->result_array()) > 0) {
             return $query->result_array();
@@ -45,6 +47,7 @@ class News_model extends CI_Model {
 
     public function get3news_for_front() {
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('date', 'desc');
         $this->db->limit(3);
         $query = $this->db->get_where('news', array('active' => 'on'));
         if (count($query->result_array()) > 0) {
@@ -66,7 +69,7 @@ class News_model extends CI_Model {
                 'desc' => $this->input->post('desc'),
                 'keyw' => $this->input->post('keyw'),
                 'text' => $this->input->post('text'),
-                'date' => $this->input->post('date'),
+                'date' => date('Y-m-d H:i:s', strtotime($this->input->post('date'))),
                 'category_id' => $this->input->post('category_id'),
                 'active' => $this->input->post('active')
             );
@@ -80,7 +83,7 @@ class News_model extends CI_Model {
                 'keyw' => $this->input->post('keyw'),
                 'text' => $this->input->post('text'),
                 'image' => $image,
-                'date' => $this->input->post('date'),
+                'date' => date('Y-m-d H:i:s', strtotime($this->input->post('date'))),
                 'category_id' => $this->input->post('category_id'),
                 'active' => $this->input->post('active')
             );
@@ -123,7 +126,7 @@ class News_model extends CI_Model {
             'order' => 0,
             'url' => $this->input->post('url'),
             'text' => $this->input->post('text'),
-            'date' => $this->input->post('date'),
+            'date' => date('Y-m-d H:i:s', strtotime($this->input->post('date'))),
             'title' => $this->input->post('title'),
             'desc' => $this->input->post('desc'),
             'keyw' => $this->input->post('keyw'),

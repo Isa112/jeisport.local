@@ -41,7 +41,7 @@
             <div class="form-group">
                 <label for="date">Дата публикаци</label>
                 <div class='input-group date' id='datetimepicker1'>
-                    <input name="date" id="date" type='text' value="<?= $new['date'] ?>" class="form-control" />
+                    <input name="date" id="date" type='text' value="<?= date('d.m.Y H:i', strtotime($new['date'])) ?>" class="form-control" />
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
             </div>

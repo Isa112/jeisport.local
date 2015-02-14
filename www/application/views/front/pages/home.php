@@ -95,14 +95,12 @@
         </div><!-- /categories -->
 
         <div class="banner">
-            <a href="#"><img src="img/banner-1.jpg" height="90" width="1000" alt=""></a>
+            <a href="#"><img src="/img/banner-1.jpg" height="90" width="1000" alt=""></a>
         </div><!-- banner -->
-
         <h3 class="block-title">Видео блог от Jeisport</h3><!-- title -->
-
         <div class="flexslider">
-
-            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-1000px, 0px, 0px); transform: translate3d(-1000px, 0px, 0px);"><li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
+            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-1000px, 0px, 0px); transform: translate3d(-1000px, 0px, 0px);">
+                    <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
                         <div class="video_block">
                             <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
                             <a href="#" class="title_link">Лучшие бои Майка Тайсона</a>
@@ -139,45 +137,20 @@
                             <a href="#" class="title_link">Фитнесс для девушек в спорт зале</a>
                         </div>
                     </li>
-
-                    <li class="" style="width: 1000px; float: left; display: block;">
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Лучшие бои Майка Тайсона</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Мультфильм про звезд футбола</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Трансформация - Марк Фитт</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Фитнесс для девушек в спорт зале</a>
-                        </div>
-                    </li>
-
-                    <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Лучшие бои Майка Тайсона</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Мультфильм про звезд футбола</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Трансформация - Марк Фитт</a>
-                        </div>
-                        <div class="video_block">
-                            <a href="#" class="img_link"><img src="img/video-img.jpg" alt="" draggable="false"></a>
-                            <a href="#" class="title_link">Фитнесс для девушек в спорт зале</a>
-                        </div>
-                    </li></ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div><!-- slider -->
-
+                </ul>
+            </div>
+            <ol class="flex-control-nav flex-control-paging">
+                <li>
+                    <a class="flex-active">1</a>
+                </li>
+                <li>
+                    <a class="">2</a>
+                </li>
+            </ol>
+            <ul class="flex-direction-nav">
+                <li><a class="flex-prev" href="#">Previous</a></li>
+                <li><a class="flex-next" href="#">Next</a></li>
+            </ul></div><!-- slider -->
         <section>
 
             <div class="news">
@@ -186,14 +159,16 @@
                     <?php foreach ($news as $new): ?>
                         <!-- block_item -->
                         <div class="block_item">
-                            <a href="/news/<?= $new['url'] ?>" class="block_img_wrapper"><img src="/images/news/<?= $new['image'] ?>" alt=""></a>
+                            <a href="/news/<?= $new['url'] ?>" class="block_img_wrapper">
+                                <img src="/images/news/<?= $new['image'] ?>" alt="<?= $new['name'] ?>">
+                            </a>
                             <div class="block_item_content">
                                 <h5><a href="/news/<?= $new['url'] ?>"><?= $new['name'] ?></a></h5>
                                 <p><?= mb_strimwidth(strip_tags($new['text']), 0, 150, "..."); ?></p>
                                 <div class="info_block">
                                     <a href="/news/<?= $new['url'] ?>" class="views"><?= $new['views'] ?></a>
                                     <a href="/news/<?= $new['url'] ?>" class="comments">12</a>
-                                    <span><?= $new['date'] ?></span>
+                                    <span><?= date('d.m.Y H:i', strtotime($new['date'])) ?></span>
                                 </div><!-- info_block -->
                             </div><!-- block_item_content -->
                         </div>
@@ -213,14 +188,16 @@
                 <?php if ($posts): ?>
                     <?php foreach ($posts as $post): ?>
                         <div class="block_item">
-                            <a href="/blog/<?= $post['url'] ?>" class="block_img_wrapper"><img src="/images/blog/<?= $post['image'] ?>" alt=""></a>
+                            <a href="/blog/<?= $post['url'] ?>" class="block_img_wrapper">
+                                <img src="/images/blog/<?= $post['image'] ?>" alt="<?= $post['name'] ?>">
+                            </a>
                             <div class="block_item_content">
                                 <h5><a href="/blog/<?= $post['url'] ?>"><?= $post['name'] ?></a></h5>
                                 <p><?= mb_strimwidth(strip_tags($post['text']), 0, 150, "..."); ?></p>
                                 <div class="info_block">
                                     <a href="/blog/<?= $post['url'] ?>" class="views"><?= $post['views'] ?></a>
                                     <a href="/blog/<?= $post['url'] ?>" class="comments">12</a>
-                                    <span><?= $post['date'] ?></span>
+                                    <span><?= date('d.m.Y H:i', strtotime($post['date'])) ?></span>
                                 </div><!-- info_block -->
                             </div><!-- block_item_content -->
                         </div>
