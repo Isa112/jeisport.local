@@ -59,6 +59,14 @@ class Points_model extends CI_Model {
         }
     }
 
+    public function get_searched_points_for_front($sport_id, $subway_id) {
+        $this->db->order_by('name', 'asc');
+        $this->db->or_where(array('subway1_id' => $subway_id, 'subway2_id' => $subway_id));
+        $this->db->where(array('sport_id' => $sport_id));
+        $query = $this->db->get('points');
+        return $query->result_array();
+    }
+
     public function get_point_by_url_for_front($url) {
         $query = $this->db->get_where('points', array('url' => $url, 'active' => 'on'));
         if (count($query->row_array()) > 0) {

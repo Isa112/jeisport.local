@@ -9,43 +9,45 @@
         <div class="clear"></div>
 
         <div class="category-menu category-menu2">
-            <form action="">
+            <form action="/find_point/" method="post">
                 <div class="input-text">
                     <span>Выберите категорию</span>
                     <label for="">
                         <i></i>
-                        <select id="select-1" placeholder="категория" value="категория">
-                            <option value="category">категория 1</option>
-                            <option value="category">категория 2</option>
-                            <option value="category">категория 3</option>
-                            <option value="category">категория 4</option>
-                            <option value="category">категория 5</option>
+                        <select name="category" id="select-1" placeholder="категория" value="категория">
+                            <?php
+                            foreach ($categories as $cat):
+                                ?>
+                                <option <?php if ($cat['id'] == $category_id): ?>selected=""<?php endif; ?>value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                                <?php
+                            endforeach;
+                            ?>
                         </select>
                     </label>
                 </div>
                 <div class="input-text">
-                    <span>Выберите подкатегорию</span>
+                    <span>Выберите вид спорта</span>
                     <label for="">
                         <i></i>
-                        <select id="select-2" placeholder="подкатегория" value="подкатегория">
-                            <option value="subcategory">подкатегория 1</option>
-                            <option value="subcategory">подкатегория 2</option>
-                            <option value="subcategory">подкатегория 3</option>
-                            <option value="subcategory">подкатегория 4</option>
-                            <option value="subcategory">подкатегория 5</option>
+                        <select name="sport" id="select-2" placeholder="подкатегория" value="подкатегория">
+                            <?php
+                            foreach ($sports as $cat):
+                                ?>
+                                <option <?php if ($cat['id'] == $sport_id): ?>selected=""<?php endif; ?> value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                                <?php
+                            endforeach;
+                            ?>
                         </select>
                     </label>
                 </div>
                 <div class="input-text input-text-3">
-                    <span>Пропишите станцию метро</span>
+                    <span>Выберите станцию метро</span>
                     <label for="">
                         <i></i>
-                        <select id="select-3" placeholder="метро" value="метро">
-                            <option value="metro">станция метро 1</option>
-                            <option value="metro">станция метро 2</option>
-                            <option value="metro">станция метро 3</option>
-                            <option value="metro">станция метро 4</option>
-                            <option value="metro">станция метро 5</option>
+                        <select name="subway" id="select-3" placeholder="метро" value="метро">
+                            <?php foreach ($subways as $cat): ?>
+                                <option <?php if ($cat['id'] == $subway_id): ?>selected=""<?php endif; ?> value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </label>
                 </div>
@@ -57,31 +59,79 @@
         </div>
 
         <ul class="points">
-            <?php for ($i = 0; $i < 10; $i++): ?>
-                <li>
-                    <img src="/img/category-images/img-1.jpg" alt="">
-                    <h5>Международный центр  исторического фехтования "Эскалибур"</h5>
-                    <div class="points_wrapper">
-                        <img src="/img/sample_icons/metro2.png" style="width: 19px; height: 18px; float:left; margin-right: 2px;">
-                        <span class="metro1">Дубровка 6 мин</span>
-                        
-                        <img src="/img/sample_icons/metro2.png" style="width: 19px; height: 18px; float:left; margin-right: 2px;">
-                        <span class="metro2">Шаболовская1 мин</span>
-                        <p>Адрес: Москва, ул. Шарикоподшипниковская, д. 17</p>
-                        <p>Телефон: +7(495) 669 56 83, +7(925) 421 21 28</p>
-                        <p>E-mail: support@exkalibur.ru</p>
-                        <p>Сайт: exkalibur.ru</p>
-                        <p>График работы: 6:00 - 23:00 - Пн-Сб</p>
-                        <input style='bottom:12px;' type="button" value="Подробнее...">
-                    </div>
-                </li>
-            <?php endfor; ?>
+            <?php if ($searched_points): ?>
+                <?php foreach ($searched_points as $point): ?>
+                    <li>
+                        <img src="/images/points/<?= $point['image'] ?>" alt="<?= $point['name'] ?>">
+                        <h5><?= $point['name'] ?></h5>
+                        <div class="points_wrapper">
+                            <?php
+                            $subway1 = $this->points_model->get_subway_for_point_front($point['subway1_id']);
+                            $subway1_img = $subway1['image'];
+                            $subway1 = $subway1['name'];
+                            if ($subway1):
+                                ?>
+                                <img src="/images/subways/<?= $subway1_img ?>" style="width: 19px; height: 18px; float:left; margin-right: 2px;">
+                                <span class="metro1"><?php
+                                    if ($subway1) {
+                                        echo $subway1 . ' ' . $point['time1'] . ' мин';
+                                    }
+                                    ?></span>
+                                <?php
+                            else:
+                                echo '<img src="/img/sample_icons/metro1.png" style="width: 19px; height: 18px; float:left; margin-right: 2px;"><span class="metro1">Нет</span>';
+                            endif;
+                            $subway2 = $this->points_model->get_subway_for_point_front($point['subway2_id']);
+                            $subway2_img = $subway2['image'];
+                            $subway2 = $subway2['name'];
+                            if ($subway2):
+                                ?>
+                                <img src="/images/subways/<?= $subway2_img ?>" style="width: 19px; height: 18px; float:left; margin-right: 2px;">
+                                <span class="metro2"><?php
+                                    if ($subway2) {
+                                        echo $subway2 . ' ' . $point['time2'] . ' мин';
+                                    }
+                                    ?></span>
+                                <div class='clear'></div>
+                                <?php
+                            else:
+                                echo '<img src="/img/sample_icons/metro2.png" style="width: 19px; height: 18px; float:left; margin-right: 2px;"><span class="metro2">Нет</span><div class="clear"></div>';
+                            endif;
+                            ?>
+                            <?php
+                            if ($point['contacts']):
+                                ?>
+                                <p>Адрес: <?= $point['contacts'] ?></p>
+                                <?php
+                            endif;
+                            if ($point['phone']):
+                                ?>
+                                <p>Телефон: <?= $point['phone'] ?></p>
+                                <?php
+                            endif;
+                            if ($point['email']):
+                                ?>
+                                <p>E-mail: <?= $point['email'] ?></p>
+                                <?php
+                            endif;
+                            if ($point['site']):
+                                ?>
+                                <p>Сайт: <?= $point['site'] ?></p>
+                                <?php
+                            endif;
+                            if ($point['graphite']):
+                                ?>
+                                <p>График работы: <?= $point['graphite'] ?></p>
+                            <?php endif; ?>
+                            <input style='bottom:12px;' type="button" value="Подробнее..." onclick="window.location = '/<?= $category['url'] . '/' . $sport['url'] . '/' . $point['url'] ?>/'">
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Спортивных клубов по данном запросу не найдено</p>
+            <?php endif; ?>
 
         </ul>
-
-        <article>
-            <p>Устали однообразно курсировать между домом и работой? Решили разбавить этот тандем яркой ноткой, занявшись своим телом и здоровьем, ведь  «в здоровом теле – здоровый дух»? А может, вы ищете спортивные секции для детей, поскольку осенью снижается физическая активность, столь необходимая  для полноценного развития ребенка? Тогда самое время сесть поудобнее и изучить самую актуальную и подробную информацию про спортивные клубы Москвы!  Здесь вы найдете самые разные спортивные клубы, которые могут быть расположены около вашего места работы или дома, а также спортивные секции, где будут  заниматься ваши дети. На сайте Jeisport.ru представлено огромное разнообразие спортивных клубов Москвы, среди которых вы найдете: Спортклубы и спортивные  школы, в которых проводятся занятия по единоборствам: кикбоксинг, бокс, боевое самбо, муай-тай (тайский бокс) и многие другие, Фитнесклубы – замечательная  возможность для прекрасных дам подтянуть фигуру и всегда выглядеть потрясающе: в нашем каталоге представлено большое разнообразие спортивных секций  по аква-аэробике, пилатесу, фитнесу, в том числе для молодых мам и беременных, а также тренажерные залы, Спортклубы с бассейнами – то, что нужно для полного  избавления от стрессов: в каталоге вы найдете бассейны по своему вкусу – крытые или открытые, Спортивные игры – раздел нашего сайта, который наверняка  заинтересует любителей оздоровиться и насладиться игрой в баскетбол, бадминтон, пляжный или классический волейбол, хоккей, пинг-понг, керлинг, гольф и,  конечно, футбол. К вашим услугам огромный выбор спортклубов, предлагающих посетителям поиграть в эти и другие спортивные игры, Танцы – для вашего удобства  все спортивные танцевальные секции сгруппированы по танцевальным направлениям: латина, go-go, R&amp;B, бальные, клубные, хореография и многие другие;  здесь же вы найдете спортивные танцевальные секции для детей, Активный отдых – то, что нужно для полного расслабления и восстановления сил! В этой категории  любители острых ощущений и не только найдут информацию о парашютном спорте, велотрассах, роллердромах, скалодромах, скейтпарках, паркуре и полетах на  шаре в Москве. С нами выбор спортивного клуба или секции в Москве – сплошное удовольствие!</p>
-        </article>
 
     </div><!-- wrapper -->
 </div>

@@ -247,15 +247,19 @@ class Pages extends CI_Controller {
 
     public function find_point() {
         if ($this->input->post()) {
-            $data['title'] = 'Поиск спортивного клуба';
+            $data['stitle'] = 'Поиск спортивного клуба';
 
-            $categories = $this->categories_model->get_categories_for_front();
-            $data['categories'] = $categories;
+            $data['categories'] = $categories = $this->categories_model->get_categories_for_front();
+            $data['subways'] = $subways = $this->subways_model->get_subways_for_point();
+            $data['category_id'] = $category_id = $this->input->post('category');
+            $data['sport_id'] = $sport_id = $this->input->post('sport');
 
-            $data['category_id'] = $this->input->post('category');
-            $data['sport_id'] = $this->input->post('sport');
-            $data['subway_id'] = $this->input->post('subway');
+            $data['category'] = $this->categories_model->get_categories($category_id);
+            $data['sport'] = $this->sports_model->get_sports($category_id);
 
+            $data['subway_id'] = $subway_id = $this->input->post('subway');
+            $data['sports'] = $sports = $this->sports_model->get_sports_for_category_front($category_id);
+            $data['searched_points'] = $result_arr = $this->points_model->get_searched_points_for_front($sport_id, $subway_id);
             $this->load->view('front/templates/metahead', $data);
             $this->load->view('front/templates/header', $data);
             $this->load->view('front/templates/sub-menu', $data);
