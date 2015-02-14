@@ -36,7 +36,7 @@
                                 <div class="info_block">
                                     <a href="/blog/<?= $e['url'] ?>/" class="views"><?= $e['views'] ?></a>
                                     <a href="/blog/<?= $e['url'] ?>/" class="comments">12</a>
-                                    <span><?= $e['date'] ?></span>
+                                    <span><?= date('d.m.Y h:i', strtotime($e['date'])) ?></span>
                                 </div><!-- info_block -->
                             </div><!-- block_item_content -->
                         </div>

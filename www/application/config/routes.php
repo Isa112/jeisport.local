@@ -48,6 +48,8 @@ $route['about'] = 'front/pages/view/about';
 $route['search'] = 'front/search';
 $route['search/(:any)'] = 'front/search/query/$1';
 
+$route['find_point'] = 'front/pages/find_point';
+
 $route['sendrequest'] = 'front/pages/sendrequest';
 $route['sendrequest/save'] = 'front/pages/sendrequest/save';
 

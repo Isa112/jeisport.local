@@ -9,19 +9,19 @@
 
         <h3 class="block-title comments_title">Новости Jeisport</h3><!-- title -->
 
-<!--        <div class="search_block news_block">
-            <div class="search_block_in news_block_in">
-                <span>Выберите категорию новостей</span>
-                <label for="select-1">
-                    <i></i>
-                    <select id="select_category" placeholder="категория" value="категория">
-                        <?php foreach ($newsCategories as $car): ?>
-                            <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </label>
-            </div>
-        </div>-->
+        <!--        <div class="search_block news_block">
+                    <div class="search_block_in news_block_in">
+                        <span>Выберите категорию новостей</span>
+                        <label for="select-1">
+                            <i></i>
+                            <select id="select_category" placeholder="категория" value="категория">
+        <?php foreach ($newsCategories as $car): ?>
+                                                    <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
+        <?php endforeach; ?>
+                            </select>
+                        </label>
+                    </div>
+                </div>-->
 
         <div class="news_content">
             <div class="news_left_side news">
@@ -36,7 +36,7 @@
                                 <div class="info_block">
                                     <a href="/news/<?= $new['url'] ?>/" class="views"><?= $new['views'] ?></a>
                                     <a href="/news/<?= $new['url'] ?>/" class="comments">12</a>
-                                    <span><?= $new['date'] ?></span>
+                                    <span><?= date('d.m.Y h:i', strtotime($new['date'])) ?></span>
                                 </div><!-- info_block -->
                             </div><!-- block_item_content -->
                         </div>
@@ -63,16 +63,18 @@
         </div>
         <div class="clear"></div>
         <div class="pagination">
-            <?php if ($startFrom >= 5): ?>
-                <a href="/news/<?= ($startFrom / 5 - 1) ?>/" class="prev">Предыдущая</a>
-            <?php endif; ?>
-            <ul>
-                <?php for ($p = 0; $p <= intval($countNews / 5); $p++): ?>
-                    <li><a <?php if ($startFrom == $p * 5): ?> class="active" <?php endif ?> href="/news/<?= $p ?>/"><?= $p + 1 ?></a></li>
-                <?php endfor; ?>
-            </ul><div></div>
-            <?php if ($startFrom < $countNews): ?>
-                <a href="/news/<?= ($startFrom / 5 + 1) ?>/" class="next">Следующая</a>
+            <?php if ($countNews > 5): ?>
+                <?php if ($startFrom >= 5): ?>
+                    <a href="/news/<?= ($startFrom / 5 - 1) ?>/" class="prev">Предыдущая</a>
+                <?php endif; ?>
+                <ul>
+                    <?php for ($p = 0; $p <= intval($countNews / 5); $p++): ?>
+                        <li><a <?php if ($startFrom == $p * 5): ?> class="active" <?php endif ?> href="/news/<?= $p ?>/"><?= $p + 1 ?></a></li>
+                    <?php endfor; ?>
+                </ul><div></div>
+                <?php if ($startFrom < $countNews): ?>
+                    <a href="/news/<?= ($startFrom / 5 + 1) ?>/" class="next">Следующая</a>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
 

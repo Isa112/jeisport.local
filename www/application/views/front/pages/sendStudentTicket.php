@@ -1,4 +1,4 @@
-<form action="javascript:" method="post">
+<form id='sbs_call_form' action="javascript:" method="post">
     <h5>Для получения студ билета спортсмена укажите:</h5>
     <input <?php
     if ($this->input->post('delivery') == 'courier') {

@@ -245,6 +245,27 @@ class Pages extends CI_Controller {
         return $result;
     }
 
+    public function find_point() {
+        if ($this->input->post()) {
+            $data['title'] = 'Поиск спортивного клуба';
+
+            $categories = $this->categories_model->get_categories_for_front();
+            $data['categories'] = $categories;
+
+            $data['category_id'] = $this->input->post('category');
+            $data['sport_id'] = $this->input->post('sport');
+            $data['subway_id'] = $this->input->post('subway');
+
+            $this->load->view('front/templates/metahead', $data);
+            $this->load->view('front/templates/header', $data);
+            $this->load->view('front/templates/sub-menu', $data);
+            $this->load->view('front/pages/search_points_results', $data);
+            $this->load->view('front/templates/footer', $data);
+        } else {
+            redirect('/');
+        }
+    }
+
     public function sendrequest($action = null) {
         if (!$action) {
             $this->load->view('front/pages/sendrequest');

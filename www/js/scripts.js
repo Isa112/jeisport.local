@@ -85,6 +85,7 @@ function form_sendbid() {
 function sendsbs() {
     $("#send_sbs_btn").hide();
     $("#send_sbs_img").show();
+    $('#sbs_call_form').css('opacity', '0.3');
     $.ajax({
         url: '/getStudentTicket/save',
         type: "POST",
@@ -94,6 +95,7 @@ function sendsbs() {
             document.getElementById('sbs_res').innerHTML = response;
             $("#send_sbs_btn").show();
             $("#send_sbs_img").hide();
+            $('#sbs_call_form').css('opacity', '1');
         },
         error: function (response) {
             document.getElementById('sbs_res').innerHTML = "Ошибка при отправке формы";
@@ -118,6 +120,7 @@ function form_sendsbs() {
 function sendbackcall() {
     $('#send_backcall_btn').hide();
     $('#send_backcall_img').show();
+    $('#back_call_form').css('opacity', '0.3');
     $.ajax({
         url: '/send_backcall_from_point/save',
         type: "POST",
@@ -129,6 +132,7 @@ function sendbackcall() {
             $('#point_input_url').val(url);
             $('#send_backcall_btn').show();
             $('#send_backcall_img').hide();
+            $('#back_call_form').css('opacity', '1');
         },
         error: function (response) {
             document.getElementById('backcall_form').innerHTML = "Ошибка при отправке формы";

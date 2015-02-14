@@ -31,7 +31,7 @@
         <div class="info_block about_us_info_block">
             <a href="#" class="views"><?= $blog['views'] ?></a>
             <a href="#" class="comments">12</a>
-            <span><?= $blog['date'] ?></span>
+            <span><?= date('d.m.Y h:i', strtotime($blog['date'])) ?></span>
         </div><!-- info_block -->
 
         <div class="about_us_block">

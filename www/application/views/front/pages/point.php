@@ -127,7 +127,7 @@
                                             <a href="#" data-modal-id="#modal6" data-id="<?= $trener[$i]['id'] ?>" class="img_link modal-open">
                                                 <img class="trener_image" src="/images/points/treners/<?= $trener[$i]['image'] ?>" alt="" draggable="false">
                                             </a>
-                                            <a href="#" data-modal-id="#modal6" class="title_link modal-open"><?= $trener[$i]['name'] ?></a>
+                                            <a href="#" data-modal-id="#modal6" class="title_link modal-open"><?= $trener[$i]['sname'] ?> <?= $trener[$i]['name'] ?></a>
                                         </div>
                                     <?php endif; ?>
                                 <?php endfor; ?>
