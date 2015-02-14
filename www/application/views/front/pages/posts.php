@@ -2,16 +2,16 @@
     <div class="wrapper">
         <ul class="breadcrumbs">
             <li><a href="/">Главная</a></li>
-            <li><a href="/news/">Новости</a></li>
+            <li><a href="/blog/">Блог</a></li>
         </ul><!-- breadcrumbs -->
 
         <div class="clear"></div>
 
-        <h3 class="block-title comments_title">Новости Jeisport</h3><!-- title -->
+        <h3 class="block-title comments_title">Блог Jeisport</h3><!-- title -->
 
 <!--        <div class="search_block news_block">
             <div class="search_block_in news_block_in">
-                <span>Выберите категорию новостей</span>
+                <span>Выберите категорию постов блога</span>
                 <label for="select-1">
                     <i></i>
                     <select id="select_category" placeholder="категория" value="категория">
@@ -25,18 +25,18 @@
 
         <div class="news_content">
             <div class="news_left_side news">
-                <?php if ($news): ?>
-                    <?php foreach ($news as $new): ?>
+                <?php if ($posts): ?>
+                    <?php foreach ($posts as $e): ?>
                         <!-- block_item -->
                         <div class="block_item">
-                            <a href="/news/<?= $new['url'] ?>/" class="block_img_wrapper"><img src="/images/news/<?= $new['image'] ?>" alt="<?= $new['name'] ?>"></a>
+                            <a href="/blog/<?= $e['url'] ?>/" class="block_img_wrapper"><img src="/images/blog/<?= $e['image'] ?>" alt="<?= $e['name'] ?>"></a>
                             <div class="block_item_content">
-                                <h5><a href="/news/<?= $new['url'] ?>/"><?= $new['name'] ?></a></h5>
-                                <p><?= mb_strimwidth(strip_tags($new['text']), 0, 150, "..."); ?></p>
+                                <h5><a href="/blog/<?= $e['url'] ?>/"><?= $e['name'] ?></a></h5>
+                                <p><?= mb_strimwidth(strip_tags($e['text']), 0, 150, "..."); ?></p>
                                 <div class="info_block">
-                                    <a href="/news/<?= $new['url'] ?>/" class="views"><?= $new['views'] ?></a>
-                                    <a href="/news/<?= $new['url'] ?>/" class="comments">12</a>
-                                    <span><?= $new['date'] ?></span>
+                                    <a href="/blog/<?= $e['url'] ?>/" class="views"><?= $e['views'] ?></a>
+                                    <a href="/blog/<?= $e['url'] ?>/" class="comments">12</a>
+                                    <span><?= $e['date'] ?></span>
                                 </div><!-- info_block -->
                             </div><!-- block_item_content -->
                         </div>
@@ -56,24 +56,14 @@
                 <h3 class="block-title news_title">Теги</h3><!-- title -->
                 <div class="tags">
                     <?php foreach ($tags as $tag): ?>
-                        <a href="/news/tag/<?= $tag['id'] ?>" class="tag_item_<?= rand(1, 9) ?>">&laquo;<?= $tag['name'] ?>&raquo;</a>
+                        <a href="/blog/tag/<?= $tag['id'] ?>" class="tag_item_<?= rand(1, 9) ?>">&laquo;<?= $tag['name'] ?>&raquo;</a>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
         <div class="clear"></div>
         <div class="pagination">
-            <?php if ($startFrom >= 5): ?>
-                <a href="/news/<?= ($startFrom / 5 - 1) ?>/" class="prev">Предыдущая</a>
-            <?php endif; ?>
-            <ul>
-                <?php for ($p = 0; $p <= intval($countNews / 5); $p++): ?>
-                    <li><a <?php if ($startFrom == $p * 5): ?> class="active" <?php endif ?> href="/news/<?= $p ?>/"><?= $p + 1 ?></a></li>
-                <?php endfor; ?>
-            </ul><div></div>
-            <?php if ($startFrom < $countNews): ?>
-                <a href="/news/<?= ($startFrom / 5 + 1) ?>/" class="next">Следующая</a>
-            <?php endif; ?>
+
         </div>
 
     </div><!-- wrapper -->

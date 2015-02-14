@@ -20,6 +20,16 @@ class Blogs_model extends CI_Model {
         }
     }
 
+    public function get_blogs_for_front($id = false) {
+        if ($id) {
+            $query = $this->db->get_where('blog', array('id' => $id, 'active' => 'on'));
+            return $query->row_array();
+        }
+        $this->db->order_by('order', 'desc');
+        $query = $this->db->get_where('blog', array('active' => 'on'));
+        return $query->result_array();
+    }
+
     public function get3posts_for_front() {
         $this->db->order_by('order', 'desc');
         $this->db->limit(3);

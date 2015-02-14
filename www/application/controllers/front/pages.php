@@ -209,14 +209,25 @@ class Pages extends CI_Controller {
         }
     }
 
-    public function blog($blog) {
+    public function blog($blog = false, $page = false) {
         $categories = $this->categories_model->get_categories_for_front();
         $data['categories'] = $categories;
 
         $blog = $this->blogs_model->get_blog_by_url_for_front($blog);
         if (!$blog) {
-            $this->output->set_status_header('404');
-            $this->load->view('front/pages/404', $data);
+            $data['title'] = 'Блог';
+//            $startFrom = $page * 5;
+//            $data['startFrom'] = $startFrom;
+            $data['posts'] = $this->blogs_model->get_blogs_for_front();
+//            $data['countPosts'] = count($this->blog_model->get_news_for_front()) - 1;
+            $data['tags'] = $this->main_model->get_tags(null, 'blog');
+            //$data['newsCategories'] = $this->newscategories_model->get_newscategories();
+
+            $this->load->view('front/templates/metahead', $data);
+            $this->load->view('front/templates/header', $data);
+            $this->load->view('front/templates/sub-menu', $data);
+            $this->load->view('front/pages/posts', $data);
+            $this->load->view('front/templates/footer', $data);
         } else {
             $data['title'] = mb_ucfirst($blog['name']);
             $data['blog'] = $blog;
