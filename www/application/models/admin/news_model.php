@@ -22,7 +22,7 @@ class News_model extends CI_Model {
         }
     }
 
-    public function get_news_for_pagination($startFrom = null) {
+    public function get_news_for_pagination($startFrom) {
 
         $this->db->order_by('order', 'desc');
         $this->db->order_by('date', 'desc');

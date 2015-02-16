@@ -26,5 +26,7 @@
         <script type="text/javascript" src="/js/prefixfree.min.js"></script>
         <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <!--<script type="text/javascript" src="/js/library.js"></script>-->
     </head>

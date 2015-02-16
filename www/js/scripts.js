@@ -1,4 +1,14 @@
 $(window).load(function () {
+
+    $('.showhide').click(function () {
+//        $('#cover_area').animate({height: '474px'});
+////        $('.hidden_map').show();
+//        return false;
+        var t = $(this).text();
+        $(this).text($(this).attr('data-text')).attr('data-text', t).parents('.presentation').toggleClass('active').find('.hidden_map').slideToggle();
+        return false;
+    });
+
     $('.flexslider').flexslider({
         animation: "slide",
         start: function (slider) {

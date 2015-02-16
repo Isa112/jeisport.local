@@ -170,11 +170,34 @@ class Pages extends CI_Controller {
 
         $new = $this->news_model->get_new_by_url_for_front($new);
         if (!$new) {
+            $this->load->library('pagination');
+
+            $config['base_url'] = '/news/';
+            $config['total_rows'] = count($this->news_model->get_news_for_front());
+            $config['per_page'] = $startFrom = 5;
+            $config['uri_segment'] = 2;
+
+            $config['full_tag_open'] = '<ul class="pagination">';
+            $config['full_tag_close'] = '</ul>';
+
+            $config['prev_link'] = 'Предыдущая';
+            $config['prev_tag_open'] = '<li class="first_child">';
+            $config['prev_tag_close'] = '</li>';
+
+            $config['next_link'] = 'Следующая';
+            $config['next_tag_open'] = '<li class="last_child">';
+            $config['next_tag_close'] = '</li>';
+
+            $config['cur_tag_open'] = '<li class="active">';
+            $config['cur_tag_close'] = '</li>';
+
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+
+            $this->pagination->initialize($config);
+
             $data['title'] = 'Новости';
-            $startFrom = $page * 5;
-            $data['startFrom'] = $startFrom;
             $data['news'] = $this->news_model->get_news_for_pagination($startFrom);
-            $data['countNews'] = count($this->news_model->get_news_for_front()) - 1;
             $data['tags'] = $this->main_model->get_tags(null, 'news');
             $data['newsCategories'] = $this->newscategories_model->get_newscategories();
 
@@ -366,8 +389,6 @@ class Pages extends CI_Controller {
                     echo $arr['error'];
                     $this->front_model->set_sbs();
 
-                    $admin_email = $this->main_model->get_adm_email();
-                    $admin_email = $admin_email['email'];
                     if ($this->input->post('delivery') == 'courier') {
                         $delivery = 'При доставке курьеру';
                     } elseif ('self') {
@@ -375,6 +396,21 @@ class Pages extends CI_Controller {
                     } else {
                         $delivery = 'Не указано';
                     }
+                    $date = date('d.m.Y H:i:s');
+                    $site = str_ireplace('http://', '', substr(base_url(), 0, -1));
+                    $text = "Новая заявка СБС";
+//                            . " Имя: " . $this->input->post('name')
+//                            . " Фамилия: " . $this->input->post('sname')
+//                            . " Отчество: " . $this->input->post('mname')
+//                            . " Место учебы: " . $this->input->post('univer')
+//                            . " Контакты: " . $this->input->post('contacts')
+//                            . " Оплата: " . $delivery
+//                            . " Дата отправки: " . $date
+//                            . " IP-адрес: " . $this->input->ip_address();
+//                    file_get_contents("http://sms.ru/sms/send?api_id=e82bd4ca-841a-6504-b1ca-7d57d5d17590&to=+996554709700&text=" . urlencode($text));
+
+                    $admin_email = $this->main_model->get_adm_email();
+                    $admin_email = $admin_email['email'];
 
                     if (valid_email($admin_email)) {
                         $config = array(

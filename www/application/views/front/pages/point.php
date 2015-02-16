@@ -31,8 +31,34 @@
                 <h6><?= $point['contacts'] ?></h6>
                 <p><?= $point['phone'] ?></p>
             </div>
+            <script src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
+            <script type="text/javascript">
+                // Создает обработчик события window.onLoad
+                YMaps.jQuery(function () {
+                    // Создает экземпляр карты и привязывает его к созданному контейнеру
+                    var map = new YMaps.Map(YMaps.jQuery("#map-canvas")[0]);
+
+                    // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
+                    var point = new YMaps.GeoPoint(<?= $point['coords'] ?>);
+                    map.setCenter(point, 10);
+                    map.addControl(new YMaps.TypeControl());
+                    map.addControl(new YMaps.ToolBar());
+                    map.addControl(new YMaps.Zoom());
+                    map.addControl(new YMaps.ScaleLine());
+
+                    var placemark = new YMaps.Placemark(point, {draggable: false});
+                    YMaps.Events.observe(placemark, placemark.Events.DragEnd, function (obj) {
+                        var prev = obj.getGeoPoint().copy();
+                        $('#coords').val(prev);
+                    });
+                    placemark.name = "<?= $point['name'] ?>";
+                    map.addOverlay(placemark);
+                })
+            </script>
+            <div id="cover_area"></div>
+            <div class="hidden_map" id="map-canvas"></div>
             <div class="load_more">
-                <a href="#">Показать на карте</a>
+                <a href="#" class="showhide" data-text="Скрыть карту">Показать карту</a>
             </div>
         </div>
 
@@ -152,17 +178,17 @@
 
         <div id="disqus_thread"></div>
         <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'jeisport-sport'; // required: replace example with your forum shortname
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'jeisport-sport'; // required: replace example with your forum shortname
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
         </script>
         <noscript>Please enable JavaScript to view the comments.</a></noscript>
 

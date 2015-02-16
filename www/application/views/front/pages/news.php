@@ -16,7 +16,7 @@
                             <i></i>
                             <select id="select_category" placeholder="категория" value="категория">
         <?php foreach ($newsCategories as $car): ?>
-                                                    <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
+                                                                    <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
         <?php endforeach; ?>
                             </select>
                         </label>
@@ -62,21 +62,8 @@
             </div>
         </div>
         <div class="clear"></div>
-        <div class="pagination">
-            <?php if ($countNews > 5): ?>
-                <?php if ($startFrom >= 5): ?>
-                    <a href="/news/<?= ($startFrom / 5 - 1) ?>/" class="prev">Предыдущая</a>
-                <?php endif; ?>
-                <ul>
-                    <?php for ($p = 0; $p <= intval($countNews / 5); $p++): ?>
-                        <li><a <?php if ($startFrom == $p * 5): ?> class="active" <?php endif ?> href="/news/<?= $p ?>/"><?= $p + 1 ?></a></li>
-                    <?php endfor; ?>
-                </ul><div></div>
-                <?php if ($startFrom < $countNews): ?>
-                    <a href="/news/<?= ($startFrom / 5 + 1) ?>/" class="next">Следующая</a>
-                <?php endif; ?>
-            <?php endif; ?>
-        </div>
-
+        
+        <?= $this->pagination->create_links() ?>
+        
     </div><!-- wrapper -->
 </div><!-- content -->
