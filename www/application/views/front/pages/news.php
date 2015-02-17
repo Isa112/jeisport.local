@@ -16,7 +16,7 @@
                             <i></i>
                             <select id="select_category" placeholder="категория" value="категория">
         <?php foreach ($newsCategories as $car): ?>
-                                                                    <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
+                                                                        <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
         <?php endforeach; ?>
                             </select>
                         </label>
@@ -62,8 +62,8 @@
             </div>
         </div>
         <div class="clear"></div>
-        
-        <?= $this->pagination->create_links() ?>
-        
+        <ul class="pagination">
+            <?= $this->pagination->create_links() ?>
+        </ul>
     </div><!-- wrapper -->
 </div><!-- content -->

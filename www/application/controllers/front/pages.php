@@ -174,11 +174,11 @@ class Pages extends CI_Controller {
 
             $config['base_url'] = '/news/';
             $config['total_rows'] = count($this->news_model->get_news_for_front());
-            $config['per_page'] = $startFrom = 5;
+            $config['per_page'] = 5;
             $config['uri_segment'] = 2;
 
-            $config['full_tag_open'] = '<ul class="pagination">';
-            $config['full_tag_close'] = '</ul>';
+            $config['full_tag_open'] = '';
+            $config['full_tag_close'] = '';
 
             $config['prev_link'] = 'Предыдущая';
             $config['prev_tag_open'] = '<li class="first_child">';
@@ -197,6 +197,11 @@ class Pages extends CI_Controller {
             $this->pagination->initialize($config);
 
             $data['title'] = 'Новости';
+            if($page){
+                $startFrom = $page;
+            }else{
+                $startFrom = 0;
+            }
             $data['news'] = $this->news_model->get_news_for_pagination($startFrom);
             $data['tags'] = $this->main_model->get_tags(null, 'news');
             $data['newsCategories'] = $this->newscategories_model->get_newscategories();

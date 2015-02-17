@@ -37,6 +37,7 @@ class News_model extends CI_Model {
     public function get_news_for_front() {
 
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('date', 'desc');
         $query = $this->db->get_where('news', array('active' => 'on'));
         if (count($query->result_array()) > 0) {
             return $query->result_array();
