@@ -60,9 +60,12 @@ class Points_model extends CI_Model {
     }
 
     public function get_searched_points_for_front($sport_id, $subway_id) {
-        $this->db->order_by('name', 'asc');
-        $this->db->or_where(array('subway1_id' => $subway_id, 'subway2_id' => $subway_id));
+        $this->db->order_by('points.name', 'asc');
         $this->db->where(array('sport_id' => $sport_id));
+//        $this->db->where(array('subway1_id' => $subway_id));
+//        $this->db->where(array('subway2_id' => $subway_id));
+//        $this->db->join('subways', 'subways.id = points.subway1_id', 'right');
+//        $this->db->join('subways', 'subways.id = points.subway2_id');
         $query = $this->db->get('points');
         return $query->result_array();
     }

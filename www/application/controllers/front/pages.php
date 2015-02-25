@@ -197,9 +197,9 @@ class Pages extends CI_Controller {
             $this->pagination->initialize($config);
 
             $data['title'] = 'Новости';
-            if($page){
+            if ($page) {
                 $startFrom = $page;
-            }else{
+            } else {
                 $startFrom = 0;
             }
             $data['news'] = $this->news_model->get_news_for_pagination($startFrom);
@@ -386,65 +386,75 @@ class Pages extends CI_Controller {
                 $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
 
                 if ($this->form_validation->run() == FALSE) {
+//                    echo $_COOKIE['ordered'];
+//                    setcookie('ordered', 'true', time() + 10);
                     $this->load->view('front/pages/sendStudentTicket');
                 } else {
-                    $arr = array(
-                        'error' => '<div class="form-item" style="color:green; font-weight:bold;padding: 10px 30px; margin-top: 30px; text-align: center;"><strong>Спасибо! </strong>Ваша заявка была успешно отправлена! Ожидайте, в скором времени наш менеджер свяжется с вами</div>'
-                    );
-                    echo $arr['error'];
-                    $this->front_model->set_sbs();
+                    if (!isset($_COOKIE['ordered'])) {
+                        setcookie('ordered', 'true', time() + 300);
+                        $arr = array(
+                            'error' => '<div class="form-item" style="color:green; font-weight:bold;padding: 10px 30px; margin-top: 30px; text-align: center;"><strong>Спасибо! </strong>Ваша заявка была успешно отправлена! Ожидайте, в скором времени наш менеджер свяжется с вами</div>'
+                        );
+                        echo $arr['error'];
+                        $this->front_model->set_sbs();
 
-                    if ($this->input->post('delivery') == 'courier') {
-                        $delivery = 'При доставке курьеру';
-                    } elseif ('self') {
-                        $delivery = 'Онлайн (заберу сам(а))';
+                        if ($this->input->post('delivery') == 'courier') {
+                            $delivery = 'При доставке курьеру';
+                        } elseif ('self') {
+                            $delivery = 'Онлайн (заберу сам(а))';
+                        } else {
+                            $delivery = 'Не указано';
+                        }
+                        $date = date('d.m.Y H:i:s');
+                        $site = str_ireplace('http://', '', substr(base_url(), 0, -1));
+                        $text = "Новая заявка СБС";
+                        //                            . " Имя: " . $this->input->post('name')
+                        //                            . " Фамилия: " . $this->input->post('sname')
+                        //                            . " Отчество: " . $this->input->post('mname')
+                        //                            . " Место учебы: " . $this->input->post('univer')
+                        //                            . " Контакты: " . $this->input->post('contacts')
+                        //                            . " Оплата: " . $delivery
+                        //                            . " Дата отправки: " . $date
+                        //                            . " IP-адрес: " . $this->input->ip_address();
+
+                        $admin_email = $this->main_model->get_adm_email();
+                        $admin_email = $admin_email['email'];
+
+                        if (valid_email($admin_email)) {
+                            $config = array(
+                                'protocol' => 'smtp',
+                                'smtp_host' => 'ssl://smtp.googlemail.com',
+                                'smtp_port' => 465,
+                                'smtp_user' => 'officialakniet@gmail.com',
+                                'smtp_pass' => 'googstud321',
+                                'mailtype' => 'html',
+                                'charset' => 'utf-8');
+                            $this->load->library('email');
+                            $this->email->initialize($config);
+
+                            $this->email->set_newline("\r\n");
+                            $this->email->from('support@jeisport.ru', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                            $this->email->to($admin_email);
+                            $this->email->subject('Новая заявка на покупку студенческого билета на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                            $this->email->message(
+                                    'Имя: ' . $this->input->post('name') . '<br/>' .
+                                    'Фамилия: ' . $this->input->post('sname') . '<br/>' .
+                                    'Отчество: ' . $this->input->post('mname') . '<br/>' .
+                                    'Место учебы: ' . $this->input->post('univer') . '<br/>' .
+                                    'Контакты: ' . $this->input->post('contacts') . '<br/>' .
+                                    'Оплата: ' . $delivery . ' <br/>' .
+                                    'Дата отправки: ' . date('d.m.Y H:i:s') .
+                                    '<br/>' .
+                                    'IP-адрес: ' . $this->input->ip_address()
+                            );
+                            $this->email->send();
+                        }
+//                        file_get_contents("http://sms.ru/sms/send?api_id=e82bd4ca-841a-6504-b1ca-7d57d5d17590&to=+996554709700&text=" . urlencode($text));
                     } else {
-                        $delivery = 'Не указано';
-                    }
-                    $date = date('d.m.Y H:i:s');
-                    $site = str_ireplace('http://', '', substr(base_url(), 0, -1));
-                    $text = "Новая заявка СБС";
-//                            . " Имя: " . $this->input->post('name')
-//                            . " Фамилия: " . $this->input->post('sname')
-//                            . " Отчество: " . $this->input->post('mname')
-//                            . " Место учебы: " . $this->input->post('univer')
-//                            . " Контакты: " . $this->input->post('contacts')
-//                            . " Оплата: " . $delivery
-//                            . " Дата отправки: " . $date
-//                            . " IP-адрес: " . $this->input->ip_address();
-//                    file_get_contents("http://sms.ru/sms/send?api_id=e82bd4ca-841a-6504-b1ca-7d57d5d17590&to=+996554709700&text=" . urlencode($text));
-
-                    $admin_email = $this->main_model->get_adm_email();
-                    $admin_email = $admin_email['email'];
-
-                    if (valid_email($admin_email)) {
-                        $config = array(
-                            'protocol' => 'smtp',
-                            'smtp_host' => 'ssl://smtp.googlemail.com',
-                            'smtp_port' => 465,
-                            'smtp_user' => 'officialakniet@gmail.com',
-                            'smtp_pass' => 'googstud321',
-                            'mailtype' => 'html',
-                            'charset' => 'utf-8'
+                        $arr = array(
+                            'error' => '<div class="form-item" style="color:red; font-weight:bold;padding: 10px 30px; margin-top: 30px; text-align: center;">Подождите 5 мин и отправьте заявку снова.</div>'
                         );
-                        $this->load->library('email');
-                        $this->email->initialize($config);
-
-                        $this->email->set_newline("\r\n");
-                        $this->email->from('support@jeisport.ru', 'Сайт ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
-                        $this->email->to($admin_email);
-                        $this->email->subject('Новая заявка на покупку студенческого билета на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
-                        $this->email->message(
-                                'Имя: ' . $this->input->post('name') . '<br/>' .
-                                'Фамилия: ' . $this->input->post('sname') . '<br/>' .
-                                'Отчество: ' . $this->input->post('mname') . '<br/>' .
-                                'Место учебы: ' . $this->input->post('univer') . '<br/>' .
-                                'Контакты: ' . $this->input->post('contacts') . '<br/>' .
-                                'Оплата: ' . $delivery . ' <br/>' .
-                                'Дата отправки: ' . date('d.m.Y H:i:s') . '<br/>' .
-                                'IP-адрес: ' . $this->input->ip_address()
-                        );
-                        $this->email->send();
+                        echo $arr['error'];
                     }
                 }
             } else {
@@ -489,8 +499,7 @@ class Pages extends CI_Controller {
                             'smtp_port' => 465,
                             'smtp_user' => 'officialakniet@gmail.com',
                             'smtp_pass' => 'googstud321',
-                            'mailtype' => 'html',
-                            'charset' => 'utf-8'
+                            'mailtype' => 'html', 'charset' => 'utf-8'
                         );
                         $this->load->library('email');
                         $this->email->initialize($config);
@@ -558,9 +567,7 @@ class Pages extends CI_Controller {
                         'protocol' => "smtp",
                         'smtp_host' => "ssl://smtp.googlemail.com",
                         'smtp_port' => 465,
-                        'smtp_user' => "officialakniet@gmail.com",
-                        'smtp_pass' => "googstud321",
-                        'mailtype' => "html",
+                        'smtp_user' => "officialakniet@gmail.com", 'smtp_pass' => "googstud321", 'mailtype' => "html",
                         'charset' => "utf-8"
                     );
                     $this->load->library('email');
@@ -585,15 +592,16 @@ class Pages extends CI_Controller {
                 redirect('contacts');
             }
         } else {
-
             $categories = $this->categories_model->get_categories_for_front();
+            $data['title'] = 'Контакты Jeisport - Самая обширная база спортивных клубов Москвы!'
 
-            $data['title'] = 'Контакты Jeisport - Самая обширная база спортивных клубов Москвы!';
+            ;
             $data['categories'] = $categories;
 
             $this->load->view('front/templates/metahead', $data);
             $this->load->view('front/templates/header', $data);
             $this->load->view('front/templates/sub-menu', $data);
+
             $this->load->view('front/pages/contacts', $data);
             $this->load->view('front/templates/footer', $data);
         }

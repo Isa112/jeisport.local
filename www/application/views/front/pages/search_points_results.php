@@ -123,6 +123,10 @@
                                 ?>
                                 <p>График работы: <?= $point['graphite'] ?></p>
                             <?php endif; ?>
+                            <?php
+                            $sport = $this->sports_model->get_sports($point['sport_id']);
+                            $category = $this->categories_model->get_categories($sport['category_id']);
+                            ?>
                             <input style='bottom:12px;' type="button" value="Подробнее..." onclick="window.location = '/<?= $category['url'] . '/' . $sport['url'] . '/' . $point['url'] ?>/'">
                         </div>
                     </li>

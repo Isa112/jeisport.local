@@ -94,7 +94,7 @@
                     <p>E-mail: <?= $point['email'] ?></p>
                 <?php endif; ?>
                 <?php if ($point['site']): ?>
-                    <p>Сайт: <?= $point['site'] ?></p>
+                    <p>Сайт: <noindex><a target="_blank" href="http://<?= $point['site'] ?>" rel="nofollow"><?= $point['site'] ?></a></noindex></p>
                 <?php endif; ?>
                 <?php if ($point['graphite']): ?>
                     <p>График работы: <?= $point['graphite'] ?></p>
