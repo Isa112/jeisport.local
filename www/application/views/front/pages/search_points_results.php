@@ -1,3 +1,6 @@
+<!--<pre>
+    <?php print_r($searched_points); ?>
+</pre>-->
 <div class="content">
     <div class="wrapper">
 
@@ -59,7 +62,9 @@
         </div>
 
         <ul class="points">
-            <?php if ($searched_points): ?>
+            <?php
+            if ($searched_points):
+                ?>
                 <?php foreach ($searched_points as $point): ?>
                     <li>
                         <img src="/images/points/<?= $point['image'] ?>" alt="<?= $point['name'] ?>">
