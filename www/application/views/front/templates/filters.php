@@ -1,11 +1,11 @@
 <div class="category-menu">
     <div class="wrapper">
-        <form action="javascript:">
+        <form action="/find_point/" method="post">
             <div class="input-text">
                 <span>Выберите категорию</span>
                 <label for="">
                     <i></i>
-                    <select id="select-1" placeholder="категория" value="категория">
+                    <select name="category" id="select-1" placeholder="категория" value="категория">
                         <?php
                         foreach ($categories as $cat):
                             ?>
@@ -23,7 +23,7 @@
                 <span>Выберите вид спорта</span>
                 <label for="">
                     <i></i>
-                    <select id="select-2" placeholder="подкатегория" value="подкатегория">
+                    <select name="sport" id="select-2" placeholder="подкатегория" value="подкатегория">
                         <!--<option value="" disabled style="display: none;">Выберите категорию...</option>-->
                         <?php foreach ($sports as $cat): ?>
                             <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
@@ -35,7 +35,7 @@
                 <span>Выберите станцию метро</span>
                 <label for="">
                     <i></i>
-                    <select id="select-3" placeholder="метро" value="метро">
+                    <select name="subway" id="select-3" placeholder="метро" value="метро">
                         <?php foreach ($subways as $cat): ?>
                             <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
                         <?php endforeach; ?>

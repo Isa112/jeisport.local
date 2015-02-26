@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 13 2015 г., 21:49
+-- Время создания: Фев 26 2015 г., 17:40
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `backcalls` (
   `ip` varchar(255) NOT NULL,
   `read` enum('on','0','','') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Дамп данных таблицы `backcalls`
@@ -107,7 +107,9 @@ CREATE TABLE IF NOT EXISTS `backcalls` (
 
 INSERT INTO `backcalls` (`id`, `name`, `phone`, `point_url`, `date`, `ip`, `read`) VALUES
 (14, 'выфв', 'выфвф', '/edinoborstvaa/ajkidott/dasda/', '11.02.2015 03:45:58', '127.0.0.1', ''),
-(15, 'вфыв', 'выфв', '/edinoborstvaa/ajkidott/dasda/', '11.02.2015 03:54:29', '127.0.0.1', '');
+(15, 'вфыв', 'выфв', '/edinoborstvaa/ajkidott/dasda/', '11.02.2015 03:54:29', '127.0.0.1', ''),
+(16, 'фыв', 'фыв', '/edinoborstvaa/ajkidott/dasda/', '14.02.2015 04:16:21', '127.0.0.1', ''),
+(17, 'Андрей', 'выф выф вфыв', '/edinoborstvaa/ajkidott/dasda/', '14.02.2015 10:05:54', '127.0.0.1', '');
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `name` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   `text` text NOT NULL,
-  `date` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
   `title` varchar(255) NOT NULL,
   `desc` text NOT NULL,
   `keyw` text NOT NULL,
@@ -130,15 +132,19 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `views` int(11) NOT NULL,
   `active` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `blog`
 --
 
 INSERT INTO `blog` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `order`, `views`, `active`) VALUES
-(1, 'Пост!', 'post', '<p>Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;</p>\r\n', '25.11.2014 12:04', '', '', '', '1371e81502a177207b027773273e9ff1.jpg', 1, 24, 'on'),
-(2, 'Новая статья в блоге', 'novaja_statja_v_bloge', '', '11.02.2015 02:30', '', '', '', '7505771fd12b8978f7c389461a26ab39.jpg', 2, 1, 'on');
+(1, 'Пост!', 'post', '<p>Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;</p>\r\n', '0000-00-00 00:00:00', '', '', '', '1371e81502a177207b027773273e9ff1.jpg', 0, 26, 'on'),
+(2, 'Новая статья в блоге', 'novaja_statja_v_bloge', '<p><span style="color:rgba(0, 0, 0, 0.498039); font-family:arial,sans-serif; font-size:18px">New coub editor is perfect for quickly looping and remixing videos. Now you can create video mashups with up to 10 video sources!</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', '7505771fd12b8978f7c389461a26ab39.jpg', 0, 3, 'on'),
+(3, 'Тестовый блог', 'testovyj_blog', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Однажды, много лет назад, я разговорилась со знакомым программистом и среди прочих реплик помню его фразу о том, что изобретена некая гениальная штука, благодаря которой все знания человечества станут доступны любому субъекту, &ndash; Всемирная информационная сеть.</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', 'eebd2ae770ab15ef03c165066f6e957c.jpg', 0, 0, 'on'),
+(4, 'Опасности райских кущей', 'opasnosti_rajskih_kuschej', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Интернет для меня третий перелом в истории человеческой культуры &ndash; после появления языка и изобретения книги</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote1" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">1</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. В Древней Греции оратора, выступавшего на площади в Афинах, слышали не более двадцати тысяч человек. Это был звуковой предел общения: география языка &ndash; это племя. Потом пришла книга, которая расширила круг общения до географии страны.</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', 'cd89c797df227cc97e84275e28534807.jpg', 0, 0, 'on'),
+(5, 'Дмитрий Быков (2011)', 'dmitrij_bykov_(2011)', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Со временем возникнет новая иерархия человечества, новая гуманная цивилизация</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote4" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">4</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. А пока&hellip; пока в Интернете доминирует &laquo;оборотная сторона&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote5" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">5</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;этого грандиозного открытия-прорыва &ndash; его разрушительная сила</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote6" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">6</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Неслучайно</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote7" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">7</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;Всемирная сеть становится орудием в руках террористов, хакеров и фанатиков всех мастей.</span></p>\r\n', '2015-01-01 12:00:00', '', '', '', '88711998a9e0c151d082fdfb9c75a8e0.jpg', 0, 0, 'on'),
+(6, 'Новый пост в блоге! Урааа!!!!', 'novyj_post_v_bloge_uraaa', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Самый наглядный факт современности: Интернет, который немыслимо расширил возможности простого человека для высказывания и действия, лежит в основе нынешнего &laquo;восстания масс&raquo;. Это явление, возникшее еще в первой половине двадцатого века, вызванное вульгаризацией культуры &ndash; материальной и духовной, породило и коммунизм, и нацизм</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote8" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">8</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Сегодня он обращен к &laquo;массовому&raquo; в любом человеке, питается от него и удовлетворяет его во всех отношениях &ndash; от языкового до политического и потребительского</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote9" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">9</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">, ибо невероятно приблизил к народу желанные &laquo;хлеб и зрелища&raquo;, включая самые низкие</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote10" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">10</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Этот наперсник, проповедник и исповедник толп превращает в &laquo;шум&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote11" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">11</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;все, к чему прикасается, чему дает жизнь,</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote12" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">12</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;плодит пошлость, невежество и агрессию, давая им неслыханный, завораживающий выход не просто наружу, а на весь мир. Опаснее всего, что это игривое и очень смышленое &laquo;дитя&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote13" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">13</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;новой цивилизации уничтожает критерии &ndash; духовные, нравственные и поведенческие коды существования человеческого общества</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote14" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">14</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Что поделать, в интернет-пространстве все равны в самом площадном смысле этого слова</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote15" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">15</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. И я думаю: не слишком ли высокую цену мы платим за прекрасную возможность поговорить с далеким другом, прочесть редкую книгу, увидеть гениальную картину и услышать великую оперу? Не чересчур ли рано сделано это грандиозное открытие? Иными словами, доросло ли человечество до самого себя?</span></p>\r\n', '2015-02-14 08:43:00', '', '', '', 'dba04eba85e4c714d19f7e8d17ad7199.jpg', 0, 5, 'on');
 
 -- --------------------------------------------------------
 
@@ -194,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `email` (
 --
 
 INSERT INTO `email` (`email`) VALUES
-('protected_by@mail.ru');
+('protected.for@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -214,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `ip` varchar(255) NOT NULL,
   `read` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `feedback`
@@ -225,7 +231,11 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `phone`, `theme`, `msg`, `date`, 
 (2, 'Андрей', 'protected.for@gmail.com', '+996554709700', 'вфывфыв', 'фывфывыф', '27.11.2014 15:13:26', '127.0.0.1', 'on'),
 (4, 'SEOшникам, владельцам сайтов, раскрутчикам,админам,желающим легко раскручивать сайты http://seointensiv.blogspot.ru/', 'rmknab@gmail.com', 'SEOшникам, владельцам сайтов, раскрутчикам,админам,желающим легко раскручивать сайты http://seointensiv.blogspot.ru/', 'SEOшникам, владельцам сайтов, раскрутчикам,админам,желающим легко раскручивать сайты http://seointensiv.blogspot.ru/', 'SEOшникам, владельцам сайтов, раскрутчикам,админам,желающим легко раскручивать сайты http://seointensiv.blogspot.ru/<br />\n <a href="http://seointensiv.blogspot.ru/">SEOшникам, владельцам сайтов, раскрутчикам,админам,желающим легко раскручивать сайты http://seointensiv.blogspot.ru/</a> [url=http://seointensiv.blogspot.ru/]SEOшникам, владельцам сайтов, раскрутчикам,админам,желающим легко раскручивать сайты http://seointensiv.blogspot.ru/[/url]', '10.12.2014 05:28:18', '5.44.169.179', 'on'),
 (6, 'das', 'dsa@das.ru', 'dasdas', 'dsadsa', 'dsadsa', '08.02.2015 20:55:03', '127.0.0.1', 'on'),
-(7, 'dsad', 'dsad@dsa.ru', 'dsa', 'dsa', 'dsa', '10.02.2015 23:28:33', '127.0.0.1', 'on');
+(7, 'dsad', 'dsad@dsa.ru', 'dsa', 'dsa', 'dsa', '10.02.2015 23:28:33', '127.0.0.1', 'on'),
+(8, 'Фыв', 'asd@asd.ru', 'фыв', 'выфвыфв', 'ыфвыфвфы', '14.02.2015 07:45:48', '127.0.0.1', 'on'),
+(9, 'Фыв', 'asd@asd.ru', 'фыв', 'выфвыфв', 'ыфвыфвфы', '14.02.2015 07:48:37', '127.0.0.1', 'on'),
+(10, 'Андрей Федотов', 'protected.for@gmail.com', '+996554709700', 'asd', 'das dasd adas', '14.02.2015 07:54:35', '127.0.0.1', 'on'),
+(11, 'dasdas', 'asd@asd.ru', 'asd', 'asd', 'asd', '14.02.2015 07:59:09', '127.0.0.1', 'on');
 
 -- --------------------------------------------------------
 
@@ -257,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `name` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   `text` text NOT NULL,
-  `date` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
   `title` varchar(255) NOT NULL,
   `desc` text NOT NULL,
   `keyw` text NOT NULL,
@@ -267,22 +277,15 @@ CREATE TABLE IF NOT EXISTS `news` (
   `views` int(11) NOT NULL,
   `active` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- Дамп данных таблицы `news`
 --
 
 INSERT INTO `news` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `category_id`, `order`, `views`, `active`) VALUES
-(4, 'Новость новая приновая!', 'novost_novaja_prinovaja', '', '11.02.2015 02:32', '', '', '', 'adc37e337a0bcadb4e29dd5aaf6805eb.jpg', 0, 0, 0, 'on'),
-(5, 'Новость новая приновая!', 'novost_novaja_prinovaja', '', '11.02.2015 02:32', '', '', '', 'adc37e337a0bcadb4e29dd5aaf6805eb.jpg', 0, 0, 0, 'on'),
-(6, 'Новость новая приновая!', 'novost_novaja_prinovaja', '', '11.02.2015 02:32', '', '', '', 'adc37e337a0bcadb4e29dd5aaf6805eb.jpg', 0, 0, 0, 'on'),
-(7, 'Новость новая приновая!', 'novost_novaja_prinovaja', '', '11.02.2015 02:32', '', '', '', 'adc37e337a0bcadb4e29dd5aaf6805eb.jpg', 0, 0, 0, 'on'),
-(8, 'нвоость', 'novost', '<p><span style="color:rgb(0, 0, 0); font-family:rbcgrotesk-regular; font-size:14px">Современные секции единоборств - это огромный выбор различных видов борьбы. Если вы мечтаете о крепких кулаках, тогда можно записаться в секцию бокса, если ваша цель крепкие ноги &ndash; тхэквондо и т.д. Не зависимо от выбранногонаправления всегда необходимо ориентироваться на опыт, профессионализм тренера. Именно от его навыков и умения донести ученикам основы и азы боевого искусства зависит эффективность занятий.Польза или вред при посещении школы единоборств?</span></p>\r\n', '16.07.2015 19:15', '', '', '', '18f8ec0a7c0decce943c70ebd88b8822.jpg', 1, 0, 45, 'on'),
-(9, 'нвоость', 'novost', '<p><span style="color:rgb(0, 0, 0); font-family:rbcgrotesk-regular; font-size:14px">Современные секции единоборств - это огромный выбор различных видов борьбы. Если вы мечтаете о крепких кулаках, тогда можно записаться в секцию бокса, если ваша цель крепкие ноги &ndash; тхэквондо и т.д. Не зависимо от выбранногонаправления всегда необходимо ориентироваться на опыт, профессионализм тренера. Именно от его навыков и умения донести ученикам основы и азы боевого искусства зависит эффективность занятий.Польза или вред при посещении школы единоборств?</span></p>\r\n', '16.07.2015 19:15', '', '', '', '18f8ec0a7c0decce943c70ebd88b8822.jpg', 1, 0, 45, 'on'),
-(10, 'Новость новая приновая!', 'novost_novaja_prinovaja', '', '11.02.2015 02:32', '', '', '', 'adc37e337a0bcadb4e29dd5aaf6805eb.jpg', 0, 0, 0, 'on'),
-(11, 'Новость новая приновая!', 'novost_novaja_prinovaja', '', '11.02.2015 02:32', '', '', '', 'adc37e337a0bcadb4e29dd5aaf6805eb.jpg', 0, 0, 0, 'on'),
-(12, 'Новость новая приновая!', 'novost_novaja_prinovaja', '', '11.02.2015 02:32', '', '', '', 'adc37e337a0bcadb4e29dd5aaf6805eb.jpg', 0, 0, 0, 'on');
+(32, '12312312312312312312312', '12312312312312312312312', '', '2015-02-24 23:12:00', '', '', '', '8ebf239d559ceeb1e1fc87dfb69a6f42.jpg', 0, 0, 0, 'on'),
+(33, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 2, 'on');
 
 -- --------------------------------------------------------
 
@@ -1248,7 +1251,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('bump_interval', '10', 0),
 ('bump_type', 'd', 0),
 ('cache_gc', '7200', 0),
-('cache_last_gc', '1423236825', 1),
+('cache_last_gc', '1423885854', 1),
 ('captcha_gd', '1', 0),
 ('captcha_gd_3d_noise', '1', 0),
 ('captcha_gd_fonts', '1', 0),
@@ -1271,7 +1274,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('coppa_mail', '', 0),
 ('cron_lock', '0', 1),
 ('database_gc', '604800', 0),
-('database_last_gc', '1423236502', 1),
+('database_last_gc', '1423885834', 1),
 ('dbms_version', '5.5.25', 0),
 ('default_dateformat', 'D M d, Y g:i a', 0),
 ('default_lang', 'ru', 0),
@@ -1319,6 +1322,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('fulltext_postgres_max_word_len', '254', 0),
 ('fulltext_postgres_min_word_len', '4', 0),
 ('fulltext_postgres_ts_name', 'simple', 0),
+('fulltext_sphinx_id', 'f8eb0c0ad3c74f7d', 0),
 ('fulltext_sphinx_indexer_mem_limit', '512', 0),
 ('fulltext_sphinx_stopwords', '0', 0),
 ('gzip_compress', '0', 0),
@@ -1426,12 +1430,12 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('print_pm', '1', 0),
 ('questionnaire_unique_id', '5b7e323c13fc2705', 0),
 ('queue_interval', '60', 0),
-('rand_seed', 'c8e96286646f9fec76e002dbef8182fe', 1),
-('rand_seed_last_update', '1423863036', 1),
+('rand_seed', '7b9fdb4db95beccce5f85543b9982634', 1),
+('rand_seed_last_update', '1424952810', 1),
 ('ranks_path', 'images/ranks', 0),
 ('read_notification_expire_days', '30', 0),
 ('read_notification_gc', '86400', 0),
-('read_notification_last_gc', '1423236811', 1),
+('read_notification_last_gc', '1423885846', 1),
 ('record_online_date', '1418561949', 1),
 ('record_online_users', '3', 1),
 ('referer_validation', '1', 0),
@@ -1442,7 +1446,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('search_gc', '7200', 0),
 ('search_indexing_state', '', 1),
 ('search_interval', '0', 0),
-('search_last_gc', '1423310205', 1),
+('search_last_gc', '1424952811', 1),
 ('search_store_results', '1800', 0),
 ('search_type', '\\phpbb\\search\\fulltext_native', 0),
 ('secure_allow_deny', '1', 0),
@@ -1452,7 +1456,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('server_port', '80', 0),
 ('server_protocol', 'http://', 0),
 ('session_gc', '3600', 0),
-('session_last_gc', '1423469837', 1),
+('session_last_gc', '1423885838', 1),
 ('session_length', '3600', 0),
 ('site_desc', 'A short text to describe your forum', 0),
 ('site_home_text', '', 0),
@@ -1477,7 +1481,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('version', '3.1.2', 0),
 ('warnings_expire_days', '90', 0),
 ('warnings_gc', '14400', 0),
-('warnings_last_gc', '1423466015', 1);
+('warnings_last_gc', '1423885860', 1);
 
 -- --------------------------------------------------------
 
@@ -1519,6 +1523,13 @@ CREATE TABLE IF NOT EXISTS `phpbb_confirm` (
   PRIMARY KEY (`session_id`,`confirm_id`),
   KEY `confirm_type` (`confirm_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Дамп данных таблицы `phpbb_confirm`
+--
+
+INSERT INTO `phpbb_confirm` (`confirm_id`, `session_id`, `confirm_type`, `code`, `seed`, `attempts`) VALUES
+('b7a498389f31e7b84c24e2fb4d9eefc6', '90afb7e2ad8d6f49c12c72bb09f1cdc1', 1, '52YFF', 457432737, 0);
 
 -- --------------------------------------------------------
 
@@ -1754,8 +1765,8 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums` (
 --
 
 INSERT INTO `phpbb_forums` (`forum_id`, `parent_id`, `left_id`, `right_id`, `forum_parents`, `forum_name`, `forum_desc`, `forum_desc_bitfield`, `forum_desc_options`, `forum_desc_uid`, `forum_link`, `forum_password`, `forum_style`, `forum_image`, `forum_rules`, `forum_rules_link`, `forum_rules_bitfield`, `forum_rules_options`, `forum_rules_uid`, `forum_topics_per_page`, `forum_type`, `forum_status`, `forum_last_post_id`, `forum_last_poster_id`, `forum_last_post_subject`, `forum_last_post_time`, `forum_last_poster_name`, `forum_last_poster_colour`, `forum_flags`, `display_on_index`, `enable_indexing`, `enable_icons`, `enable_prune`, `prune_next`, `prune_days`, `prune_viewed`, `prune_freq`, `display_subforum_list`, `forum_options`, `forum_posts_approved`, `forum_posts_unapproved`, `forum_posts_softdeleted`, `forum_topics_approved`, `forum_topics_unapproved`, `forum_topics_softdeleted`, `enable_shadow_prune`, `prune_shadow_days`, `prune_shadow_freq`, `prune_shadow_next`) VALUES
-(1, 0, 1, 4, '', 'Your first category', '', '', 7, '', '', '', 0, '', '', '', '', 7, '', 0, 0, 0, 1, 2, '', 1418454675, 'admin', 'AA0000', 32, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 1, 0),
-(2, 1, 2, 3, 'a:1:{i:1;a:2:{i:0;s:19:"Your first category";i:1;i:0;}}', 'Ваш первый форум', 'описание первого форума', '', 7, '', '', '', 0, '', '', '', '', 7, '', 0, 1, 0, 1, 2, 'Welcome to phpBB3', 1418454675, 'admin', 'AA0000', 48, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 7, 1, 0);
+(1, 0, 1, 4, '', 'Категория', '', '', 7, '', '', '', 1, '', '', '', '', 7, '', 0, 0, 0, 1, 2, '', 1418454675, 'admin', 'AA0000', 32, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 1, 0),
+(2, 1, 2, 3, 'a:1:{i:1;a:2:{i:0;s:18:"Категория";i:1;i:0;}}', 'Ваш первый форум', 'описание первого форума', '', 7, '', '', '', 0, '', '', '', '', 7, '', 0, 1, 0, 1, 2, 'Welcome to phpBB3', 1418454675, 'admin', 'AA0000', 48, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 7, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1931,7 +1942,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_log` (
   KEY `topic_id` (`topic_id`),
   KEY `reportee_id` (`reportee_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=25 ;
 
 --
 -- Дамп данных таблицы `phpbb_log`
@@ -1959,7 +1970,9 @@ INSERT INTO `phpbb_log` (`log_id`, `log_type`, `user_id`, `forum_id`, `topic_id`
 (19, 2, 1, 0, 0, 0, '127.0.0.1', 1423236851, 'LOG_ERROR_EMAIL', 'a:1:{i:0;s:695:"<strong>EMAIL/SMTP</strong><br /><em>/forum/ucp.php</em><br /><br />SMTP-сервер не поддерживает аутентификацию.<h1>Backtrace</h1><p>Connecting to smtp.googlemail.com:25<br />LINE: 1020 &lt;- 220 mx.google.com ESMTP g5sm478931lag.11 - gsmtp\r\n<br /># EHLO PROTECTED-PC<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [158.181.225.62]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-STARTTLS\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># STARTTLS<br />LINE: 1414 &lt;- 220 2.0.0 Ready to start TLS\r\n</p><br />";}'),
 (20, 0, 2, 0, 0, 0, '127.0.0.1', 1423239284, 'LOG_ADMIN_AUTH_SUCCESS', ''),
 (21, 0, 2, 0, 0, 0, '127.0.0.1', 1423239733, 'LOG_ADMIN_AUTH_SUCCESS', ''),
-(22, 2, 1, 0, 0, 0, '127.0.0.1', 1423466074, 'LOG_ERROR_EMAIL', 'a:1:{i:0;s:695:"<strong>EMAIL/SMTP</strong><br /><em>/forum/ucp.php</em><br /><br />SMTP-сервер не поддерживает аутентификацию.<h1>Backtrace</h1><p>Connecting to smtp.googlemail.com:25<br />LINE: 1020 &lt;- 220 mx.google.com ESMTP v5sm1946053lby.9 - gsmtp\r\n<br /># EHLO PROTECTED-PC<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [158.181.225.62]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-STARTTLS\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># STARTTLS<br />LINE: 1414 &lt;- 220 2.0.0 Ready to start TLS\r\n</p><br />";}');
+(22, 2, 1, 0, 0, 0, '127.0.0.1', 1423466074, 'LOG_ERROR_EMAIL', 'a:1:{i:0;s:695:"<strong>EMAIL/SMTP</strong><br /><em>/forum/ucp.php</em><br /><br />SMTP-сервер не поддерживает аутентификацию.<h1>Backtrace</h1><p>Connecting to smtp.googlemail.com:25<br />LINE: 1020 &lt;- 220 mx.google.com ESMTP v5sm1946053lby.9 - gsmtp\r\n<br /># EHLO PROTECTED-PC<br />LINE: 1369 &lt;- 250-mx.google.com at your service, [158.181.225.62]\r\n<br />LINE: 1369 &lt;- 250-SIZE 35882577\r\n<br />LINE: 1369 &lt;- 250-8BITMIME\r\n<br />LINE: 1369 &lt;- 250-STARTTLS\r\n<br />LINE: 1369 &lt;- 250-ENHANCEDSTATUSCODES\r\n<br />LINE: 1369 &lt;- 250-PIPELINING\r\n<br />LINE: 1369 &lt;- 250 SMTPUTF8\r\n<br /># STARTTLS<br />LINE: 1414 &lt;- 220 2.0.0 Ready to start TLS\r\n</p><br />";}'),
+(23, 0, 2, 0, 0, 0, '127.0.0.1', 1423885867, 'LOG_ADMIN_AUTH_SUCCESS', ''),
+(24, 0, 2, 0, 0, 0, '127.0.0.1', 1423886024, 'LOG_FORUM_EDIT', 'a:1:{i:0;s:18:"Категория";}');
 
 -- --------------------------------------------------------
 
@@ -1981,16 +1994,6 @@ CREATE TABLE IF NOT EXISTS `phpbb_login_attempts` (
   KEY `att_time` (`attempt_time`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Дамп данных таблицы `phpbb_login_attempts`
---
-
-INSERT INTO `phpbb_login_attempts` (`attempt_ip`, `attempt_browser`, `attempt_forwarded_for`, `attempt_time`, `user_id`, `username`, `username_clean`) VALUES
-('127.0.0.1', '', '', 1423585268, 0, 'asmuratbek@gmail.com', 'asmuratbek@gmail.com'),
-('127.0.0.1', '', '', 1423692466, 0, 'asmuratbek@gmail.com', 'asmuratbek@gmail.com'),
-('127.0.0.1', '', '', 1423741763, 0, 'asmuratbek@gmail.com', 'asmuratbek@gmail.com'),
-('127.0.0.1', '', '', 1423863021, 0, 'asmuratbek@gmail.com', 'asmuratbek@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -3093,19 +3096,17 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions` (
 --
 
 INSERT INTO `phpbb_sessions` (`session_id`, `session_user_id`, `session_last_visit`, `session_start`, `session_time`, `session_ip`, `session_browser`, `session_forwarded_for`, `session_page`, `session_viewonline`, `session_autologin`, `session_admin`, `session_forum_id`) VALUES
-('0c7c2651cbc2b7642b454f2c63b1f539', 1, 1423863020, 1423863020, 1423863020, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=asmuratbek%40gmail.com', 1, 0, 0, 0),
-('1a8b3ebed544f04d5abe6ae79e8ed8ad', 57, 1423466093, 1423741787, 1423741787, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', 1, 0, 0, 0),
-('38702c3ab6367f611c2e6002e9e6f2ee', 1, 1423692461, 1423692461, 1423692461, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=asmuratbek%40gmail.com', 1, 0, 0, 0),
-('3def71634dd358916d16146bca07c261', 1, 1423469836, 1423469836, 1423469836, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
-('47360a31f7073d17f1e51f25588126b2', 57, 1423466093, 1423863024, 1423863024, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', 1, 0, 0, 0),
-('4eb78b35e5776cbb3de584da9307e41c', 57, 1423466093, 1423653574, 1423653574, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', 1, 0, 0, 0),
-('6d47ad9d3c2907e87079ce33fd4fa1c2', 1, 1423741761, 1423741761, 1423741761, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=asmuratbek%40gmail.com', 1, 0, 0, 0),
-('6f688ad5492ad684b6f701e8061ae049', 57, 1423466093, 1423741790, 1423741790, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', 1, 0, 0, 0),
-('975246952f76bb158995eee86f01c5a7', 2, 1423466002, 1423863036, 1423863036, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', 1, 0, 0, 0),
-('a49925aa77e3ff23db44c561147800ff', 57, 1423466093, 1423511516, 1423511516, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', 1, 0, 0, 0),
-('c587426f2a5f3492dc3b7a50466d5350', 1, 1423585268, 1423585268, 1423585268, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=asmuratbek%40gmail.com', 1, 0, 0, 0),
-('fb5b3d6869248c17b448648ff277e1d1', 57, 1423466093, 1423585275, 1423585275, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', 1, 0, 0, 0),
-('ff85e073896ecde1e0beba94a8a50bdf', 1, 1423863027, 1423863027, 1423863027, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'ucp.php?mode=logout&redirect=%2F', 1, 0, 0, 0);
+('0f66f2d4a616817516df34e869ccd4d3', 1, 1424952810, 1424952810, 1424952810, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
+('13e1abfc603fd853367c7b07893c9b37', 2, 1423863036, 1423885972, 1423885972, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', 1, 0, 0, 0),
+('1ddb8fa9d1c3c63cc2187c6281e4e006', 2, 1423863036, 1423885866, 1423886600, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'adm/index.php?i=acp_search&mode=settings', 1, 0, 1, 0),
+('46712fb60bedd44ca3fec8ef236b1548', 2, 1423863036, 1423886196, 1423886197, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
+('594a7cf43b87797eb7845ce63bdee21d', 1, 1423886002, 1423886002, 1423886002, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
+('7124c35fe3531f4b9837e37cfc4d2cef', 1, 1423886025, 1423886025, 1423886025, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
+('90afb7e2ad8d6f49c12c72bb09f1cdc1', 1, 1423887348, 1423887348, 1423887351, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'ucp.php?confirm_id=b7a498389f31e7b84c24e2fb4d9eefc6&mode=confirm&type=1', 1, 0, 0, 0),
+('af6aa307593f5613b11e91aacd790df1', 1, 1423885766, 1423885766, 1423885766, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'ucp.php?mode=logout&redirect=%2F', 1, 0, 0, 0),
+('b10045934bae2e4550a6a625ab3c9371', 2, 1423863036, 1424187407, 1424187407, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', 1, 0, 0, 0),
+('be089a06ce2b8190fef2159ca7f6cf8b', 1, 1423885982, 1423885982, 1423885982, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'ucp.php?mode=logout&redirect=%2F', 1, 0, 0, 0),
+('d6867145523cd9f534f1fd0407a2cdac', 2, 1423863036, 1424192718, 1424192718, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3474,8 +3475,8 @@ CREATE TABLE IF NOT EXISTS `phpbb_users` (
 --
 
 INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions`, `user_perm_from`, `user_ip`, `user_regdate`, `username`, `username_clean`, `user_password`, `user_passchg`, `user_email`, `user_email_hash`, `user_birthday`, `user_lastvisit`, `user_lastmark`, `user_lastpost_time`, `user_lastpage`, `user_last_confirm_key`, `user_last_search`, `user_warnings`, `user_last_warning`, `user_login_attempts`, `user_inactive_reason`, `user_inactive_time`, `user_posts`, `user_lang`, `user_timezone`, `user_dateformat`, `user_style`, `user_rank`, `user_colour`, `user_new_privmsg`, `user_unread_privmsg`, `user_last_privmsg`, `user_message_rules`, `user_full_folder`, `user_emailtime`, `user_topic_show_days`, `user_topic_sortby_type`, `user_topic_sortby_dir`, `user_post_show_days`, `user_post_sortby_type`, `user_post_sortby_dir`, `user_notify`, `user_notify_pm`, `user_notify_type`, `user_allow_pm`, `user_allow_viewonline`, `user_allow_viewemail`, `user_allow_massemail`, `user_options`, `user_avatar`, `user_avatar_type`, `user_avatar_width`, `user_avatar_height`, `user_sig`, `user_sig_bbcode_uid`, `user_sig_bbcode_bitfield`, `user_jabber`, `user_actkey`, `user_newpasswd`, `user_form_salt`, `user_new`, `user_reminded`, `user_reminded_time`) VALUES
-(1, 2, 1, '00000000000w27wrgg\ni1cjyo000000\ni1cjyo000000', 0, '', 1418454675, 'Anonymous', 'anonymous', '', 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', '', 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'ded11590ff7dba4c', 1, 0, 0),
-(2, 3, 5, 'zik0zjzik0zjzik0zc\ni1cjyo000000\nzik0zjzi8sg0', 0, '127.0.0.1', 1418454675, 'admin', 'admin', '$2y$10$obXAkj6EoWu7ggCb4ssZZeCxBYjMDU2lDJ2ZlmLRvRVuOWJMV.YXS', 0, 'jt4twggad34erzdsf@hotmail.com', 13310010827, '', 1423466002, 0, 0, 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', '', 0, 0, 0, 0, 0, 0, 1, 'en', '', 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'b7115ef00e391b4b', 1, 0, 0),
+(1, 2, 1, '00000000000w27wrgg\ni1cjyo000000\ni1cjyo000000', 0, '', 1418454675, 'Anonymous', 'anonymous', '', 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', '', 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'acc4a46af820e261', 1, 0, 0),
+(2, 3, 5, 'zik0zjzik0zjzik0zc\ni1cjyo000000\nzik0zjzi8sg0', 0, '127.0.0.1', 1418454675, 'admin', 'admin', '$2y$10$obXAkj6EoWu7ggCb4ssZZeCxBYjMDU2lDJ2ZlmLRvRVuOWJMV.YXS', 0, 'jt4twggad34erzdsf@hotmail.com', 13310010827, '', 1423863036, 0, 0, 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', '', 0, 0, 0, 0, 0, 0, 1, 'en', '', 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '03f5814c9da749c0', 1, 0, 0),
 (3, 2, 6, '', 0, '', 1418454699, 'AdsBot [Google]', 'adsbot [google]', '', 1418454699, '', 0, '', 0, 1418454699, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '21116ee5b90d3ba2', 0, 0, 0),
 (4, 2, 6, '', 0, '', 1418454700, 'Alexa [Bot]', 'alexa [bot]', '', 1418454700, '', 0, '', 0, 1418454700, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'c08cd3bff7159522', 0, 0, 0),
 (5, 2, 6, '', 0, '', 1418454700, 'Alta Vista [Bot]', 'alta vista [bot]', '', 1418454700, '', 0, '', 0, 1418454700, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'b2dfbcf74171735d', 0, 0, 0),
@@ -3521,15 +3522,15 @@ INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions
 (45, 2, 6, '', 0, '', 1418454710, 'Yahoo Slurp [Bot]', 'yahoo slurp [bot]', '', 1418454710, '', 0, '', 0, 1418454710, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '4769227ef815e1f8', 0, 0, 0),
 (46, 2, 6, '', 0, '', 1418454710, 'Yahoo [Bot]', 'yahoo [bot]', '', 1418454710, '', 0, '', 0, 1418454710, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e3cc9b97e4d29212', 0, 0, 0),
 (47, 2, 6, '', 0, '', 1418454711, 'YahooSeeker [Bot]', 'yahooseeker [bot]', '', 1418454711, '', 0, '', 0, 1418454711, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '3cdbc008adf32b0b', 0, 0, 0),
-(49, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418551724, 'jhsdgasdg', 'jhsdgasdg', '$2y$10$po7mB6dbPMGRpo4GkXmZQ.domMBKkOppCjaD2k2d1KfzGs.LyuQBK', 1418551724, 'jhsdgasdg@mail.ru', 398765278017, '', 1418551839, 1418551724, 0, 'viewforum.php?f=2', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '3d713f9d2162ddd0', 1, 0, 0),
+(49, 0, 2, '', 0, '127.0.0.1', 1418551724, 'jhsdgasdg', 'jhsdgasdg', '$2y$10$po7mB6dbPMGRpo4GkXmZQ.domMBKkOppCjaD2k2d1KfzGs.LyuQBK', 1418551724, 'jhsdgasdg@mail.ru', 398765278017, '', 1418551839, 1418551724, 0, 'viewforum.php?f=2', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '3d713f9d2162ddd0', 1, 0, 0),
 (50, 0, 2, '', 0, '127.0.0.1', 1418552035, 'resagr', 'resagr', '$2y$10$Xh/s3e41vRpc.hheUgR8oO3Yo8eMBiB4XqiKCN9iIR2QBUadPaSjW', 1418552035, '54uhtsrsrht@namba.kg', 406198964720, '', 0, 1418552035, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '4d2b4f366772d2a8', 1, 0, 0),
 (51, 0, 2, '', 0, '127.0.0.1', 1418552189, 'dizufghjka', 'dizufghjka', '$2y$10$ojHMZdFTNkwxQJ5V6P8m4O8mz5cFNAPmdcetFaO3wvnIgDGbfyzum', 1418552189, 'dizufghjka@gmail.com', 14981037020, '', 0, 1418552189, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e75b8bf81861d0cd', 1, 0, 0),
-(52, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418561617, 'protected', 'protected', '$2y$10$7Xa55trKvXpzEvXnOR.FiOPOIrqqmX8TzABQpfOK5UGYW5qlXCFo.', 1418561617, 'protected.for@gmail.com', 389024239523, '', 1418561745, 1418561617, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Antarctica/Vostok', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '6a29e124ff5c8768', 1, 0, 0),
-(53, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418561867, 'andry', 'andry', '$2y$10$E/5hpnEgltf/Iwr.QDkGcun0YSSh6itIedKqaeBQZRel9c.YNz6ey', 1418561867, 'protected_by@mail.ru', 256812957320, '', 1418581697, 1418561867, 0, 'index.php', '', 0, 0, 0, 3, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e73d571faa18321a', 1, 0, 0),
-(54, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1418582399, 'login123', 'login123', '$2y$10$j87fWJPG7r7c8dZlNPTdNucOTfOtTEvd3sVKrLYqD6kuhE9l7iJla', 1418582399, 'email@mail.ru', 118448467813, '', 1418637404, 1418582399, 0, 'ucp.php?login=external&mode=login&password=pass123&redirect=%2F&username=login123', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '5b644e08b2af59f8', 1, 0, 0),
-(55, 0, 2, '00000000001qccftm0\ni1cjyo000000\nqlaq53000000', 0, '127.0.0.1', 1423236566, '123', '123', '$2y$10$fqE5tcXiKnqpLFlplxPwwenxAahuwBrV2Z.1oYV0DYOihG6Mxh9Da', 1423236566, '123@123.ru', 353749127910, '', 1423465914, 1423236566, 0, 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=123', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'd455b94923f7633f', 1, 0, 0),
+(52, 0, 2, '', 0, '127.0.0.1', 1418561617, 'protected', 'protected', '$2y$10$7Xa55trKvXpzEvXnOR.FiOPOIrqqmX8TzABQpfOK5UGYW5qlXCFo.', 1418561617, 'protected.for@gmail.com', 389024239523, '', 1418561745, 1418561617, 0, 'index.php', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Antarctica/Vostok', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '6a29e124ff5c8768', 1, 0, 0),
+(53, 0, 2, '', 0, '127.0.0.1', 1418561867, 'andry', 'andry', '$2y$10$E/5hpnEgltf/Iwr.QDkGcun0YSSh6itIedKqaeBQZRel9c.YNz6ey', 1418561867, 'protected_by@mail.ru', 256812957320, '', 1418581697, 1418561867, 0, 'index.php', '', 0, 0, 0, 3, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'e73d571faa18321a', 1, 0, 0),
+(54, 0, 2, '', 0, '127.0.0.1', 1418582399, 'login123', 'login123', '$2y$10$j87fWJPG7r7c8dZlNPTdNucOTfOtTEvd3sVKrLYqD6kuhE9l7iJla', 1418582399, 'email@mail.ru', 118448467813, '', 1418637404, 1418582399, 0, 'ucp.php?login=external&mode=login&password=pass123&redirect=%2F&username=login123', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '5b644e08b2af59f8', 1, 0, 0),
+(55, 0, 2, '', 0, '127.0.0.1', 1423236566, '123', '123', '$2y$10$fqE5tcXiKnqpLFlplxPwwenxAahuwBrV2Z.1oYV0DYOihG6Mxh9Da', 1423236566, '123@123.ru', 353749127910, '', 1423465914, 1423236566, 0, 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=123', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'd455b94923f7633f', 1, 0, 0),
 (56, 0, 2, '', 0, '127.0.0.1', 1423236849, 'asd', 'asd', '$2y$10$QQeYtnGyKuY/pFC6MBYou.580WhvpfJurKOGvXFeIReiYxzYt77wG', 1423236849, 'asd@asd.ru', 325484148110, '', 0, 1423236849, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', 'cb1ffdbcd04e04bb', 1, 0, 0),
-(57, 0, 2, '', 0, '127.0.0.1', 1423466070, 'murat', 'murat', '$2y$10$eA5qQvfH0Oq5guuc5lxwgufwIY0O2FmXs/ic1cY8bsy40ZVwqFS42', 1423466070, 'asmuratbek@gmail.com', 240825792220, '', 1423466093, 1423466070, 0, 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '0fee948f6caedbac', 1, 0, 0);
+(57, 0, 2, '', 0, '127.0.0.1', 1423466070, 'murat', 'murat', '$2y$10$eA5qQvfH0Oq5guuc5lxwgufwIY0O2FmXs/ic1cY8bsy40ZVwqFS42', 1423466070, 'asmuratbek@gmail.com', 240825792220, '', 1423863024, 1423466070, 0, 'ucp.php?login=external&mode=login&password=123123&redirect=%2F&username=murat', '', 0, 0, 0, 0, 0, 0, 0, 'ru', 'Asia/Bishkek', 'D M d, Y g:i a', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '0fee948f6caedbac', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3958,7 +3959,7 @@ CREATE TABLE IF NOT EXISTS `points` (
   `price_month` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `url` (`url`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
 -- Дамп данных таблицы `points`
@@ -3966,7 +3967,7 @@ CREATE TABLE IF NOT EXISTS `points` (
 
 INSERT INTO `points` (`id`, `name`, `order`, `active`, `payed`, `url`, `header`, `title`, `desc`, `keyw`, `image`, `sport_id`, `subway1_id`, `time1`, `subway2_id`, `time2`, `contacts`, `phone`, `email`, `admemail`, `site`, `graphite`, `text`, `payedf`, `payedt`, `coords`, `youtube`, `price_year`, `price_6months`, `price_month`) VALUES
 (39, 'Международный центр исторического фехтования', 0, 'on', '0', 'dasda', '0', 'Международный центр исторического фехтования', 'Международный центр исторического фехтования "Эскалибур"', 'Международный центр исторического фехтования "Эскалибур"', '2e0f6fab16323115a7be7a0ffebc1d9b.jpg', 23, '0', 6, '1', 4, 'Москва, ул. Шарикопошниковская, д. 17', '+798512313', 'protected.for@gmail.com', 'asd@das.rudsa', 'excalibur-center.ru', 'Каждый день с 6 утра до 12 ночи', '<p>Фитнес-клуб &laquo;Мультиспорт&raquo; &ndash; это действительно мультикоктейль, состоящий из всех возможных радостей фитнес-жизни и сопутствующих развлечений. Очень удачное расположение, недалеко от комплекса &laquo;Лужники&raquo;, позволяет задействовать для занятий не только помещения фитнес-клуба, но и все прилегающее пространство.</p>\r\n\r\n<h6>К услугам гостей клуба:</h6>\r\n\r\n<ul>\r\n	<li>&mdash; тренажерные залы;</li>\r\n	<li>&mdash; залы групповых программ;</li>\r\n	<li>&mdash; единоборства;</li>\r\n	<li>&mdash; бассейн;</li>\r\n	<li>&mdash; фехтование;</li>\r\n	<li>&mdash; корты;</li>\r\n	<li>&mdash; школа сквош и многое другое!</li>\r\n</ul>\r\n\r\n<p>Кроме набора привычных услуг &laquo;Мультиспорт&raquo; предлагает и инновационные направления. А именно: занятия в студии FreeMotion, занятия на открытом воздухе Open air, целевые персонифицированные фитнес-программы, спортивная диагностика и фитнес-экспертиза. Здесь созданы все условия для того, чтобы спорт стал любимой частью вашей жизни &ndash; программы создаются с учетом только ваших особенностей, а выбор клубных карт порадует даже искушенного спортгурмана.</p>\r\n\r\n<p>В качестве разогрева до занятий или просто активного отдыха вы можете сыграть партию настольного тенниса или выбить страйк в боулинге. Ну а после тренировки добро пожаловать в спа, клубное кафе или фитобар.</p>\r\n\r\n<h6>Бассейн</h6>\r\n\r\n<p>есть бассейн, водные программы</p>\r\n\r\n<h6>Групповые программы</h6>\r\n\r\n<p>пилатес, interval, занятия для беременных, лечебная гимнастика, аквааэробика, аэробика, стретчинг, фитнес программы, йога, боевые искусства, танцы</p>\r\n\r\n<h6>Банный комплекс</h6>\r\n\r\n<p>финская сауна, турецкая баня (хамам), гидромассаж Прочие услуги фитнес магазин, СПА, детский фитнес, персональные тренировки, бар / ресторан</p>\r\n', '01.01.1970 06:00', '01.01.1970 06:00', '100.898438,59.879284', 'aahPguhmotk', '', '', ''),
-(40, 'Московская школа Айкидо', 0, 'on', '0', 'asdsad', '0', 'Московская школа Айкидо', 'Московская школа Айкидо "Каннагара Додзё" (центральный зал)', 'Московская школа Айкидо "Каннагара Додзё" (центральный зал)', 'aacdab92e1adb398423ce3ccb2daad68.jpg', 23, '2', 0, '0', 0, 'Москва, ул. Академика Петровского, д. 10', '+7 789 456 123', '', '', 'kannagara-aikido.ru', '6-23', '<p><span style="color:rgb(38, 38, 38); font-family:segoe ui; font-size:15.5555562973022px">Додзё основано в 1989 г. С тех пор занятия идут, не прекращаясь. Участники клуба видят айкидо не только как острое оружие, но и как возможность развития личности.</span></p>\r\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
+(40, 'Московская школа Айкидо', 0, 'on', '0', 'asdsad', '0', 'Московская школа Айкидо', 'Московская школа Айкидо "Каннагара Додзё" (центральный зал)', 'Московская школа Айкидо "Каннагара Додзё" (центральный зал)', 'aacdab92e1adb398423ce3ccb2daad68.jpg', 23, '2', 10, '1', 15, 'Москва, ул. Академика Петровского, д. 10', '+7 789 456 123', '', '', 'kannagara-aikido.ru', '6-23', '<p><span style="color:rgb(38, 38, 38); font-family:segoe ui; font-size:15.5555562973022px">Додзё основано в 1989 г. С тех пор занятия идут, не прекращаясь. Участники клуба видят айкидо не только как острое оружие, но и как возможность развития личности.</span></p>\r\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
 (41, 'Спортивный клуб "Ермак"', 0, 'on', '0', 'sportivnyj_klub_ermak', '0', 'Спортивный клуб "Ермак"', 'Спортивный клуб "Ермак"', 'Спортивный клуб "Ермак"', '7ad3f0f6c2e27b8308643d167b73d1fa.jpg', 23, '1', 8, '0', 0, 'Москва, ул. Обручева, д. 23, корп. 3', '', '', '', 'www.ermakclub.ru', '6-23', '<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Cпортивный клуб &quot;Ермак&quot; приглашает всех желающих на тренировки по различным видам единоборств: Бокс, Кикбоксинг, Тайский бокс (Муай-Тай), Боевое самбо, Карате, Айкидо, Дзюдо, Джиу-джитсу, Микс файт (ММА).</div>\n\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">&nbsp;</div>\n\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Также мы рады предложить для ваших детей (от 5 лет) тренировки по следующим направлениям: Самбо, Бокс, Дзюдо, Карате, Айкидо, Джиу-джитсу и ОФП.</div>\n\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Для женщин у нас предусмотрены групповые программы по аэробике, стретчингу, тайбо, современным танцам и балету.</div>\n\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">&nbsp;</div>\n\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">В тренерский состав спортивного клуба &quot;Ермак&quot; входят: заслуженные мастера спорта, чемпионы России, Европы и Мира, а также Олимпийские призеры.</div>\n\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Ждем Вас в нашем клубе!</div>\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
 (42, 'Клуб контактных единоборств', 0, 'on', '0', 'klub_kontaktnyh_edinoborstv_kombat', '0', 'Клуб контактных единоборств', 'Клуб контактных единоборств "Комбат"', 'Клуб контактных единоборств "Комбат"', 'a5bfccb8b0d607a6b7eeeac95da2f32d.jpg', 23, '1', 8, '0', 0, 'Москва, ул. Новинский бульвар, д.18а', '', '', '', 'combat.narod.ru', 'с 6 до 23:00 Пн-Ср-Пт', '<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Автономная некоммерческая организация Клуб Единоборств &quot;Комбат&quot; основной своей целью ставит развитие спортивных и традиционных видов единоборств и систем самозащиты.&nbsp;</div>\r\n\r\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Спортсмены клуба &quot;Комбат&quot; - многократные победители и призеры чемпионатов Москвы по тайскому боксу, призеры всероссийских соревнований и неоднократные победители профессиональных турниров по тайскому боксу, а также победители и призеры соревнований по кикбоксингу, боксу, армейскому рукопашному бою, контактному каратэ.&nbsp;</div>\r\n\r\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Клуб Комбат является соучредителем Ассоциации Клубов Боевых Искусств (АКБИ) ЦАО города Москвы, &nbsp;совместно с которой было проведено 15 Открытых турниров ЦАО по каратэ, кикбоксингу и рукопашному бою.&nbsp;</div>\r\n\r\n<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 15.5555562973022px; font-family: Segoe, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0); line-height: 17.7777786254883px;">Клуб Единоборств &quot;Комбат&quot; существует с 1997 года. Клуб возник на части коллектива спорт клуба &quot;Арбат 51&quot;, в котором в конце 80-х тренировали известные специалисты единоборств: Глеб Горячев, Николай Гречко, Александр Королев (каратэ Сэн&quot;э), Юрий Семенов (кикбоксинг ЕПАКК), Игорь Федорович Пестун, Александр Столяров (кикбоксинг КИТЭК), Константин Давыдов (каратэ, кикбоксинг клуб &quot;Будо&quot;), Алексей Иванов (каратэ Дзесимон).</div>\r\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
 (43, 'Фитнес клуб "Палестра Sport"', 0, 'on', '0', 'fitnes_klub_palestra_sport', '0', 'Фитнес клуб "Палестра Sport"', 'Фитнес клуб "Палестра Sport"', 'Фитнес клуб "Палестра Sport"', 'c724e61f27f7cf4bbab241b59e6fcb14.jpg', 23, '2', 12, '0', 0, 'Москва, ул. 2-я Песчаная, д. 4а.', '', '', '', 'palestrasport.ru', '6-23', '<p>На территории &laquo;ПАЛЕСТРА Sport&raquo; находятся:</p>\n\n<ul>\n	<li>SPA-салон.</li>\n	<li>Три бассейна (детский, бассейн с морской водой и большой бассейн (25 м) с тремя плавательными дорожками и отдельной зоной для занятий по аква-аэробике).</li>\n	<li>Два тренажерных зала с новейшим оборудованием.</li>\n	<li>Зал единоборств.</li>\n	<li>Крытый теннисный корт со специальным покрытием.</li>\n	<li>Два зала для персональных тренировок.</li>\n	<li>Три зала для групповых тренировок.</li>\n	<li>Марокканский хаммам, сауна и русская баня.</li>\n	<li>SPA-кафе, ресторан, летняя терраса.</li>\n	<li>Детский Пиратский Клуб.</li>\n</ul>\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
@@ -3985,7 +3986,8 @@ INSERT INTO `points` (`id`, `name`, `order`, `active`, `payed`, `url`, `header`,
 (55, 'Клуб айкидо в Сокольниках', 0, 'on', '0', 'klub_ajkido_v_sokolnikah', '0', 'Клуб айкидо в Сокольниках', 'Клуб айкидо в Сокольниках', 'Клуб айкидо в Сокольниках', '90ecfe50d5ceb356c922f9e3da403d5a.jpg', 23, '2', 2, '0', 0, 'Москва, ул. Стромынка, д. 20, корп. 1', '', '', '', 'http://aikido-v-sokolnikah.ru', '8:00-22:00', '<p>Айкидо в Сокольниках</p>\n\n<p>Если Вы ищите место для занятий Айкидо в районе станции метро Сокольники, то Вам определенно не найти места более подходящего, чем наш Клуб Айкидо в Сокольниках. В нашем Клубе занимаются как взрослые, так и дети, как новички, так и люди с многолетним опытом. Подберите наиболее подходящую для Вас программу, ознакомившись с нашим расписанием.</p>\n\n<p>Айкидо &mdash; японское боевое искусство, созданное О-сэнсэем Морихэем Уэсибой как синтез его исследований боевых искусств, философии и религиозных убеждений. Целью Уэсибы было создать и разработать боевое искусство, впитавшее в себя все достижения великих мастеров. Айкидо акцентируется на слиянии с атакой противника и перенаправлении энергии атакующего (в противовес встречи силы силой). В дополнение к физическим техникам и тренировкам, айкидо придаёт особое значение тренировкам сознания, управляемого расслабления, и развития &laquo;духа&raquo; и силы &laquo;ки&raquo;.</p>\n\n<p>Для учеников появились новые разделы с дополнительной методической информацией и видео. Доступ к новым разделам просите у Вашего инструктора.</p>\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
 (56, 'Айкидо клуб', 0, 'on', '0', 'ajkido_klub', '0', 'Айкидо клуб', 'Айкидо клуб', 'Айкидо клуб', '94774f3c362afcea93f097a0fd1912bb.jpg', 23, '1', 0, '0', 0, 'Москва, Ул. 7-я Текстильщиков, дом 5', '', '', '', 'Aikido1.ru', '8:00-22:00', '<p>Здравствуйте! Мы рады приветствовать вас на сайте федерации Айкидо Айкикай.</p>\n\n<p>Айкидо &ndash; это боевое искусство, которое позволит оказать сопротивление гораздо более сильному противнику. Его сила и ярость будут направлены против него самого.</p>\n\n<p>Тренировки по Айкидо абсолютно травмобезопасны. На тренировках могут тренироваться люди совершенно разных возрастов и уровней физической подготовки. Большое внимание на тренировках уделяется навыкам владения своим телом и дыхательным техникам.</p>\n\n<p>Тренировки проводятся для детей, взрослых, а также индивидуально. Всю информацию о расписании занятий, залах и ведущих тренерах вы можете найти в соответсвующих разделах сайта. На тренировках вы приобретете не только базовые знания техник Айкидо, но и научитесь ударной техники, технике работы с оружием и повысите уровень физической подготовки. Ждем Вас в наших залах!</p>\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
 (57, 'Клуб Айкидо "Дзикисинкай" на Волгоградском Проспекте', 0, 'on', '0', 'klub_ajkido_dzikisinkaj_na_volgogradskom_prospekte', '0', 'Клуб Айкидо "Дзикисинкай" на Волгоградском Проспекте', 'Клуб Айкидо "Дзикисинкай" на Волгоградском Проспекте', 'Клуб Айкидо "Дзикисинкай" на Волгоградском Проспекте', '0b12c056f3cb0b483a394d2c53088f76.jpg', 23, '1', 0, '0', 0, 'Москва, Волгоградский проспект, д. 28', '', '', '', 'www.jikishinkai.ru', '8:00-22:00', '<p>В 1992 году Номура сенсей постановил, что Огнян Найдов-Железов, имевший в то время 1 Дан и Андрей Лычев (тоже 1 Дан) должны организовать свою отдельную секцию. Такая секция начала работать в сентябре 1992 года при Колледже Сбербанка РФ и просуществовала целый год. Один из занимавшихся в секции новичков &ndash; Сергей Волошко предложил организовать секцию в МГТУ.</p>\n\n<p>Благодаря поддержке кафедры физвоспитания и лично декана Киселева такая секция начала работать 4 октября 1993 года. Эта дата и считается Днем Рождения Айкидо в МГТУ.</p>\n\n<p>Практически с самого начала секция работала под пристальным вниманием Хомбу Додзе. Сиханы Хомбу Додзе Итихаси и Миямото первый раз посетили занятия в секции Айкидо МГТУ в декабре 1993 года, к этому периоду относится и первое официальное показательное выступление членов Клуба перед широкой аудиторией. С 1995 года Миямото сихан, решением Досю, был назначен техническим куратором клуба. С тех пор, ежегодно Миямото сихан проводит в Москве семинар по Айкидо, организатором которого является Федерация Айкидо Айкикай России и лично Огнян Кременович Найдов-Железов.</p>\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
-(58, 'Дом культуры', 0, 'on', '0', 'dom_kultury_berendej', '0', 'Дом культуры', 'Дом культуры "Берендей"', 'Дом культуры "Берендей"', '1011a7b8137f2619ab1ed4c839fbb638.jpg', 23, '0', 0, '0', 0, 'Москва, проспект маршала Жукова, д. 76, корп. 1', '', '', '', '', '12:00-18:00 ф', '<p>В 1991 году был открыт ДК &laquo;Берендей&raquo;, который с начала своего возникновения и по сегодняшний день пользуется большой популярностью среди населения.</p>\r\n\r\n<p>Здесь каждый может найти по душе любимое занятие.</p>\r\n\r\n<p>Много талантов вырастил &laquo;Берендей&raquo;, многим помог определиться в жизни, а кому-то подарил момент общения.</p>\r\n\r\n<p>Одна из самых любимых и посещаемых секций - секция айкидо для детей.</p>\r\n\r\n<p>График занятий:<br />\r\n- вторник - с 17:00 до 18:00;<br />\r\n- суббота - с 12:00 до 13:00.</p>\r\n\r\n<p>Инструктор: Щеглова (Коваленко) Наталья, 2 дан айкидо айкикай</p>\r\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', '');
+(58, 'Дом культуры', 0, 'on', '0', 'dom_kultury_berendej', '0', 'Дом культуры', 'Дом культуры "Берендей"', 'Дом культуры "Берендей"', '1011a7b8137f2619ab1ed4c839fbb638.jpg', 23, '0', 0, '0', 0, 'Москва, проспект маршала Жукова, д. 76, корп. 1', '', '', '', '', '12:00-18:00 ф', '<p>В 1991 году был открыт ДК &laquo;Берендей&raquo;, который с начала своего возникновения и по сегодняшний день пользуется большой популярностью среди населения.</p>\r\n\r\n<p>Здесь каждый может найти по душе любимое занятие.</p>\r\n\r\n<p>Много талантов вырастил &laquo;Берендей&raquo;, многим помог определиться в жизни, а кому-то подарил момент общения.</p>\r\n\r\n<p>Одна из самых любимых и посещаемых секций - секция айкидо для детей.</p>\r\n\r\n<p>График занятий:<br />\r\n- вторник - с 17:00 до 18:00;<br />\r\n- суббота - с 12:00 до 13:00.</p>\r\n\r\n<p>Инструктор: Щеглова (Коваленко) Наталья, 2 дан айкидо айкикай</p>\r\n', '01.01.1970 06:00', '01.01.1970 06:00', '', '', '', '', ''),
+(59, 'asdasdsa', 0, 'on', '0', 'asdasdsa', '0', '', '', '', 'cd210e10f7b05c90b12d5ffb2d2ef844.jpg', 24, '1', 0, '0', 0, 'asd', 'das', 'das@das.ru', 'protected.for@gmail.com', 'asd', 'das', '', '01.01.1970 12:00', '01.01.1970 12:00', '', 'd', 'dsa', 'das', 'dsa');
 
 -- --------------------------------------------------------
 
@@ -4240,7 +4242,7 @@ CREATE TABLE IF NOT EXISTS `points_treners` (
   `text` text NOT NULL,
   `point_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Дамп данных таблицы `points_treners`
@@ -4253,7 +4255,12 @@ INSERT INTO `points_treners` (`id`, `name`, `sname`, `image`, `pph`, `ppm`, `ord
 (12, 'Гвоздев Максим', '', '1418304114_34d84045e4fe7d7a11602605fef919f0.jpg', '', '', 0, '', 44),
 (13, 'Алеся Дмитриева', '', '1418304114_61e6571834e0375cb043e53d7acea71b.jpg', '', '', 0, '', 44),
 (14, 'Евдокимов Александр', '', '1418307637_e92d0693b3c5638a778ba78d41587cda.jpg', '', '', 0, '', 48),
-(30, '', '', '1423734919_41fdc8c3e0fb4d39e6156a1031eaee80.gif', '', '', 0, '', 39);
+(30, 'Сергей', 'Пупкин', '1423734919_41fdc8c3e0fb4d39e6156a1031eaee80.gif', '200', '700', 0, 'Сервис онлайн проверки текста на уникальность TEXT.RU покажет процент уникальности текста.', 39),
+(31, '', '', '1423884620_3c92c636bee5e6900f1131b4d5526b84.jpg', '', '', 0, '', 39),
+(32, '', '', '1423884620_1633a84bfa8eb535028239dfe1941a9b.jpg', '', '', 0, '', 39),
+(33, '', '', '1423884620_611a2d917bd5fcbbbd171c3221bf1c66.jpg', '', '', 0, '', 39),
+(34, 'Кролик', 'Иванов', '1423884671_b19bf2ca57dc98572f3890ffc9660e8e.jpg', '800 руб.', '2000 руб.', 0, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 39),
+(35, '', '', '1423884671_23c7b46346f7caaf463e5a5199af76db.jpg', '', '', 0, '', 39);
 
 -- --------------------------------------------------------
 
@@ -4278,7 +4285,7 @@ CREATE TABLE IF NOT EXISTS `requests` (
   `ip` varchar(255) NOT NULL,
   `read` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `requests`
@@ -4289,7 +4296,10 @@ INSERT INTO `requests` (`id`, `name`, `age`, `sex`, `weight`, `sports`, `subway`
 (2, 'dasd', 'dsad', 'dsa', 'sadas', 'das', 'dsa', 'dsa', 'dsa', 'dsada@adsa.ru', 'das', '27.11.2014 14:57:02', '127.0.0.1', 'on'),
 (3, 'dsa', 'ds', 'sadas', 'dsad', 'sdas', 'dsada', 'das', 'dsadas', 'dfdas@dsa.ru', 'dasd', '06.02.2015 13:21:45', '127.0.0.1', 'on'),
 (4, 'dasd', 'dsa', 'd', 'dsa', 'dsa', 'd', 'das', 'd', 'asdas@dasdas.ru', 'dasdas', '06.02.2015 13:23:00', '127.0.0.1', 'on'),
-(5, 'dsad', 'dsa', 'dsa', 'dsa', 'dads', 'das', 'das', 'dsa', 'das@dsa.ru', 'dsad', '06.02.2015 13:26:29', '127.0.0.1', 'on');
+(5, 'dsad', 'dsa', 'dsa', 'dsa', 'dads', 'das', 'das', 'dsa', 'das@dsa.ru', 'dsad', '06.02.2015 13:26:29', '127.0.0.1', 'on'),
+(6, 'Андрей', '19', 'Мужской', '55555', 'Лял лвыфл выф', 'Бабушкинское', 'выфрвлфырв', '6000000$', 'protected.for@gmail.com', '+996554709700', '14.02.2015 03:55:37', '127.0.0.1', 'on'),
+(7, 'Андрей Федотов', '19', 'МУжской', '62', 'футбол, волейбол, баскетбол, хоккей', 'Бабушкинское', 'Нет', '5000000$', 'protected.for@gmail.com', '+996554709700', '14.02.2015 07:58:40', '127.0.0.1', 'on'),
+(8, 'asd', 'ddsajdk', 'jdl', 'kj', 'k', 'j', 'kl', 'j', 'kl@asd.ru', 'asd', '14.02.2015 23:13:58', '127.0.0.1', 'on');
 
 -- --------------------------------------------------------
 
@@ -4400,7 +4410,7 @@ CREATE TABLE IF NOT EXISTS `studentcards` (
   `ip` varchar(255) NOT NULL,
   `read` enum('on','0','','') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Дамп данных таблицы `studentcards`
@@ -4411,7 +4421,32 @@ INSERT INTO `studentcards` (`id`, `name`, `sname`, `mname`, `univer`, `contacts`
 (4, 'das', 'dsad', 'dsad', 'dsad', 'asdas', 'courier', '10.02.2015 16:25:08', '127.0.0.1', 'on'),
 (5, 'Андрей', 'Федотов', 'Игоревич', 'Политех', '0554709700', 'self', '10.02.2015 22:15:43', '127.0.0.1', 'on'),
 (6, 'dasda', 'das', 'ds', 'dasd', 'asdsa', 'courier', '10.02.2015 22:18:37', '127.0.0.1', 'on'),
-(7, 'asd', 'dasdsadas', 'asdas', 'das', 'dasdasd', 'courier', '14.02.2015 03:33:53', '127.0.0.1', '');
+(7, 'asd', 'dasdsadas', 'asdas', 'das', 'dasdasd', 'courier', '14.02.2015 03:33:53', '127.0.0.1', ''),
+(8, 'asd', 'das', 'das', 'das', 'das', 'courier', '14.02.2015 07:32:14', '127.0.0.1', ''),
+(9, 'asd', 'asd', 'asd', 'asd', 'asd', 'self', '14.02.2015 07:56:05', '127.0.0.1', ''),
+(10, 'фвы', 'вфы', 'вфы', 'вфы', 'вфы', 'self', '14.02.2015 10:07:39', '127.0.0.1', ''),
+(11, 'Андрей', 'вфывфы', 'фыв', 'фыв', 'фыв', 'courier', '16.02.2015 12:19:44', '127.0.0.1', ''),
+(12, 'dasd', 'asd', 'asd', 'asd', 'asd', 'courier', '16.02.2015 12:26:23', '127.0.0.1', ''),
+(13, 'asd', 'asd', 'asd', 'asd', 'asd', 'courier', '16.02.2015 12:28:35', '127.0.0.1', ''),
+(14, 'Андрей', 'Федотов', 'Игоревич', 'ПОЛИТЕХ', '554709700', 'courier', '16.02.2015 13:26:04', '127.0.0.1', ''),
+(15, 'фыв', '123', 'ячс', 'апр', 'ннг', 'courier', '16.02.2015 13:28:54', '127.0.0.1', ''),
+(16, 'фыв', 'фыв', 'фыв', 'фыв', 'фыв', 'courier', '16.02.2015 13:34:34', '127.0.0.1', ''),
+(17, 'sad', 'asd', 'asd', 'asd', 'asd', 'courier', '16.02.2015 13:35:53', '127.0.0.1', ''),
+(18, 'das', 'das', 'dsa', 'das', 'dsa', 'courier', '16.02.2015 13:36:19', '127.0.0.1', ''),
+(19, 'dasdas', 'dasdas', 'dasda', '123', '512', 'courier', '16.02.2015 13:39:56', '127.0.0.1', ''),
+(20, '123', '321', 'das', 'das', 'das', 'courier', '16.02.2015 13:41:06', '127.0.0.1', ''),
+(21, 'dsad', 'dsa', 'dsa', 'dsa', 'das', 'courier', '16.02.2015 13:47:21', '127.0.0.1', ''),
+(22, 'asd', 'asd', 'asd', 'asd', 'asd', 'courier', '16.02.2015 23:39:56', '127.0.0.1', ''),
+(23, '123', '123', '123', '123', '123', 'courier', '16.02.2015 23:40:17', '127.0.0.1', ''),
+(24, '123', '123', '123', '123', '123', 'courier', '16.02.2015 23:43:18', '127.0.0.1', ''),
+(25, 'dasd', 'das', 'das', 'das', 'asd', 'courier', '16.02.2015 23:43:27', '127.0.0.1', ''),
+(26, 'Андрей', 'Федотов', 'вфы', 'вфы', 'выф', 'courier', '18.02.2015 15:30:04', '127.0.0.1', ''),
+(27, 'вфыв', 'вфы', 'вфы', 'вфы', 'вфы', 'courier', '18.02.2015 15:30:43', '127.0.0.1', ''),
+(28, 'выф', 'выф', 'выф', 'вфы', 'вфы', 'courier', '18.02.2015 15:31:15', '127.0.0.1', ''),
+(29, 'вфывф', 'выф', 'вфы', 'фыв', 'фыв', 'courier', '19.02.2015 00:10:59', '127.0.0.1', ''),
+(30, 'фыв', 'фыв', 'фыв', 'фыв', 'фыв', 'courier', '19.02.2015 00:11:14', '127.0.0.1', ''),
+(31, 'фыв', 'вфы', 'фыв', 'фыв', 'фыв', 'courier', '19.02.2015 00:11:37', '127.0.0.1', ''),
+(32, 'фыв', 'фыв', 'фыв', 'фыв', 'фыв', 'courier', '19.02.2015 00:12:20', '127.0.0.1', '');
 
 -- --------------------------------------------------------
 
@@ -4450,25 +4485,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `object` enum('blog','news') NOT NULL,
   `page_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
-
---
--- Дамп данных таблицы `tags`
---
-
-INSERT INTO `tags` (`id`, `name`, `object`, `page_id`) VALUES
-(35, 'футбол', 'blog', 1),
-(36, 'баскетбол', 'blog', 1),
-(37, 'минибол', 'blog', 2),
-(38, 'майна', 'news', 1),
-(39, 'гайна', 'news', 1),
-(40, 'тупья', 'news', 1),
-(41, 'вфывф', 'news', 2),
-(42, 'йцуйуц', 'news', 2),
-(43, 'сячсяч', 'news', 2),
-(44, 'бодифлекс отзывы', 'news', 4),
-(45, 'диеты дюкана отзывы', 'news', 7),
-(46, 'ванночки для укрепления ногтей в домашних условиях', 'news', 13);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
