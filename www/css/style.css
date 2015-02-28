@@ -2598,7 +2598,7 @@ ul.pagination li.first_child a:hover, ul.pagination li.last_child a:hover {
 }
 .news_banner {
     width: 240px;
-    height: 400px;
+    height: auto;
     padding: 37px;
     border:1px dashed #c9c9c9;
     margin: 0 auto;

@@ -164,7 +164,7 @@ $route['admin/settings/banners/edit/(:num)'] = 'admin/banners/edit/$1';
 $route['admin/settings/banners/delete/(:num)'] = 'admin/banners/delete/$1';
 $route['admin/settings/banners/up/(:num)'] = 'admin/banners/up/$1';
 $route['admin/settings/banners/down/(:num)'] = 'admin/banners/down/$1';
-$route['admin/settings/banners/add'] = 'admin/banners/add';
+//$route['admin/settings/banners/add'] = 'admin/banners/add';
 
 $route['admin/settings/maintext'] = 'admin/settings/maintext';
 $route['admin/settings/maintext/edit'] = 'admin/settings/maintext/edit';
@@ -212,6 +212,8 @@ $route['contacts/save'] = 'front/pages/contacts/save';
 $route['forumlogin/login'] = 'front/forumlogin/login';
 $route['forumlogin/login1'] = 'front/forumlogin/login1';
 $route['forumlogin/logout'] = 'front/forumlogin/logout';
+
+$route['banners/(:num)'] = 'front/pages/bannerClicksCount/$1';
 
 $route['(:any)/(:any)/(:any)'] = 'front/pages/point/$1/$2/$3';
 $route['(:any)/(:any)'] = 'front/pages/points/$1/$2';

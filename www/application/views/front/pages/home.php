@@ -89,10 +89,11 @@
                 <!-- /li -->
             </ul>
         </div><!-- /categories -->
-
-        <div class="banner">
-            <a href="#"><img src="/img/banner-1.jpg" height="90" width="1000" alt=""></a>
-        </div><!-- banner -->
+        <?php if (isset($banner['id'])): ?>
+            <div class="banner">
+                <a target="_blank" href="/banners/<?= $banner['id'] ?>"><img src="/images/banners/<?= $banner['image'] ?>" height="90" width="1000" alt=""></a>
+            </div><!-- banner -->
+        <?php endif; ?>
         <h3 class="block-title">Видео блог от Jeisport</h3><!-- title -->
         <div class="flexslider">
             <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-1000px, 0px, 0px); transform: translate3d(-1000px, 0px, 0px);">

@@ -33,6 +33,17 @@ class Blogs_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_blogs_for_pagination($startFrom) {
+        $this->db->order_by('order', 'desc');
+        $this->db->order_by('date', 'desc');
+        $query = $this->db->get_where('blog', array('active' => 'on'), 5, $startFrom);
+        if (count($query->result_array()) > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
     public function get3posts_for_front() {
         $this->db->order_by('order', 'desc');
         $this->db->order_by('date', 'desc');

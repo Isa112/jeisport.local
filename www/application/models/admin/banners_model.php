@@ -48,18 +48,29 @@ class Banners_model extends CI_Model {
         }
     }
 
-    public function get_banners_for_point($id = null) {
+    public function get_banner_for_front($pos) {
+        if ($pos) {
+            $query = $this->db->get_where('banners', array('pos' => $pos, 'active' => 'on'));
+            return $query->row_array();
+        }
+    }
+
+    public function get_banner_by_id_for_front($id) {
         if ($id) {
             $query = $this->db->get_where('banners', array('id' => $id, 'active' => 'on'));
             return $query->row_array();
         }
-        $this->db->order_by('order', 'desc');
-        $query = $this->db->get_where('banners', array('active' => 'on'));
-        if (count($query->result_array()) > 0) {
-            return $query->result_array();
-        } else {
-            return false;
-        }
+    }
+
+    public function incClicks($id) {
+        $query = $this->db->get_where('banners', array('id' => $id, 'active' => 'on'));
+        $banner = $query->row_array();
+        $clicks = $banner['clicks'] + 1;
+        $data = array(
+            'clicks' => $clicks
+        );
+        $this->db->where('id', $id);
+        $this->db->update('banners', $data);
     }
 
     public function set_banner($image) {
@@ -73,11 +84,14 @@ class Banners_model extends CI_Model {
             'order' => 0
         );
 
+
+
         return $this->db->insert('banners', $data);
     }
 
     public function delete_banner($id) {
-        $this->db->delete('banners', array('id' => $id));
+        $this->db->delete('banners', array
+            ('id' => $id));
     }
 
     public function update_banner($id, $image = null) {
@@ -96,8 +110,7 @@ class Banners_model extends CI_Model {
                 'url' => $this->input->post('url'),
                 'pos' => $this->input->post('pos'),
                 'order' => $this->input->post('order'),
-                'active' => $this->input->post('active')
-            );
+                'active' => $this->input->post('active'));
 
             $this->db->where('id', $id);
             $this->db->update('banners', $data);

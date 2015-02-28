@@ -16,7 +16,7 @@
                             <i></i>
                             <select id="select_category" placeholder="категория" value="категория">
         <?php foreach ($newsCategories as $car): ?>
-                                                                        <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
+                                                                                <option value="<?= $car['id'] ?>"><?= $car['name'] ?></option>
         <?php endforeach; ?>
                             </select>
                         </label>
@@ -49,16 +49,18 @@
 
             </div>
             <div class="news_right_side">
-                <div class="news_banner">
-                    <img src="/img/news-banner.jpg" alt="">
-                    <span>реклама</span>
-                </div>
-                <h3 class="block-title news_title">Теги</h3><!-- title -->
+                <?php if (isset($banner['id'])): ?>
+                    <div class="news_banner">
+                        <a target="_blank" href="/banners/<?= $banner['id'] ?>"><img src="/images/banners/<?= $banner['image'] ?>" alt=""></a>
+                        <span>реклама</span>
+                    </div>
+                <?php endif; ?>
+<!--                <h3 class="block-title news_title">Теги</h3> title 
                 <div class="tags">
                     <?php foreach ($tags as $tag): ?>
                         <a href="/news/tag/<?= $tag['id'] ?>" class="tag_item_<?= rand(1, 9) ?>">&laquo;<?= $tag['name'] ?>&raquo;</a>
                     <?php endforeach; ?>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="clear"></div>

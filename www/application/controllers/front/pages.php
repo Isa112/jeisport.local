@@ -45,11 +45,20 @@ class Pages extends CI_Controller {
             $data['about_text'] = $this->main_model->get_about();
         }
 
+        $data['banner'] = $this->banners_model->get_banner_for_front('main');
+
         $this->load->view('front/templates/metahead', $data);
         $this->load->view('front/templates/header', $data);
         $this->load->view('front/templates/sub-menu', $data);
         $this->load->view('front/pages/' . $page, $data);
         $this->load->view('front/templates/footer', $data);
+    }
+
+    public function bannerClicksCount($id) {
+        $banner = $this->banners_model->get_banner_by_id_for_front($id);
+        $this->banners_model->incClicks($banner['id']);
+        redirect($banner['url']);
+        exit();
     }
 
     public function sports($category) {
@@ -170,6 +179,9 @@ class Pages extends CI_Controller {
 
         $new = $this->news_model->get_new_by_url_for_front($new);
         if (!$new) {
+            $data['title'] = 'Новости';
+            $data['banner'] = $this->banners_model->get_banner_for_front('news');
+
             $this->load->library('pagination');
 
             $config['base_url'] = '/news/';
@@ -196,7 +208,6 @@ class Pages extends CI_Controller {
 
             $this->pagination->initialize($config);
 
-            $data['title'] = 'Новости';
             if ($page) {
                 $startFrom = $page;
             } else {
@@ -244,12 +255,43 @@ class Pages extends CI_Controller {
         $blog = $this->blogs_model->get_blog_by_url_for_front($blog);
         if (!$blog) {
             $data['title'] = 'Блог';
-//            $startFrom = $page * 5;
-//            $data['startFrom'] = $startFrom;
-            $data['posts'] = $this->blogs_model->get_blogs_for_front();
-//            $data['countPosts'] = count($this->blog_model->get_news_for_front()) - 1;
+
+            $this->load->library('pagination');
+
+            $config['base_url'] = '/blog/';
+            $config['total_rows'] = count($this->blogs_model->get_blogs_for_front());
+            $config['per_page'] = 5;
+            $config['uri_segment'] = 2;
+
+            $config['full_tag_open'] = '';
+            $config['full_tag_close'] = '';
+
+            $config['prev_link'] = 'Предыдущая';
+            $config['prev_tag_open'] = '<li class="first_child">';
+            $config['prev_tag_close'] = '</li>';
+
+            $config['next_link'] = 'Следующая';
+            $config['next_tag_open'] = '<li class="last_child">';
+            $config['next_tag_close'] = '</li>';
+
+            $config['cur_tag_open'] = '<li class="active">';
+            $config['cur_tag_close'] = '</li>';
+
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+
+            $this->pagination->initialize($config);
+
+            if ($page) {
+                $startFrom = $page;
+            } else {
+                $startFrom = 0;
+            }
+
+            $data['posts'] = $this->blogs_model->get_blogs_for_pagination($startFrom);
             $data['tags'] = $this->main_model->get_tags(null, 'blog');
-            //$data['newsCategories'] = $this->newscategories_model->get_newscategories();
+
+            $data['banner'] = $this->banners_model->get_banner_for_front('blog');
 
             $this->load->view('front/templates/metahead', $data);
             $this->load->view('front/templates/header', $data);

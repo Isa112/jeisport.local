@@ -1,5 +1,5 @@
 <div class="col-md-9">
-    <a href='/admin/settings/banners/add'><button type="button" style='margin-bottom:20px;' class="btn btn-default btn-default">Добавить</button></a>
+    <!--<a href='/admin/settings/banners/add'><button type="button" style='margin-bottom:20px;' class="btn btn-default btn-default">Добавить</button></a>-->
     <?php
     if (!is_array($banners)) {
         echo '<div class="alert alert-danger" role="alert"><strong>Oops! </strong>Записей в базе не найдено!</div>';
@@ -10,6 +10,7 @@
                 <td width="30px">#</td>
                 <td width="50%">Ссылка</td>
                 <td width="50%">Позиция</td>
+                <td width="50%">Кликов</td>
                 <td>Миниатюра</td>
                 <td>Активен</td>
                 <td>Порядок</td>
@@ -33,6 +34,7 @@
                             echo 'Позиция не задана';
                         }
                         ?></td>
+                    <td><?= $banner['clicks'] ?></td>
                     <td width="20px"><img width="100px" src='/images/banners/<?= $banner['image'] ?>'></td>
                     <td width="30px"><?php
                         if ($banner['active'] == 'on') {
