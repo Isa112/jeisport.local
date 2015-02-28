@@ -1,3 +1,6 @@
+<script>
+    $.post('/banners/incviews', {id: <?= $banner['id'] ?>});
+</script>
 <div class="content">
     <div class="wrapper">
         <ul class="breadcrumbs">
@@ -41,12 +44,12 @@
                         <span>реклама</span>
                     </div>
                 <?php endif; ?>
-<!--                <h3 class="block-title news_title">Теги</h3> title 
-                <div class="tags">
-                    <?php foreach ($tags as $tag): ?>
-                        <a href="/blog/tag/<?= $tag['id'] ?>" class="tag_item_<?= rand(1, 9) ?>">&laquo;<?= $tag['name'] ?>&raquo;</a>
-                    <?php endforeach; ?>
-                </div>-->
+                <!--                <h3 class="block-title news_title">Теги</h3> title 
+                                <div class="tags">
+                <?php foreach ($tags as $tag): ?>
+                                                <a href="/blog/tag/<?= $tag['id'] ?>" class="tag_item_<?= rand(1, 9) ?>">&laquo;<?= $tag['name'] ?>&raquo;</a>
+                <?php endforeach; ?>
+                                </div>-->
             </div>
         </div>
         <div class="clear"></div>

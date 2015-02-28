@@ -11,10 +11,11 @@
                 <td width="50%">Ссылка</td>
                 <td width="50%">Позиция</td>
                 <td width="50%">Кликов</td>
+                <td width="50%">Показов</td>
                 <td>Миниатюра</td>
                 <td>Активен</td>
                 <td>Порядок</td>
-                <td width="30px">Редактировать</td>
+                <td width="30px">Править</td>
                 <td width="30px">Удалить</td>
             </tr>
             <?php
@@ -22,7 +23,7 @@
                 ?>
                 <tr>
                     <td class="id" width="30px"><?= $banner['id'] ?></td>
-                    <td width="30%"><?= $banner['url'] ?></td>
+                    <td width="30%"><?= mb_strimwidth(strip_tags($banner['url']), 0, 20, "..."); ?></td>
                     <td width="30px"><?php
                         if ($banner['pos'] == 'main') {
                             echo 'На главной';
@@ -35,6 +36,7 @@
                         }
                         ?></td>
                     <td><?= $banner['clicks'] ?></td>
+                    <td><?= $banner['views'] ?></td>
                     <td width="20px"><img width="100px" src='/images/banners/<?= $banner['image'] ?>'></td>
                     <td width="30px"><?php
                         if ($banner['active'] == 'on') {

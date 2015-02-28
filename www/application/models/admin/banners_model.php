@@ -117,4 +117,20 @@ class Banners_model extends CI_Model {
         }
     }
 
+    public function update_banner_views($id) {
+
+        if ($id) {
+            $query = $this->db->get_where('banners', array('id' => $id));
+            $new = $query->row_array();
+        }
+
+        $views = $new['views'] + 1;
+
+        $data = array(
+            'views' => $views
+        );
+        $this->db->where('id', $id);
+        $this->db->update('banners', $data);
+    }
+
 }

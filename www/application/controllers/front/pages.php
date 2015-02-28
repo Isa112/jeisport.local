@@ -24,6 +24,11 @@ class Pages extends CI_Controller {
             $this->output->set_status_header('404');
             $this->load->view('front/pages/404', $data);
         }
+
+        if ($page == 'home') {
+            $banner = $this->banners_model->get_banner_for_front('main');
+            $this->banners_model->update_banner_views($banner['id']);
+        }
         $data['title'] = 'Jeisport - Самая обширная база спортивных клубов Москвы!';
 
         $categories = $this->categories_model->get_categories_for_front();
@@ -246,6 +251,11 @@ class Pages extends CI_Controller {
             $id = $this->input->post('id');
             $this->front_model->update_blog_views($id);
         }
+    }
+
+    public function incviews() {
+        $id = $this->input->post('id');
+        $this->banners_model->update_banner_views($id);
     }
 
     public function blog($blog = false, $page = false) {

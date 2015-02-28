@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label for="url">Ссылка</label>
-                <input required name='url' value="<?= $banner['url'] ?>" type="text" class="form-control" id="url" placeholder="Название">
+                <input required name='url' value="<?= $banner['url'] ?>" type="url" class="form-control" id="url" placeholder="Название">
             </div>
             <div class="form-group">
                 <label for="pos">Позиция</label>
@@ -56,6 +56,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Кликов</div>
                 <div class="panel-body"><?= $banner['clicks'] ?></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Показов</div>
+                <div class="panel-body"><?= $banner['views'] ?></div>
             </div>
         </div>
     </div>

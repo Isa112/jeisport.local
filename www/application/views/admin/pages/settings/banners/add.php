@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="url">Ссылка</label>
-                <input required name='url' value="<?= set_value('url') ?>" type="text" class="form-control" id="url" placeholder="Название">
+                <input required name='url' value="<?= set_value('url') ?>" type="url" class="form-control" id="url" placeholder="Название">
             </div>
             <div class="form-group">
                 <label for="pos">Позиция</label>
