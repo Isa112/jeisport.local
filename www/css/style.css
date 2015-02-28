@@ -377,6 +377,32 @@ video#bgvideo {
     -moz-box-shadow: inset 3px 2px 2px 0px rgba(50, 50, 50, 0.2);
     box-shadow: inset 3px 2px 2px 0px rgba(50, 50, 50, 0.2);
 }
+.banner_form form .input-text input[type=text]{
+    width: 145px;
+    padding: 0 10px;
+    font-size: 12px;
+    border: 1px solid #a0a0a0;
+    margin-right: 9px;
+    float: left;
+    height: 19px;
+    margin-top: 5px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    margin-bottom: 15px;
+}
+#select-3{
+    width: 145px;
+    padding: 0 10px;
+    font-size: 12px;
+    border: 1px solid #a0a0a0;
+    margin-right: 9px;
+    float: left;
+    height: 19px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
 #select-2 {
     margin-bottom: 14px;
 }
@@ -2853,3 +2879,6 @@ h3.presentation_title_h3 {
 /*hidden map block*/
 
 .hidden_map {width: 100%;height: 474px;position: absolute;bottom: -83px;left: 0;z-index: 11;display: none;}
+
+/* autocomplete styles */
+#ui-id-1{width: 300px;background-color: #fff;}

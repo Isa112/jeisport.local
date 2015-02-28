@@ -20,6 +20,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/slider.css">
+        <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">-->
+        
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="/js/jquery-ui.min.js"></script>
         <script src="/js/jquery.flexslider.js"></script>

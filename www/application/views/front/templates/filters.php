@@ -34,7 +34,7 @@
             <div class="input-text input-text-3">
                 <span>Выберите станцию метро</span>
                 <label for="">
-                    <input name="subway" id="select-3" placeholder="начните набирать..." value="">
+                    <input type="text" name="subway" id="select-3" placeholder="начните набирать..." value="">
                 </label>
             </div>
             <div class="input-submit">
