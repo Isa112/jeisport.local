@@ -285,9 +285,9 @@ class Pages extends CI_Controller {
             $data['category'] = $this->categories_model->get_categories($category_id);
             $data['sport'] = $this->sports_model->get_sports($category_id);
 
-            $data['subway_id'] = $subway_id = $this->input->post('subway');
+            $data['subway_name'] = $subway_name = $this->input->post('subway');
             $data['sports'] = $sports = $this->sports_model->get_sports_for_category_front($category_id);
-            $data['searched_points'] = $result_arr = $this->points_model->get_searched_points_for_front($sport_id, $subway_id);
+            $data['searched_points'] = $result_arr = $this->points_model->get_searched_points_for_front($sport_id, $subway_name);
             $this->load->view('front/templates/metahead', $data);
             $this->load->view('front/templates/header', $data);
             $this->load->view('front/templates/sub-menu', $data);

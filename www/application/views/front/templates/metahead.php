@@ -29,4 +29,22 @@
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <!--<script type="text/javascript" src="/js/library.js"></script>-->
+        <script>
+            $(function () {
+                var availableTags = [
+<?php
+$c = count($subways);
+foreach ($subways as $k => $s)
+    if ($k == $c - 1) {
+        echo "'{$s['name']}'\r\n";
+    } else {
+        echo "'{$s['name']}',\r\n";
+    }
+?>
+                ];
+                $("#select-3").autocomplete({
+                    source: availableTags
+                });
+            });
+        </script>
     </head>

@@ -34,12 +34,7 @@
             <div class="input-text input-text-3">
                 <span>Выберите станцию метро</span>
                 <label for="">
-                    <i></i>
-                    <select name="subway" id="select-3" placeholder="метро" value="метро">
-                        <?php foreach ($subways as $cat): ?>
-                            <option value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
+                    <input name="subway" id="select-3" placeholder="начните набирать..." value="">
                 </label>
             </div>
             <div class="input-submit">

@@ -1,5 +1,5 @@
 <!--<pre>
-    <?php print_r($searched_points); ?>
+<?php print_r($searched_points); ?>
 </pre>-->
 <div class="content">
     <div class="wrapper">
@@ -46,12 +46,7 @@
                 <div class="input-text input-text-3">
                     <span>Выберите станцию метро</span>
                     <label for="">
-                        <i></i>
-                        <select name="subway" id="select-3" placeholder="метро" value="метро">
-                            <?php foreach ($subways as $cat): ?>
-                                <option <?php if ($cat['id'] == $subway_id): ?>selected=""<?php endif; ?> value="<?= $cat['id'] ?>"><?= $cat['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                        <input name="subway" id="select-3" placeholder="начните набирать..." value="<?= $subway_name ?>">
                     </label>
                 </div>
                 <div class="input-submit">
