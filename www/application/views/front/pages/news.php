@@ -1,3 +1,6 @@
+<script>
+    $.post('/banners/incviews', {id: <?= $banner['id'] ?>});
+</script>
 <div class="content">
     <div class="wrapper">
         <ul class="breadcrumbs">
