@@ -159,6 +159,13 @@ $route['admin/settings/subways/up/(:num)'] = 'admin/subways/up/$1';
 $route['admin/settings/subways/down/(:num)'] = 'admin/subways/down/$1';
 $route['admin/settings/subways/add'] = 'admin/subways/add';
 
+$route['admin/settings/banners'] = 'admin/banners/page/banners';
+$route['admin/settings/banners/edit/(:num)'] = 'admin/banners/edit/$1';
+$route['admin/settings/banners/delete/(:num)'] = 'admin/banners/delete/$1';
+$route['admin/settings/banners/up/(:num)'] = 'admin/banners/up/$1';
+$route['admin/settings/banners/down/(:num)'] = 'admin/banners/down/$1';
+$route['admin/settings/banners/add'] = 'admin/banners/add';
+
 $route['admin/settings/maintext'] = 'admin/settings/maintext';
 $route['admin/settings/maintext/edit'] = 'admin/settings/maintext/edit';
 

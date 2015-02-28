@@ -123,6 +123,7 @@ $autoload['model'] = array(
     'admin/points_model',
     'admin/sports_model',
     'admin/subways_model',
+    'admin/banners_model',
     'admin/videoblog_model',
     'admin/studentcards_model',
     'admin/backcall_model',

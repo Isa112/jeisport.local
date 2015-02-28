@@ -35,6 +35,11 @@
             echo 'active';
         }
         ?>">Станции метро</a>
+        <a href="/admin/settings/banners" class="list-group-item <?php
+        if ($this->uri->segment(3) == 'banners') {
+            echo 'active';
+        }
+        ?>">Баннеры</a>
 <!--        <a href="/admin/settings/videoblog" class="list-group-item <?php
         if ($this->uri->segment(3) == 'videoblog') {
             echo 'active';
