@@ -161,7 +161,7 @@ $route['admin/settings/subways/add'] = 'admin/subways/add';
 
 $route['admin/settings/banners'] = 'admin/banners/page/banners';
 $route['admin/settings/banners/edit/(:num)'] = 'admin/banners/edit/$1';
-$route['admin/settings/banners/delete/(:num)'] = 'admin/banners/delete/$1';
+//$route['admin/settings/banners/delete/(:num)'] = 'admin/banners/delete/$1';
 $route['admin/settings/banners/up/(:num)'] = 'admin/banners/up/$1';
 $route['admin/settings/banners/down/(:num)'] = 'admin/banners/down/$1';
 //$route['admin/settings/banners/add'] = 'admin/banners/add';
@@ -218,6 +218,7 @@ $route['banners/incviews'] = 'front/pages/incviews';
 
 $route['(:any)/(:any)/(:any)'] = 'front/pages/point/$1/$2/$3';
 $route['(:any)/(:any)'] = 'front/pages/points/$1/$2';
+$route['(:any)/(:any)/(:any)'] = 'front/pages/points/$1/$2/$3';
 $route['(:any)'] = 'front/pages/sports/$1';
 
 /* End of file routes.php */

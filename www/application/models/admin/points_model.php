@@ -59,6 +59,17 @@ class Points_model extends CI_Model {
         }
     }
 
+    public function get_points_for_pagination($sport_id, $startFrom) {
+
+        $this->db->order_by('order', 'desc');
+        $query = $this->db->get_where('points', array('active' => 'on', 'sport_id' => $sport_id), 10, $startFrom);
+        if (count($query->result_array()) > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
     public function get_searched_points_for_front($sport_id, $subway_name) {
         $Squery = $this->db->get_where('subways', array('name' => $subway_name));
         $subway = $Squery->row_array();

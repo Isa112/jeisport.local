@@ -16,7 +16,7 @@
                 <td>Активен</td>
                 <td>Порядок</td>
                 <td width="30px">Править</td>
-                <td width="30px">Удалить</td>
+                <!--<td width="30px">Удалить</td>-->
             </tr>
             <?php
             foreach ($banners as $banner):
@@ -47,7 +47,7 @@
                         ?></td>
                     <td><a href='/admin/settings/banners/up/<?= $banner['id'] ?>'><span class="glyphicon glyphicon-arrow-up"></span></a><a href='/admin/settings/banners/down/<?= $banner['id'] ?>'><span class="glyphicon glyphicon-arrow-down"></span></a> (<?= $banner['order'] ?>)</td>
                     <td width="30px"><a href='/admin/settings/banners/edit/<?= $banner['id'] ?>'><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td width="30px"><a href='/admin/settings/banners/delete/<?= $banner['id'] ?>'><span class="glyphicon glyphicon-remove"></span></a></td>
+                    <!--<td width="30px"><a href='/admin/settings/banners/delete/<?= $banner['id'] ?>'><span class="glyphicon glyphicon-remove"></span></a></td>-->
                 </tr>
                 <?php
             endforeach;

@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/slider.css">
         <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">-->
-        
+
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="/js/jquery-ui.min.js"></script>
         <script src="/js/jquery.flexslider.js"></script>
@@ -47,6 +47,9 @@ foreach ($subways as $k => $s)
                 $("#select-3").autocomplete({
                     source: availableTags
                 });
+//                _resizeMenu: function() {
+//                    this.menu.element.outerWidth('auto');
+//                }
             });
         </script>
     </head>

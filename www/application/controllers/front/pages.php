@@ -98,7 +98,7 @@ class Pages extends CI_Controller {
         }
     }
 
-    public function points($category, $sport) {
+    public function points($category, $sport, $page = false) {
         $categories = $this->categories_model->get_categories_for_front();
         $data['categories'] = $categories;
         $subways = $this->subways_model->get_subways_for_point();
@@ -114,7 +114,41 @@ class Pages extends CI_Controller {
                 $this->output->set_status_header('404');
                 $this->load->view('front/pages/404', $data);
             } else {
-                $data['points'] = $points;
+                $this->load->library('pagination');
+
+                $config['base_url'] = "/$category/{$sport['url']}/";
+                $config['total_rows'] = count($this->points_model->get_points_for_front($sport['id']));
+                $config['per_page'] = 10;
+                $config['num_links'] = 4;
+                $config['uri_segment'] = 3;
+
+                $config['full_tag_open'] = '';
+                $config['full_tag_close'] = '';
+
+                $config['prev_link'] = 'Предыдущая';
+                $config['prev_tag_open'] = '<li class="first_child">';
+                $config['prev_tag_close'] = '</li>';
+
+                $config['next_link'] = 'Следующая';
+                $config['next_tag_open'] = '<li class="last_child">';
+                $config['next_tag_close'] = '</li>';
+
+                $config['cur_tag_open'] = '<li class="active">';
+                $config['cur_tag_close'] = '</li>';
+
+                $config['num_tag_open'] = '<li>';
+                $config['num_tag_close'] = '</li>';
+
+                $this->pagination->initialize($config);
+
+                if ($page) {
+                    $startFrom = $page;
+                } else {
+                    $startFrom = 0;
+                }
+
+                $data['posts'] = $this->blogs_model->get_blogs_for_pagination($startFrom);
+                $data['points'] = $this->points_model->get_points_for_pagination($sport['id'], $startFrom);
                 $category = $this->categories_model->get_category_by_url_for_front($category);
                 if (!$category) {
                     $this->output->set_status_header('404');

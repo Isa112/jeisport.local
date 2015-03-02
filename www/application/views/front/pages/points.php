@@ -70,6 +70,9 @@
     <?php endforeach; ?>
 </ul>
 
+<ul class="pagination">
+    <?= $this->pagination->create_links() ?>
+</ul>
 <article>
     <p><?= $sport['text'] ?></p>
 </article>
