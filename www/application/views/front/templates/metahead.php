@@ -20,18 +20,28 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/slider.css">
+        <link rel="stylesheet" href="/colorbox/example4/colorbox.css">
         <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">-->
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="/js/jquery-ui.min.js"></script>
+        <script src="/colorbox/jquery.colorbox-min.js"></script>
         <script src="/js/jquery.flexslider.js"></script>
         <script type="text/javascript" src="/js/prefixfree.min.js"></script>
-        <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <!--<script type="text/javascript" src="/js/library.js"></script>-->
         <script>
+            $(document).ready(function () {
+
+                $('#get_student_ticket').colorbox({
+                    opacity: 0.5,
+                    width: "600",
+                    height: "360",
+                    close: "Закрыть"
+                });
+            });
+            
             $(function () {
                 var availableTags = [
 <?php

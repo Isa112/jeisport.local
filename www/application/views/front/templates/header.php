@@ -33,7 +33,7 @@
 
     <?php if (!$this->session->userdata('phpbb_username') && !$this->session->userdata('phpbb_userpassword')): ?>
         <a href="#" data-modal-id="#modal1" class="enter modal-open2"><img src="/img/social/icon_enter.png" alt="">Вход</a>
-        <a href="#" data-modal-id="#modal2" class="ticket modal-open" style="top: 263px;"><img src="/img/social/icon_sbs.png" alt=""><span>СБС</span><i>Студенческий билет спортсмена</i></a>
+        <a href="/getStudentTicket/" data-modal-id="#modal2" class="ticket modal-open" style="top: 263px;"><img src="/img/social/icon_sbs.png" alt=""><span>СБС</span><i>Студенческий билет спортсмена</i></a>
     <?php else: ?>
         <a href="javascript:" data-modal-id="#modal1" class="enter modal-open2" style="width: auto; top: 220px; cursor: default;">Добро пожаловать, <?= $this->session->userdata('phpbb_username') ?>!</a>
         <a class="enter enter2" href="/forumlogin/logout">Выход</a>

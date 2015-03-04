@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 26 2015 г., 17:40
+-- Время создания: Мар 04 2015 г., 12:48
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -106,10 +106,38 @@ CREATE TABLE IF NOT EXISTS `backcalls` (
 --
 
 INSERT INTO `backcalls` (`id`, `name`, `phone`, `point_url`, `date`, `ip`, `read`) VALUES
-(14, 'выфв', 'выфвф', '/edinoborstvaa/ajkidott/dasda/', '11.02.2015 03:45:58', '127.0.0.1', ''),
+(14, 'выфв', 'выфвф', '/edinoborstvaa/ajkidott/dasda/', '11.02.2015 03:45:58', '127.0.0.1', 'on'),
 (15, 'вфыв', 'выфв', '/edinoborstvaa/ajkidott/dasda/', '11.02.2015 03:54:29', '127.0.0.1', ''),
 (16, 'фыв', 'фыв', '/edinoborstvaa/ajkidott/dasda/', '14.02.2015 04:16:21', '127.0.0.1', ''),
 (17, 'Андрей', 'выф выф вфыв', '/edinoborstvaa/ajkidott/dasda/', '14.02.2015 10:05:54', '127.0.0.1', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `banners`
+--
+
+DROP TABLE IF EXISTS `banners`;
+CREATE TABLE IF NOT EXISTS `banners` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) NOT NULL,
+  `pos` enum('main','news','blog','') NOT NULL,
+  `clicks` int(11) NOT NULL,
+  `views` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `order` int(11) NOT NULL,
+  `active` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Дамп данных таблицы `banners`
+--
+
+INSERT INTO `banners` (`id`, `url`, `pos`, `clicks`, `views`, `image`, `order`, `active`) VALUES
+(1, 'http://filezilla.ru/', 'main', 1, 85, 'cfdeaab665d10378ee62812c62bdce8f.jpg', 0, 'on'),
+(2, 'http://vk.com/bestad', 'news', 2, 36, '80cd8478295674887819f8cc4a12df48.jpg', 0, 'on'),
+(6, 'http://mail.ru/', 'blog', 0, 16, '59d2b7d7a7ac77eda9816c5ff5fef1f4.jpg', 0, 'on');
 
 -- --------------------------------------------------------
 
@@ -132,19 +160,22 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `views` int(11) NOT NULL,
   `active` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Дамп данных таблицы `blog`
 --
 
 INSERT INTO `blog` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `order`, `views`, `active`) VALUES
-(1, 'Пост!', 'post', '<p>Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;</p>\r\n', '0000-00-00 00:00:00', '', '', '', '1371e81502a177207b027773273e9ff1.jpg', 0, 26, 'on'),
+(1, 'Пост!', 'post', '<p>Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;Рыбта тексвфыж фыв фыдвфыовфды овлд&nbsp;</p>\r\n', '0000-00-00 00:00:00', '', '', '', '1371e81502a177207b027773273e9ff1.jpg', 0, 27, 'on'),
 (2, 'Новая статья в блоге', 'novaja_statja_v_bloge', '<p><span style="color:rgba(0, 0, 0, 0.498039); font-family:arial,sans-serif; font-size:18px">New coub editor is perfect for quickly looping and remixing videos. Now you can create video mashups with up to 10 video sources!</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', '7505771fd12b8978f7c389461a26ab39.jpg', 0, 3, 'on'),
 (3, 'Тестовый блог', 'testovyj_blog', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Однажды, много лет назад, я разговорилась со знакомым программистом и среди прочих реплик помню его фразу о том, что изобретена некая гениальная штука, благодаря которой все знания человечества станут доступны любому субъекту, &ndash; Всемирная информационная сеть.</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', 'eebd2ae770ab15ef03c165066f6e957c.jpg', 0, 0, 'on'),
 (4, 'Опасности райских кущей', 'opasnosti_rajskih_kuschej', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Интернет для меня третий перелом в истории человеческой культуры &ndash; после появления языка и изобретения книги</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote1" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">1</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. В Древней Греции оратора, выступавшего на площади в Афинах, слышали не более двадцати тысяч человек. Это был звуковой предел общения: география языка &ndash; это племя. Потом пришла книга, которая расширила круг общения до географии страны.</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', 'cd89c797df227cc97e84275e28534807.jpg', 0, 0, 'on'),
 (5, 'Дмитрий Быков (2011)', 'dmitrij_bykov_(2011)', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Со временем возникнет новая иерархия человечества, новая гуманная цивилизация</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote4" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">4</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. А пока&hellip; пока в Интернете доминирует &laquo;оборотная сторона&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote5" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">5</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;этого грандиозного открытия-прорыва &ndash; его разрушительная сила</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote6" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">6</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Неслучайно</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote7" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">7</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;Всемирная сеть становится орудием в руках террористов, хакеров и фанатиков всех мастей.</span></p>\r\n', '2015-01-01 12:00:00', '', '', '', '88711998a9e0c151d082fdfb9c75a8e0.jpg', 0, 0, 'on'),
-(6, 'Новый пост в блоге! Урааа!!!!', 'novyj_post_v_bloge_uraaa', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Самый наглядный факт современности: Интернет, который немыслимо расширил возможности простого человека для высказывания и действия, лежит в основе нынешнего &laquo;восстания масс&raquo;. Это явление, возникшее еще в первой половине двадцатого века, вызванное вульгаризацией культуры &ndash; материальной и духовной, породило и коммунизм, и нацизм</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote8" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">8</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Сегодня он обращен к &laquo;массовому&raquo; в любом человеке, питается от него и удовлетворяет его во всех отношениях &ndash; от языкового до политического и потребительского</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote9" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">9</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">, ибо невероятно приблизил к народу желанные &laquo;хлеб и зрелища&raquo;, включая самые низкие</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote10" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">10</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Этот наперсник, проповедник и исповедник толп превращает в &laquo;шум&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote11" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">11</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;все, к чему прикасается, чему дает жизнь,</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote12" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">12</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;плодит пошлость, невежество и агрессию, давая им неслыханный, завораживающий выход не просто наружу, а на весь мир. Опаснее всего, что это игривое и очень смышленое &laquo;дитя&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote13" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">13</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;новой цивилизации уничтожает критерии &ndash; духовные, нравственные и поведенческие коды существования человеческого общества</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote14" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">14</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Что поделать, в интернет-пространстве все равны в самом площадном смысле этого слова</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote15" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">15</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. И я думаю: не слишком ли высокую цену мы платим за прекрасную возможность поговорить с далеким другом, прочесть редкую книгу, увидеть гениальную картину и услышать великую оперу? Не чересчур ли рано сделано это грандиозное открытие? Иными словами, доросло ли человечество до самого себя?</span></p>\r\n', '2015-02-14 08:43:00', '', '', '', 'dba04eba85e4c714d19f7e8d17ad7199.jpg', 0, 5, 'on');
+(6, 'Новый пост в блоге! Урааа!!!!', 'novyj_post_v_bloge_uraaa', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Самый наглядный факт современности: Интернет, который немыслимо расширил возможности простого человека для высказывания и действия, лежит в основе нынешнего &laquo;восстания масс&raquo;. Это явление, возникшее еще в первой половине двадцатого века, вызванное вульгаризацией культуры &ndash; материальной и духовной, породило и коммунизм, и нацизм</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote8" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">8</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Сегодня он обращен к &laquo;массовому&raquo; в любом человеке, питается от него и удовлетворяет его во всех отношениях &ndash; от языкового до политического и потребительского</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote9" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">9</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">, ибо невероятно приблизил к народу желанные &laquo;хлеб и зрелища&raquo;, включая самые низкие</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote10" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">10</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Этот наперсник, проповедник и исповедник толп превращает в &laquo;шум&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote11" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">11</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;все, к чему прикасается, чему дает жизнь,</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote12" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">12</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;плодит пошлость, невежество и агрессию, давая им неслыханный, завораживающий выход не просто наружу, а на весь мир. Опаснее всего, что это игривое и очень смышленое &laquo;дитя&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote13" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">13</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;новой цивилизации уничтожает критерии &ndash; духовные, нравственные и поведенческие коды существования человеческого общества</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote14" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">14</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Что поделать, в интернет-пространстве все равны в самом площадном смысле этого слова</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote15" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">15</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. И я думаю: не слишком ли высокую цену мы платим за прекрасную возможность поговорить с далеким другом, прочесть редкую книгу, увидеть гениальную картину и услышать великую оперу? Не чересчур ли рано сделано это грандиозное открытие? Иными словами, доросло ли человечество до самого себя?</span></p>\r\n', '2015-02-14 08:43:00', '', '', '', 'dba04eba85e4c714d19f7e8d17ad7199.jpg', 0, 9, 'on'),
+(7, 'Новый пост в блоге! Урааа!!!!', 'novyj_post_v_bloge_uraaa', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Самый наглядный факт современности: Интернет, который немыслимо расширил возможности простого человека для высказывания и действия, лежит в основе нынешнего &laquo;восстания масс&raquo;. Это явление, возникшее еще в первой половине двадцатого века, вызванное вульгаризацией культуры &ndash; материальной и духовной, породило и коммунизм, и нацизм</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote8" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">8</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Сегодня он обращен к &laquo;массовому&raquo; в любом человеке, питается от него и удовлетворяет его во всех отношениях &ndash; от языкового до политического и потребительского</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote9" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">9</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">, ибо невероятно приблизил к народу желанные &laquo;хлеб и зрелища&raquo;, включая самые низкие</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote10" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">10</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Этот наперсник, проповедник и исповедник толп превращает в &laquo;шум&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote11" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">11</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;все, к чему прикасается, чему дает жизнь,</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote12" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">12</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;плодит пошлость, невежество и агрессию, давая им неслыханный, завораживающий выход не просто наружу, а на весь мир. Опаснее всего, что это игривое и очень смышленое &laquo;дитя&raquo;</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote13" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">13</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">&nbsp;новой цивилизации уничтожает критерии &ndash; духовные, нравственные и поведенческие коды существования человеческого общества</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote14" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">14</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. Что поделать, в интернет-пространстве все равны в самом площадном смысле этого слова</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote15" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">15</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. И я думаю: не слишком ли высокую цену мы платим за прекрасную возможность поговорить с далеким другом, прочесть редкую книгу, увидеть гениальную картину и услышать великую оперу? Не чересчур ли рано сделано это грандиозное открытие? Иными словами, доросло ли человечество до самого себя?</span></p>\r\n', '2015-02-14 08:43:00', '', '', '', 'dba04eba85e4c714d19f7e8d17ad7199.jpg', 0, 6, 'on'),
+(8, 'Новая статья в блоге', 'novaja_statja_v_bloge', '<p><span style="color:rgba(0, 0, 0, 0.498039); font-family:arial,sans-serif; font-size:18px">New coub editor is perfect for quickly looping and remixing videos. Now you can create video mashups with up to 10 video sources!</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', '7505771fd12b8978f7c389461a26ab39.jpg', 0, 3, 'on'),
+(9, 'Опасности райских кущей', 'opasnosti_rajskih_kuschej', '<p><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">Интернет для меня третий перелом в истории человеческой культуры &ndash; после появления языка и изобретения книги</span><a class="footnote" href="http://totaldict.ru/texts/2013-2/#footnote1" style="border: 0px none; font-size: 14px; margin: 0px; outline: none 0px; padding: 0px; vertical-align: baseline; color: rgb(29, 29, 29); text-decoration: none; font-family: Arial, sans-serif; line-height: 18.2000007629395px; text-align: justify; text-indent: 21px; background: none 0px 0px repeat scroll transparent;">1</a><span style="color:rgb(63, 62, 62); font-family:arial,sans-serif; font-size:14px">. В Древней Греции оратора, выступавшего на площади в Афинах, слышали не более двадцати тысяч человек. Это был звуковой предел общения: география языка &ndash; это племя. Потом пришла книга, которая расширила круг общения до географии страны.</span></p>\r\n', '0000-00-00 00:00:00', '', '', '', 'cd89c797df227cc97e84275e28534807.jpg', 0, 0, 'on');
 
 -- --------------------------------------------------------
 
@@ -178,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `h1`, `h2`, `url`, `image`, `image2`, `image3`, `title`, `desc`, `keyw`, `text`, `order`, `active`) VALUES
 (55, 'Фитнес клубы', 'СЕКЦИИ И КЛУБЫ ЕДИНОБОРСТВ', 'вфывфы', 'fitnes-club', '87785e3e0c820addcc924a926e262770.png', 'a2e2962e050f5e56bfb2c2ed266a2c9c.jpg', '581e1115d8756264290bd5f80fff39da.png', '', '', '', '<p><span style="font-family:rbcgrotesk-light; font-size:medium">Устали однообразно курсировать между домом и работой? Решили разбавить этот тандем яркой ноткой, занявшись своим телом и здоровьем, ведь &laquo;в здоровом теле &ndash; здоровый дух&raquo;? А может, вы ищете спортивные секции для детей, поскольку осенью снижается физическая активность, столь необходимая для полноценного развития ребенка? Тогда самое время сесть поудобнее и изучить самую актуальную и подробную информацию про спортивные клубы Москвы! Здесь вы найдете самые разные спортивные клубы, которые могут быть расположены около вашего места работы или дома, а также спортивные секции, где будут заниматься ваши дети. На сайте Jeisport.ru представлено огромное разнообразие спортивных клубов Москвы, среди которых вы найдете: Спортклубы и спортивные школы, в которых проводятся занятия по единоборствам: кикбоксинг, бокс, боевое самбо, муай-тай (тайский бокс) и многие другие, Фитнесклубы &ndash; замечательная возможность для прекрасных дам подтянуть фигуру и всегда выглядеть потрясающе: в нашем каталоге представлено большое разнообразие спортивных секций по аква-аэробике, пилатесу, фитнесу, в том числе для молодых мам и беременных, а также тренажерные залы, Спортклубы с бассейнами &ndash; то, что нужно для полного избавления от стрессов: в каталоге вы найдете бассейны по своему вкусу &ndash; крытые или открытые, Спортивные игры &ndash; раздел нашего сайта, который наверняка заинтересует любителей оздоровиться и насладиться игрой в баскетбол, бадминтон, пляжный или классический волейбол, хоккей, пинг-понг, керлинг, гольф и, конечно, футбол. К вашим услугам огромный выбор спортклубов, предлагающих посетителям поиграть в эти и другие спортивные игры, Танцы &ndash; для вашего удобства все спортивные танцевальные секции сгруппированы по танцевальным направлениям: латина, go-go, R&amp;B, бальные, клубные, хореография и многие другие; здесь же вы найдете спортивные танцевальные секции для детей, Активный отдых &ndash; то, что нужно для полного расслабления и восстановления сил! В этой категории любители острых ощущений и не только найдут информацию о парашютном спорте, велотрассах, роллердромах, скалодромах, скейтпарках, паркуре и полетах на шаре в Москве. С нами выбор спортивного клуба или секции в Москве &ndash; сплошное удовольствие!</span></p>\n', 0, 'on'),
-(56, 'Единоборства', 'Единоборства', 'Единоборства1', 'edinoborstvaa', '584e049bf5f0610f0918139c9a7270ea.png', '677d16f9df549c47cb903ea2ef624ee9.jpg', '5df20f2e456705a916602dadf3d6870e.png', '', '', '', '<p>dasdas</p>\r\n', 1, 'on'),
+(56, 'Единоборства', 'Единоборства', 'Единоборства1', 'edinoborstvaa', '584e049bf5f0610f0918139c9a7270ea.png', 'ca7ef2004ffb357de189dc48734bfd81.jpg', '5df20f2e456705a916602dadf3d6870e.png', '', '', '', '<p>dasdas</p>\r\n', 1, 'on'),
 (57, 'Активный отдых', 'вфывыфв', '', 'aktivnyj_otdyh', '9b1f2de2704ed0e2312d0a5053affa05.png', '2517551ff51f3f1bd94b801fd1f0ac6a.jpg', '67692f50c3395cd1414392bdc663f0fb.png', '', '', '', '', 0, 'on'),
 (58, 'Бассейны', 'выфвфы', 'выфвфы', 'bassejny', '2e2c2b3fd12a0dd0156ee040168c9c02.png', 'a5c9bf021581dbc7e667339dfed21aca.jpg', 'c7254a6077c4d45a5f6bafdf6e3b4ff1.png', '', '', '', '', 0, 'on'),
 (59, 'Спортивные игры', 'dasd', '', 'sportivnye_igry', 'a44517d81303ae02dd889140d770797b.png', 'fa00f9ccc0cd7eb60b229720832eaf2c.jpg', '5f2a042d48368242d740d3d875ae15b5.png', '', '', '', '', 0, 'on'),
@@ -277,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `views` int(11) NOT NULL,
   `active` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Дамп данных таблицы `news`
@@ -285,7 +316,13 @@ CREATE TABLE IF NOT EXISTS `news` (
 
 INSERT INTO `news` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `category_id`, `order`, `views`, `active`) VALUES
 (32, '12312312312312312312312', '12312312312312312312312', '', '2015-02-24 23:12:00', '', '', '', '8ebf239d559ceeb1e1fc87dfb69a6f42.jpg', 0, 0, 0, 'on'),
-(33, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 2, 'on');
+(33, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 13, 'on'),
+(34, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 3, 'on'),
+(35, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 3, 'on'),
+(36, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 3, 'on'),
+(37, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 3, 'on'),
+(38, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 3, 'on'),
+(39, '132мсчавырвоы к ыпыпы', '132mschavyrvoy_k_ypypy', '', '2015-03-26 23:15:00', '', '', '', '74ac4363f7ce62adf164aff8b18ead53.jpg', 0, 0, 3, 'on');
 
 -- --------------------------------------------------------
 
@@ -1251,7 +1288,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('bump_interval', '10', 0),
 ('bump_type', 'd', 0),
 ('cache_gc', '7200', 0),
-('cache_last_gc', '1423885854', 1),
+('cache_last_gc', '1424982949', 1),
 ('captcha_gd', '1', 0),
 ('captcha_gd_3d_noise', '1', 0),
 ('captcha_gd_fonts', '1', 0),
@@ -1430,8 +1467,8 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('print_pm', '1', 0),
 ('questionnaire_unique_id', '5b7e323c13fc2705', 0),
 ('queue_interval', '60', 0),
-('rand_seed', '7b9fdb4db95beccce5f85543b9982634', 1),
-('rand_seed_last_update', '1424952810', 1),
+('rand_seed', '6599e66e14e05df4168c612a093e5baf', 1),
+('rand_seed_last_update', '1424982945', 1),
 ('ranks_path', 'images/ranks', 0),
 ('read_notification_expire_days', '30', 0),
 ('read_notification_gc', '86400', 0),
@@ -1446,7 +1483,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('search_gc', '7200', 0),
 ('search_indexing_state', '', 1),
 ('search_interval', '0', 0),
-('search_last_gc', '1424952811', 1),
+('search_last_gc', '1424975331', 1),
 ('search_store_results', '1800', 0),
 ('search_type', '\\phpbb\\search\\fulltext_native', 0),
 ('secure_allow_deny', '1', 0),
@@ -1456,7 +1493,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('server_port', '80', 0),
 ('server_protocol', 'http://', 0),
 ('session_gc', '3600', 0),
-('session_last_gc', '1423885838', 1),
+('session_last_gc', '1424976342', 1),
 ('session_length', '3600', 0),
 ('site_desc', 'A short text to describe your forum', 0),
 ('site_home_text', '', 0),
@@ -1481,7 +1518,7 @@ INSERT INTO `phpbb_config` (`config_name`, `config_value`, `is_dynamic`) VALUES
 ('version', '3.1.2', 0),
 ('warnings_expire_days', '90', 0),
 ('warnings_gc', '14400', 0),
-('warnings_last_gc', '1423885860', 1);
+('warnings_last_gc', '1424975334', 1);
 
 -- --------------------------------------------------------
 
@@ -1529,7 +1566,8 @@ CREATE TABLE IF NOT EXISTS `phpbb_confirm` (
 --
 
 INSERT INTO `phpbb_confirm` (`confirm_id`, `session_id`, `confirm_type`, `code`, `seed`, `attempts`) VALUES
-('b7a498389f31e7b84c24e2fb4d9eefc6', '90afb7e2ad8d6f49c12c72bb09f1cdc1', 1, '52YFF', 457432737, 0);
+('18c21da62b874dae2dd5b94921d3d23e', '4f2dcf7b1b491989ff3f292f39a36fd0', 1, '75YS', 554738469, 0),
+('ddb86c37fad5489b95901c3cabcb4b20', 'bc0c027a7e408077b1a50dacf4bf29fb', 1, '1WHF', 1175694164, 0);
 
 -- --------------------------------------------------------
 
@@ -3096,17 +3134,9 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions` (
 --
 
 INSERT INTO `phpbb_sessions` (`session_id`, `session_user_id`, `session_last_visit`, `session_start`, `session_time`, `session_ip`, `session_browser`, `session_forwarded_for`, `session_page`, `session_viewonline`, `session_autologin`, `session_admin`, `session_forum_id`) VALUES
-('0f66f2d4a616817516df34e869ccd4d3', 1, 1424952810, 1424952810, 1424952810, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
-('13e1abfc603fd853367c7b07893c9b37', 2, 1423863036, 1423885972, 1423885972, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', 1, 0, 0, 0),
-('1ddb8fa9d1c3c63cc2187c6281e4e006', 2, 1423863036, 1423885866, 1423886600, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'adm/index.php?i=acp_search&mode=settings', 1, 0, 1, 0),
-('46712fb60bedd44ca3fec8ef236b1548', 2, 1423863036, 1423886196, 1423886197, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
-('594a7cf43b87797eb7845ce63bdee21d', 1, 1423886002, 1423886002, 1423886002, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
-('7124c35fe3531f4b9837e37cfc4d2cef', 1, 1423886025, 1423886025, 1423886025, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
-('90afb7e2ad8d6f49c12c72bb09f1cdc1', 1, 1423887348, 1423887348, 1423887351, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'ucp.php?confirm_id=b7a498389f31e7b84c24e2fb4d9eefc6&mode=confirm&type=1', 1, 0, 0, 0),
-('af6aa307593f5613b11e91aacd790df1', 1, 1423885766, 1423885766, 1423885766, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'ucp.php?mode=logout&redirect=%2F', 1, 0, 0, 0),
-('b10045934bae2e4550a6a625ab3c9371', 2, 1423863036, 1424187407, 1424187407, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', 1, 0, 0, 0),
-('be089a06ce2b8190fef2159ca7f6cf8b', 1, 1423885982, 1423885982, 1423885982, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36', '', 'ucp.php?mode=logout&redirect=%2F', 1, 0, 0, 0),
-('d6867145523cd9f534f1fd0407a2cdac', 2, 1423863036, 1424192718, 1424192718, '127.0.0.1', '', '', 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', 1, 0, 0, 0);
+('4f2dcf7b1b491989ff3f292f39a36fd0', 1, 1424975330, 1424975330, 1424975335, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36', '', 'ucp.php?confirm_id=18c21da62b874dae2dd5b94921d3d23e&mode=confirm&type=1', 1, 0, 0, 0),
+('73561524ba4f1bf583cfc9342ab161a5', 1, 1424982944, 1424982944, 1424982944, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36', '', 'index.php', 1, 0, 0, 0),
+('bc0c027a7e408077b1a50dacf4bf29fb', 1, 1424976341, 1424976341, 1424976341, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36', '', 'ucp.php?confirm_id=ddb86c37fad5489b95901c3cabcb4b20&mode=confirm&type=1', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3475,8 +3505,8 @@ CREATE TABLE IF NOT EXISTS `phpbb_users` (
 --
 
 INSERT INTO `phpbb_users` (`user_id`, `user_type`, `group_id`, `user_permissions`, `user_perm_from`, `user_ip`, `user_regdate`, `username`, `username_clean`, `user_password`, `user_passchg`, `user_email`, `user_email_hash`, `user_birthday`, `user_lastvisit`, `user_lastmark`, `user_lastpost_time`, `user_lastpage`, `user_last_confirm_key`, `user_last_search`, `user_warnings`, `user_last_warning`, `user_login_attempts`, `user_inactive_reason`, `user_inactive_time`, `user_posts`, `user_lang`, `user_timezone`, `user_dateformat`, `user_style`, `user_rank`, `user_colour`, `user_new_privmsg`, `user_unread_privmsg`, `user_last_privmsg`, `user_message_rules`, `user_full_folder`, `user_emailtime`, `user_topic_show_days`, `user_topic_sortby_type`, `user_topic_sortby_dir`, `user_post_show_days`, `user_post_sortby_type`, `user_post_sortby_dir`, `user_notify`, `user_notify_pm`, `user_notify_type`, `user_allow_pm`, `user_allow_viewonline`, `user_allow_viewemail`, `user_allow_massemail`, `user_options`, `user_avatar`, `user_avatar_type`, `user_avatar_width`, `user_avatar_height`, `user_sig`, `user_sig_bbcode_uid`, `user_sig_bbcode_bitfield`, `user_jabber`, `user_actkey`, `user_newpasswd`, `user_form_salt`, `user_new`, `user_reminded`, `user_reminded_time`) VALUES
-(1, 2, 1, '00000000000w27wrgg\ni1cjyo000000\ni1cjyo000000', 0, '', 1418454675, 'Anonymous', 'anonymous', '', 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', '', 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'acc4a46af820e261', 1, 0, 0),
-(2, 3, 5, 'zik0zjzik0zjzik0zc\ni1cjyo000000\nzik0zjzi8sg0', 0, '127.0.0.1', 1418454675, 'admin', 'admin', '$2y$10$obXAkj6EoWu7ggCb4ssZZeCxBYjMDU2lDJ2ZlmLRvRVuOWJMV.YXS', 0, 'jt4twggad34erzdsf@hotmail.com', 13310010827, '', 1423863036, 0, 0, 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', '', 0, 0, 0, 0, 0, 0, 1, 'en', '', 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '03f5814c9da749c0', 1, 0, 0),
+(1, 2, 1, '00000000000w27wrgg\ni1cjyo000000\ni1cjyo000000', 0, '', 1418454675, 'Anonymous', 'anonymous', '', 0, '', 0, '', 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', '', 'd M Y H:i', 1, 0, '', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '97843500a72ad004', 1, 0, 0),
+(2, 3, 5, 'zik0zjzik0zjzik0zc\ni1cjyo000000\nzik0zjzi8sg0', 0, '127.0.0.1', 1418454675, 'admin', 'admin', '$2y$10$obXAkj6EoWu7ggCb4ssZZeCxBYjMDU2lDJ2ZlmLRvRVuOWJMV.YXS', 0, 'jt4twggad34erzdsf@hotmail.com', 13310010827, '', 1424192718, 0, 0, 'ucp.php?login=external&mode=login&password=qaz2wsx&redirect=%2F&username=admin', '', 0, 0, 0, 0, 0, 0, 1, 'en', '', 'D M d, Y g:i a', 1, 1, 'AA0000', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 1, 1, 1, 1, 230271, '', '', 0, 0, '', '', '', '', '', '', '03f5814c9da749c0', 1, 0, 0),
 (3, 2, 6, '', 0, '', 1418454699, 'AdsBot [Google]', 'adsbot [google]', '', 1418454699, '', 0, '', 0, 1418454699, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', '21116ee5b90d3ba2', 0, 0, 0),
 (4, 2, 6, '', 0, '', 1418454700, 'Alexa [Bot]', 'alexa [bot]', '', 1418454700, '', 0, '', 0, 1418454700, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'c08cd3bff7159522', 0, 0, 0),
 (5, 2, 6, '', 0, '', 1418454700, 'Alta Vista [Bot]', 'alta vista [bot]', '', 1418454700, '', 0, '', 0, 1418454700, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 'en', 'UTC', 'D M d, Y g:i a', 1, 0, '9E8DA7', 0, 0, 0, 0, -3, 0, 0, 't', 'd', 0, 't', 'a', 0, 1, 0, 0, 1, 1, 0, 230271, '', '', 0, 0, '', '', '', '', '', '', 'b2dfbcf74171735d', 0, 0, 0),
@@ -4410,7 +4440,7 @@ CREATE TABLE IF NOT EXISTS `studentcards` (
   `ip` varchar(255) NOT NULL,
   `read` enum('on','0','','') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- Дамп данных таблицы `studentcards`
@@ -4446,7 +4476,8 @@ INSERT INTO `studentcards` (`id`, `name`, `sname`, `mname`, `univer`, `contacts`
 (29, 'вфывф', 'выф', 'вфы', 'фыв', 'фыв', 'courier', '19.02.2015 00:10:59', '127.0.0.1', ''),
 (30, 'фыв', 'фыв', 'фыв', 'фыв', 'фыв', 'courier', '19.02.2015 00:11:14', '127.0.0.1', ''),
 (31, 'фыв', 'вфы', 'фыв', 'фыв', 'фыв', 'courier', '19.02.2015 00:11:37', '127.0.0.1', ''),
-(32, 'фыв', 'фыв', 'фыв', 'фыв', 'фыв', 'courier', '19.02.2015 00:12:20', '127.0.0.1', '');
+(32, 'фыв', 'фыв', 'фыв', 'фыв', 'фыв', 'courier', '19.02.2015 00:12:20', '127.0.0.1', ''),
+(33, 'dasd', 'das', 'das', 'das', 'das', 'courier', '03.03.2015 02:44:25', '127.0.0.1', '');
 
 -- --------------------------------------------------------
 
@@ -4462,7 +4493,7 @@ CREATE TABLE IF NOT EXISTS `subways` (
   `order` int(11) NOT NULL,
   `active` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `subways`
@@ -4470,7 +4501,10 @@ CREATE TABLE IF NOT EXISTS `subways` (
 
 INSERT INTO `subways` (`id`, `name`, `image`, `order`, `active`) VALUES
 (1, 'Дубровка', '26a520b7130c777eeb9747083ec6ce84.png', 0, 'on'),
-(2, 'Сокольники', '49d7b76dd28c58596e53c5ed3c3d3dc9.png', 0, 'on');
+(2, 'Сокольники', '49d7b76dd28c58596e53c5ed3c3d3dc9.png', 0, 'on'),
+(3, 'Варшавская', '41132f89e29001f07a4bb444e70ca559.png', 0, 'on'),
+(4, 'Бибирево', '657bf10eef5ab28d83ffc05189b66022.png', 0, 'on'),
+(5, 'Станция "Новослободская"', 'ed470d7cd8cfd056a055adfdcf61ba5e.png', 0, 'on');
 
 -- --------------------------------------------------------
 

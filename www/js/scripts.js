@@ -197,8 +197,18 @@ $(function () { // when DOM is ready
             $('#select-2').html(data);
         });
     });
-    $('#select_category').change(function () {
 
+    $('#self').live('change', function () {
+        if ($(this).attr('checked')) {
+            $('#send_sbs_btn').hide();
+            $('#payment').show();
+        }
+    });
+    $('#courier').live('change', function () {
+        if ($(this).attr('checked')) {
+            $('#send_sbs_btn').show();
+            $('#payment').hide();
+        }
     });
 
 });

@@ -1,6 +1,6 @@
 <h3 class="about_us_title points_title"><?= $sport['name'] ?></h3>
 
-<ul class="points">
+<ul class="points" style="padding-bottom: 0px;">
     <?php foreach ($points as $point): ?>
         <li>
             <img src="/images/points/<?= $point['image'] ?>" alt="<?= $point['name'] ?>">
