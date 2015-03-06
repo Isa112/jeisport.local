@@ -118,6 +118,9 @@ class Categories extends CI_Controller {
         }
         $data['title'] = 'Редактирование категории';
         $category = $this->categories_model->get_categories($id);
+        foreach ($category as $k => $v) {
+            $category[$k] = htmlspecialchars(stripslashes($v));
+        }
         $data['category'] = $category;
         if ($this->input->post('do') == 'categoryEdit') {
             $this->form_validation->set_rules('name', 'Название', 'required');

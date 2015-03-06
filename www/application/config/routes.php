@@ -216,9 +216,9 @@ $route['forumlogin/logout'] = 'front/forumlogin/logout';
 $route['banners/(:num)'] = 'front/pages/bannerClicksCount/$1';
 $route['banners/incviews'] = 'front/pages/incviews';
 
+$route['(:any)/(:any)/(:num)'] = 'front/pages/points/$1/$2/$3';
 $route['(:any)/(:any)/(:any)'] = 'front/pages/point/$1/$2/$3';
 $route['(:any)/(:any)'] = 'front/pages/points/$1/$2';
-$route['(:any)/(:any)/(:any)'] = 'front/pages/points/$1/$2/$3';
 $route['(:any)'] = 'front/pages/sports/$1';
 
 /* End of file routes.php */

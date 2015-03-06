@@ -113,6 +113,7 @@
                                 <span>за год</span>
                                 <div class="tab_content">
                                     <span><?= $point['price_year'] ?></span>
+                                    <a style='margin-bottom: 30px;display: inline-block;margin-left: 20px;' href='/pricelist/<?= $point['id'] ?>'>Скачать прайс</a>
                                     <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
                                 </div>
                             </div>
@@ -122,6 +123,7 @@
                                 <span>за 6 мес.</span>
                                 <div class="tab_content">
                                     <span><?= $point['price_6months'] ?></span>
+                                    <a style='margin-bottom: 30px;display: inline-block;margin-left: 20px;' href='/pricelist/<?= $point['id'] ?>'>Скачать прайс</a>
                                     <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
                                 </div>
                             </div>
@@ -131,6 +133,7 @@
                                 <span>за 1 мес.</span>
                                 <div class="tab_content">
                                     <span><?= $point['price_month'] ?></span>
+                                    <a style='margin-bottom: 30px;display: inline-block;margin-left: 20px;' href='/pricelist/<?= $point['id'] ?>'>Скачать прайс</a>
                                     <p>Цены, приведённые на сайте, не окончательные, не являются публичной офертой и носят информационный характер. Администрация оставляет за собой право изменять цены. Вы можете уточнить стоимость по телефону.</p>
                                 </div>
                             </div>
@@ -178,17 +181,17 @@
 
         <div id="disqus_thread"></div>
         <script type="text/javascript">
-                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                var disqus_shortname = 'jeisport-sport'; // required: replace example with your forum shortname
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'jeisport-sport'; // required: replace example with your forum shortname
 
-                /* * * DON'T EDIT BELOW THIS LINE * * */
-                (function () {
-                    var dsq = document.createElement('script');
-                    dsq.type = 'text/javascript';
-                    dsq.async = true;
-                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
         </script>
         <noscript>Please enable JavaScript to view the comments.</a></noscript>
 

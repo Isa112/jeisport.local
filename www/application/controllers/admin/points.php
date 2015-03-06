@@ -139,6 +139,10 @@ class Points extends CI_Controller {
         }
         $data['title'] = 'Редактирование спортивной точки';
         $point = $this->points_model->get_points($id);
+        foreach ($point as $k => $v) {
+            $point[$k] = htmlspecialchars(stripslashes($v));
+        }
+
         $data['point'] = $point;
 
         $sports = $this->sports_model->get_sports();
@@ -404,8 +408,8 @@ class Points extends CI_Controller {
         </div>
         <?php
     }
-    
-    public function get4treners(){
+
+    public function get4treners() {
         
     }
 
@@ -632,7 +636,6 @@ class Points extends CI_Controller {
         </div>
         <?php
     }
-    
 
     public function hall_data_save() {
         $this->points_model->hall_data_save();

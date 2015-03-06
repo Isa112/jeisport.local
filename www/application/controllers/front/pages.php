@@ -147,7 +147,6 @@ class Pages extends CI_Controller {
                     $startFrom = 0;
                 }
 
-                $data['posts'] = $this->blogs_model->get_blogs_for_pagination($startFrom);
                 $data['points'] = $this->points_model->get_points_for_pagination($sport['id'], $startFrom);
                 $category = $this->categories_model->get_category_by_url_for_front($category);
                 if (!$category) {
@@ -225,11 +224,19 @@ class Pages extends CI_Controller {
 
             $config['base_url'] = '/news/';
             $config['total_rows'] = count($this->news_model->get_news_for_front());
-            $config['per_page'] = 5;
+            $config['per_page'] = 2;
             $config['uri_segment'] = 2;
 
             $config['full_tag_open'] = '';
             $config['full_tag_close'] = '';
+
+            $config['first_link'] = 'Начало';
+            $config['first_tag_open'] = '<li class="start">';
+            $config['first_tag_close'] = '</li>';
+
+            $config['last_link'] = 'Конец';
+            $config['last_tag_open'] = '<li class="finish">';
+            $config['last_tag_close'] = '</li>';
 
             $config['prev_link'] = 'Предыдущая';
             $config['prev_tag_open'] = '<li class="first_child">';

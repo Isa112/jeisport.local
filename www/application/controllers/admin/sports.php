@@ -23,12 +23,12 @@ class Sports extends CI_Controller {
             show_404();
         }
         $sports = $this->sports_model->get_sports();
-        
+
         $data['title'] = 'Административная панель';
         $data['sports'] = $sports;
         $data['categories'] = $this->categories_model->get_categories();
         $data['cat'] = '';
-        
+
         $this->load->view('admin/templates/metahead', $data);
         $this->load->view('admin/templates/navbar', $data);
         $this->load->view('admin/pages/sports/' . $page, $data);
@@ -47,11 +47,11 @@ class Sports extends CI_Controller {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');
         }
-        
-        if(!$this->categories_model->get_categories()){
+
+        if (!$this->categories_model->get_categories()) {
             redirect('admin/categories');
         }
-        
+
         $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
         $this->form_validation->set_rules('url', 'ЧПУ', 'trim|xss_clean|required|callback_check_url');
         $this->form_validation->set_rules('title', 'Мета title', 'trim|xss_clean');
@@ -109,6 +109,9 @@ class Sports extends CI_Controller {
         }
         $data['title'] = 'Редактирование вида спорта';
         $sport = $this->sports_model->get_sports($id);
+        foreach ($sport as $k => $v) {
+            $sport[$k] = htmlspecialchars(stripslashes($v));
+        }
         $data['sport'] = $sport;
         if ($this->input->post('do') == 'sportEdit') {
             $this->form_validation->set_rules('name', 'Название', 'required|trim|xss_clean');
@@ -214,16 +217,16 @@ class Sports extends CI_Controller {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');
         }
-        if($category == 'all'){
+        if ($category == 'all') {
             redirect('admin/sports');
         }
         $sports = $this->sports_model->get_ordered_sports($category);
-        
+
         $data['title'] = 'Административная панель';
         $data['sports'] = $sports;
         $data['cat'] = $category;
         $data['categories'] = $this->categories_model->get_categories();
-        
+
         $this->load->view('admin/templates/metahead', $data);
         $this->load->view('admin/templates/navbar', $data);
         $this->load->view('admin/pages/sports/sports', $data);

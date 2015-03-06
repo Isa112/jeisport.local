@@ -2562,14 +2562,33 @@ ul.pagination li.active {margin: 5px 10px;
                          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007d5f', endColorstr='#00a88e',GradientType=0 ); /* IE6-8 */
                          color: #fff;
 }
+ul.pagination li.start a, ul.pagination li.finish a {
+    min-width: 100px;
+    font-family: 'RBCGROTESK-REGULAR';
+    font-size: 14px;
+    min-width: 100px;
+    color: #00a88e;
+    margin: 5px 0px;
+}
+ul.pagination li.start a:hover, ul.pagination li.finish a:hover {
+    text-decoration: underline;min-width: 100px;background: none;
+}
+
 ul.pagination li.first_child, ul.pagination li.last_child {
     min-width: 100px;
+}
+ul.pagination li.first_child {
+    margin: 5px 0 0 10px;
+}
+ul.pagination li.last_child{
+    margin: 5px 10px 0 0;
 }
 ul.pagination li.first_child a, ul.pagination li.last_child a {
     font-family: 'RBCGROTESK-REGULAR';
     font-size: 14px;
     min-width: 100px;
-    color: #00a88e;}
+    color: #00a88e;
+}
 
 ul.pagination li.first_child a:hover, ul.pagination li.last_child a:hover {
     text-decoration: underline;min-width: 100px;background: none;
