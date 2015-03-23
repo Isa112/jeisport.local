@@ -29,41 +29,10 @@ class Points extends CI_Controller {
 
         $this->load->library('pagination');
         $config['base_url'] = "/admin/points/";
-        $config['total_rows'] = count($this->points_model->get_points());
+        $config['total_rows'] = $data['count_all'] = count($this->points_model->get_points());
         $config['per_page'] = 50;
-        $config['num_links'] = 4;
+        $config['num_links'] = 10;
         $config['uri_segment'] = 3;
-
-//<nav>
-//    <ul class="pagination">
-//        <li>
-//            <a href="#" aria-label="First">
-//                <span aria-hidden="true">&laquo;&laquo;</span>
-//            </a>
-//        </li>
-//        <li>
-//            <a href="#" aria-label="Previous">
-//                <span aria-hidden="true">&laquo;</span>
-//            </a>
-//        </li>
-//        <li><a href="#">1</a></li>
-//        <li><a href="#">2</a></li>
-//        <li><a href="#">3</a></li>
-//        <li><a href="#">4</a></li>
-//        <li><a href="#">5</a></li>
-//        <li>
-//            <a href="#" aria-label="Next">
-//                <span aria-hidden="true">&raquo;</span>
-//            </a>
-//        </li>
-//        <li>
-//            <a href="#" aria-label="Last">
-//                <span aria-hidden="true">&raquo;&raquo;</span>
-//            </a>
-//        </li>
-//    </ul>
-//</nav>
-
 
         $config['full_tag_open'] = '<nav><ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
@@ -177,20 +146,7 @@ class Points extends CI_Controller {
             } else {
                 $image_data = $this->upload->data();
             }
-            if ($_FILES['pricelist']['name']) {
-                if (!$this->upload->do_upload('pricelist')) {
-                    $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
-                    redirect('admin/points/add');
-                } else {
-                    $price_data = $this->upload->data();
-                }
-            }
-            if (!isset($price_data)) {
-                $price_data = '';
-            } else {
-                $price_data = $price_data['file_name'];
-            }
-            $insert_id = $this->points_model->set_point($image_data['file_name'], $price_data);
+            $insert_id = $this->points_model->set_point($image_data['file_name']);
 
             $arr = array(
                 'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Спортивная точка была успешно добавлена!</div>'

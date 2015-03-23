@@ -40,6 +40,7 @@ class Points_model extends CI_Model {
             return $query->row_array();
         }
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('id', 'asc');
         $query = $this->db->get('points');
         if (count($query->result_array()) > 0) {
             return $query->result_array();
@@ -50,6 +51,7 @@ class Points_model extends CI_Model {
 
     public function get_points_for_front($sport_id) {
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('id', 'asc');
         $query = $this->db->get_where('points', array('sport_id' => $sport_id, 'active' => 'on'));
         if (count($query->result_array()) > 0) {
             return $query->result_array();
@@ -60,6 +62,7 @@ class Points_model extends CI_Model {
 
     public function get_points_for_pagintaion_admin($startFrom) {
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('id', 'asc');
         $query = $this->db->get('points', 50, $startFrom);
         if (count($query->result_array()) > 0) {
             return $query->result_array();
@@ -193,7 +196,7 @@ class Points_model extends CI_Model {
         $this->db->delete('points_treners', array('point_id' => $id));
     }
 
-    public function set_point($image, $pricelist) {
+    public function set_point($image) {
         if ($this->input->post('payedf'))
             $payedf = $this->input->post('payedf');
         else

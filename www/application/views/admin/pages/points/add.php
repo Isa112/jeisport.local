@@ -8,11 +8,6 @@
 <div class="page-header">
     <h2>Добавление спортивной точки</h2>
 </div>
-<div class="row" style="margin-top: 10px;">
-    <div class="col-md-12">
-        <button type="submit" class="btn btn-default">Сохранить</button>
-    </div>
-</div>
 <div class="row" style="margin-bottom: 5px;">
     <div class="col-md-12">
         <?= validation_errors(); ?>
