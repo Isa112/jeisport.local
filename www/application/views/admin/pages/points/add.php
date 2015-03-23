@@ -8,6 +8,11 @@
 <div class="page-header">
     <h2>Добавление спортивной точки</h2>
 </div>
+<div class="row" style="margin-top: 10px;">
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-default">Сохранить</button>
+    </div>
+</div>
 <div class="row" style="margin-bottom: 5px;">
     <div class="col-md-12">
         <?= validation_errors(); ?>
@@ -68,10 +73,10 @@
             <label for="youtube">Ключ видео с youtube</label>
             <input name='youtube' value="<?= set_value('youtube') ?>" type="text" class="form-control" id="youtube" placeholder="v5NfMbQn8jA">
         </div>
-<!--        <div class="form-group">
-            <label for="pricelist">Прайс лист</label><br/>
-            <input name='pricelist' type="file" class="btn-file" id="pricelist" >
-        </div>-->
+        <!--        <div class="form-group">
+                    <label for="pricelist">Прайс лист</label><br/>
+                    <input name='pricelist' type="file" class="btn-file" id="pricelist" >
+                </div>-->
         <div class="form-group">
             <label for="price_month">Цена за 1 месяц</label>
             <input name='price_month' value="<?= set_value('price_month') ?>" type="text" class="form-control" id="price_month" placeholder="35 000 руб.">
@@ -204,7 +209,7 @@
                     var map = new YMaps.Map(YMaps.jQuery("#map-canvas")[0]);
 
                     // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
-                    var point = new YMaps.GeoPoint(37.619752,55.74722);
+                    var point = new YMaps.GeoPoint(37.619752, 55.74722);
                     map.setCenter(point, 10);
                     map.addControl(new YMaps.TypeControl());
                     map.addControl(new YMaps.ToolBar());

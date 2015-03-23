@@ -19,8 +19,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-        <meta name="keywords" content="<?= $metakeyw ?>">
-        <meta name="description" content="<?= $metadesc ?>">
+        <meta name="keywords" content="<?php if (isset($metakeyw)) echo $metakeyw ?>">
+        <meta name="description" content="<?php if (isset($metadesc)) echo $metadesc ?>">
 
 
         <link rel="stylesheet" href="/css/style.css">

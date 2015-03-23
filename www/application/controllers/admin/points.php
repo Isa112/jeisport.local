@@ -166,6 +166,8 @@ class Points extends CI_Controller {
         if (count($selected)) {
             $data['selected'] = $selected['sport_id'];
         }
+        $data['sport'] = $sport = $this->sports_model->get_sports($point['sport_id']);
+        $data['category'] = $category = $this->categories_model->get_categories($sport['category_id']);
         $data['sports'] = $arr;
 
         $subways = $this->subways_model->get_subways_for_point();

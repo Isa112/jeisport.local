@@ -1,0 +1,1 @@
+[23-Mar-2015 14:50:27 UTC] PHP Fatal error:  Call to undefined method Categories_model::get_sports() in Z:\home\jeisport.local\www\application\controllers\admin\points.php on line 170

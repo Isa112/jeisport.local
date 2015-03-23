@@ -14,7 +14,7 @@
         <button type="submit" class="btn btn-default">Сохранить</button>
     </div>
     <div class="col-md-2">
-        <button type="submit" class="btn btn-default"><?= $selected ?></button>
+        <a target="_blank" href="/<?= $category['url'] ?>/<?= $sport['url'] ?>/<?= $point['url'] ?>/" class="btn btn-default">Перейти на спорт. точку</a>
     </div>
 </div>
 <div class="row" style="margin-bottom: 5px;">
