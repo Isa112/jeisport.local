@@ -18,6 +18,11 @@
             ?></title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="keywords" content="<?= $metakeyw ?>">
+        <meta name="description" content="<?= $metadesc ?>">
+
+
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/slider.css">
         <link rel="stylesheet" href="/colorbox/example4/colorbox.css">
@@ -41,7 +46,7 @@
                     close: "Закрыть"
                 });
             });
-            
+
             $(function () {
                 var availableTags = [
 <?php

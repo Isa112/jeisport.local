@@ -29,7 +29,9 @@ class Pages extends CI_Controller {
             $banner = $this->banners_model->get_banner_for_front('main');
             $this->banners_model->update_banner_views($banner['id']);
         }
-        $data['title'] = 'Jeisport - Самая обширная база спортивных клубов Москвы!';
+        $data['title'] = 'Спортивные клубы Москвы, спортклуб в Москве — лучшие спортклубы: каталог (Москва)';
+        $data['metadesc'] = 'На нашем сайте Вы найдете лучшие спортивные клубы Москвы на любой вкус. Каталог спортклубов в городе Москве. Цены.';
+        $data['metakeyw'] = 'спортивные клубы, спортклубы, лучший спортклуб, спортклубы Москва, спортивные клубы Москва, каталог, цены, отзывы';
 
         $categories = $this->categories_model->get_categories_for_front();
         $data['categories'] = $categories;
@@ -138,6 +140,14 @@ class Pages extends CI_Controller {
 
                 $config['num_tag_open'] = '<li>';
                 $config['num_tag_close'] = '</li>';
+
+                $config['first_link'] = 'Начало';
+                $config['first_tag_open'] = '<li class="first_child">';
+                $config['first_tag_close'] = '</li>';
+
+                $config['last_link'] = 'Конец';
+                $config['last_tag_open'] = '<li class="last_child">';
+                $config['last_tag_close'] = '</li>';
 
                 $this->pagination->initialize($config);
 

@@ -184,7 +184,15 @@ class Points_model extends CI_Model {
         $this->db->delete('points_treners', array('point_id' => $id));
     }
 
-    public function set_point($image) {
+    public function set_point($image, $pricelist) {
+        if ($this->input->post('payedf'))
+            $payedf = $this->input->post('payedf');
+        else
+            $payedf = date('d.m.Y H:i');
+        if ($this->input->post('payedt'))
+            $payedt = $this->input->post('payedt');
+        else
+            $payedt = date('d.m.Y H:i');
 
         $data = array(
             'name' => $this->input->post('name'),
@@ -194,6 +202,7 @@ class Points_model extends CI_Model {
             'url' => str_replace(array(')', '('), array('', ''), $this->input->post('url')),
             'graphite' => $this->input->post('graphite'),
             'image' => $image,
+//            'price_list' => $pricelist,
             'sport_id' => $this->input->post('sport'),
             'subway1_id' => $this->input->post('subway1_id'),
             'subway2_id' => $this->input->post('subway2_id'),
@@ -210,8 +219,8 @@ class Points_model extends CI_Model {
             'text' => $this->input->post('text'),
             'active' => $this->input->post('active'),
             'payed' => $this->input->post('payed'),
-            'payedf' => $this->input->post('payedf'),
-            'payedt' => $this->input->post('payedt'),
+            'payedf' => $payedf,
+            'payedt' => $payedt,
             'price_month' => $this->input->post('price_month'),
             'price_6months' => $this->input->post('price_6months'),
             'price_year' => $this->input->post('price_year'),

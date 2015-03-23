@@ -24,15 +24,15 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="name">Название</label>
-            <input name='name' value="<?= set_value('name') ?>" class="form-control name" type="text" class="form-control" id="name" placeholder="Название" required>
+            <input name='name' value="<?= set_value('name') ?>" class="form-control name" type="text" class="form-control" id="name" placeholder="Название" >
         </div>
         <div class="form-group">
             <label for="url">ЧПУ</label>
-            <input name='url' value="<?= set_value('url') ?>" class="form-control name_translit" type="text" class="form-control" id="url" placeholder="Чпу" required>
+            <input name='url' value="<?= set_value('url') ?>" class="form-control name_translit" type="text" class="form-control" id="url" placeholder="Чпу" >
         </div>
         <div class="form-group">
             <label for="sport">Вид спорта</label>
-            <select name="sport" class="form-control" id="sport" required>
+            <select name="sport" class="form-control" id="sport" >
                 <option value="" disabled style="display: none;">Выберите вид спорта...</option>
                 <?php foreach ($sports as $sport): ?>
                     <option value="<?= $sport['id'] ?>"><?= $sport['name'] ?></option>
@@ -62,12 +62,16 @@
         </div>
         <div class="form-group">
             <label for="graphite">График работы</label>
-            <input required name='graphite' value="<?= set_value('graphite') ?>" type="text" class="form-control" id="graphite" placeholder="6:00 - 23:00 - Пн-Сб">
+            <input  name='graphite' value="<?= set_value('graphite') ?>" type="text" class="form-control" id="graphite" placeholder="6:00 - 23:00 - Пн-Сб">
         </div>
         <div class="form-group">
             <label for="youtube">Ключ видео с youtube</label>
             <input name='youtube' value="<?= set_value('youtube') ?>" type="text" class="form-control" id="youtube" placeholder="v5NfMbQn8jA">
         </div>
+<!--        <div class="form-group">
+            <label for="pricelist">Прайс лист</label><br/>
+            <input name='pricelist' type="file" class="btn-file" id="pricelist" >
+        </div>-->
         <div class="form-group">
             <label for="price_month">Цена за 1 месяц</label>
             <input name='price_month' value="<?= set_value('price_month') ?>" type="text" class="form-control" id="price_month" placeholder="35 000 руб.">
@@ -82,7 +86,7 @@
         </div>
         <div class="form-group">
             <label for="image">Главное изображение</label><br/>
-            <input name='image' type="file" class="btn-file" id="image" required>
+            <input name='image' type="file" class="btn-file" id="image" >
             <p class="help-block">Выберите главное фото для спортивной точки</p>
         </div>
         <input type='hidden' name='do' value='pointAdd'>
@@ -188,7 +192,7 @@
         </div>
         <div class="col-md-3">
             <div class="input-group">
-                <input name='time1' value="<?= set_value('time1') ?>" type="text" class="form-control" id="time1" placeholder="">
+                <input name='time2' value="<?= set_value('time2') ?>" type="text" class="form-control" id="time2" placeholder="">
                 <span class="input-group-addon">мин</span>
             </div>
         </div>

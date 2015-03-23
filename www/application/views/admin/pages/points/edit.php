@@ -10,8 +10,11 @@
 </div>
 <?= form_open_multipart('admin/points/edit/' . $point['id']) ?>
 <div class="row" style="margin-bottom: 10px;">
-    <div class="col-md-12">
+    <div class="col-md-2">
         <button type="submit" class="btn btn-default">Сохранить</button>
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-default"><?= $selected ?></button>
     </div>
 </div>
 <div class="row" style="margin-bottom: 5px;">
@@ -65,7 +68,7 @@
         </div>
         <div class="form-group">
             <label for="graphite">График работы</label>
-            <input required name='graphite' value="<?= $point['graphite'] ?>" type="text" class="form-control" id="graphite" placeholder="6:00 - 23:00 - Пн-Сб">
+            <input name='graphite' value="<?= $point['graphite'] ?>" type="text" class="form-control" id="graphite" placeholder="6:00 - 23:00 - Пн-Сб">
         </div>
         <div class="form-group">
             <label for="youtube">Ключ видео с youtube</label>
@@ -128,7 +131,7 @@
             <div class="form-group">
                 <label for="payedf">Оплачен с:</label>
                 <div class='input-group date' id='payedf'>
-                    <input name="payedf" id="payedf" type='text' value="<?= date('d.m.Y h:i', strtotime($point['payedf'])) ?>" class="form-control" />
+                    <input name="payedf" id="payedf" type='text' value="<?= date('d.m.Y H:i', strtotime($point['payedf'])) ?>" class="form-control" />
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
             </div>
@@ -142,7 +145,7 @@
             <div class="form-group">
                 <label for="payedt">По:</label>
                 <div class='input-group date' id='payedt'>
-                    <input name="payedt" id="payedt" type='text' value="<?= date('d.m.Y h:i', strtotime($point['payedt'])) ?>" class="form-control" />
+                    <input name="payedt" id="payedt" type='text' value="<?= date('d.m.Y H:i', strtotime($point['payedt'])) ?>" class="form-control" />
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
             </div>

@@ -15,7 +15,7 @@
                         echo 'selected';
                     }
                     ?> value="<?= $sport['id'] ?>"><?= $sport['name'] ?></option>
-<?php endforeach; ?>
+                    <?php endforeach; ?>
             </select>
         </td>
         <td>Активен</td>

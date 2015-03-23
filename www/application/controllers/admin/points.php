@@ -61,7 +61,7 @@ class Points extends CI_Controller {
             $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
             $this->form_validation->set_rules('youtube', 'Видео с youtube', 'trim|xss_clean');
             $this->form_validation->set_rules('url', 'ЧПУ', 'trim|required|xss_clean|callback_check_url');
-            $this->form_validation->set_rules('graphite', 'График работы', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('graphite', 'График работы', 'trim|xss_clean');
             $this->form_validation->set_rules('sport', 'Вид спорта', 'trim|required|xss_clean');
             $this->form_validation->set_rules('contacts', 'Контактная информация', 'trim|xss_clean');
             $this->form_validation->set_rules('phone', 'Телефон', 'trim|xss_clean');
@@ -91,11 +91,11 @@ class Points extends CI_Controller {
             $this->load->view('admin/pages/points/add', $data);
             $this->load->view('admin/templates/footer', $data);
         } else {
+//            print_r($_FILES);
             $config['upload_path'] = './images/points';
-            $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG|DOCX|docx|DOC|doc|XLSX|xls';
             $config['max_size'] = '5120';
             $config['encrypt_name'] = true;
-
             $this->load->library('upload', $config);
 
             if (!$this->upload->do_upload('image')) {
@@ -104,14 +104,27 @@ class Points extends CI_Controller {
                 redirect('admin/points/add');
             } else {
                 $image_data = $this->upload->data();
-                $insert_id = $this->points_model->set_point($image_data['file_name']);
-
-                $arr = array(
-                    'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Спортивная точка была успешно добавлена!</div>'
-                );
-                $this->session->set_userdata($arr);
-                redirect('admin/points/edit/' . $insert_id);
             }
+            if ($_FILES['pricelist']['name']) {
+                if (!$this->upload->do_upload('pricelist')) {
+                    $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
+                    redirect('admin/points/add');
+                } else {
+                    $price_data = $this->upload->data();
+                }
+            }
+            if (!isset($price_data)) {
+                $price_data = '';
+            } else {
+                $price_data = $price_data['file_name'];
+            }
+            $insert_id = $this->points_model->set_point($image_data['file_name'], $price_data);
+
+            $arr = array(
+                'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Спортивная точка была успешно добавлена!</div>'
+            );
+            $this->session->set_userdata($arr);
+            redirect('admin/points/edit/' . $insert_id);
         }
     }
 
@@ -167,7 +180,7 @@ class Points extends CI_Controller {
             $this->form_validation->set_rules('youtube', 'Видео с youtube', 'trim|xss_clean');
             $this->form_validation->set_rules('url', 'ЧПУ', 'trim|required|xss_clean|callback_check_url');
             $this->form_validation->set_rules('sport', 'Вид спорта', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('graphite', 'График работы', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('graphite', 'График работы', 'trim|xss_clean');
             $this->form_validation->set_rules('contacts', 'Контактная информация', 'trim|xss_clean');
             $this->form_validation->set_rules('phone', 'Телефон', 'trim|xss_clean');
             $this->form_validation->set_rules('email', 'E-mail', 'trim|xss_clean');

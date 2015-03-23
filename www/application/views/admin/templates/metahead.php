@@ -49,7 +49,8 @@
         <script>
             $(function () {
                 $('.name').liTranslit({
-                    elAlias: $('.name_translit')
+                    elAlias: $('.name_translit'),
+                    reg: '" "="-"'
                 });
             });
         </script>
