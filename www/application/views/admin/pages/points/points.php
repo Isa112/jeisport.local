@@ -26,12 +26,10 @@
     </tr>
     <?php
     if (is_array($points)) {
-        $i = 0;
         foreach ($points as $point):
-            $i++;
             ?>
             <tr>
-                <td width="30px"><?= $i ?></td>
+                <td width="30px"><?= $point['id'] ?></td>
                 <td width="30%"><?= cut_str($point['name'], 50) ?></td>
                 <td width="30%">/<?= cut_str($point['url'], 25) ?>/</td>
                 <td width="20px"><img width="150px" style='border: 1px solid #ddd; border-radius: 4px; padding: 4px;' src='/images/points/<?= $point['image'] ?>'></td>
@@ -69,3 +67,5 @@
     }
     ?>
 </table>
+
+<?= $this->pagination->create_links() ?>

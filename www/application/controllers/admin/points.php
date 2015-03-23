@@ -14,7 +14,7 @@ class Points extends CI_Controller {
         }
     }
 
-    public function view($page = 'points') {
+    public function view($page = 'points', $firstPage = 0) {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');
         }
@@ -24,9 +24,81 @@ class Points extends CI_Controller {
         }
 
         $data['title'] = 'Административная панель';
-        $data['points'] = $this->points_model->get_points();
         $data['cat'] = '';
         $data['sports'] = $this->sports_model->get_sports();
+
+        $this->load->library('pagination');
+        $config['base_url'] = "/admin/points/";
+        $config['total_rows'] = count($this->points_model->get_points());
+        $config['per_page'] = 50;
+        $config['num_links'] = 4;
+        $config['uri_segment'] = 3;
+
+//<nav>
+//    <ul class="pagination">
+//        <li>
+//            <a href="#" aria-label="First">
+//                <span aria-hidden="true">&laquo;&laquo;</span>
+//            </a>
+//        </li>
+//        <li>
+//            <a href="#" aria-label="Previous">
+//                <span aria-hidden="true">&laquo;</span>
+//            </a>
+//        </li>
+//        <li><a href="#">1</a></li>
+//        <li><a href="#">2</a></li>
+//        <li><a href="#">3</a></li>
+//        <li><a href="#">4</a></li>
+//        <li><a href="#">5</a></li>
+//        <li>
+//            <a href="#" aria-label="Next">
+//                <span aria-hidden="true">&raquo;</span>
+//            </a>
+//        </li>
+//        <li>
+//            <a href="#" aria-label="Last">
+//                <span aria-hidden="true">&raquo;&raquo;</span>
+//            </a>
+//        </li>
+//    </ul>
+//</nav>
+
+
+        $config['full_tag_open'] = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['prev_link'] = '<span aria-hidden="true">&laquo;</span>';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['next_link'] = '<span aria-hidden="true">&raquo;</span>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="active"><a>';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+        $config['first_link'] = '<span aria-hidden="true">&laquo;&laquo;</span>';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link'] = '<span aria-hidden="true">&raquo;&raquo;</span>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+
+        if ($firstPage != 0) {
+            $startFrom = $firstPage;
+        } else {
+            $startFrom = 0;
+        }
+
+        $data['points'] = $this->points_model->get_points_for_pagintaion_admin($startFrom);
 
         $this->load->view('admin/templates/metahead', $data);
         $this->load->view('admin/templates/navbar', $data);
@@ -166,8 +238,10 @@ class Points extends CI_Controller {
         if (count($selected)) {
             $data['selected'] = $selected['sport_id'];
         }
+
         $data['sport'] = $sport = $this->sports_model->get_sports($point['sport_id']);
         $data['category'] = $category = $this->categories_model->get_categories($sport['category_id']);
+
         $data['sports'] = $arr;
 
         $subways = $this->subways_model->get_subways_for_point();

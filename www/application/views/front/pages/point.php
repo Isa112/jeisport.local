@@ -178,38 +178,21 @@
 
         <h3 class="block-title comments_title" id="section_1">Отзывы</h3><!-- title -->
 
-
         <div id="disqus_thread"></div>
         <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'jeisport-sport'; // required: replace example with your forum shortname
+            /* * * CONFIGURATION VARIABLES * * */
+            var disqus_shortname = 'jeisport24';
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function () {
                 var dsq = document.createElement('script');
                 dsq.type = 'text/javascript';
                 dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the comments.</a></noscript>
-
-
-        <!--        <a href="" class="comments_in_presentation">22 Комментария</a>
-                <div class="comments">
-                    <h6>Дмитрий</h6>
-                    <p>В этом виде спорта практически не существует каких-то возрастных ограничений. Вы можете привести в секцию ребенка или прийти сами даже со своими  родителями<a href="">Ответить</a></p>
-                </div>
-                <div class="comments">
-                    <h6>Дмитрий</h6>
-                    <p>В этом виде спорта практически не существует каких-то возрастных ограничений. Вы можете привести в секцию ребенка или прийти сами даже со своими  родителями<a href="">Ответить</a></p>
-                </div>
-                <div class="add_comment">
-                    <h6>Добавьте новый комментарий</h6>
-                    <p>В этом виде спорта практически не существует каких-то возрастны</p>
-                    <input type="button" value="Добавить">
-                </div>-->
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
     </div><!-- wrapper -->
 </div>

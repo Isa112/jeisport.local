@@ -94,6 +94,7 @@ $route['admin/sports/order/(:any)'] = 'admin/sports/order/$1';
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 $route['admin/points'] = 'admin/points/view/points';
+$route['admin/points/(:num)'] = 'admin/points/view/points/$1';
 $route['admin/points/edit/(:num)'] = 'admin/points/edit/$1';
 $route['admin/points/delete/(:num)'] = 'admin/points/delete/$1';
 $route['admin/points/up/(:num)'] = 'admin/points/up/$1';

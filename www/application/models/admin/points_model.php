@@ -49,9 +49,18 @@ class Points_model extends CI_Model {
     }
 
     public function get_points_for_front($sport_id) {
-
         $this->db->order_by('order', 'desc');
         $query = $this->db->get_where('points', array('sport_id' => $sport_id, 'active' => 'on'));
+        if (count($query->result_array()) > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
+    public function get_points_for_pagintaion_admin($startFrom) {
+        $this->db->order_by('order', 'desc');
+        $query = $this->db->get('points', 50, $startFrom);
         if (count($query->result_array()) > 0) {
             return $query->result_array();
         } else {
