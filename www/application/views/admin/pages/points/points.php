@@ -1,6 +1,9 @@
 <a href='/admin/points/add'><button type="button" style='margin-bottom:20px;' class="btn btn-default btn-default">Добавить</button></a>
 <div class="well">Всего записей в базе данных: <?= $count_all ?></div>
 
+<?php if (is_numeric($this->uri->segment(3)) || (!$this->uri->segment(3))): ?>
+    <?= $this->pagination->create_links() ?>
+<?php endif; ?>
 <table class="table table-bordered">
     <tr>
         <td width="20px">#</td>
@@ -69,5 +72,6 @@
     }
     ?>
 </table>
-
-<?= $this->pagination->create_links() ?>
+<?php if (is_numeric($this->uri->segment(3))): ?>
+    <?= $this->pagination->create_links() ?>
+<?php endif; ?>

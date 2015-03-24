@@ -362,6 +362,7 @@ class Points extends CI_Controller {
         if ($sport == 'all') {
             redirect('admin/points');
         }
+        $data['count_all'] = count($this->points_model->get_points());
         $data['sports'] = $this->sports_model->get_sports();
         $points = $this->points_model->get_ordered_points($sport);
 
