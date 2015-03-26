@@ -1934,6 +1934,7 @@ ul.points li h5 {
     position: absolute;
     top: 200px;
     line-height: 48px;
+    overflow: hidden;
 }
 ul.points li img {
     width: 374px;
