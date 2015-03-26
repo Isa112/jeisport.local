@@ -222,7 +222,7 @@
         <div class="map">
             <div id="map-canvas"></div>
         </div>
-        <input id="coords" type="hidden" name="coords" value="">
+        <input id="coords" type="hidden" name="coords" value="37.619752, 55.74722">
     </div>
 </div>
 <div class="row">

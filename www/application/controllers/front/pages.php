@@ -156,8 +156,9 @@ class Pages extends CI_Controller {
                 } else {
                     $startFrom = 0;
                 }
-
-                $data['points'] = $this->points_model->get_points_for_pagination($sport['id'], $startFrom);
+                $points = $this->points_model->get_points_for_pagination($sport['id'], $startFrom);
+                $data['points'] = $points;
+                
                 $category = $this->categories_model->get_category_by_url_for_front($category);
                 if (!$category) {
                     $this->output->set_status_header('404');
@@ -195,6 +196,7 @@ class Pages extends CI_Controller {
         $data['stitle'] = $point['name'];
         $data['category'] = $category;
         $data['sport'] = $sport;
+        $point['name'] = htmlspecialchars(stripslashes($point['name']));
         $data['point'] = $point;
 
         $data['subway1'] = $this->points_model->get_subway_for_point_front($point['subway1_id']);

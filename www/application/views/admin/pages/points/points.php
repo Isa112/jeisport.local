@@ -72,6 +72,6 @@
     }
     ?>
 </table>
-<?php if (is_numeric($this->uri->segment(3))): ?>
+<?php if (is_numeric($this->uri->segment(3)) || (!$this->uri->segment(3))): ?>
     <?= $this->pagination->create_links() ?>
 <?php endif; ?>

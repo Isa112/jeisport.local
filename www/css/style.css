@@ -15,6 +15,7 @@ input[type=text] {outline: 0;}input[type=submit] {outline: 0;}
 input[type=submit] {outline: 0;}input[type=submit]:hover {cursor: pointer;}
 input[type=button] {outline: 0;}input[type=button]:hover {cursor: pointer;}
 textarea {outline: 0;}
+
 /*fonts*/
 
 @font-face {
@@ -83,7 +84,11 @@ header {
 header .logo {
     float: left;
     width: 230px;
-    padding: 30px 0 0 0;
+}
+header .logo a {
+    display: block;
+    font-size: 0;
+    padding: 30px 0 16px 0;
 }
 /*main navigation*/
 header ul {
@@ -714,10 +719,12 @@ section {padding-bottom: 60px;overflow: hidden;}
 .categories ul li {
     width: 227px;
     height: 167px;
-    float: left;
+    display: inline-block;
     margin: 0 25px 29px 0;
     overflow: hidden;
     position: relative;
+
+
 }
 
 
@@ -1926,6 +1933,7 @@ ul.points li h5 {
     margin: 0;
     position: absolute;
     top: 200px;
+    line-height: 48px;
 }
 ul.points li img {
     width: 374px;
@@ -2161,7 +2169,7 @@ p.after_enter {
     font-size: 16px;
     line-height: 20px;
     color: #fff;
-    margin: 20px 0 28px 0;
+    margin: 15px 0;
 }
 .call_back a {
     display: block;
@@ -2861,7 +2869,7 @@ footer .header_wrapper {
 }
 #modal6 {
     overflow-y: scroll;
-    overflow-x: hidden;   
+    overflow-x: hidden;
 }
 .presentation_slider {
     width: 1000px;
@@ -2919,6 +2927,7 @@ h3.presentation_title_h3 {
     width: 150%;
     height: 150%;
 }*/
+
 .categories_2 ul li a:hover>img {
      -webkit-transform: scale(1.5);
     -moz-transform: scale(1.5);
@@ -2926,3 +2935,18 @@ h3.presentation_title_h3 {
     -o-transform: scale(1.5);
     transform: scale(1.5);
 }
+
+
+article h2 {
+    font-family: 'RBCGROTESK-REGULAR';
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+article p {
+    text-indent: 15px;
+}
+
+

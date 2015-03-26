@@ -15,7 +15,9 @@
                 </ul>
             </div><!-- slider -->
             <div class="presentation_title">
-                <h5><?= $point['name'] ?></h5>
+                <h5><?php if ($this->session->userdata('logged')): ?>
+                        <a target="_blank" href="/admin/points/edit/<?= $point['id'] ?>">Править</a>
+                    <?php endif; ?> <?= $point['name'] ?></h5>
                 <a href="#section_1" class="plagination">Отзывы</a>
                 <?php if ($point['price_year'] || $point['price_6months'] || $point['price_month']): ?>
                     <a href="#section_2" class="plagination">Прайс лист </a>
@@ -36,10 +38,11 @@
                 // Создает обработчик события window.onLoad
                 YMaps.jQuery(function () {
                     // Создает экземпляр карты и привязывает его к созданному контейнеру
-                    var map = new YMaps.Map(YMaps.jQuery("#map-canvas")[0]);
+                    var map = new YMaps.Map(YMaps.jQuery("#map")[0]);
 
                     // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
                     var point = new YMaps.GeoPoint(<?= $point['coords'] ?>);
+                    map.enableScrollZoom();
                     map.setCenter(point, 10);
                     map.addControl(new YMaps.TypeControl());
                     map.addControl(new YMaps.ToolBar());
@@ -49,14 +52,12 @@
                     var placemark = new YMaps.Placemark(point, {draggable: false});
                     YMaps.Events.observe(placemark, placemark.Events.DragEnd, function (obj) {
                         var prev = obj.getGeoPoint().copy();
-                        $('#coords').val(prev);
                     });
                     placemark.name = "<?= $point['name'] ?>";
                     map.addOverlay(placemark);
                 })
             </script>
-            <div id="cover_area"></div>
-            <div class="hidden_map" id="map-canvas"></div>
+            <div class="hidden_map" id="map" style="width: 1000px; height: 474px"></div>
             <div class="load_more">
                 <a href="#" class="showhide" data-text="Скрыть карту">Показать карту</a>
             </div>
@@ -102,7 +103,7 @@
                 <p>Цена: свыше 60 тыс. руб за год</p>
                 <label for="">Вы владелец?</label>
                 <div class="call_back">
-                    <p>Чтобы записаться на пробное посещение или задать вопросы менеджеру клуба закажи обратный звонок</p>
+                    <p>Чтобы записаться на пробное посещение или задать вопросы менеджеру клуба закажите обратный звонок</p>
                     <a href="javascript:" id="send_backcall" class="modal-open" data-modal-id="#modal5">Заказать обратный звонок</a>
                 </div>
                 <?php if ($point['price_year'] || $point['price_6months'] || $point['price_month']): ?>
@@ -150,11 +151,13 @@
                     <ul class="slides" style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-2000px, 0px, 0px); transform: translate3d(-2000px, 0px, 0px);">
                         <?php foreach ($treners as $trener): ?>
                             <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
-                                <?php for ($i = 0; $i < 4; $i++): ?>
+                                <?php
+                                for ($i = 0; $i < 4; $i++):
+                                    ?>
                                     <?php if (isset($trener[$i])): ?>
                                         <div class="video_block">
                                             <a href="#" data-modal-id="#modal6" data-id="<?= $trener[$i]['id'] ?>" class="img_link modal-open">
-                                                <img class="trener_image" src="/images/points/treners/<?= $trener[$i]['image'] ?>" alt="" draggable="false">
+                                                <img class="trener_image" src="/resize_image.php?file=images/points/treners/<?= $trener[$i]['image'] ?>&amp;w=185" alt="" draggable="false">
                                             </a>
                                             <a href="#" data-modal-id="#modal6" class="title_link modal-open"><?= $trener[$i]['sname'] ?> <?= $trener[$i]['name'] ?></a>
                                         </div>

@@ -40,6 +40,7 @@ class Sports_model extends CI_Model {
             return $query->row_array();
         }
         $this->db->order_by('order', 'desc');
+        $this->db->order_by('name', 'asc');
         $query = $this->db->get('sports');
         if (count($query->result_array()) > 0) {
             return $query->result_array();

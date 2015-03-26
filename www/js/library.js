@@ -168,7 +168,7 @@ function trener_del_click_subscription() {
 }
 
 jQuery(document).ready(function () {
-    $('table .glyphicon-remove, .glyphicon-trash').click(function () {
+    $('table .glyphicon-remove, .glyphicon-trash, .remove_point').click(function () {
         if (confirm('Удалить?')) {
             return true
         } else {

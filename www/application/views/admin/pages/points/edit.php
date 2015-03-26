@@ -16,6 +16,9 @@
     <div class="col-md-2">
         <a target="_blank" href="/<?= $category['url'] ?>/<?= $sport['url'] ?>/<?= $point['url'] ?>/" class="btn btn-default">Перейти на спорт. точку</a>
     </div>
+    <div class="col-md-2">
+        <a href="/admin/points/delete/<?= $point['id'] ?>/" class="btn btn-default remove_point">Удалить</a>
+    </div>
 </div>
 <div class="row" style="margin-bottom: 5px;">
     <div class="col-md-12">
@@ -208,6 +211,7 @@
 
                     // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
                     var point = new YMaps.GeoPoint(<?= $point['coords'] ?>);
+                    map.enableScrollZoom();
                     map.setCenter(point, 10);
                     map.addControl(new YMaps.TypeControl());
                     map.addControl(new YMaps.ToolBar());

@@ -3,8 +3,8 @@
 <ul class="points" style="padding-bottom: 0px;">
     <?php foreach ($points as $point): ?>
         <li>
-            <img src="/images/points/<?= $point['image'] ?>" alt="<?= $point['name'] ?>">
-            <h5><?= $point['name'] ?></h5>
+            <img src="/resize_image.php?file=images/points/<?= $point['image'] ?>&w=374" alt="<?= str_replace("\"", "", $point['name']); ?>" title="<?= str_replace("\"", "", $point['name']); ?>">
+            <h5><?= cut_str($point['name'], 42) ?></h5>
             <div class="points_wrapper">
                 <?php
                 $subway1 = $this->points_model->get_subway_for_point_front($point['subway1_id']);

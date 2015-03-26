@@ -16,11 +16,11 @@
                 foreach ($sports as $sport):
                     ?>
                     <li class="no_hover no_bg">
-                        <a href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>/">
+                        <a alt="<?= $sport['name'] ?>" title="<?= $sport['name'] ?>" href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>/">
                             <div class="visible_block">
                                 <h6><?= $sport['name'] ?></h6>
                             </div>
-                            <img src="/images/sports/<?= $sport['image'] ?>" alt="<?= $sport['name'] ?>">
+                            <img src="/resize_image.php?file=images/sports/<?= $sport['image'] ?>&w=250" alt="<?= $sport['name'] ?>" title="<?= $sport['name'] ?>">
                         </a>
                     </li>
                     <?php

@@ -151,16 +151,16 @@
     <header id="header">
         <div class="header_wrapper">
             <div class="logo">
-                <a href="/"><img src="/img/logo.png" height="66" width="193" alt=""></a>
+                <a href="/"><img src="/img/logo.png" height="66" width="193" alt="Логотип jeisport" title="Логотип jeisport"></a>
             </div><!-- logo -->
             <ul>
-                <li><a href="/">Главная</a></li>
+                <li><a alt="Перейти на главную" title="Перейти на главную" href="/">Главная</a></li>
                 <?php
                 foreach ($categories as $category):
                     if ($category['active'] == 'on'):
                         ?>
                         <li>
-                            <a style="background-image: #00a68e url(/images/categories/<?= $category['image'] ?>) center 22px no-repeat;" href="<?= '/' . $category['url'] ?>/"><?= $category['name'] ?></a>
+                            <a alt="Перейти <?= lcfirst($category['name']) ?>" title="Перейти <?= $category['name'] ?>" style="background-image: #00a68e url(/images/categories/<?= $category['image'] ?>) center 22px no-repeat;" href="<?= '/' . $category['url'] ?>/"><?= $category['name'] ?></a>
                         </li>
                         <?php
                     endif;

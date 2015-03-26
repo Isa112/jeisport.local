@@ -157,7 +157,7 @@
                         <!-- block_item -->
                         <div class="block_item">
                             <a href="/news/<?= $new['url'] ?>" class="block_img_wrapper">
-                                <img src="/images/news/<?= $new['image'] ?>" alt="<?= $new['name'] ?>">
+                                <img src="/resize_image.php?file=images/news/<?= $new['image'] ?>&h=125" alt="<?= $new['name'] ?>">
                             </a>
                             <div class="block_item_content">
                                 <h5><a href="/news/<?= $new['url'] ?>"><?= $new['name'] ?></a></h5>
@@ -186,7 +186,7 @@
                     <?php foreach ($posts as $post): ?>
                         <div class="block_item">
                             <a href="/blog/<?= $post['url'] ?>" class="block_img_wrapper">
-                                <img src="/images/blog/<?= $post['image'] ?>" alt="<?= $post['name'] ?>">
+                                <img src="/resize_image.php?file=images/blog/<?= $post['image'] ?>&h=125" alt="<?= $post['name'] ?>">
                             </a>
                             <div class="block_item_content">
                                 <h5><a href="/blog/<?= $post['url'] ?>"><?= $post['name'] ?></a></h5>
