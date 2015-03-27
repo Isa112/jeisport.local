@@ -31,7 +31,7 @@
             </div>
             <div class="presentation_adress">
                 <h6><?= $point['contacts'] ?></h6>
-                <p><?= $point['phone'] ?></p>
+                <p><?= cut_str($point['phone'], 21) ?></p>
             </div>
             <script src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
             <script type="text/javascript">
@@ -196,7 +196,7 @@
             })();
         </script>
         <noscript>Для отображения комментариев нужно включить Javascript</noscript>
-        
+
         <!-- /KAMENT -->
         <!--           <div class="add_comment_block">
             <form action="">
