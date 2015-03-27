@@ -151,7 +151,7 @@
     <header id="header">
         <div class="header_wrapper">
             <div class="logo">
-                <a href="/"><img src="/img/logo.png" height="66" width="193" alt="Логотип jeisport" title="Логотип jeisport"></a>
+                <a href="/"><img src="/img/logo.png" height="66" width="193" title="Логотип jeisport"></a>
             </div><!-- logo -->
             <ul>
                 <li><a alt="Перейти на главную" title="Перейти на главную" href="/">Главная</a></li>

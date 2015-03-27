@@ -16,7 +16,7 @@
                 foreach ($sports as $sport):
                     ?>
                     <li class="no_hover no_bg">
-                        <a alt="<?= $sport['name'] ?>" title="<?= $sport['name'] ?>" href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>/">
+                        <a title="<?= $sport['name'] ?>" href="<?= '/' . $category['url'] . '/' . $sport['url'] ?>/">
                             <div class="visible_block">
                                 <h6><?= $sport['name'] ?></h6>
                             </div>

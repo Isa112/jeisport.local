@@ -31,7 +31,7 @@
             </div>
             <div class="presentation_adress">
                 <h6><?= $point['contacts'] ?></h6>
-                <p><?= $point['phone'] ?></p>
+                <p><?= cut_str($point['phone'], 21) ?></p>
             </div>
             <script src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
             <script type="text/javascript">
@@ -180,22 +180,31 @@
         <?php endif; ?>
 
         <h3 class="block-title comments_title" id="section_1">Отзывы</h3><!-- title -->
-
-        <div id="disqus_thread"></div>
+        <!-- KAMENT -->
+        <div style="margin-bottom: 40px;" id="kament_comments"></div>
         <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES * * */
-            var disqus_shortname = 'jeisport24';
+            /* * * НАСТРОЙКА * * */
+            var kament_subdomain = 'jeisport';
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
+            /* * * НЕ МЕНЯЙТЕ НИЧЕГО НИЖЕ ЭТОЙ СТРОКИ * * */
             (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                var node = document.createElement('script');
+                node.type = 'text/javascript';
+                node.async = true;
+                node.src = 'http://' + kament_subdomain + '.svkament.ru/js/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(node);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        <noscript>Для отображения комментариев нужно включить Javascript</noscript>
 
+        <!-- /KAMENT -->
+        <!--           <div class="add_comment_block">
+            <form action="">
+             <input type="text" value="Имя">
+             <input type="text" value="Email">
+             <textarea name="" id="" value="Комментарий" cols="30" rows="10"></textarea>
+             <input type="submit" value="Опубликовать">
+            </form>
+           </div>-->
     </div><!-- wrapper -->
 </div>
